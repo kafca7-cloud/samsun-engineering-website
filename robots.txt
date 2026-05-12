@@ -1,0 +1,21 @@
+# robots.txt for samsuneng.co.kr
+# 삼선엔지니어링 - CAT 공인 대리점
+
+User-agent: *
+Allow: /
+
+# 사이트맵 위치
+Sitemap: https://samsuneng.co.kr/sitemap.xml
+
+# 검색엔진별 명시적 허용 (혹시 모를 차단 방지)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Daumoa
+Allow: /
+
+User-agent: bingbot
+Allow: /

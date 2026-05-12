@@ -12,4 +12,23 @@
       <image:caption>발전기·엔진 토탈 솔루션 파트너 - 여수 CAT 공인 대리점</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://samsuneng.co.kr/generator-inspection.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://samsuneng.co.kr/img/cat-c175-genset.png</image:loc>
+      <image:title>CAT C175 비상발전기 - 정기점검 대상</image:title>
+      <image:caption>비상발전기 정기점검 - CAT ET 및 SOS 진단 기반 점검</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://samsuneng.co.kr/img/cat-et-software.webp</image:loc>
+      <image:title>CAT ET 진단 소프트웨어</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://samsuneng.co.kr/img/sos-analysis-report-1.jpg</image:loc>
+      <image:title>SOS 오일 샘플링 분석 결과</image:title>
+    </image:image>
+  </url>
 </urlset>

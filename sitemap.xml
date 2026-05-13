@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://samsuneng.co.kr/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -30,5 +30,11 @@
       <image:loc>https://samsuneng.co.kr/img/sos-analysis-report-1.jpg</image:loc>
       <image:title>SOS 오일 샘플링 분석 결과</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://samsuneng.co.kr/resources/faq.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

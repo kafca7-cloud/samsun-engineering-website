@@ -290,11 +290,8 @@ nav#mainNav {
 }
 .hero::before {
   content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(to right,
-    var(--cat-yellow) 0%, var(--cat-yellow) 33%,
-    #ffd740 33%, #ffd740 66%,
-    var(--cat-black) 66%, var(--cat-black) 100%);
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
 }
 .hero-inner { max-width: var(--max-w); margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 .hero-label {

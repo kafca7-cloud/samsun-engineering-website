@@ -228,80 +228,47 @@
   --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* ================================================
-   NAVIGATION (CAT 스타일 — 흰 배경)
-================================================ */
-nav {
-  position: sticky; top: 0; z-index: 1000;
+/* ─── SIMPLE PAGE HEADER ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   background: var(--cat-white);
-  border-bottom: 1px solid var(--cat-border);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 .nav-inner {
   max-width: var(--max-w); margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2rem; height: 84px;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
 }
-.logo { gap: 18px !important; height: 64px !important; }
-.logo img {
-  height: 62px !important; width: auto;
-  display: block;
-}
-.logo-text {
-  font-size: 32px;
-  font-weight: 900;
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
   color: var(--cat-black);
-  letter-spacing: -0.8px;
-  font-family: 'Pretendard', sans-serif;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
   line-height: 1;
-  white-space: nowrap;
 }
-.nav-links a { height: 84px !important; }
-.nav-links { display: flex; gap: 0; list-style: none; height: 100%; }
-.nav-links li { display: flex; align-items: center; }
-.nav-links a {
-  color: var(--cat-black); font-size: 15.5px; font-weight: 600;
-  padding: 0 1.1rem; height: 84px; display: flex; align-items: center;
-  letter-spacing: 0.2px; position: relative;
-  transition: color 0.2s, background 0.2s;
-  white-space: nowrap;
-}
-.nav-links a::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-  height: 3px; background: var(--cat-yellow);
-  transform: scaleX(0); transition: transform 0.25s ease;
-}
-.nav-links a:hover { color: var(--cat-black); background: var(--cat-gray1); }
-.nav-links a:hover::after { transform: scaleX(1); }
-.nav-right { display: flex; align-items: center; gap: 0.8rem; }
-.nav-cta {
-  background: var(--cat-yellow); color: var(--cat-black);
-  padding: 10px 22px; font-size: 13px; font-weight: 700;
-  border: none; cursor: pointer; letter-spacing: 0.3px;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-.nav-cta:hover { background: #e6b000; }
-.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-.hamburger span { width:22px; height:2px; background:var(--cat-black); display:block; border-radius:1px; }
 
-/* ─── MOBILE NAV (≤860px) ─── */
-@media (max-width: 860px) {
-  .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .nav-links { display: none; }
-  .nav-inner { height: 72px; }
-  .logo { height: 54px !important; gap: 14px !important; }
-  .logo img { height: 52px !important; }
-  .logo-text { font-size: 26px; letter-spacing: -0.6px; }
-  .nav-links a { height: 72px !important; }
-}
+/* 본문이 fixed 헤더에 가려지지 않도록 */
+body { padding-top: 64px; }
+
 @media (max-width: 560px) {
-  .nav-inner { height: 64px; padding: 0 1rem; }
-  .logo { height: 44px !important; gap: 10px !important; }
-  .logo img { height: 42px !important; }
-  .logo-text { font-size: 20px; letter-spacing: -0.4px; }
-  .nav-links a { height: 64px !important; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  body { padding-top: 56px; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
 }
 
 
@@ -516,54 +483,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ─── FOOTER ─── */
-footer {
-  background: var(--cat-dark); color: rgba(255,255,255,0.6);
-  padding: 60px 2rem 30px;
-  font-size: 13px;
-}
-.footer-wrap { max-width: var(--max-w); margin: 0 auto; }
-.footer-top {
-  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 3rem; padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.footer-logo { margin-bottom: 1rem; }
-.footer-company-name {
-  font-size: 20px; font-weight: 700; color: #fff;
-  letter-spacing: 0.5px; display: block; margin-bottom: 0.8rem;
-}
-.footer-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.9; }
-.footer-col h4 {
-  font-size: 13px; font-weight: 700; color: #fff;
-  letter-spacing: 1px; margin-bottom: 1rem;
-}
-.footer-col a {
-  display: block; font-size: 13px; color: rgba(255,255,255,0.5);
-  padding: 4px 0; transition: color 0.2s;
-}
-.footer-col a:hover { color: var(--cat-yellow); }
-.cat-stripe {
-  height: 4px; width: 100%; margin: 1.5rem 0;
-  background: linear-gradient(to right,
-    var(--cat-yellow) 0%, var(--cat-yellow) 33%,
-    #ffd740 33%, #ffd740 66%,
-    var(--cat-black) 66%, var(--cat-black) 100%);
-}
-.footer-bottom {
-  padding-top: 1rem;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 1rem;
-}
-.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.4); }
-.iso-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.iso-pill {
-  font-size: 10px; font-weight: 700; padding: 3px 10px;
-  border: 1px solid rgba(255,196,0,0.3); color: rgba(255,196,0,0.6);
-  letter-spacing: 0.5px;
-}
-
 @media (max-width: 800px) {
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   .faq-section { padding: 50px 1rem; }
   .hero { padding: 110px 1rem 60px; }
   .cat-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
@@ -578,29 +498,10 @@ footer {
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-inner">
-    <a href="/" class="logo" style="display:flex;align-items:center;text-decoration:none;">
-      <img src="/img/main/logo.jpg" alt="삼선엔지니어링" style="width:auto;display:block;">
-      <div style="display:flex;align-items:center;margin-left:0;">
-        <span class="logo-text">삼선엔지니어링</span>
-      </div>
+    <a href="/" class="home-btn">
+      <span class="arrow">←</span>
+      <span>홈으로</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="/#about">회사소개</a></li>
-      <li><a href="/#history">연혁</a></li>
-      <li><a href="/#services">사업분야</a></li>
-      <li><a href="/generator-inspection.html" style="color:var(--cat-yellow);">정기점검</a></li>
-      <li><a href="/#products">판매제품</a></li>
-      <li><a href="/#performance">실적</a></li>
-      <li><a href="/#tech">기술력</a></li>
-      <li><a href="/#clients">고객사</a></li>
-      <li><a href="/resources/faq.html" class="active" style="color:var(--cat-yellow);">FAQ</a></li>
-      <li><a href="/#contact">오시는길</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="hamburger" onclick="toggleMob()" aria-label="메뉴">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
   </div>
 </nav>
 
@@ -918,54 +819,6 @@ footer {
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <span class="footer-company-name">㈜삼선엔지니어링</span>
-        </div>
-        <p class="footer-desc">
-          대표이사: 우광희 &nbsp;|&nbsp; 사업자등록번호: 417-81-26338<br>
-          법인등록번호: 206211-0023809<br>
-          설립: 1990년 (법인 설립: 2002년)<br>
-          전라남도 여수시 좌수영로 919 (여천동)<br>
-          Tel. 061-642-1247 &nbsp;|&nbsp; Fax. 061-642-8999<br>
-          E-mail: samsun3618@hanmail.net
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4>회사</h4>
-        <a href="/#about">회사 소개</a>
-        <a href="/#history">회사 연혁</a>
-        <a href="/#tech">기술력</a>
-      </div>
-      <div class="footer-col">
-        <h4>서비스</h4>
-        <a href="/#services">사업 분야</a>
-        <a href="/generator-inspection.html">정기점검</a>
-        <a href="/#performance">주요 실적</a>
-      </div>
-      <div class="footer-col">
-        <h4>자료실</h4>
-        <a href="/resources/faq.html">자주 묻는 질문</a>
-        <a href="/#contact">오시는 길</a>
-        <a href="mailto:samsun3618@hanmail.net">이메일 문의</a>
-      </div>
-    </div>
-    <div class="cat-stripe"></div>
-    <div class="footer-bottom">
-      <p>© 1990–2025 ㈜삼선엔지니어링. All rights reserved.</p>
-      <div class="iso-row">
-        <span class="iso-pill" title="GERMAN CERT 인증번호: GQ-211254">ISO 9001</span>
-        <span class="iso-pill" title="GERMAN CERT 인증번호: GE-210491">ISO 14001</span>
-        <span class="iso-pill" title="GERMAN CERT 인증번호: GO-251038">ISO 45001</span>
-        <span class="iso-pill" title="전라남도지사 등록 2025.05.30">전기공사업 등록</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
 <script>
 // 아코디언 토글
 document.querySelectorAll('.faq-q').forEach(btn => {
@@ -1008,16 +861,5 @@ if (hash) {
 </script>
 
 
-<script>
-// 모바일 햄버거 메뉴 토글
-function toggleMob() {
-  const nl = document.querySelector('.nav-links');
-  const open = nl.style.display === 'flex';
-  nl.style.cssText = open ? '' :
-    'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;' +
-    'background:#fff;padding:1.5rem 2rem;gap:0;z-index:999;' +
-    'border-top:2px solid var(--cat-yellow);box-shadow:0 8px 24px rgba(0,0,0,0.12);';
-}
-</script>
 </body>
 </html>

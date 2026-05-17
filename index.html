@@ -1432,15 +1432,10 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
     </a>
     <ul class="nav-links">
       <li><a href="#about">회사소개</a></li>
-      <li><a href="#history">연혁</a></li>
       <li><a href="#services">사업분야</a></li>
-      <li><a href="/generator-inspection.html" style="color:var(--cat-yellow);">정기점검</a></li>
-      <li><a href="#products">판매제품</a></li>
-      <li><a href="#performance">실적</a></li>
-      <li><a href="#tech">기술력</a></li>
-      <li><a href="#clients">고객사</a></li>
-      <li><a href="/resources/faq.html">FAQ</a></li>
-      <li><a href="#contact">오시는길</a></li>
+      <li><a href="#performance">실적·고객사</a></li>
+      <li><a href="/resources/faq.html">자료실</a></li>
+      <li><a href="#contact">문의</a></li>
     </ul>
     <div class="nav-right">
       <button class="hamburger" onclick="toggleMob()" aria-label="메뉴">
@@ -2542,15 +2537,30 @@ window.addEventListener('scroll', () => {
     window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.12)' : '0 2px 8px rgba(0,0,0,0.08)';
 });
 
-// Active nav highlight
+// Active nav highlight (메뉴 5개 ↔ 섹션 다대다 매핑)
+// 한 메뉴가 여러 섹션을 대표할 수 있음 (예: "회사소개"는 about + history + tech 포함)
+const SECTION_TO_MENU = {
+  'home': '#home',
+  'about': '#about',
+  'history': '#about',
+  'tech': '#about',
+  'services': '#services',
+  'inspection-banner': '#services',
+  'products': '#services',
+  'performance': '#performance',
+  'clients': '#performance',
+  'contact': '#contact'
+};
+
 window.addEventListener('scroll', () => {
   const navAs = document.querySelectorAll('.nav-links a');
   let cur = '';
   document.querySelectorAll('section[id]').forEach(s => {
     if (window.scrollY >= s.offsetTop - 90) cur = s.id;
   });
+  const activeHref = SECTION_TO_MENU[cur] || '';
   navAs.forEach(a => {
-    const active = a.getAttribute('href') === '#' + cur;
+    const active = a.getAttribute('href') === activeHref;
     a.style.color = active ? 'var(--cat-yellow)' : '';
     a.style.background = active ? 'var(--cat-gray1)' : '';
   });

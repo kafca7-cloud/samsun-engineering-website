@@ -630,10 +630,12 @@ h1, h2, h3, h4, h5, h6,
   cursor: not-allowed;
 }
 .form-note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--cat-gray3);
-  line-height: 1.5;
+  line-height: 1.65;
   flex: 1;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ─── 제출 후 메시지 ─── */
@@ -673,18 +675,22 @@ h1, h2, h3, h4, h5, h6,
   background: var(--cat-white);
   padding: 1.5rem 1.6rem;
   border-left: 3px solid var(--cat-yellow);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .sidebar-card.dark {
   background: var(--cat-black);
   color: var(--cat-white);
 }
 .sidebar-card h3 {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 2.5px;
   color: var(--cat-yellow);
   text-transform: uppercase;
   margin-bottom: 1rem;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .sidebar-card.dark h3 {
   color: var(--cat-yellow);
@@ -700,9 +706,12 @@ h1, h2, h3, h4, h5, h6,
   align-items: flex-start;
   gap: 10px;
   padding: 6px 0;
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--cat-gray4);
-  line-height: 1.55;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-family: inherit;
 }
 .promise-list li::before {
   content: '✓';
@@ -728,17 +737,20 @@ h1, h2, h3, h4, h5, h6,
   color: var(--cat-yellow);
 }
 .quick-contact-item .qc-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.55);
   text-transform: uppercase;
+  word-break: keep-all;
 }
 .quick-contact-item .qc-value {
   font-size: 14.5px;
   color: var(--cat-white);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .quick-contact-item .qc-value a {
   color: var(--cat-white);
@@ -751,12 +763,16 @@ h1, h2, h3, h4, h5, h6,
 
 .policy-link {
   display: block;
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--cat-gray4);
   line-height: 1.6;
-  padding: 8px 0;
+  padding: 9px 0;
   border-bottom: 1px solid var(--cat-border);
   transition: color 0.15s;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-family: inherit;
+  text-decoration: none;
 }
 .policy-link:last-child {
   border-bottom: none;
@@ -1014,7 +1030,7 @@ h1, h2, h3, h4, h5, h6,
         <h3>SAMSUN의 약속</h3>
         <ul class="promise-list">
           <li>영업일 24시간 내 회신</li>
-          <li>모든 견적·상담 무료</li>
+          <li>상담·기술 자문 가능</li>
           <li>CAT 공인 대리점 정품 보증</li>
           <li>ISO 9001 / 14001 / 45001 인증</li>
           <li>35년 누적 현장 경험</li>
@@ -1061,7 +1077,7 @@ h1, h2, h3, h4, h5, h6,
       <!-- 자주 묻는 질문 -->
       <div class="sidebar-card">
         <h3>먼저 확인해 보세요</h3>
-        <a href="/resources/faq.html" class="policy-link">▸ 견적은 무료인가요?</a>
+        <a href="/resources/faq.html" class="policy-link">▸ 견적·상담은 어떻게 진행되나요?</a>
         <a href="/resources/faq.html" class="policy-link">▸ 출장 점검 가능 지역은?</a>
         <a href="/resources/faq.html" class="policy-link">▸ CAT 외 브랜드도 가능한가요?</a>
         <a href="/resources/faq.html" class="policy-link">▸ 정기점검 주기는?</a>

@@ -691,7 +691,7 @@ section { padding: 100px 2rem; }
 
 /* ─── 이미지 헤더 + 별도 아이콘 영역 ─── */
 .svc-img-wrap {
-  margin: 0 0 1.4rem;
+  margin: 0 0 1.6rem;
 }
 
 /* 헤더 영역 (이미지 위쪽 검정 띠) */
@@ -703,6 +703,7 @@ section { padding: 100px 2rem; }
   gap: 12px;
   border-left: 3px solid var(--cat-yellow);
   transition: background 0.25s, border-color 0.25s;
+  margin-bottom: 4px;  /* 이미지와 시각적으로 구분 */
 }
 .svc-card:hover .svc-icon-header {
   background: var(--cat-yellow);
@@ -782,7 +783,7 @@ section { padding: 100px 2rem; }
 }
 .svc-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); transform: translateY(-4px); z-index:1; }
 .svc-card:hover::after { transform: scaleX(1); }
-.svc-card:hover .svc-card:hover .svc-card h3 { font-size: 16px; font-weight: 700; color: var(--cat-black); margin-bottom: 0.7rem; }
+.svc-card:hover .svc-card:hover .svc-card h3 { font-size: 17px; font-weight: 800; color: var(--cat-black); margin: 0.4rem 0 0.8rem; letter-spacing: -0.3px; line-height: 1.4; }
 .svc-card p { font-size: 13px; color: var(--cat-gray3); line-height: 1.75; }
 .svc-tags { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
@@ -1383,16 +1384,21 @@ nav.scrolled { box-shadow: 0 1px 0 var(--cat-gray2) !important; }
     var(--cat-black) 100%);
 }
 
-/* Service cards — minimal flat */
+/* Service cards — minimal flat (기존 padding/overflow/position 유지) */
 .svc-card {
   background: var(--cat-white);
   border: 1px solid var(--cat-border);
-  transition: border-color 0.25s, transform 0.25s;
+  /* 필수 유지 속성 — 위 정의들의 핵심 보존 */
+  padding: 2.4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  cursor: default;
 }
 .svc-card:hover {
   border-color: var(--cat-black);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   transform: none !important;
-  box-shadow: none !important;
 }
 .svc-card::after { display: none; }
 

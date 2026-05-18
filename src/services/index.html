@@ -1,0 +1,215 @@
+<!-- @meta {
+  "cta_eyebrow": "SERVICE INQUIRY",
+  "cta_title": "어떤 서비스가 필요하신가요?",
+  "cta_sub": "사업분야별 상세 문의는 SAMSUN에 직접 연락 주세요.<br>전화·이메일 모두 접수 가능합니다."
+} -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사업분야 (6개) | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="㈜삼선엔지니어링의 6개 사업분야 - 세일즈, 유지보수, 해상 엔진 수리, 시공업, 임대업, MRO & 부품 조달. CAT 공인 대리점으로서 발전기·엔진 통합 솔루션을 제공합니다.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://samsuneng.co.kr/services/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samsuneng.co.kr/services/">
+<meta property="og:title" content="사업분야 6개 | SAMSUN 삼선엔지니어링">
+<meta property="og:description" content="발전기·엔진 통합 솔루션 - 세일즈, 유지보수, 해상 엔진, 시공업, 임대업, MRO 6개 사업분야">
+<meta property="og:locale" content="ko_KR">
+
+<style>
+{{> design-tokens}}
+</style>
+
+<style>
+.services-grid-section {
+  background: var(--cat-gray1);
+  padding: 4rem 2rem;
+}
+.services-grid-inner {
+  max-width: var(--max-w); margin: 0 auto;
+}
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2px;
+  background: var(--cat-border);
+  margin-top: 2rem;
+}
+.svc-card {
+  background: var(--cat-white);
+  padding: 2.4rem 2rem 2rem;
+  display: flex; flex-direction: column;
+  text-decoration: none;
+  color: var(--cat-black);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.svc-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: var(--cat-yellow);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+.svc-card:hover::after {
+  transform: scaleX(1);
+}
+.svc-num {
+  font-size: 5rem; font-weight: 900;
+  color: rgba(0,0,0,0.04);
+  position: absolute; top: 0.5rem; right: 1rem; line-height: 1;
+}
+.svc-card h3 {
+  font-size: 1.3rem; font-weight: 800;
+  color: var(--cat-black);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.3px;
+  position: relative; z-index: 1;
+}
+.svc-card p {
+  font-size: 14px; color: var(--cat-gray4);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+  flex: 1;
+  position: relative; z-index: 1;
+}
+.svc-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 1.5rem;
+  position: relative; z-index: 1;
+}
+.svc-tag {
+  font-size: 11px; padding: 3px 10px; font-weight: 600;
+  background: var(--cat-gray1); color: var(--cat-gray4);
+  border: 1px solid var(--cat-border);
+}
+.svc-arrow {
+  font-size: 13px; font-weight: 700;
+  color: var(--cat-black);
+  letter-spacing: 0.3px;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--cat-border);
+  transition: color 0.18s;
+  position: relative; z-index: 1;
+}
+.svc-card:hover .svc-arrow {
+  color: var(--cat-yellow);
+}
+
+@media (max-width: 560px) {
+  .services-grid-section { padding: 2.5rem 1rem; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-card { padding: 1.8rem 1.4rem 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+{{> header-sub}}
+
+<section class="hero">
+  <div class="hero-stripe"></div>
+  <div class="hero-inner">
+    <span class="hero-label">BUSINESS AREA</span>
+    <h1>사업분야<br><em>발전기·엔진 통합 솔루션</em></h1>
+    <p class="lead">
+      ㈜삼선엔지니어링은 <strong>CAT 공인 대리점</strong>으로서 발전기·엔진 분야의
+      6개 핵심 사업영역에서 전문 서비스를 제공합니다.
+      각 분야별 자세한 내용을 확인해 주세요.
+    </p>
+  </div>
+</section>
+
+<section class="services-grid-section">
+  <div class="services-grid-inner">
+    <div class="svc-grid">
+
+    <a href="/services/sales/" class="svc-card">
+      <div class="svc-num">01</div>
+      <h3>세일즈</h3>
+      <p>육·해상 디젤 엔진 및 비상발전기 판매, 엔진 관련 부품 및 소모품 유통. CAT 공인 대리점으로서 최고 품질의 제품을 공급합니다.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">비상발전기 판매</span>
+        <span class="svc-tag">디젤엔진</span>
+        <span class="svc-tag">부품·소모품</span>
+      </div>
+      <div class="svc-arrow">자세히 보기 →</div>
+    </a>
+
+    <a href="/services/maintenance/" class="svc-card">
+      <div class="svc-num">02</div>
+      <h3>유지보수</h3>
+      <p>비상발전기·디젤 엔진 정기 점검 및 수리, 24시간 긴급 대응 체계 및 설비 이력 관리로 최적 상태를 유지합니다.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">정기점검·수리</span>
+        <span class="svc-tag">24h 긴급출동</span>
+        <span class="svc-tag">이력관리</span>
+      </div>
+      <div class="svc-arrow">자세히 보기 →</div>
+    </a>
+
+    <a href="/services/marine/" class="svc-card">
+      <div class="svc-num">03</div>
+      <h3>해상 엔진 수리</h3>
+      <p>선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">주기관 O/H</span>
+        <span class="svc-tag">선박 발전기</span>
+        <span class="svc-tag">관공선 점검</span>
+      </div>
+      <div class="svc-arrow">자세히 보기 →</div>
+    </a>
+
+    <a href="/services/construction/" class="svc-card">
+      <div class="svc-num">04</div>
+      <h3>시공업</h3>
+      <p>전기공사업 면허 기반의 신규 시공 역량. 발전기 이전·개조 공사, 전기·플랜트 시공 서비스를 제공합니다.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">전기공사업</span>
+        <span class="svc-tag">이전·개조</span>
+        <span class="svc-tag">플랜트 시공</span>
+      </div>
+      <div class="svc-arrow">자세히 보기 →</div>
+    </a>
+
+    <a href="/services/rental/" class="svc-card">
+      <div class="svc-num">05</div>
+      <h3>임대업</h3>
+      <p>비상발전기 단기·장기 임대 서비스와 건설 기계·장비 임대. 갑작스러운 전력 수요에도 신속하게 대응합니다.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">단기임대</span>
+        <span class="svc-tag">장기임대</span>
+        <span class="svc-tag">정밀기계</span>
+      </div>
+      <div class="svc-arrow">자세히 보기 →</div>
+    </a>
+
+    <a href="/services/mro/" class="svc-card">
+      <div class="svc-num">06</div>
+      <h3>MRO & 부품 조달</h3>
+      <p>Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">정품 부품</span>
+        <span class="svc-tag">신속 조달</span>
+        <span class="svc-tag">T/S</span>
+      </div>
+      <div class="svc-arrow">자세히 보기 →</div>
+    </a>
+
+    </div>
+  </div>
+</section>
+
+{{> cta-section}}
+
+</body>
+</html>

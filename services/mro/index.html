@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRO & 부품 조달 (MRO & Parts) | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://samsuneng.co.kr/services/mro/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samsuneng.co.kr/services/mro/">
+<meta property="og:title" content="MRO & 부품 조달 (MRO & Parts) | SAMSUN 삼선엔지니어링">
+<meta property="og:description" content="Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.">
+<meta property="og:locale" content="ko_KR">
+
+<style>
+/* ============================================================
+   SAMSUN 공통 디자인 토큰
+   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
+   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
+   ============================================================ */
+
+:root {
+  /* 색상 */
+  --cat-yellow: #FFC400;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-yellow-soft: rgba(255,196,0,0.06);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-white: #ffffff;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-gray5: #2a2a2a;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+
+  /* 레이아웃 */
+  --max-w: 1280px;
+
+  /* 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── 기본 리셋 ─── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 64px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--cat-black);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─── HERO 영역 공통 스타일 ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-stripe {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
+  z-index: 2;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
+
+/* ─── CTA 섹션 공통 스타일 ─── */
+.cta-section {
+  background: var(--cat-black); color: var(--cat-white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow, .cta-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.cta-title em { color: var(--cat-yellow); font-style: normal; }
+.cta-sub, .cta-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 16px 32px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  border: 1px solid transparent; cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cat-yellow); color: var(--cat-black);
+}
+.btn-primary:hover { background: #e6b000; }
+.btn-secondary {
+  background: transparent; color: var(--cat-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  border-color: var(--cat-yellow); color: var(--cat-yellow);
+}
+
+/* ─── 모바일 반응형 ─── */
+@media (max-width: 560px) {
+  body { padding-top: 56px; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
+  .hero { padding: 110px 1rem 60px; }
+  .cta-section { padding: 60px 1rem; }
+  .cta-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+</style>
+
+<style>
+.intro-section {
+  background: var(--cat-white);
+  padding: 4rem 2rem;
+  border-bottom: 1px solid var(--cat-border);
+}
+.intro-inner {
+  max-width: 880px; margin: 0 auto;
+}
+.intro-summary {
+  font-size: 1.15rem; line-height: 1.85;
+  color: var(--cat-gray4);
+  margin-bottom: 2rem;
+}
+.intro-tags {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+}
+.tag {
+  font-size: 13px; padding: 6px 14px; font-weight: 600;
+  background: var(--cat-gray1); color: var(--cat-gray4);
+  border: 1px solid var(--cat-border);
+}
+.content-placeholder {
+  background: var(--cat-gray1);
+  padding: 4rem 2rem;
+}
+.content-inner {
+  max-width: 880px; margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--cat-white);
+  border: 2px dashed var(--cat-border);
+}
+.content-placeholder h2 {
+  font-size: 1.6rem; font-weight: 800; color: var(--cat-black);
+  margin-bottom: 1rem; letter-spacing: -0.5px;
+}
+.content-placeholder p {
+  font-size: 1rem; color: var(--cat-gray4); line-height: 1.8;
+  max-width: 540px; margin: 0 auto 1.5rem;
+}
+.content-placeholder .placeholder-note {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid var(--cat-yellow);
+  background: var(--cat-yellow-soft);
+  margin-bottom: 1rem;
+}
+.related-section {
+  background: var(--cat-white);
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--cat-border);
+}
+.related-inner {
+  max-width: 880px; margin: 0 auto;
+}
+.related-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow);
+  margin-bottom: 1rem;
+}
+.related-section h2 {
+  font-size: 1.8rem; font-weight: 800; color: var(--cat-black);
+  margin-bottom: 2rem; letter-spacing: -0.5px;
+}
+.related-list {
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.related-link {
+  display: flex; align-items: center; gap: 12px;
+  padding: 1.2rem 1.5rem;
+  background: var(--cat-gray1);
+  border-left: 4px solid var(--cat-yellow);
+  text-decoration: none;
+  color: var(--cat-black);
+  font-weight: 700; font-size: 15px;
+  transition: background 0.18s, transform 0.18s;
+}
+.related-link:hover {
+  background: var(--cat-yellow);
+  transform: translateX(4px);
+}
+.related-arrow {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--cat-yellow);
+  transition: color 0.18s;
+}
+.related-link:hover .related-arrow {
+  color: var(--cat-black);
+}
+.other-services {
+  background: var(--cat-black);
+  padding: 4rem 2rem;
+  color: var(--cat-white);
+}
+.other-inner {
+  max-width: 880px; margin: 0 auto;
+}
+.other-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow);
+  margin-bottom: 1rem;
+}
+.other-services h2 {
+  font-size: 1.5rem; font-weight: 800; color: var(--cat-white);
+  margin-bottom: 1.8rem; letter-spacing: -0.3px;
+}
+.other-svc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+.other-svc-card {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 1.4rem;
+  background: var(--cat-card);
+  color: var(--cat-white);
+  text-decoration: none;
+  font-weight: 600; font-size: 14.5px;
+  border-left: 3px solid var(--cat-yellow);
+  transition: background 0.18s, padding-left 0.18s;
+}
+.other-svc-card:hover {
+  background: var(--cat-elev);
+  padding-left: 1.8rem;
+}
+@media (max-width: 560px) {
+  .intro-section, .content-placeholder, .related-section, .other-services {
+    padding: 2.5rem 1rem;
+  }
+  .content-inner { padding: 2rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="home-btn">
+      <span class="arrow">←</span>
+      <span>홈으로</span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-stripe"></div>
+  <div class="hero-inner">
+    <span class="hero-label">MRO & PARTS</span>
+    <h1>MRO & 부품 조달<br><em>정품 부품·기술 지원 통합 솔루션</em></h1>
+    <p class="lead">
+      Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.
+    </p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="intro-inner">
+    <p class="intro-summary">
+      <strong>㈜삼선엔지니어링</strong>은 CAT 공인 대리점으로서 35년 이상의 경험을 바탕으로
+      MRO & 부품 조달 분야에서 신뢰할 수 있는 서비스를 제공합니다.
+    </p>
+    <div class="intro-tags">
+      <span class="tag">정품 부품</span> <span class="tag">신속 조달</span> <span class="tag">T/S</span>
+    </div>
+  </div>
+</section>
+
+<section class="content-placeholder">
+  <div class="content-inner">
+    <span class="placeholder-note">CONTENT COMING SOON</span>
+    <h2>상세 콘텐츠 준비 중입니다</h2>
+    <p>
+      구체적인 서비스 항목, 차별화 포인트, 주요 실적 등 자세한 내용을 곧 업데이트할 예정입니다.<br>
+      문의사항이 있으시면 언제든 연락 주세요.
+    </p>
+  </div>
+</section>
+
+  <!-- 관련 자료 -->
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-label">RELATED RESOURCES</div>
+      <h2>관련 자료</h2>
+      <div class="related-list">
+        <a href="/products/" class="related-link">
+          <span class="related-arrow">→</span>
+          <span>주요 제품 라인업 보기</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<section class="other-services">
+  <div class="other-inner">
+    <div class="other-label">OTHER SERVICES</div>
+    <h2>다른 사업분야 보기</h2>
+    <div class="other-svc-grid">
+      <a href="/services/sales/" class="other-svc-card">세일즈 →</a>
+      <a href="/services/maintenance/" class="other-svc-card">유지보수 →</a>
+      <a href="/services/marine/" class="other-svc-card">해상 엔진 수리 →</a>
+      <a href="/services/construction/" class="other-svc-card">시공업 →</a>
+      <a href="/services/rental/" class="other-svc-card">임대업 →</a>
+      <a href="/services/" class="other-svc-card" style="background:var(--cat-yellow);color:var(--cat-black);border-left-color:var(--cat-black);font-weight:800;">전체 사업분야 보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 
+  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
+  - 각 페이지에서 cta_eyebrow, cta_title, cta_sub 변수로 텍스트 커스텀 가능
+  - 변수 미지정 시 기본값 사용
+-->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">MRO & PARTS INQUIRY</div>
+    <h2 class="cta-title">MRO & 부품 조달 서비스 문의</h2>
+    <p class="cta-sub">구체적인 견적·일정·기술 상담 모두 SAMSUN에 문의해 주세요.<br>전화·이메일 모두 접수 가능합니다.</p>
+    <div class="cta-actions">
+      <a href="tel:0616421247" class="btn btn-primary">
+        ☎ 061-642-1247 전화 문의
+      </a>
+      <a href="mailto:samsun3618@hanmail.net" class="btn btn-secondary">
+        ✉ 이메일 문의
+      </a>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

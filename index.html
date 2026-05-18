@@ -693,10 +693,13 @@ section { padding: 100px 2rem; }
 .svc-img-wrap {
   margin: 0 0 1.4rem;
 }
+
+/* 헤더 영역 (이미지 위쪽 검정 띠) */
 .svc-icon-header {
   background: var(--cat-black);
   padding: 12px 14px;
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
   gap: 12px;
   border-left: 3px solid var(--cat-yellow);
   transition: background 0.25s, border-color 0.25s;
@@ -705,21 +708,30 @@ section { padding: 100px 2rem; }
   background: var(--cat-yellow);
   border-left-color: var(--cat-black);
 }
+
+/* 아이콘 박스 */
 .svc-icon-box {
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .svc-icon-box svg {
-  width: 22px; height: 22px;
+  width: 22px;
+  height: 22px;
   fill: var(--cat-yellow);
   transition: fill 0.25s;
 }
 .svc-card:hover .svc-icon-box svg {
   fill: var(--cat-black);
 }
+
+/* 카테고리 라벨 텍스트 */
 .svc-icon-label {
-  font-size: 11px; font-weight: 800;
+  font-size: 11px;
+  font-weight: 800;
   letter-spacing: 2px;
   color: var(--cat-yellow);
   text-transform: uppercase;
@@ -728,6 +740,8 @@ section { padding: 100px 2rem; }
 .svc-card:hover .svc-icon-label {
   color: var(--cat-black);
 }
+
+/* 이미지 프레임 (16:9 비율 고정) */
 .svc-img-frame {
   position: relative;
   width: 100%;
@@ -736,24 +750,27 @@ section { padding: 100px 2rem; }
   background: var(--cat-gray1);
 }
 .svc-img-frame img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
-  transition: transform 0.4s;
   display: block;
+  transition: transform 0.4s;
 }
 .svc-card:hover .svc-img-frame img {
   transform: scale(1.05);
 }
 
-/* aspect-ratio 미지원 fallback (구형 브라우저) */
-@supports not (aspect-ratio: 1) {
+/* 구형 브라우저 fallback (aspect-ratio 미지원) */
+@supports not (aspect-ratio: 1 / 1) {
   .svc-img-frame {
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 = 9/16 = 0.5625 */
+    padding-bottom: 56.25%; /* 16:9 비율 */
   }
   .svc-img-frame img {
-    position: absolute; top: 0; left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 /* CAT 특유의 노란 밑줄 호버 */

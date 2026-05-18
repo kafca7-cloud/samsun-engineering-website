@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>문의하기 | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="발전기·엔진 견적, 정기점검, 고장 진단, 임대, 시공 문의. CAT 공인 대리점 SAMSUN 삼선엔지니어링이 영업일 24시간 내 회신해 드립니다.">
+<title>견적·정기점검·고장 진단 문의 | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="발전기·엔진 견적, 비상발전기 정기점검, 디젤엔진 고장 진단, 산업용 발전기 임대, 시공, 정품 부품 조달 문의. CAT 공인 대리점 SAMSUN이 영업일 24시간 내 회신해 드립니다. 35년 현장 경험, 여수 본사 기반 전국 출장 대응.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://samsuneng.co.kr/contact/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://samsuneng.co.kr/contact/">
-<meta property="og:title" content="문의하기 | SAMSUN 삼선엔지니어링">
-<meta property="og:description" content="발전기·엔진 도입·정기점검·고장 진단 문의. SAMSUN이 영업일 24시간 내 회신해 드립니다.">
+<meta property="og:title" content="견적·정기점검·고장 진단 문의 | SAMSUN 삼선엔지니어링">
+<meta property="og:description" content="발전기·엔진 운영의 모든 단계 — 견적·정기점검·고장 진단·임대·시공·부품 조달. CAT 공인 대리점 SAMSUN이 영업일 24시간 내 회신해 드립니다.">
 <meta property="og:locale" content="ko_KR">
 
 <style>
@@ -319,11 +319,22 @@ h1, h2, h3, h4, h5, h6,
   color: var(--cat-yellow);
   font-style: normal;
 }
+.contact-hero .hero-services {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cat-yellow);
+  background: rgba(255, 196, 0, 0.08);
+  padding: 8px 18px;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.5px;
+  border-left: 2px solid var(--cat-yellow);
+}
 .contact-hero .lead {
-  font-size: 17px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.7);
-  max-width: 720px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.75);
+  max-width: 780px;
 }
 
 /* ─── 본문 레이아웃 (2컬럼) ─── */
@@ -367,24 +378,53 @@ h1, h2, h3, h4, h5, h6,
 
 /* ─── 폼 섹션 그룹 ─── */
 .form-section {
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.2rem;
 }
 .form-section-title {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 12px;
+  font-size: 18px;
   font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--cat-yellow);
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  letter-spacing: -0.2px;
+  color: var(--cat-black);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--cat-border);
+  position: relative;
 }
 .form-section-title::before {
   content: '';
-  width: 18px;
-  height: 2px;
+  width: 5px;
+  height: 22px;
   background: var(--cat-yellow);
+  flex-shrink: 0;
+}
+.form-section-title .section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--cat-white);
+  background: var(--cat-black);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.form-section-title .section-meta {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cat-gray3);
+  letter-spacing: 0;
+  margin-left: auto;
+}
+.form-section-title .required {
+  font-size: 14px;
+  color: #d33;
+  font-weight: 700;
 }
 
 /* ─── 폼 필드 ─── */
@@ -765,10 +805,13 @@ h1, h2, h3, h4, h5, h6,
 <section class="contact-hero">
   <div class="contact-hero-inner">
     <span class="label">CONTACT US</span>
-    <h1>발전기·엔진 도입을<br><em>고민 중이신가요?</em></h1>
+    <h1>발전기·엔진 운영 중<br><em>어떤 도움이 필요하신가요?</em></h1>
+    <p class="hero-services">
+      견적 · 정기점검 · 고장 진단 · 임대 · 시공 · 부품 조달
+    </p>
     <p class="lead">
-      견적 문의·정기점검 상담·고장 진단·임대·시공·부품 조달까지,<br>
-      ㈜삼선엔지니어링이 영업일 24시간 내 회신해 드립니다.
+      35년 현장 경험을 가진 SAMSUN이 영업일 24시간 내 회신해 드립니다.<br>
+      CAT 공인 대리점으로서 Cummins · MTU · Volvo · Yanmar · Doosan 등 다양한 브랜드 장비도 함께 대응합니다.
     </p>
   </div>
 </section>
@@ -790,14 +833,14 @@ h1, h2, h3, h4, h5, h6,
         <input type="hidden" name="access_key" value="6234538d-3d1a-4eae-a7ff-5e798ee99d76">
         <input type="hidden" name="subject" value="[SAMSUN 홈페이지] 새 문의가 도착했습니다">
         <input type="hidden" name="from_name" value="SAMSUN 홈페이지 문의 폼">
-        <input type="hidden" name="redirect" value="https://samsuneng.co.kr/contact/?status=success">
+        <input type="hidden" name="redirect" value="https://www.samsuneng.co.kr/contact/?status=success">
 
         <!-- Honeypot (봇 차단) -->
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
         <!-- ───── 1. 회사 정보 ───── -->
         <div class="form-section">
-          <div class="form-section-title">1. 회사 정보</div>
+          <div class="form-section-title"><span class="section-num">1</span>회사 정보</div>
           <div class="form-row">
             <div class="field">
               <label>회사명 <span class="required">*</span></label>
@@ -822,7 +865,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- ───── 2. 연락처 ───── -->
         <div class="form-section">
-          <div class="form-section-title">2. 연락처</div>
+          <div class="form-section-title"><span class="section-num">2</span>연락처</div>
           <div class="form-row">
             <div class="field">
               <label>회사 이메일 <span class="required">*</span></label>
@@ -838,7 +881,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- ───── 3. 문의 유형 ───── -->
         <div class="form-section">
-          <div class="form-section-title">3. 문의 유형 <span class="required">*</span></div>
+          <div class="form-section-title"><span class="section-num">3</span>문의 유형 <span class="required">*</span></div>
           <div class="field">
             <select name="문의유형" required>
               <option value="">— 문의 유형을 선택해 주세요 —</option>
@@ -855,7 +898,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- ───── 4. 설비 정보 (선택) ───── -->
         <div class="form-section">
-          <div class="form-section-title">4. 설비 정보 <span class="optional" style="color: var(--cat-gray3); font-weight: 500;">(선택 — 정확한 견적을 위해)</span></div>
+          <div class="form-section-title"><span class="section-num">4</span>설비 정보<span class="section-meta">선택 — 정확한 견적을 위해</span></div>
           <div class="form-row">
             <div class="field">
               <label>설비 종류</label>
@@ -890,7 +933,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- ───── 5. 문의 내용 ───── -->
         <div class="form-section">
-          <div class="form-section-title">5. 문의 내용 <span class="required">*</span></div>
+          <div class="form-section-title"><span class="section-num">5</span>문의 내용 <span class="required">*</span></div>
           <div class="field">
             <textarea name="문의내용" required placeholder="구체적인 요구사항·일정·예상 시기 등을 알려주시면 더 정확한 답변이 가능합니다."></textarea>
           </div>
@@ -898,7 +941,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- ───── 6. 회신 선호 방식 ───── -->
         <div class="form-section">
-          <div class="form-section-title">6. 회신 선호 방식 <span class="required">*</span></div>
+          <div class="form-section-title"><span class="section-num">6</span>회신 선호 방식 <span class="required">*</span></div>
           <div class="radio-group">
             <label>
               <input type="radio" name="회신방식" value="이메일 회신" required>
@@ -1116,58 +1159,19 @@ h1, h2, h3, h4, h5, h6,
     }
   });
 
-  // 제출 시 — fetch로 명시적 처리 (안전한 방식)
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
+  // 제출 시 — HTML 기본 제출 방식 (브라우저가 처리)
+  // Web3Forms는 hidden redirect 필드의 URL로 자동 이동시킴
+  form.addEventListener('submit', function(e) {
+    // preventDefault 없음 — 폼이 그대로 제출됨
     submitBtn.disabled = true;
     submitBtn.textContent = '접수 중...';
-    errorMsg.style.display = 'none';
-    successMsg.style.display = 'none';
-    
-    const formData = new FormData(form);
-    const json = JSON.stringify(Object.fromEntries(formData));
-    
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: json
-      });
-      
-      const result = await response.json();
-      
-      if (response.status === 200) {
-        // 성공
-        successMsg.style.display = 'block';
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        form.reset();
-        submitBtn.textContent = '문의 접수하기 →';
+    // 5초 후에도 페이지 이동이 없으면 에러로 간주 (안전장치)
+    setTimeout(function() {
+      if (submitBtn.disabled) {
         submitBtn.disabled = false;
-      } else {
-        // 서버 응답은 왔지만 에러
-        console.error('Web3Forms 응답 오류:', result);
-        errorMsg.innerHTML = '<strong>⚠️ 제출 중 오류가 발생했습니다.</strong>' +
-          (result.message ? '<br>' + result.message : '') +
-          '<br>잠시 후 다시 시도해 주시거나, ☎ 061-642-1247 또는 ✉ samsun3618@hanmail.net으로 직접 연락 주세요.';
-        errorMsg.style.display = 'block';
-        errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         submitBtn.textContent = '문의 접수하기 →';
-        submitBtn.disabled = false;
       }
-    } catch (error) {
-      // 네트워크 오류
-      console.error('네트워크 오류:', error);
-      errorMsg.innerHTML = '<strong>⚠️ 일시적인 오류가 발생했습니다.</strong>' +
-        '<br>네트워크 연결을 확인하시거나, ☎ 061-642-1247 또는 ✉ samsun3618@hanmail.net으로 직접 연락 주세요.';
-      errorMsg.style.display = 'block';
-      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      submitBtn.textContent = '문의 접수하기 →';
-      submitBtn.disabled = false;
-    }
+    }, 8000);
   });
 })();
 </script>

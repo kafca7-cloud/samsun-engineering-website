@@ -293,28 +293,77 @@
   color: var(--cat-black); line-height: 1.5;
   padding-top: 3px;
 }
+
+
+
+
+.faq-item.open 
+
+.faq-.faq-item.open .faq-.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+  padding: 0 1.8rem;
+}
+.faq-item.open .faq-a {
+  max-height: 800px;
+  opacity: 1;
+  padding: 0.4rem 1.8rem 1.6rem 1.8rem;
+}
+
+.faq-a p {
+  font-size: 15.5px; line-height: 1.85;
+  color: var(--cat-gray4);
+  margin: 0;
+}
+
+.faq-a p strong {
+  color: var(--cat-black); font-weight: 700;
+}
+
+/* +/- 토글 아이콘 (충돌 없는 깔끔한 정의) */
 .faq-q-toggle {
   flex-shrink: 0;
-  width: 24px; height: 24px; margin-top: 6px;
+  width: 28px;
+  height: 28px;
+  margin-top: 4px;
   position: relative;
-  transition: transform 0.25s;
+  display: inline-block;
 }
 .faq-q-toggle::before,
 .faq-q-toggle::after {
-  content: ''; position: absolute; left: 50%; top: 50%;
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
   background: var(--cat-black);
-  transition: transform 0.25s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.faq-q-toggle::before { width: 14px; height: 2px; transform: translate(-50%, -50%); }
-.faq-q-toggle::after { width: 2px; height: 14px; transform: translate(-50%, -50%); }
-.faq-item.open .faq-q-toggle::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.faq-q-toggle::before {
+  width: 14px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+.faq-q-toggle::after {
+  width: 2px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+}
+/* open 상태: 세로 막대 회전 + 사라짐 → '-' 모양 */
+.faq-item.open .faq-q-toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
 
-.faq-.faq-item.open .faq-.faq-a p {
-  font-size: 15.5px; line-height: 1.85;
-  color: var(--cat-gray4);
-}
-.faq-a p strong {
-  color: var(--cat-black); font-weight: 700;
+/* faq-q 버튼 기본 스타일 보강 (이미 있으면 무시됨) */
+.faq-q {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: inherit;
 }
 
 /* ─── CTA SECTION ─── */

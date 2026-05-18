@@ -1191,13 +1191,29 @@ h1, h2, h3, h4, h5, h6,
   const successMsg = document.getElementById('successMsg');
   const errorMsg = document.getElementById('errorMsg');
 
-  // URL에 ?status=success 가 있으면 성공 메시지 표시 (Web3Forms redirect 후)
+  // URL 파라미터로 제출 결과 표시 (Web3Forms redirect 후)
+  // ?status=success 또는 Web3Forms 기본 응답인 ?success=true 모두 감지
   const params = new URLSearchParams(window.location.search);
-  if (params.get('status') === 'success') {
+  const isSuccess = params.get('status') === 'success' || params.get('success') === 'true';
+  const isError = params.get('status') === 'error' || params.get('error') === 'true';
+
+  if (isSuccess) {
     successMsg.style.display = 'block';
-    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    // URL 정리
-    history.replaceState({}, document.title, window.location.pathname);
+    setTimeout(function() {
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
+  } else if (isError) {
+    errorMsg.style.display = 'block';
+    setTimeout(function() {
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
+  }
+  if (isSuccess || isError) {
+    setTimeout(function() {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }, 5000);
   }
 
   // 회사 이메일 도메인 경고 (제출은 막지 않고 친절히 안내)

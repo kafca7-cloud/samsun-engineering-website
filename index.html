@@ -689,44 +689,72 @@ section { padding: 100px 2rem; }
   transition: all 0.25s; cursor: default;
 }
 
-/* ─── 이미지 + 오버레이 아이콘 ─── */
+/* ─── 이미지 헤더 + 별도 아이콘 영역 ─── */
 .svc-img-wrap {
-  position: relative;
   margin: 0 0 1.4rem;
-  overflow: hidden;
-  height: 180px;
 }
-.svc-img-wrap img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-  display: block;
-}
-.svc-card:hover .svc-img-wrap img {
-  transform: scale(1.05);
-}
-.svc-icon-overlay {
-  position: absolute;
-  top: 14px; left: 14px;
-  width: 44px; height: 44px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  display: flex; align-items: center; justify-content: center;
+.svc-icon-header {
+  background: var(--cat-black);
+  padding: 12px 14px;
+  display: flex; align-items: center;
+  gap: 12px;
   border-left: 3px solid var(--cat-yellow);
   transition: background 0.25s, border-color 0.25s;
-  z-index: 2;
 }
-.svc-card:hover .svc-icon-overlay {
+.svc-card:hover .svc-icon-header {
   background: var(--cat-yellow);
   border-left-color: var(--cat-black);
 }
-.svc-icon-overlay svg {
+.svc-icon-box {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.svc-icon-box svg {
   width: 22px; height: 22px;
   fill: var(--cat-yellow);
   transition: fill 0.25s;
 }
-.svc-card:hover .svc-icon-overlay svg {
+.svc-card:hover .svc-icon-box svg {
   fill: var(--cat-black);
+}
+.svc-icon-label {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cat-yellow);
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+.svc-card:hover .svc-icon-label {
+  color: var(--cat-black);
+}
+.svc-img-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--cat-gray1);
+}
+.svc-img-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.4s;
+  display: block;
+}
+.svc-card:hover .svc-img-frame img {
+  transform: scale(1.05);
+}
+
+/* aspect-ratio 미지원 fallback (구형 브라우저) */
+@supports not (aspect-ratio: 1) {
+  .svc-img-frame {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 = 9/16 = 0.5625 */
+  }
+  .svc-img-frame img {
+    position: absolute; top: 0; left: 0;
+  }
 }
 /* CAT 특유의 노란 밑줄 호버 */
 .svc-card::after {
@@ -1656,8 +1684,13 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
     </div>
     <div class="svc-grid">
       <div class="svc-card fade-up">        <div class="svc-img-wrap">
-          <div class="svc-icon-overlay"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-          <img src="img/main/service-supply.jpg" alt="발전기·엔진 신규 공급">
+          <div class="svc-icon-header">
+            <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+            <div class="svc-icon-label">SALES</div>
+          </div>
+          <div class="svc-img-frame">
+            <img src="img/main/service-supply.jpg" alt="발전기·엔진 신규 공급">
+          </div>
         </div>
         <h3>세일즈 (Sales)</h3>
         <p>육·해상 디젤 엔진 및 비상발전기 판매, 엔진 관련 부품 및 소모품 유통. CAT 공인 대리점으로서 최고 품질의 제품을 공급합니다.</p>
@@ -1665,17 +1698,27 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <a href="/products/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
       <div class="svc-card fade-up" data-d="1">        <div class="svc-img-wrap">
-          <div class="svc-icon-overlay"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-          <img src="img/main/service-maintenance.jpg" alt="정기점검 및 유지보수">
+          <div class="svc-icon-header">
+            <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div class="svc-icon-label">MAINTENANCE</div>
+          </div>
+          <div class="svc-img-frame">
+            <img src="img/main/service-maintenance.jpg" alt="정기점검 및 유지보수">
+          </div>
         </div>
         <h3>유지보수 (Maintenance)</h3>
-        <p>비상발전기·디젤 엔진 정기 점검 및 수리, 24시간 긴급 대응 체계 및 설비 이력 관리로 최적 상태를 유지합니다.</p>
+        <p>비상발전기·디젤 엔진 정기 점검 및 수리, 24시간 긴급 대응 체계 및 설비 이력 관리로 최적 상태를 유지합니다.</p>
         <div class="svc-tags"><span class="tag">정기점검·수리</span><span class="tag">24h 긴급출동</span><span class="tag">이력관리</span></div>
         <a href="/services/maintenance/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
       <div class="svc-card fade-up" data-d="2">        <div class="svc-img-wrap">
-          <div class="svc-icon-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V10H8v2h3v8.93A8 8 0 0 1 4 13H6V11H2v.05A10 10 0 0 0 12 22a10 10 0 0 0 10-9.95V11H18V13H20A8 8 0 0 1 13 20.93V12h3V10H13V7.83A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1z"/></svg></div>
-          <img src="img/main/service-marine.jpg" alt="선박 엔진 정비">
+          <div class="svc-icon-header">
+            <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V10H8v2h3v8.93A8 8 0 0 1 4 13H6V11H2v.05A10 10 0 0 0 12 22a10 10 0 0 0 10-9.95V11H18V13H20A8 8 0 0 1 13 20.93V12h3V10H13V7.83A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1z"/></svg></div>
+            <div class="svc-icon-label">MARINE</div>
+          </div>
+          <div class="svc-img-frame">
+            <img src="img/main/service-marine.jpg" alt="선박 엔진 정비">
+          </div>
         </div>
         <h3>해상 엔진 수리 (Marine)</h3>
         <p>선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.</p>
@@ -1683,8 +1726,13 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <a href="/services/marine/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
       <div class="svc-card fade-up">        <div class="svc-img-wrap">
-          <div class="svc-icon-overlay"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm2-4h14v-3c0-3.31-2.69-6-6-6h-2c-3.31 0-6 2.69-6 6v3zm6-12V3h2v2h-2z"/></svg></div>
-          <img src="img/main/service-installation.jpg" alt="설치·시공 현장">
+          <div class="svc-icon-header">
+            <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm2-4h14v-3c0-3.31-2.69-6-6-6h-2c-3.31 0-6 2.69-6 6v3zm6-12V3h2v2h-2z"/></svg></div>
+            <div class="svc-icon-label">CONSTRUCTION</div>
+          </div>
+          <div class="svc-img-frame">
+            <img src="img/main/service-installation.jpg" alt="설치·시공 현장">
+          </div>
         </div>
         <h3>시공업 (Construction)</h3>
         <p>전기공사업 면허 기반의 신규 시공 역량. 발전기 이전·개조 공사, 전기·플랜트 시공 서비스를 제공합니다.</p>
@@ -1692,8 +1740,13 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <a href="/services/construction/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
       <div class="svc-card fade-up" data-d="1">        <div class="svc-img-wrap">
-          <div class="svc-icon-overlay"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM7.5 4.21l4.5 2.6 4.5-2.6L12 1.61 7.5 4.21zM5 6.46l5 2.89v4.56l-5-2.89V6.46zm14 0v4.56l-5 2.89V9.35l5-2.89zm-13 7.31l5 2.89v3.96l-5-2.89v-3.96zm13 0v3.96l-5 2.89v-3.96l5-2.89z"/></svg></div>
-          <img src="img/main/service-rental.jpg" alt="발전기 임대">
+          <div class="svc-icon-header">
+            <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM7.5 4.21l4.5 2.6 4.5-2.6L12 1.61 7.5 4.21zM5 6.46l5 2.89v4.56l-5-2.89V6.46zm14 0v4.56l-5 2.89V9.35l5-2.89zm-13 7.31l5 2.89v3.96l-5-2.89v-3.96zm13 0v3.96l-5 2.89v-3.96l5-2.89z"/></svg></div>
+            <div class="svc-icon-label">RENTAL</div>
+          </div>
+          <div class="svc-img-frame">
+            <img src="img/main/service-rental.jpg" alt="발전기 임대">
+          </div>
         </div>
         <h3>임대업 (Rental)</h3>
         <p>비상발전기 단기·장기 임대 서비스와 건설 기계·장비 임대. 갑작스러운 전력 수요에도 신속하게 대응합니다.</p>
@@ -1701,8 +1754,13 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <a href="/services/rental/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
       <div class="svc-card fade-up" data-d="2">        <div class="svc-img-wrap">
-          <div class="svc-icon-overlay"><svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5 3.5-3.5z"/></svg></div>
-          <img src="img/main/MRO.jpg" alt="부품 조달">
+          <div class="svc-icon-header">
+            <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5 3.5-3.5z"/></svg></div>
+            <div class="svc-icon-label">MRO & PARTS</div>
+          </div>
+          <div class="svc-img-frame">
+            <img src="img/main/MRO.jpg" alt="부품 조달">
+          </div>
         </div>
         <h3>MRO & 부품 조달</h3>
         <p>Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.</p>
@@ -1723,7 +1781,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         Featured Service
       </div>
       <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;letter-spacing:-0.8px;margin-bottom:1rem;">
-        기동 테스트만으로는 부족합니다.<br>
+        기동 테스트만으로는 부족합니다.<br>
         <span style="color:var(--cat-yellow);">진단 기반 비상발전기 정기점검</span>
       </h2>
       <p style="font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:2rem;max-width:600px;">

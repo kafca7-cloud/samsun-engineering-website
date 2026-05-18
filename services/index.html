@@ -193,6 +193,25 @@ nav#mainNav {
   .btn { width: 100%; justify-content: center; }
 }
 
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
 </style>
 
 <style>
@@ -329,7 +348,7 @@ nav#mainNav {
     <a href="/services/maintenance/" class="svc-card">
       <div class="svc-num">02</div>
       <h3>유지보수</h3>
-      <p>비상발전기·디젤 엔진 정기 점검 및 수리, 24시간 긴급 대응 체계 및 설비 이력 관리로 최적 상태를 유지합니다.</p>
+      <p>비상발전기·디젤 엔진 정기 점검 및 수리, 24시간 긴급 대응 체계 및 설비 이력 관리로 최적 상태를 유지합니다.</p>
       <div class="svc-tags">
         <span class="svc-tag">정기점검·수리</span>
         <span class="svc-tag">24h 긴급출동</span>

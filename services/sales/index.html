@@ -193,6 +193,25 @@ nav#mainNav {
   .btn { width: 100%; justify-content: center; }
 }
 
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
 </style>
 
 <style>

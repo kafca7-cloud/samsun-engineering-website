@@ -697,15 +697,7 @@ section { padding: 100px 2rem; }
 }
 .svc-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); transform: translateY(-4px); z-index:1; }
 .svc-card:hover::after { transform: scaleX(1); }
-.svc-icon {
-  width: 48px; height: 48px;
-  background: var(--cat-black); display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.4rem; transition: background 0.25s;
-}
-.svc-card:hover .svc-icon { background: var(--cat-yellow); }
-.svc-icon svg { width: 24px; height: 24px; fill: var(--cat-yellow); transition: fill 0.25s; }
-.svc-card:hover .svc-icon svg { fill: var(--cat-black); }
-.svc-card h3 { font-size: 16px; font-weight: 700; color: var(--cat-black); margin-bottom: 0.7rem; }
+.svc-card:hover .svc-card:hover .svc-card h3 { font-size: 16px; font-weight: 700; color: var(--cat-black); margin-bottom: 0.7rem; }
 .svc-card p { font-size: 13px; color: var(--cat-gray3); line-height: 1.75; }
 .svc-tags { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
@@ -1623,9 +1615,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       <p style="font-size:14px;color:var(--cat-gray3);max-width:280px;line-height:1.8;">발전기·엔진 통합 솔루션,<br>삼선엔지니어링이 책임지겠습니다.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card fade-up">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
+      <div class="svc-card fade-up">        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
           <img src="img/main/service-supply.jpg" alt="발전기·엔진 신규 공급" style="width:100%;height:180px;object-fit:cover;transition:transform 0.4s;">
         </div>
         <h3>세일즈 (Sales)</h3>
@@ -1633,9 +1623,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">비상발전기 판매</span><span class="tag">디젤엔진</span><span class="tag">부품·소모품</span></div>
         <a href="/products/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up" data-d="1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
+      <div class="svc-card fade-up" data-d="1">        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
           <img src="img/main/service-maintenance.jpg" alt="정기점검 및 유지보수" style="width:100%;height:180px;object-fit:cover;transition:transform 0.4s;">
         </div>
         <h3>유지보수 (Maintenance)</h3>
@@ -1643,9 +1631,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">정기점검·수리</span><span class="tag">24h 긴급출동</span><span class="tag">이력관리</span></div>
         <a href="/services/maintenance/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up" data-d="2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44a1 1 0 0 1-.94 0l-7.9-4.44A1 1 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44a1 1 0 0 1 .94 0l7.9 4.44c.32.17.53.5.53.88v9z"/></svg></div>
-        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
+      <div class="svc-card fade-up" data-d="2">        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
           <img src="img/main/service-marine.jpg" alt="선박 엔진 정비" style="width:100%;height:180px;object-fit:cover;object-position:center 20%;transition:transform 0.4s;">
         </div>
         <h3>해상 엔진 수리 (Marine)</h3>
@@ -1653,9 +1639,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">주기관 O/H</span><span class="tag">선박 발전기</span><span class="tag">관공선 점검</span></div>
         <a href="/services/marine/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
+      <div class="svc-card fade-up">        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
           <img src="img/main/service-installation.jpg" alt="설치·시공 현장" style="width:100%;height:180px;object-fit:cover;transition:transform 0.4s;">
         </div>
         <h3>시공업 (Construction)</h3>
@@ -1663,9 +1647,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">전기공사업</span><span class="tag">이전·개조</span><span class="tag">플랜트 시공</span></div>
         <a href="/services/construction/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up" data-d="1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
+      <div class="svc-card fade-up" data-d="1">        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
           <img src="img/main/service-rental.jpg" alt="발전기 임대" style="width:100%;height:180px;object-fit:cover;object-position:center 70%;transition:transform 0.4s;">
         </div>
         <h3>임대업 (Rental)</h3>
@@ -1673,9 +1655,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">단기임대</span><span class="tag">장기임대</span><span class="tag">정밀기계</span></div>
         <a href="/services/rental/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up" data-d="2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
+      <div class="svc-card fade-up" data-d="2">        <div style="margin:0 0 1.4rem;height:auto;overflow:visible;">
           <img src="img/main/MRO.jpg" alt="부품 조달" style="width:100%;height:240px;object-fit:contain;background:var(--cat-white);transition:transform 0.4s;">
         </div>
         <h3>MRO & 부품 조달</h3>

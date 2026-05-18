@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인정보 처리방침 | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="㈜삼선엔지니어링의 개인정보 처리방침. 수집 항목, 이용 목적, 보유 기간, 정보주체의 권리 등을 안내합니다.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://samsuneng.co.kr/privacy/">
+
+<style>
+/* ============================================================
+   SAMSUN 공통 디자인 토큰
+   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
+   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
+   ============================================================ */
+
+:root {
+  /* 색상 */
+  --cat-yellow: #FFC400;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-yellow-soft: rgba(255,196,0,0.06);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-white: #ffffff;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-gray5: #2a2a2a;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+
+  /* 레이아웃 */
+  --max-w: 1280px;
+
+  /* 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── 기본 리셋 ─── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 64px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--cat-black);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─── HERO 영역 공통 스타일 ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-stripe {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
+  z-index: 2;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
+
+/* ─── CTA 섹션 공통 스타일 ─── */
+.cta-section {
+  background: var(--cat-black); color: var(--cat-white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow, .cta-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.cta-title em { color: var(--cat-yellow); font-style: normal; }
+.cta-sub, .cta-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 16px 32px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  border: 1px solid transparent; cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cat-yellow); color: var(--cat-black);
+}
+.btn-primary:hover { background: #e6b000; }
+.btn-secondary {
+  background: transparent; color: var(--cat-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  border-color: var(--cat-yellow); color: var(--cat-yellow);
+}
+
+/* ─── 모바일 반응형 ─── */
+@media (max-width: 560px) {
+  body { padding-top: 56px; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
+  .hero { padding: 110px 1rem 60px; }
+  .cta-section { padding: 60px 1rem; }
+  .cta-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+</style>
+
+<style>
+.privacy-hero {
+  background: var(--cat-black);
+  color: var(--cat-white);
+  padding: 3.5rem 2rem 2.5rem;
+  position: relative;
+}
+.privacy-hero::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 5px;
+  background: var(--cat-yellow);
+}
+.privacy-hero-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.privacy-hero .label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.privacy-hero h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+}
+.privacy-hero .updated {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+.privacy-body {
+  background: var(--cat-white);
+  padding: 3rem 2rem;
+}
+.privacy-content {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.privacy-intro {
+  background: var(--cat-gray1);
+  padding: 1.5rem 1.8rem;
+  border-left: 3px solid var(--cat-yellow);
+  margin-bottom: 2.5rem;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--cat-gray4);
+}
+
+.privacy-section {
+  margin-bottom: 2.5rem;
+}
+.privacy-section h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--cat-yellow);
+  letter-spacing: -0.3px;
+}
+.privacy-section h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--cat-black);
+  margin: 1.4rem 0 0.6rem;
+}
+.privacy-section p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--cat-gray4);
+  margin-bottom: 0.8rem;
+}
+.privacy-section ul {
+  margin: 0.6rem 0 1rem 1.2rem;
+  padding: 0;
+}
+.privacy-section li {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--cat-gray4);
+  margin-bottom: 4px;
+}
+.privacy-section strong {
+  color: var(--cat-black);
+  font-weight: 700;
+}
+
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 14px;
+}
+.privacy-table th,
+.privacy-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border: 1px solid var(--cat-border);
+  line-height: 1.6;
+}
+.privacy-table th {
+  background: var(--cat-gray1);
+  font-weight: 700;
+  color: var(--cat-black);
+}
+.privacy-table td {
+  color: var(--cat-gray4);
+}
+
+.contact-officer {
+  background: var(--cat-black);
+  color: var(--cat-white);
+  padding: 1.8rem 2rem;
+  margin-top: 2rem;
+}
+.contact-officer h3 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: var(--cat-yellow);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.contact-officer .officer-item {
+  font-size: 14.5px;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,0.85);
+}
+.contact-officer .officer-item strong {
+  color: var(--cat-yellow);
+  font-weight: 700;
+  margin-right: 8px;
+  min-width: 80px;
+  display: inline-block;
+}
+.contact-officer a {
+  color: var(--cat-white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.contact-officer a:hover {
+  color: var(--cat-yellow);
+  border-bottom-color: var(--cat-yellow);
+}
+
+@media (max-width: 640px) {
+  .privacy-hero { padding: 2.5rem 1rem 2rem; }
+  .privacy-body { padding: 2rem 1rem; }
+  .privacy-table { font-size: 13px; }
+  .privacy-table th,
+  .privacy-table td { padding: 9px 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="home-btn">
+      <span class="arrow">←</span>
+      <span>홈으로</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="privacy-hero">
+  <div class="privacy-hero-inner">
+    <span class="label">PRIVACY POLICY</span>
+    <h1>개인정보 처리방침</h1>
+    <div class="updated">최종 개정일: 2026년 5월 18일 · 시행일: 2026년 5월 18일</div>
+  </div>
+</section>
+
+<!-- 본문 -->
+<section class="privacy-body">
+  <div class="privacy-content">
+
+    <div class="privacy-intro">
+      ㈜삼선엔지니어링(이하 "회사")은 정보주체의 자유와 권리 보호를 위해 「개인정보 보호법」 및 관련 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고 있습니다. 이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+    </div>
+
+    <!-- 1. 수집 항목 및 목적 -->
+    <div class="privacy-section">
+      <h2>1. 수집하는 개인정보 항목 및 이용 목적</h2>
+      <p>회사는 다음의 개인정보를 다음의 목적을 위해 수집·이용합니다.</p>
+
+      <table class="privacy-table">
+        <thead>
+          <tr>
+            <th>수집 경로</th>
+            <th>수집 항목</th>
+            <th>이용 목적</th>
+            <th>보유 기간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>홈페이지 문의 폼</td>
+            <td>회사명, 담당자명, 부서, 직책, 이메일, 전화번호, 설비 정보, 문의 내용</td>
+            <td>견적·서비스 문의 응대, 상담 회신, 견적 자료 송부</td>
+            <td>문의 응대 완료 후 1년</td>
+          </tr>
+          <tr>
+            <td>견적·계약 진행 시</td>
+            <td>회사명, 사업자등록번호, 담당자명, 연락처, 주소</td>
+            <td>견적서·계약서 작성, 세금계산서 발행, 서비스 이행</td>
+            <td>관련 법령에 따른 보존 기간</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. 보유 및 이용 기간 -->
+    <div class="privacy-section">
+      <h2>2. 개인정보의 보유 및 이용 기간</h2>
+      <p>회사는 법령에 따른 개인정보 보유·이용 기간 또는 정보주체로부터 개인정보를 수집 시 동의받은 보유·이용 기간 내에서 개인정보를 처리·보유합니다.</p>
+      <ul>
+        <li><strong>문의 응대용 정보</strong>: 문의 응대 완료 후 1년 보관 후 지체 없이 파기</li>
+        <li><strong>계약 관련 자료</strong>: 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관련 법령에 따라 보존
+          <ul>
+            <li>계약 또는 청약철회 등에 관한 기록: 5년</li>
+            <li>대금결제 및 재화 등의 공급에 관한 기록: 5년</li>
+            <li>소비자의 불만 또는 분쟁처리에 관한 기록: 3년</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 3. 제3자 제공 -->
+    <div class="privacy-section">
+      <h2>3. 개인정보의 제3자 제공</h2>
+      <p>회사는 정보주체의 개인정보를 제1조(수집·이용 목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 「개인정보 보호법」 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.</p>
+      <p><strong>현재 회사는 정보주체의 개인정보를 제3자에게 제공하지 않습니다.</strong></p>
+    </div>
+
+    <!-- 4. 처리 위탁 -->
+    <div class="privacy-section">
+      <h2>4. 개인정보 처리의 위탁</h2>
+      <p>회사는 원활한 문의 응대 서비스를 위하여 아래와 같이 개인정보 처리 업무를 위탁하고 있습니다.</p>
+      <table class="privacy-table">
+        <thead>
+          <tr>
+            <th>수탁업체</th>
+            <th>위탁 업무</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Web3Forms (web3forms.com)</td>
+            <td>홈페이지 문의 폼 데이터 전송 처리</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 0.8rem; font-size: 13.5px;">회사는 위탁계약 체결 시 「개인정보 보호법」 제26조에 따라 위탁업무 수행 목적 외 개인정보 처리 금지, 기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독합니다.</p>
+    </div>
+
+    <!-- 5. 정보주체의 권리 -->
+    <div class="privacy-section">
+      <h2>5. 정보주체의 권리·의무 및 행사 방법</h2>
+      <p>정보주체는 회사에 대해 언제든지 다음 각 호의 권리를 행사할 수 있습니다.</p>
+      <ul>
+        <li>개인정보 열람 요구</li>
+        <li>오류 등이 있을 경우 정정 요구</li>
+        <li>삭제 요구</li>
+        <li>처리 정지 요구</li>
+      </ul>
+      <p>위 권리 행사는 회사에 대해 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며, 회사는 이에 대해 지체 없이 조치하겠습니다.</p>
+    </div>
+
+    <!-- 6. 파기 절차 -->
+    <div class="privacy-section">
+      <h2>6. 개인정보의 파기 절차 및 방법</h2>
+      <p>회사는 개인정보 보유 기간의 경과, 처리 목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다.</p>
+      <h3>파기 절차</h3>
+      <p>이용자가 입력한 정보는 목적 달성 후 별도의 DB(종이의 경우 별도의 서류함)로 옮겨져 내부 방침 및 기타 관련 법령에 따라 일정 기간 저장된 후 혹은 즉시 파기됩니다.</p>
+      <h3>파기 방법</h3>
+      <ul>
+        <li><strong>전자적 파일 형태</strong>: 기록을 재생할 수 없는 기술적 방법을 사용하여 영구 삭제</li>
+        <li><strong>종이 문서</strong>: 분쇄기로 분쇄하거나 소각</li>
+      </ul>
+    </div>
+
+    <!-- 7. 안전성 확보 조치 -->
+    <div class="privacy-section">
+      <h2>7. 개인정보의 안전성 확보 조치</h2>
+      <p>회사는 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.</p>
+      <ul>
+        <li><strong>관리적 조치</strong>: 내부 관리 계획 수립·시행, 정기적 직원 교육</li>
+        <li><strong>기술적 조치</strong>: 개인정보 처리 시스템의 접근 권한 관리, 접근 통제 시스템 설치, 고유 식별 정보의 암호화, 보안 프로그램 설치</li>
+        <li><strong>물리적 조치</strong>: 전산실, 자료 보관실 등의 접근 통제</li>
+      </ul>
+    </div>
+
+    <!-- 8. 개인정보 보호 책임자 -->
+    <div class="privacy-section">
+      <h2>8. 개인정보 보호 책임자</h2>
+      <p>회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호 책임자를 지정하고 있습니다.</p>
+
+      <div class="contact-officer">
+        <h3>개인정보 보호 책임자</h3>
+        <div class="officer-item"><strong>성명:</strong> 우광희</div>
+        <div class="officer-item"><strong>직책:</strong> 대표이사</div>
+        <div class="officer-item"><strong>소속:</strong> ㈜삼선엔지니어링</div>
+        <div class="officer-item"><strong>전화:</strong> <a href="tel:0616421247">061-642-1247</a></div>
+        <div class="officer-item"><strong>이메일:</strong> <a href="mailto:samsun3618@hanmail.net">samsun3618@hanmail.net</a></div>
+        <div class="officer-item"><strong>주소:</strong> 전라남도 여수시 좌수영로 919</div>
+      </div>
+    </div>
+
+    <!-- 9. 권익침해 구제 방법 -->
+    <div class="privacy-section">
+      <h2>9. 권익침해 구제 방법</h2>
+      <p>정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다.</p>
+      <ul>
+        <li><strong>개인정보분쟁조정위원회</strong>: (국번없이) 1833-6972 / <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
+        <li><strong>개인정보침해신고센터</strong>: (국번없이) 118 / <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+        <li><strong>대검찰청 사이버수사과</strong>: (국번없이) 1301 / <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
+        <li><strong>경찰청 사이버수사국</strong>: (국번없이) 182 / <a href="https://ecrm.cyber.go.kr" target="_blank" rel="noopener">ecrm.cyber.go.kr</a></li>
+      </ul>
+    </div>
+
+    <!-- 10. 개정 -->
+    <div class="privacy-section">
+      <h2>10. 개인정보 처리방침의 변경</h2>
+      <p>이 개인정보 처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 
+  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
+  페이지별 변수 (모두 기본값 있음):
+    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
+    cta_title        : 큰 제목
+    cta_sub          : 부제·설명
+    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
+    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
+    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
+    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
+-->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">문의하기</div>
+    <h2 class="cta-title">개인정보 관련 문의가 있으신가요?</h2>
+    <p class="cta-sub">개인정보 처리 관련 문의·열람·정정·삭제 요청은 SAMSUN에 연락 주세요.</p>
+    <div class="cta-actions">
+      <a href="tel:0616421247" class="btn btn-primary">
+        ☎ 전화 상담하기 (061-642-1247)
+      </a>
+      <a href="mailto:samsun3618@hanmail.net" class="btn btn-secondary">
+        ✉ 이메일 문의
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>전화 상담</span>
+  </a>
+  <a href="mailto:samsun3618@hanmail.net" class="mcb-btn mcb-mail">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>이메일 문의</span>
+  </a>
+</div>
+
+
+</body>
+</html>

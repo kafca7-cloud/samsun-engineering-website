@@ -1579,7 +1579,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       </li>
       <li><a href="#performance">실적·고객사</a></li>
       <li><a href="/resources/faq.html">자료실</a></li>
-      <li><a href="#contact">문의</a></li>
+      <li><a href="/contact/">문의</a></li>
     </ul>
     <div class="nav-right">
       <button class="hamburger" onclick="toggleMob()" aria-label="메뉴">
@@ -2037,7 +2037,19 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       <h2 class="sec-title">오시는 길 & 문의</h2>
       <p class="sec-sub">문의사항이 있으시면 언제든지 편하게 연락 주시기 바랍니다.</p>
     </div>
-    <div class="contact-grid">
+      <!-- 문의 폼 유도 배너 -->
+      <a href="/contact/" style="display:block;background:var(--cat-black);color:var(--cat-white);padding:2rem 2.4rem;margin-bottom:2rem;text-decoration:none;border-left:5px solid var(--cat-yellow);transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:3px;color:var(--cat-yellow);text-transform:uppercase;margin-bottom:0.6rem;">CONTACT FORM</div>
+            <div style="font-size:1.4rem;font-weight:800;line-height:1.3;letter-spacing:-0.3px;margin-bottom:0.4rem;">발전기·엔진 도입을 검토 중이시라면<br><span style="color:var(--cat-yellow);">문의 폼으로 정확한 견적을 요청하세요</span></div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6;">구체적인 설비 정보를 함께 보내주시면 더 정확한 답변이 가능합니다. 영업일 24시간 내 회신.</div>
+          </div>
+          <div style="background:var(--cat-yellow);color:var(--cat-black);padding:14px 28px;font-size:14px;font-weight:800;letter-spacing:0.5px;white-space:nowrap;">문의 폼 작성하기 →</div>
+        </div>
+      </a>
+
+      <div class="contact-grid">
       <div style="display:flex;flex-direction:column;gap:1rem;">
         <div class="ct-item fade-up">
           <div><div class="ct-lbl">주소</div><div class="ct-val">전라남도 여수시 좌수영로 919</div></div>
@@ -2111,7 +2123,11 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       </div>
     </div>
   </div>
-</footer>
+
+    <div style="text-align:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);">
+      <a href="/privacy/" style="font-size:12px;color:rgba(255,255,255,0.45);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:1px;">개인정보 처리방침</a>
+    </div>
+  </footer>
 
 <!-- Product Detail Modal -->
 

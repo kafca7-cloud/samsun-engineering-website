@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>자주 묻는 질문 (FAQ) | SAMSUN 삼선엔지니어링 — 비상발전기·CAT 엔진 정비 Q&A</title>
@@ -119,7 +118,7 @@
       "name": "CAT 발전기 주문부터 납품까지 리드 타임은 얼마나 걸리나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "모델과 사양에 따라 다릅니다. 표준 사양의 중소형 모델(C18~C32급)은 통상 8~12개월, 대형 모델(3512·3516·C175급)은 12~18개월이 일반적입니다. 다만 근래 글로벌 수요 급증으로 납기가 추가 지연될 수 있어, 도입 일정이 있으시면 사전 협의가 필요합니다. 긴급한 경우에는 임대 발전기로 공백을 메우거나 재고 우선 배정 등을 통한 단축도 검토 가능합니다."
+        "text": "모델과 사양에 따라 다릅니다. 표준 사양의 중소형 모델(C18~C32급)은 통상 8~12개월, 대형 모델(3512·3516·C175급)은 12~18개월이 일반적입니다. 다만 근래 글로벌 수요 급증으로 납기가 추가 지연될 수 있어, 도입 일정이 있으시면 반드시 사전 협의를 부탁드립니다. 긴급한 경우에는 임대 발전기로 공백을 메우거나 재고 우선 배정 등을 통한 단축도 검토 가능합니다."
       }
     },
     {
@@ -207,8 +206,115 @@
 </script>
 
 <style>
-/* 본문이 fixed 헤더에 가려지지 않도록 */
+:root {
+  --cat-yellow: #FFC400;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-white: #ffffff;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+  --max-w: 1440px;
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAVIGATION ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--cat-border);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 2rem;
+  height: 72px; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 12px; height: 56px; }
+.logo img { height: 50px; width: auto; display: block; }
+.logo-text { font-size: 22px; font-weight: 800; letter-spacing: -0.4px; color: var(--cat-black); }
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a {
+  font-size: 14px; font-weight: 600; color: var(--cat-black);
+  height: 72px; display: flex; align-items: center;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cat-yellow); }
+.nav-links a.active { color: var(--cat-yellow); }
+.hamburger {
+  display: none; background: transparent; border: 0; cursor: pointer;
+  width: 30px; height: 30px; padding: 4px; flex-direction: column; justify-content: space-around;
+}
+.hamburger span { display: block; height: 2px; width: 100%; background: var(--cat-black); }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-inner { height: 64px; padding: 0 1rem; }
+}
+
 /* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(to right,
+    var(--cat-yellow) 0%, var(--cat-yellow) 33%,
+    #ffd740 33%, #ffd740 66%,
+    var(--cat-black) 66%, var(--cat-black) 100%);
+}
+.hero-inner { max-width: var(--max-w); margin: 0 auto; width: 100%; position: relative; z-index: 2; }
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+}
+
 /* ─── MAIN FAQ AREA ─── */
 .faq-section {
   max-width: 920px; margin: 0 auto;
@@ -293,220 +399,47 @@
   color: var(--cat-black); line-height: 1.5;
   padding-top: 3px;
 }
+.faq-q-toggle {
+  flex-shrink: 0;
+  width: 24px; height: 24px; margin-top: 6px;
+  position: relative;
+  transition: transform 0.25s;
+}
+.faq-q-toggle::before,
+.faq-q-toggle::after {
+  content: ''; position: absolute; left: 50%; top: 50%;
+  background: var(--cat-black);
+  transition: transform 0.25s;
+}
+.faq-q-toggle::before { width: 14px; height: 2px; transform: translate(-50%, -50%); }
+.faq-q-toggle::after { width: 2px; height: 14px; transform: translate(-50%, -50%); }
+.faq-item.open .faq-item.open .faq-q-toggle::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
 
-
-
-
-.faq-item.open 
-
-.faq-.faq-item.open .faq-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
-  padding: 0 1.8rem;
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 0.5rem 0 calc(28px + 1rem + 0.5rem);
 }
 .faq-item.open .faq-a {
-  max-height: 800px;
-  opacity: 1;
-  padding: 0.4rem 1.8rem 1.6rem 1.8rem;
+  max-height: 1000px;
+  padding: 0 0.5rem 1.8rem calc(28px + 1rem + 0.5rem);
 }
-
 .faq-a p {
   font-size: 15.5px; line-height: 1.85;
   color: var(--cat-gray4);
-  margin: 0;
 }
-
 .faq-a p strong {
   color: var(--cat-black); font-weight: 700;
 }
 
-/* +/- 토글 아이콘 (충돌 없는 깔끔한 정의) */
-.faq-q-toggle {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  margin-top: 4px;
-  position: relative;
-  display: inline-block;
-}
-.faq-q-toggle::before,
-.faq-q-toggle::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background: var(--cat-black);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.faq-q-toggle::before {
-  width: 14px;
-  height: 2px;
-  transform: translate(-50%, -50%);
-}
-.faq-q-toggle::after {
-  width: 2px;
-  height: 14px;
-  transform: translate(-50%, -50%);
-}
-/* open 상태: 세로 막대 회전 + 사라짐 → '-' 모양 */
-.faq-item.open .faq-q-toggle::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-  opacity: 0;
-}
-
-/* faq-q 버튼 기본 스타일 보강 (이미 있으면 무시됨) */
-.faq-q {
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  font-family: inherit;
-}
-
 /* ─── CTA SECTION ─── */
-/* ─── FOOTER ─── */
-@media (max-width: 800px) {
-  .faq-section { padding: 50px 1rem; }
-  .cat-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-  .cat-header .cat-sub { margin-left: 0; }
-  }
-</style>
-
-<!-- 공통 디자인 토큰 (build.js가 자동 인라인) -->
-<style>
-/* ============================================================
-   SAMSUN 공통 디자인 토큰
-   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
-   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
-   ============================================================ */
-
-:root {
-  /* 색상 */
-  --cat-yellow: #FFC400;
-  --cat-yellow-dim: rgba(255,196,0,0.12);
-  --cat-yellow-soft: rgba(255,196,0,0.06);
-  --cat-black: #000000;
-  --cat-dark: #0d0d0d;
-  --cat-card: #1a1a1a;
-  --cat-elev: #262626;
-  --cat-hairline: #262626;
-  --cat-hairline-soft: #3c3c3c;
-  --cat-white: #ffffff;
-  --cat-gray1: #f5f5f5;
-  --cat-gray2: #e0e0e0;
-  --cat-gray3: #7e7e7e;
-  --cat-gray4: #555555;
-  --cat-gray5: #2a2a2a;
-  --cat-body: #bbbbbb;
-  --cat-body-strong: #e6e6e6;
-  --cat-border: #d6d6d6;
-
-  /* 레이아웃 */
-  --max-w: 1280px;
-
-  /* 폰트 */
-  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-/* ─── 기본 리셋 ─── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-body);
-  color: var(--cat-black);
-  background: var(--cat-white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-top: 64px;
-}
-a { color: inherit; text-decoration: none; }
-
-/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
-nav#mainNav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: var(--cat-white);
-  border-bottom: 3px solid var(--cat-yellow);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-.nav-inner {
-  max-width: var(--max-w); margin: 0 auto;
-  padding: 0 2rem; height: 64px;
-  display: flex; align-items: center; justify-content: flex-end;
-}
-.home-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  color: var(--cat-black);
-  font-size: 14px; font-weight: 600;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-  padding: 8px 16px;
-  border: 1px solid var(--cat-black);
-  background: transparent;
-  transition: background 0.18s, color 0.18s;
-  font-family: var(--font-body);
-  white-space: nowrap;
-}
-.home-btn:hover {
-  background: var(--cat-black);
-  color: var(--cat-yellow);
-}
-.home-btn .arrow {
-  font-size: 16px;
-  line-height: 1;
-}
-
-/* ─── HERO 영역 공통 스타일 ─── */
-.hero {
-  position: relative;
-  min-height: 360px;
-  padding: 140px 2rem 80px;
-  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
-  color: var(--cat-white);
-  display: flex; align-items: center;
-  overflow: hidden;
-}
-.hero-stripe {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 5px; background: var(--cat-yellow);
-  z-index: 2;
-}
-.hero-inner {
-  max-width: var(--max-w); margin: 0 auto; width: 100%;
-  position: relative; z-index: 2;
-}
-.hero-label {
-  display: inline-block;
-  font-size: 12px; font-weight: 700; letter-spacing: 2px;
-  color: var(--cat-yellow);
-  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
-  margin-bottom: 1.5rem;
-}
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
-  margin-bottom: 1.2rem;
-}
-.hero h1 em { color: var(--cat-yellow); font-style: normal; }
-.hero p.lead {
-  font-size: 1.05rem; color: rgba(255,255,255,0.75);
-  max-width: 720px; line-height: 1.7;
-  margin-bottom: 2rem;
-}
-.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
-
-/* ─── CTA 섹션 공통 스타일 ─── */
 .cta-section {
   background: var(--cat-black); color: var(--cat-white);
   padding: 80px 2rem;
   text-align: center;
 }
 .cta-inner { max-width: 720px; margin: 0 auto; }
-.cta-eyebrow, .cta-label {
+.cta-label {
   font-size: 12px; font-weight: 700; letter-spacing: 3px;
   color: var(--cat-yellow); margin-bottom: 1rem;
 }
@@ -515,8 +448,7 @@ nav#mainNav {
   font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
   margin-bottom: 1rem;
 }
-.cta-title em { color: var(--cat-yellow); font-style: normal; }
-.cta-sub, .cta-desc {
+.cta-desc {
   font-size: 1rem; color: rgba(255,255,255,0.7);
   margin-bottom: 2.5rem; line-height: 1.7;
 }
@@ -530,7 +462,6 @@ nav#mainNav {
   font-family: var(--font-body);
   border: 1px solid transparent; cursor: pointer;
   transition: all 0.2s;
-  text-decoration: none;
 }
 .btn-primary {
   background: var(--cat-yellow); color: var(--cat-black);
@@ -544,120 +475,93 @@ nav#mainNav {
   border-color: var(--cat-yellow); color: var(--cat-yellow);
 }
 
-/* ─── 모바일 반응형 ─── */
-@media (max-width: 560px) {
-  body { padding-top: 56px; }
-  .nav-inner { height: 56px; padding: 0 1rem; }
-  .home-btn { font-size: 13px; padding: 7px 14px; }
+/* ─── FOOTER ─── */
+footer {
+  background: var(--cat-dark); color: rgba(255,255,255,0.6);
+  padding: 60px 2rem 30px;
+  font-size: 13px;
+}
+.footer-wrap { max-width: var(--max-w); margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 3rem; padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-logo { margin-bottom: 1rem; }
+.footer-company-name {
+  font-size: 20px; font-weight: 700; color: #fff;
+  letter-spacing: 0.5px; display: block; margin-bottom: 0.8rem;
+}
+.footer-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.9; }
+.footer-col h4 {
+  font-size: 13px; font-weight: 700; color: #fff;
+  letter-spacing: 1px; margin-bottom: 1rem;
+}
+.footer-col a {
+  display: block; font-size: 13px; color: rgba(255,255,255,0.5);
+  padding: 4px 0; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--cat-yellow); }
+.cat-stripe {
+  height: 4px; width: 100%; margin: 1.5rem 0;
+  background: linear-gradient(to right,
+    var(--cat-yellow) 0%, var(--cat-yellow) 33%,
+    #ffd740 33%, #ffd740 66%,
+    var(--cat-black) 66%, var(--cat-black) 100%);
+}
+.footer-bottom {
+  padding-top: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.4); }
+.iso-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.iso-pill {
+  font-size: 10px; font-weight: 700; padding: 3px 10px;
+  border: 1px solid rgba(255,196,0,0.3); color: rgba(255,196,0,0.6);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 800px) {
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .faq-section { padding: 50px 1rem; }
   .hero { padding: 110px 1rem 60px; }
-  .cta-section { padding: 60px 1rem; }
+  .cat-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .cat-header .cat-sub { margin-left: 0; }
   .cta-actions { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
-}
-
-
-/* ─── 한국어 줄바꿈 보호 ─── */
-/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
-h1, h2, h3, h4, h5, h6,
-.hero h1, .hero p.lead,
-.hero-label,
-.cta-title, .cta-sub, .cta-eyebrow,
-.btn, .home-btn,
-.tag {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-  line-break: strict;
-}
-
-/* lead 문단 안에서 줄바꿈 자연스럽게 */
-.lead, .intro-summary, .sec-sub {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-
-/* ─── 모바일 하단 고정 문의 바 ─── */
-/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
-.mobile-contact-bar {
-  display: none;
-}
-
-@media (max-width: 860px) {
-  .mobile-contact-bar {
-    display: flex;
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 999;
-    background: var(--cat-black);
-    border-top: 3px solid var(--cat-yellow);
-    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
-    height: 60px;
-  }
-  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
-  body {
-    padding-bottom: 60px;
-  }
-  .mcb-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: 100%;
-    color: var(--cat-white);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    transition: background 0.18s, color 0.18s;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .mcb-call {
-    background: var(--cat-yellow);
-    color: var(--cat-black);
-  }
-  .mcb-call:active {
-    background: #e6b000;
-  }
-  .mcb-mail {
-    background: var(--cat-black);
-    color: var(--cat-white);
-    border-left: 1px solid rgba(255,255,255,0.1);
-  }
-  .mcb-mail:active {
-    background: var(--cat-card);
-  }
-  .mcb-btn svg {
-    flex-shrink: 0;
-  }
-}
-
-/* 매우 작은 화면 — 텍스트 살짝 축소 */
-@media (max-width: 360px) {
-  .mcb-btn {
-    font-size: 13px;
-    gap: 6px;
-  }
 }
 </style>
 </head>
 <body>
 
-
 <!-- NAV -->
-<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
 <nav id="mainNav">
   <div class="nav-inner">
-    <a href="/" class="home-btn">
-      <span class="arrow">←</span>
-      <span>홈으로</span>
+    <a href="/" class="logo">
+      <img src="/img/main/logo.jpg" alt="삼선엔지니어링">
+      <span class="logo-text">삼선엔지니어링</span>
     </a>
+    <ul class="nav-links">
+      <li><a href="/#about">회사소개</a></li>
+      <li><a href="/#history">연혁</a></li>
+      <li><a href="/#services">사업분야</a></li>
+      <li><a href="/generator-inspection.html" style="color:var(--cat-yellow);">정기점검</a></li>
+      <li><a href="/#products">판매제품</a></li>
+      <li><a href="/#performance">실적</a></li>
+      <li><a href="/#tech">기술력</a></li>
+      <li><a href="/#clients">고객사</a></li>
+      <li><a href="/resources/faq.html" class="active">FAQ</a></li>
+      <li><a href="/#contact">오시는길</a></li>
+    </ul>
+    <button class="hamburger" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-stripe"></div>
   <div class="hero-inner">
     <span class="hero-label">FREQUENTLY ASKED QUESTIONS</span>
     <h1>발전기·엔진 분야<br><em>자주 묻는 질문 20선</em></h1>
@@ -804,7 +708,7 @@ h1, h2, h3, h4, h5, h6,
         <span class="faq-q-toggle"></span>
       </button>
       <div class="faq-a">
-        <p>모델과 사양에 따라 다릅니다. 표준 사양의 <strong>중소형 모델(C18~C32급)은 통상 8~12개월</strong>, <strong>대형 모델(3512·3516·C175급)은 12~18개월</strong>이 일반적입니다. 다만 근래 글로벌 수요 급증으로 납기가 추가 지연될 수 있어, 도입 일정이 있으시면 사전 협의가 필요합니다. 긴급한 경우에는 임대 발전기로 공백을 메우거나 재고 우선 배정 등을 통한 단축도 검토 가능합니다.</p>
+        <p>모델과 사양에 따라 다릅니다. 표준 사양의 <strong>중소형 모델(C18~C32급)은 통상 8~12개월</strong>, <strong>대형 모델(3512·3516·C175급)은 12~18개월</strong>이 일반적입니다. 다만 근래 글로벌 수요 급증으로 납기가 추가 지연될 수 있어, 도입 일정이 있으시면 반드시 사전 협의를 부탁드립니다. 긴급한 경우에는 임대 발전기로 공백을 메우거나 재고 우선 배정 등을 통한 단축도 검토 가능합니다.</p>
       </div>
     </div>
   </div>
@@ -949,25 +853,17 @@ h1, h2, h3, h4, h5, h6,
 </section>
 
 <!-- CTA -->
-<!-- 
-  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
-  페이지별 변수 (모두 기본값 있음):
-    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
-    cta_title        : 큰 제목
-    cta_sub          : 부제·설명
-    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
-    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
-    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
-    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
--->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-eyebrow">추가 문의</div>
-    <h2 class="cta-title">답을 찾지 못하셨나요?</h2>
-    <p class="cta-sub">35년 현장 경험을 가진 SAMSUN 전문가가 직접 답변 드립니다. 전화·이메일 모두 접수 가능합니다.</p>
+    <div class="cta-label">STILL HAVE QUESTIONS?</div>
+    <h2 class="cta-title">찾으시는 답이 없으신가요?</h2>
+    <p class="cta-desc">
+      35년 경력의 SAMSUN 전문가가 직접 답변 드립니다.<br>
+      전화·이메일 모두 24시간 접수 가능합니다.
+    </p>
     <div class="cta-actions">
       <a href="tel:0616421247" class="btn btn-primary">
-        ☎ 전화 상담하기 (061-642-1247)
+        ☎ 061-642-1247 전화 문의
       </a>
       <a href="mailto:samsun3618@hanmail.net" class="btn btn-secondary">
         ✉ 이메일 문의
@@ -976,8 +872,55 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </section>
 
-
 <!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <span class="footer-company-name">㈜삼선엔지니어링</span>
+        </div>
+        <p class="footer-desc">
+          대표이사: 우광희 &nbsp;|&nbsp; 사업자등록번호: 417-81-26338<br>
+          법인등록번호: 206211-0023809<br>
+          설립: 1990년 (법인 설립: 2002년)<br>
+          전라남도 여수시 좌수영로 919 (여천동)<br>
+          Tel. 061-642-1247 &nbsp;|&nbsp; Fax. 061-642-8999<br>
+          E-mail: samsun3618@hanmail.net
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>회사</h4>
+        <a href="/#about">회사 소개</a>
+        <a href="/#history">회사 연혁</a>
+        <a href="/#tech">기술력</a>
+      </div>
+      <div class="footer-col">
+        <h4>서비스</h4>
+        <a href="/#services">사업 분야</a>
+        <a href="/generator-inspection.html">정기점검</a>
+        <a href="/#performance">주요 실적</a>
+      </div>
+      <div class="footer-col">
+        <h4>자료실</h4>
+        <a href="/resources/faq.html">자주 묻는 질문</a>
+        <a href="/#contact">오시는 길</a>
+        <a href="mailto:samsun3618@hanmail.net">이메일 문의</a>
+      </div>
+    </div>
+    <div class="cat-stripe"></div>
+    <div class="footer-bottom">
+      <p>© 1990–2025 ㈜삼선엔지니어링. All rights reserved.</p>
+      <div class="iso-row">
+        <span class="iso-pill" title="GERMAN CERT 인증번호: GQ-211254">ISO 9001</span>
+        <span class="iso-pill" title="GERMAN CERT 인증번호: GE-210491">ISO 14001</span>
+        <span class="iso-pill" title="GERMAN CERT 인증번호: GO-251038">ISO 45001</span>
+        <span class="iso-pill" title="전라남도지사 등록 2025.05.30">전기공사업 등록</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
 <script>
 // 아코디언 토글
 document.querySelectorAll('.faq-q').forEach(btn => {
@@ -1018,26 +961,6 @@ if (hash) {
   if (targetBtn) targetBtn.click();
 }
 </script>
-
-
-
-<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
-<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
-  <a href="tel:0616421247" class="mcb-btn mcb-call">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
-    <span>전화 상담</span>
-  </a>
-  <a href="mailto:samsun3618@hanmail.net" class="mcb-btn mcb-mail">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
-    <span>이메일 문의</span>
-  </a>
-</div>
-
 
 </body>
 </html>

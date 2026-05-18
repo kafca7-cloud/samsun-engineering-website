@@ -195,3 +195,67 @@ h1, h2, h3, h4, h5, h6,
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}

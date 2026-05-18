@@ -525,6 +525,70 @@ h1, h2, h3, h4, h5, h6,
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
 </style>
 </head>
 <body>
@@ -838,17 +902,23 @@ h1, h2, h3, h4, h5, h6,
 <!-- CTA -->
 <!-- 
   CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
-  - 각 페이지에서 cta_eyebrow, cta_title, cta_sub 변수로 텍스트 커스텀 가능
-  - 변수 미지정 시 기본값 사용
+  페이지별 변수 (모두 기본값 있음):
+    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
+    cta_title        : 큰 제목
+    cta_sub          : 부제·설명
+    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
+    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
+    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
+    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
 -->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-eyebrow">STILL HAVE QUESTIONS?</div>
-    <h2 class="cta-title">찾으시는 답이 없으신가요?</h2>
-    <p class="cta-sub">35년 경력의 SAMSUN 전문가가 직접 답변 드립니다.<br>전화·이메일 모두 접수 가능합니다.</p>
+    <div class="cta-eyebrow">추가 문의</div>
+    <h2 class="cta-title">답을 찾지 못하셨나요?</h2>
+    <p class="cta-sub">35년 현장 경험을 가진 SAMSUN 전문가가 직접 답변 드립니다. 전화·이메일 모두 접수 가능합니다.</p>
     <div class="cta-actions">
       <a href="tel:0616421247" class="btn btn-primary">
-        ☎ 061-642-1247 전화 문의
+        ☎ 전화 상담하기 (061-642-1247)
       </a>
       <a href="mailto:samsun3618@hanmail.net" class="btn btn-secondary">
         ✉ 이메일 문의
@@ -900,6 +970,24 @@ if (hash) {
 }
 </script>
 
+
+
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>전화 상담</span>
+  </a>
+  <a href="mailto:samsun3618@hanmail.net" class="mcb-btn mcb-mail">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>이메일 문의</span>
+  </a>
+</div>
 
 
 </body>

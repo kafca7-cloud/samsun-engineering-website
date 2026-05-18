@@ -1056,6 +1056,67 @@ footer {
 .hero-panel { opacity:0; animation: hIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.85s forwards; }
 @keyframes hIn { to { opacity:1; transform:none; } }
 
+/* ─── 모바일 하단 고정 문의 바 ─── */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+
 /* ================================================
    RESPONSIVE
 ================================================ */
@@ -2113,5 +2174,23 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 
 
 </script>
+
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>전화 상담</span>
+  </a>
+  <a href="mailto:samsun3618@hanmail.net" class="mcb-btn mcb-mail">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>이메일 문의</span>
+  </a>
+</div>
+
 </body>
 </html>

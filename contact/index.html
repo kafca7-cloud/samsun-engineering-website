@@ -1116,11 +1116,58 @@ h1, h2, h3, h4, h5, h6,
     }
   });
 
-  // 제출 시 버튼 비활성화
-  form.addEventListener('submit', function(e) {
+  // 제출 시 — fetch로 명시적 처리 (안전한 방식)
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
     submitBtn.disabled = true;
     submitBtn.textContent = '접수 중...';
-    // form은 그대로 제출되며, Web3Forms가 redirect URL로 이동시킴
+    errorMsg.style.display = 'none';
+    successMsg.style.display = 'none';
+    
+    const formData = new FormData(form);
+    const json = JSON.stringify(Object.fromEntries(formData));
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      });
+      
+      const result = await response.json();
+      
+      if (response.status === 200) {
+        // 성공
+        successMsg.style.display = 'block';
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        form.reset();
+        submitBtn.textContent = '문의 접수하기 →';
+        submitBtn.disabled = false;
+      } else {
+        // 서버 응답은 왔지만 에러
+        console.error('Web3Forms 응답 오류:', result);
+        errorMsg.innerHTML = '<strong>⚠️ 제출 중 오류가 발생했습니다.</strong>' +
+          (result.message ? '<br>' + result.message : '') +
+          '<br>잠시 후 다시 시도해 주시거나, ☎ 061-642-1247 또는 ✉ samsun3618@hanmail.net으로 직접 연락 주세요.';
+        errorMsg.style.display = 'block';
+        errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        submitBtn.textContent = '문의 접수하기 →';
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      // 네트워크 오류
+      console.error('네트워크 오류:', error);
+      errorMsg.innerHTML = '<strong>⚠️ 일시적인 오류가 발생했습니다.</strong>' +
+        '<br>네트워크 연결을 확인하시거나, ☎ 061-642-1247 또는 ✉ samsun3618@hanmail.net으로 직접 연락 주세요.';
+      errorMsg.style.display = 'block';
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      submitBtn.textContent = '문의 접수하기 →';
+      submitBtn.disabled = false;
+    }
   });
 })();
 </script>

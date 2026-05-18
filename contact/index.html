@@ -646,15 +646,15 @@ h1, h2, h3, h4, h5, h6,
   margin-top: 1.2rem;
   font-size: 14px;
   line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .submit-msg.success {
-  display: block;
   background: #f0fff4;
   border-color: #28a745;
   color: #1a6d33;
 }
 .submit-msg.error {
-  display: block;
   background: #fff5f5;
   border-color: #d33;
   color: #a02020;
@@ -768,17 +768,61 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.6;
   padding: 9px 0;
   border-bottom: 1px solid var(--cat-border);
-  transition: color 0.15s;
+  transition: color 0.15s, padding-left 0.15s;
   word-break: keep-all;
   overflow-wrap: break-word;
   font-family: inherit;
   text-decoration: none;
 }
-.policy-link:last-child {
+.policy-link:last-of-type {
   border-bottom: none;
+  padding-bottom: 14px;
 }
 .policy-link:hover {
   color: var(--cat-black);
+  padding-left: 4px;
+}
+
+/* FAQ 강조 박스 — 노란 바 디자인 */
+.faq-highlight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--cat-yellow);
+  color: var(--cat-black);
+  padding: 14px 16px;
+  margin-top: 12px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  border-left: 4px solid var(--cat-black);
+}
+.faq-highlight:hover {
+  background: #e6b000;
+  transform: translateX(2px);
+}
+.faq-highlight-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cat-black);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  flex-shrink: 0;
+}
+.faq-highlight-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--cat-black);
+  flex: 1;
+  letter-spacing: -0.2px;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+.faq-highlight-arrow {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--cat-black);
+  flex-shrink: 0;
 }
 
 /* ─── 반응형 ─── */
@@ -1081,7 +1125,11 @@ h1, h2, h3, h4, h5, h6,
         <a href="/resources/faq.html" class="policy-link">▸ 출장 점검 가능 지역은?</a>
         <a href="/resources/faq.html" class="policy-link">▸ CAT 외 브랜드도 가능한가요?</a>
         <a href="/resources/faq.html" class="policy-link">▸ 정기점검 주기는?</a>
-        <a href="/resources/faq.html" class="policy-link" style="color: var(--cat-yellow); font-weight: 700; border-bottom: none; margin-top: 4px;">자주 묻는 질문 20선 →</a>
+        <a href="/resources/faq.html" class="faq-highlight">
+          <div class="faq-highlight-label">FAQ</div>
+          <div class="faq-highlight-title">자주 묻는 질문 20선 보기</div>
+          <div class="faq-highlight-arrow">→</div>
+        </a>
       </div>
 
     </aside>

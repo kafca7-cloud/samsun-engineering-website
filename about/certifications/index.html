@@ -334,11 +334,26 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 3rem;
 }
 .cert-cat-block:last-child { margin-bottom: 0; }
+.cert-cat-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px; font-weight: 700;
+  color: var(--cat-black); letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+.cert-cat-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 2px;
+  background: var(--cat-yellow);
+}
 .cert-cat-title {
   font-size: 22px; font-weight: 800;
   color: var(--cat-black); margin: 0 0 1.4rem;
-  padding-left: 14px; border-left: 4px solid var(--cat-yellow);
   letter-spacing: -0.3px;
+  line-height: 1.3;
 }
 
 /* ISO 인증 — 3개 큰 카드 */
@@ -535,6 +550,7 @@ h1, h2, h3, h4, h5, h6,
 
     <!-- 01. 국제 표준 인증 -->
     <div class="cert-cat-block">
+      <div class="cert-cat-eyebrow">INTERNATIONAL STANDARDS</div>
       <h2 class="cert-cat-title">국제 표준 인증</h2>
       <div class="iso-grid">
         <div class="iso-card">
@@ -557,6 +573,7 @@ h1, h2, h3, h4, h5, h6,
 
     <!-- 02. 정부 인증 (신규) -->
     <div class="cert-cat-block">
+      <div class="cert-cat-eyebrow">GOVERNMENT CERTIFICATION</div>
       <h2 class="cert-cat-title">정부 인증</h2>
       <div class="gov-grid">
         <div class="gov-card">
@@ -579,6 +596,7 @@ h1, h2, h3, h4, h5, h6,
 
     <!-- 03. 등록 면허·자격 -->
     <div class="cert-cat-block">
+      <div class="cert-cat-eyebrow">REGISTERED LICENSES</div>
       <h2 class="cert-cat-title">등록 면허·자격</h2>
       <div class="others-grid">
         <div class="other-card">
@@ -596,6 +614,7 @@ h1, h2, h3, h4, h5, h6,
 
     <!-- 04. 등록 특허 -->
     <div class="cert-cat-block">
+      <div class="cert-cat-eyebrow">REGISTERED PATENTS</div>
       <h2 class="cert-cat-title">등록 특허</h2>
       <div class="others-grid">
         <div class="other-card">

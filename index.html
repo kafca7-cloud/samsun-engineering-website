@@ -1915,6 +1915,189 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
   </div>
 </section>
 
+<!-- ============ ⭐ SAMSUN ONLY 자체 제작 ============ -->
+<section id="in-house" class="inhouse-section">
+  <style>
+    .inhouse-section {
+      background: var(--cat-white);
+      padding: 100px 2rem;
+    }
+    .inhouse-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    /* Featured Service 스타일 라벨 (짧은 노란 바 + 작은 텍스트) */
+    .inhouse-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cat-black);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .inhouse-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--cat-yellow);
+    }
+    .inhouse-text h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+      margin: 0 0 1rem;
+      color: var(--cat-black);
+      word-break: keep-all;
+    }
+    .inhouse-text h2 em {
+      font-style: normal;
+      color: var(--cat-yellow);
+    }
+    .inhouse-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--cat-gray4, #555);
+      margin: 0 0 1.6rem;
+      max-width: 600px;
+      word-break: keep-all;
+    }
+    .inhouse-text p strong {
+      color: var(--cat-black);
+      font-weight: 700;
+    }
+    .inhouse-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .inhouse-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cat-black);
+      background: rgba(255, 196, 0, 0.15);
+      border-left: 3px solid var(--cat-yellow);
+      padding: 6px 12px;
+      letter-spacing: 0.3px;
+    }
+    /* CTA 버튼 — 일반 노란 버튼 (흰 바 제거) */
+    .inhouse-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--cat-yellow);
+      color: var(--cat-black);
+      padding: 18px 32px;
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(255, 196, 0, 0.25);
+    }
+    .inhouse-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(255, 196, 0, 0.35);
+    }
+    /* 우측 시각 영역 — 4개 배지 (inspection-banner 와 유사한 그리드) */
+    .inhouse-visual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    .inhouse-visual-card {
+      background: var(--cat-gray1, #f5f5f5);
+      border: 1px solid var(--cat-border);
+      border-top: 3px solid var(--cat-yellow);
+      border-radius: 4px;
+      padding: 1.4rem;
+    }
+    .inhouse-visual-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--cat-yellow);
+      background: var(--cat-black);
+      padding: 3px 8px;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+    .inhouse-visual-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--cat-black);
+    }
+    @media (max-width: 900px) {
+      .inhouse-section { padding: 60px 1.2rem; }
+      .inhouse-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .inhouse-text h2 { font-size: 1.6rem; }
+    }
+  </style>
+  
+  <div class="inhouse-inner">
+    
+    <div class="inhouse-text">
+      <div class="inhouse-eyebrow">⭐ SAMSUN ONLY</div>
+      <h2>
+        단종 부품,<br>
+        <em>SAMSUN이 직접 제작합니다</em>
+      </h2>
+      <p>
+        정품 공급이 중단된 부품, 특수 사양 부품도 문제없습니다.
+        <strong>35년 정비 경험</strong>을 바탕으로 ㈜삼선엔지니어링이
+        직접 설계·정밀 가공·품질 검수까지 자체 진행하여
+        정품에 준하는 품질로 공급해 드립니다.
+      </p>
+      
+      <div class="inhouse-badges">
+        <div class="inhouse-badge">단종 부품 대응</div>
+        <div class="inhouse-badge">정품 호환 제작</div>
+        <div class="inhouse-badge">특수 사양 제작</div>
+      </div>
+      
+      <a href="/products/in-house/" class="inhouse-cta">
+        자체 제작 제품 보기
+        <span style="font-size:1.2rem;">→</span>
+      </a>
+    </div>
+    
+    <div class="inhouse-visual-grid">
+      <div class="inhouse-visual-card">
+        <div class="inhouse-visual-label">DESIGN</div>
+        <div class="inhouse-visual-text">도면 분석<br>자체 설계</div>
+      </div>
+      <div class="inhouse-visual-card">
+        <div class="inhouse-visual-label">CNC</div>
+        <div class="inhouse-visual-text">정밀 가공<br>고품질 제작</div>
+      </div>
+      <div class="inhouse-visual-card">
+        <div class="inhouse-visual-label">QC</div>
+        <div class="inhouse-visual-text">품질 검수<br>치수·외관 검사</div>
+      </div>
+      <div class="inhouse-visual-card">
+        <div class="inhouse-visual-label">SUPPLY</div>
+        <div class="inhouse-visual-text">자체 공급<br>신속 납품</div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
 <!-- ====== 정기점검 진입 배너 (전용 페이지로 연결) ====== -->
 <section id="inspection-banner" style="background:var(--cat-black);color:#fff;padding:80px 2rem;position:relative;overflow:hidden;">
   <div style="position:absolute;top:0;right:-5%;width:50%;height:100%;background:radial-gradient(circle at 60% 50%,rgba(255,196,0,0.08) 0%,transparent 60%);pointer-events:none;"></div>
@@ -1956,149 +2139,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       </div>
     </div>
   </div>
-</section>
-
-
-<!-- ============ ⭐ SAMSUN ONLY 자체 제작 ============ -->
-<section id="in-house" class="inhouse-section">
-  <style>
-    .inhouse-section {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-      color: var(--cat-white);
-      padding: 90px 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .inhouse-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 6px;
-      background: var(--cat-yellow);
-    }
-    .inhouse-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .inhouse-text {}
-    .inhouse-eyebrow {
-      display: inline-block;
-      font-size: 11px; font-weight: 800; letter-spacing: 4px;
-      color: var(--cat-black); background: var(--cat-yellow);
-      padding: 6px 14px; margin-bottom: 1.4rem;
-    }
-    .inhouse-text h2 {
-      font-size: 38px; font-weight: 800; line-height: 1.3;
-      margin: 0 0 1.4rem; letter-spacing: -0.5px;
-      word-break: keep-all;
-    }
-    .inhouse-text h2 em {
-      font-style: normal; color: var(--cat-yellow);
-    }
-    .inhouse-text p {
-      font-size: 16px; line-height: 1.85;
-      color: rgba(255,255,255,0.85);
-      margin: 0 0 1.6rem; word-break: keep-all;
-    }
-    .inhouse-text p strong {
-      color: var(--cat-yellow); font-weight: 700;
-    }
-    .inhouse-badges {
-      display: flex; gap: 10px; flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .inhouse-badge {
-      font-size: 12px; font-weight: 700;
-      color: var(--cat-yellow);
-      background: rgba(255,196,0,0.12);
-      border-left: 3px solid var(--cat-yellow);
-      padding: 6px 12px; letter-spacing: 0.3px;
-    }
-    .inhouse-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--cat-yellow); color: var(--cat-black);
-      padding: 16px 28px;
-      font-size: 15px; font-weight: 800; letter-spacing: 0.3px;
-      text-decoration: none;
-      border-left: 4px solid var(--cat-white);
-      transition: gap 0.2s, background 0.18s;
-    }
-    .inhouse-cta:hover {
-      gap: 14px;
-      background: #FFD740;
-    }
-    .inhouse-visual {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,196,0,0.3);
-      padding: 3rem 2rem;
-      min-height: 320px;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center;
-    }
-    .inhouse-visual-icon {
-      font-size: 72px;
-      margin-bottom: 1rem;
-      opacity: 0.6;
-    }
-    .inhouse-visual-text {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-    }
-    @media (max-width: 900px) {
-      .inhouse-section { padding: 60px 1.2rem; }
-      .inhouse-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .inhouse-text h2 { font-size: 26px; }
-      .inhouse-visual {
-        min-height: 200px;
-        padding: 2rem 1rem;
-        order: -1;
-      }
-      .inhouse-visual-icon { font-size: 48px; }
-    }
-  </style>
-  
-  <div class="inhouse-inner">
-    
-    <div class="inhouse-text">
-      <div class="inhouse-eyebrow">⭐ SAMSUN ONLY</div>
-      <h2>단종 부품, <em>SAMSUN이 직접 제작</em>합니다</h2>
-      <p>
-        정품 공급이 중단된 부품, 특수 사양 부품도 문제없습니다.
-        <strong>35년 정비 경험</strong>을 바탕으로 ㈜삼선엔지니어링이
-        직접 설계·정밀 가공·품질 검수까지 자체 진행하여
-        정품에 준하는 품질로 공급해 드립니다.
-      </p>
-      
-      <div class="inhouse-badges">
-        <div class="inhouse-badge">단종 부품 대응</div>
-        <div class="inhouse-badge">정품 호환 제작</div>
-        <div class="inhouse-badge">특수 사양 제작</div>
-      </div>
-      
-      <a href="/products/in-house/" class="inhouse-cta">
-        자체 제작 제품 보기 →
-      </a>
-    </div>
-    
-    <div class="inhouse-visual">
-      <div class="inhouse-visual-icon">⚙️</div>
-      <div class="inhouse-visual-text">
-        도면 분석 · CNC 정밀 가공 · 품질 검수<br>
-        자체 설계 · 자체 제작 · 자체 공급
-      </div>
-    </div>
-    
-  </div>
-</section>
-<!-- PERFORMANCE --><!-- SLOGAN BAND -->
+</section><!-- PERFORMANCE --><!-- SLOGAN BAND -->
 <div class="slogan-band" style="position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:url('img/main/service-supply.jpg');background-size:cover;background-position:center;opacity:0.08;"></div>
   <p class="slogan-en">Driven by Passion &nbsp;·&nbsp; Innovating with Creativity &nbsp;·&nbsp; Growing through Trust</p>

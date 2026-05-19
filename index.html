@@ -704,9 +704,12 @@ section { padding: 100px 2rem; }
   display: flex;
   align-items: center;
   gap: 12px;
-  border-left: 3px solid var(--cat-yellow);
+  /* 노란 선 — 기본은 투명, 호버 시에만 나타남 */
+  border-left: 3px solid transparent;
   transition: background 0.25s, border-color 0.25s;
-  /* margin-bottom 제거 — 이미지와 한 덩어리로 자연스럽게 */
+}
+.svc-card:hover .svc-icon-header {
+  border-left-color: var(--cat-yellow);
 }
 .svc-card:hover .svc-icon-header {
   background: var(--cat-yellow);
@@ -1834,7 +1837,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <h3>비상발전기 정기점검·예방정비</h3>
         <p>예방정비·정밀 수리·24시간 긴급 대응을 통해 비상발전기·디젤 엔진의 가동 신뢰성을 확보합니다. 설비 이력 관리와 부품 수명 분석을 함께 제공합니다.</p>
         <div class="svc-tags"><span class="tag">예방정비</span><span class="tag">24h 긴급출동</span><span class="tag">이력관리</span></div>
-        <a href="/generator-inspection.html" class="svc-link-secondary" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;margin-right:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;background:var(--cat-yellow);padding:7px 14px;transition:background 0.18s;" onmouseover="this.style.background='#e6b000'" onmouseout="this.style.background='var(--cat-yellow)'">⚡ 정기점검 진단 →</a><a href="/services/maintenance/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
+        <a href="/services/maintenance/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
       <div class="svc-card fade-up" data-d="2">        <div class="svc-img-wrap">
           <div class="svc-icon-header">

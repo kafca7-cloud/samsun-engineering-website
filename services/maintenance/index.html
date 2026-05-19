@@ -450,16 +450,321 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </section>
 
-<section class="content-placeholder">
-  <div class="content-inner">
-    <span class="placeholder-note">CONTENT COMING SOON</span>
-    <h2>상세 콘텐츠 준비 중입니다</h2>
-    <p>
-      구체적인 서비스 항목, 차별화 포인트, 주요 실적 등 자세한 내용을 곧 업데이트할 예정입니다.<br>
-      문의사항이 있으시면 언제든 연락 주세요.
-    </p>
+<!-- 정기점검 상세 미리보기 -->
+<section class="inspection-preview">
+  <div class="ip-inner">
+    <div class="ip-header">
+      <span class="ip-eyebrow">CAT ET·SOS 진단 기반</span>
+      <h2 class="ip-title">단순 시동 테스트로는 부족합니다</h2>
+      <p class="ip-lead">
+        기동 테스트만으로는 비상시 가동 신뢰성을 보장할 수 없습니다. 
+        ㈜삼선엔지니어링은 <strong>CAT ET 전자식 분석</strong>과 <strong>SOS 오일 샘플링 분석</strong>을 통해 
+        잠재 결함을 사전에 진단합니다.
+      </p>
+    </div>
+
+    <div class="ip-cards">
+      <div class="ip-card">
+        <div class="ip-card-num">01</div>
+        <h3>엔진 주요 계통 점검</h3>
+        <p>윤활·연료·냉각·흡배기·전기 계통 등 엔진 주요 시스템의 종합 진단</p>
+      </div>
+      <div class="ip-card">
+        <div class="ip-card-num">02</div>
+        <h3>주요 소모품 상태 점검</h3>
+        <p>각종 필터·벨트·호스·배터리 등 소모품의 수명 및 교체 시점 분석</p>
+      </div>
+      <div class="ip-card">
+        <div class="ip-card-num">03</div>
+        <h3>CAT ET 전자식 분석</h3>
+        <p>CAT 공식 진단 장비로 엔진 ECM 데이터 분석, 잠재 결함 코드 진단</p>
+      </div>
+      <div class="ip-card">
+        <div class="ip-card-num">04</div>
+        <h3>SOS 오일 샘플링 분석</h3>
+        <p>윤활유 성분 분석으로 마모 입자·연료 희석·산화도 등 내부 상태 진단</p>
+      </div>
+    </div>
+
+    <div class="ip-cta-row">
+      <a href="/generator-inspection.html" class="ip-cta-link">
+        정기점검 상세 안내 보기 
+        <span class="ip-arrow">→</span>
+      </a>
+    </div>
   </div>
 </section>
+
+<!-- 24h 긴급출동 프로세스 -->
+<section class="emergency-process">
+  <div class="ep-inner">
+    <div class="ep-header">
+      <span class="ep-eyebrow">24H EMERGENCY</span>
+      <h2 class="ep-title">긴급 상황, 즉시 대응합니다</h2>
+      <p class="ep-lead">
+        설비 중단은 곧 손실입니다. 365일 24시간 긴급 출동 체계로 신속히 대응합니다.
+      </p>
+    </div>
+
+    <div class="ep-steps">
+      <div class="ep-step">
+        <div class="ep-step-num">1</div>
+        <h3>장애 접수</h3>
+        <p>전화·이메일·문의 폼으로 즉시 접수, 1차 원격 상담 진행</p>
+      </div>
+      <div class="ep-step-arrow">→</div>
+      <div class="ep-step">
+        <div class="ep-step-num">2</div>
+        <h3>긴급 출동</h3>
+        <p>여수 본사 기반, 전남·전북·경남권 신속 출동</p>
+      </div>
+      <div class="ep-step-arrow">→</div>
+      <div class="ep-step">
+        <div class="ep-step-num">3</div>
+        <h3>현장 진단</h3>
+        <p>CAT 공식 진단 장비로 정밀 원인 분석, 즉석 수리 가능 여부 판단</p>
+      </div>
+      <div class="ep-step-arrow">→</div>
+      <div class="ep-step">
+        <div class="ep-step-num">4</div>
+        <h3>수리·보고</h3>
+        <p>정품 부품으로 수리, 작업 보고서 및 사후 관리 안내</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 새 섹션용 스타일 -->
+<style>
+/* ─── 정기점검 미리보기 ─── */
+.inspection-preview {
+  background: var(--cat-white);
+  padding: 80px 2rem;
+}
+.ip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ip-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.ip-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--cat-yellow);
+  background: var(--cat-black);
+  padding: 6px 14px;
+  margin-bottom: 1.2rem;
+}
+.ip-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--cat-black);
+  letter-spacing: -0.5px;
+  margin: 0 0 1.2rem;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+.ip-lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--cat-gray4, #555);
+  max-width: 800px;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+.ip-lead strong {
+  color: var(--cat-black);
+  font-weight: 700;
+}
+.ip-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+.ip-card {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 2rem 1.4rem;
+  border-top: 3px solid var(--cat-yellow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.ip-card-num {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cat-yellow);
+  background: var(--cat-black);
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 1rem;
+}
+.ip-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin: 0 0 0.7rem;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+.ip-card p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--cat-gray4, #555);
+  margin: 0;
+  word-break: keep-all;
+}
+.ip-cta-row {
+  text-align: center;
+}
+.ip-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background 0.2s, gap 0.2s;
+  border-left: 4px solid var(--cat-yellow);
+}
+.ip-cta-link:hover {
+  gap: 14px;
+}
+.ip-arrow {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* ─── 24h 긴급출동 프로세스 ─── */
+.emergency-process {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 80px 2rem;
+}
+.ep-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ep-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.ep-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--cat-black);
+  background: var(--cat-yellow);
+  padding: 6px 14px;
+  margin-bottom: 1.2rem;
+}
+.ep-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--cat-black);
+  letter-spacing: -0.5px;
+  margin: 0 0 1.2rem;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+.ep-lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--cat-gray4, #555);
+  max-width: 800px;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+.ep-steps {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.ep-step {
+  background: var(--cat-white);
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  position: relative;
+}
+.ep-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.ep-step h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin: 0 0 0.7rem;
+  letter-spacing: -0.3px;
+}
+.ep-step p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--cat-gray4, #555);
+  margin: 0;
+  word-break: keep-all;
+}
+.ep-step-arrow {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cat-yellow);
+  align-self: center;
+}
+
+/* ─── 반응형 ─── */
+@media (max-width: 900px) {
+  .ip-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ip-title, .ep-title {
+    font-size: 26px;
+  }
+  .ep-steps {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .ep-step-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 560px) {
+  .inspection-preview, .emergency-process {
+    padding: 60px 1.2rem;
+  }
+  .ip-cards {
+    grid-template-columns: 1fr;
+  }
+  .ip-title, .ep-title {
+    font-size: 22px;
+  }
+  .ip-lead, .ep-lead {
+    font-size: 14.5px;
+  }
+}
+</style>
 
   <!-- 관련 자료 -->
   <section class="related-section">

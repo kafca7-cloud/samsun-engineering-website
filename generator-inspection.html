@@ -1012,6 +1012,16 @@ h1, h2, h3, h4, h5, h6,
 
 <!-- ============ NAV (메인과 동일) ============ -->
 <!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<style>
+  /* 서브 페이지 NAV: 1280px 제한 풀고 화면 우측 끝까지 활용 */
+  nav#mainNav .nav-inner {
+    max-width: none;
+    padding: 0 2rem;
+  }
+  @media (max-width: 720px) {
+    nav#mainNav .nav-inner { padding: 0 1rem; }
+  }
+</style>
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="/" class="home-btn">

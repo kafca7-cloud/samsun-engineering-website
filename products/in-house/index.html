@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MRO·정품 부품 조달 | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.">
+<title>자체 제작 제품 | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="㈜삼선엔지니어링 자체 제작 제품 라인업. 단종 부품, 정품 호환 부품, 특수 사양 부품 등 발전기·엔진 관련 정밀 부품을 자체 설계·제작합니다.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://samsuneng.co.kr/services/mro/">
+<link rel="canonical" href="https://www.samsuneng.co.kr/products/in-house/">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://samsuneng.co.kr/services/mro/">
-<meta property="og:title" content="MRO·정품 부품 조달 | SAMSUN 삼선엔지니어링">
-<meta property="og:description" content="Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.">
+<meta property="og:title" content="자체 제작 제품 | SAMSUN 삼선엔지니어링">
+<meta property="og:description" content="단종 부품 자체 제작, 정품 호환 부품, 특수 사양 부품 등.">
+<meta property="og:url" content="https://www.samsuneng.co.kr/products/in-house/">
 <meta property="og:locale" content="ko_KR">
 
 <style>
@@ -276,141 +276,178 @@ h1, h2, h3, h4, h5, h6,
     gap: 6px;
   }
 }
-</style>
 
-<style>
+.page-hero {
+  background: var(--cat-black);
+  color: var(--cat-white);
+  padding: 90px 2rem 70px;
+  border-left: 6px solid var(--cat-yellow);
+}
+.page-hero-inner { max-width: 1100px; margin: 0 auto; }
+.page-hero-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 800; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.page-hero h1 {
+  font-size: 40px; font-weight: 800; line-height: 1.25;
+  margin: 0 0 1rem; letter-spacing: -0.5px; word-break: keep-all;
+}
+.page-hero h1 em { font-style: normal; color: var(--cat-yellow); }
+.page-hero p.lead {
+  font-size: 16px; line-height: 1.8;
+  color: rgba(255,255,255,0.85); max-width: 720px; word-break: keep-all;
+}
+
+/* 카테고리/특징 배지 */
+.hero-badges {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,196,0,0.15);
+  border-left: 3px solid var(--cat-yellow);
+  color: var(--cat-yellow);
+  padding: 6px 12px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* 인트로 섹션 — "왜 자체 제작인가" */
 .intro-section {
   background: var(--cat-white);
-  padding: 4rem 2rem;
-  border-bottom: 1px solid var(--cat-border);
+  padding: 70px 2rem 50px;
 }
 .intro-inner {
-  max-width: 880px; margin: 0 auto;
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+  align-items: start;
 }
-.intro-summary {
-  font-size: 1.15rem; line-height: 1.85;
-  color: var(--cat-gray4);
-  margin-bottom: 2rem;
+.intro-left h2 {
+  font-size: 28px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 1rem;
+  letter-spacing: -0.4px; word-break: keep-all; line-height: 1.35;
 }
-.intro-tags {
-  display: flex; gap: 0.5rem; flex-wrap: wrap;
+.intro-left .eyebrow {
+  display: inline-block; font-size: 11px; font-weight: 800;
+  letter-spacing: 3px; color: var(--cat-yellow);
+  background: var(--cat-black); padding: 5px 12px; margin-bottom: 1rem;
 }
-.tag {
-  font-size: 13px; padding: 6px 14px; font-weight: 600;
-  background: var(--cat-gray1); color: var(--cat-gray4);
+.intro-right p {
+  font-size: 15px; line-height: 1.85; color: var(--cat-gray4, #555);
+  margin: 0 0 1rem; word-break: keep-all;
+}
+.intro-right p:last-child { margin-bottom: 0; }
+.intro-right strong { color: var(--cat-black); font-weight: 700; }
+
+/* 제품 카드 그리드 */
+.products-section {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 60px 2rem 80px;
+}
+.products-inner { max-width: 1100px; margin: 0 auto; }
+.products-section-title {
+  font-size: 22px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 2rem;
+  letter-spacing: -0.3px;
+  padding-left: 14px; border-left: 4px solid var(--cat-yellow);
+}
+
+.products-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.product-card {
+  background: var(--cat-white);
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
   border: 1px solid var(--cat-border);
+  border-top: 4px solid var(--cat-yellow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
 }
-.content-placeholder {
-  background: var(--cat-gray1);
-  padding: 4rem 2rem;
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
 }
-.content-inner {
-  max-width: 880px; margin: 0 auto;
-  text-align: center;
-  padding: 3rem 2rem;
+.product-card-img {
+  width: 100%; height: 220px;
+  background: var(--cat-gray2, #ddd);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: var(--cat-gray3);
+  overflow: hidden;
+  position: relative;
+}
+.product-card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.product-card-body {
+  padding: 1.6rem 1.4rem 1.4rem;
+  flex: 1;
+  display: flex; flex-direction: column;
+}
+.product-card-cat {
+  font-size: 10px; font-weight: 800; letter-spacing: 2px;
+  color: var(--cat-yellow); background: var(--cat-black);
+  padding: 3px 10px; text-transform: uppercase;
+  align-self: flex-start; margin-bottom: 0.9rem;
+}
+.product-card h3 {
+  font-size: 18px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 0.4rem;
+  letter-spacing: -0.3px; word-break: keep-all; line-height: 1.4;
+}
+.product-card-model {
+  font-size: 12px; color: var(--cat-gray3);
+  font-weight: 600; font-family: monospace; margin-bottom: 0.8rem;
+}
+.product-card-desc {
+  font-size: 13.5px; line-height: 1.65;
+  color: var(--cat-gray4, #555); margin: 0 0 1rem;
+  flex: 1; word-break: keep-all;
+}
+.product-card-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 0.9rem; border-top: 1px solid var(--cat-border);
+}
+.product-card-meta {
+  font-size: 11px; color: var(--cat-gray3); font-weight: 600;
+}
+.product-card-arrow {
+  font-size: 14px; font-weight: 800; color: var(--cat-black);
+  transition: gap 0.2s, color 0.2s;
+}
+.product-card:hover .product-card-arrow { color: var(--cat-yellow); }
+
+/* "준비 중" 빈 상태 */
+.products-empty {
   background: var(--cat-white);
-  border: 2px dashed var(--cat-border);
-}
-.content-placeholder h2 {
-  font-size: 1.6rem; font-weight: 800; color: var(--cat-black);
-  margin-bottom: 1rem; letter-spacing: -0.5px;
-}
-.content-placeholder p {
-  font-size: 1rem; color: var(--cat-gray4); line-height: 1.8;
-  max-width: 540px; margin: 0 auto 1.5rem;
-}
-.content-placeholder .placeholder-note {
-  display: inline-block;
-  font-size: 12px; font-weight: 700; letter-spacing: 1px;
-  color: var(--cat-yellow);
-  padding: 6px 14px; border: 1px solid var(--cat-yellow);
-  background: var(--cat-yellow-soft);
-  margin-bottom: 1rem;
-}
-.related-section {
-  background: var(--cat-white);
-  padding: 4rem 2rem;
-  border-top: 1px solid var(--cat-border);
-}
-.related-inner {
-  max-width: 880px; margin: 0 auto;
-}
-.related-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 3px;
-  color: var(--cat-yellow);
-  margin-bottom: 1rem;
-}
-.related-section h2 {
-  font-size: 1.8rem; font-weight: 800; color: var(--cat-black);
-  margin-bottom: 2rem; letter-spacing: -0.5px;
-}
-.related-list {
-  display: flex; flex-direction: column; gap: 0.8rem;
-}
-.related-link {
-  display: flex; align-items: center; gap: 12px;
-  padding: 1.2rem 1.5rem;
-  background: var(--cat-gray1);
+  text-align: center; padding: 60px 2rem;
   border-left: 4px solid var(--cat-yellow);
-  text-decoration: none;
-  color: var(--cat-black);
-  font-weight: 700; font-size: 15px;
-  transition: background 0.18s, transform 0.18s;
 }
-.related-link:hover {
-  background: var(--cat-yellow);
-  transform: translateX(4px);
+.products-empty-icon { font-size: 48px; margin-bottom: 1rem; }
+.products-empty h3 {
+  font-size: 22px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 0.8rem;
 }
-.related-arrow {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--cat-yellow);
-  transition: color 0.18s;
+.products-empty p {
+  font-size: 14px; line-height: 1.7;
+  color: var(--cat-gray4, #555);
+  max-width: 540px; margin: 0 auto; word-break: keep-all;
 }
-.related-link:hover .related-arrow {
-  color: var(--cat-black);
+
+@media (max-width: 900px) {
+  .intro-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .products-grid { grid-template-columns: 1fr; }
 }
-.other-services {
-  background: var(--cat-black);
-  padding: 4rem 2rem;
-  color: var(--cat-white);
-}
-.other-inner {
-  max-width: 880px; margin: 0 auto;
-}
-.other-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 3px;
-  color: var(--cat-yellow);
-  margin-bottom: 1rem;
-}
-.other-services h2 {
-  font-size: 1.5rem; font-weight: 800; color: var(--cat-white);
-  margin-bottom: 1.8rem; letter-spacing: -0.3px;
-}
-.other-svc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.8rem;
-}
-.other-svc-card {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.2rem 1.4rem;
-  background: var(--cat-card);
-  color: var(--cat-white);
-  text-decoration: none;
-  font-weight: 600; font-size: 14.5px;
-  border-left: 3px solid var(--cat-yellow);
-  transition: background 0.18s, padding-left 0.18s;
-}
-.other-svc-card:hover {
-  background: var(--cat-elev);
-  padding-left: 1.8rem;
-}
-@media (max-width: 560px) {
-  .intro-section, .content-placeholder, .related-section, .other-services {
-    padding: 2.5rem 1rem;
-  }
-  .content-inner { padding: 2rem 1rem; }
+@media (max-width: 600px) {
+  .page-hero { padding: 60px 1.2rem 50px; }
+  .page-hero h1 { font-size: 28px; }
+  .intro-section { padding: 50px 1.2rem 36px; }
+  .intro-left h2 { font-size: 22px; }
+  .products-section { padding: 40px 1.2rem 60px; }
+  .product-card-img { height: 180px; }
 }
 </style>
 </head>
@@ -437,89 +474,90 @@ h1, h2, h3, h4, h5, h6,
 </nav>
 
 
-<section class="hero">
-  <div class="hero-stripe"></div>
-  <div class="hero-inner">
-    <span class="hero-label">MRO & PARTS</span>
-    <h1>MRO·정품 부품 조달<br><em>정품 부품·기술 지원 통합 솔루션</em></h1>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">IN-HOUSE PRODUCTS</div>
+    <h1>SAMSUN <em>자체 제작 제품</em></h1>
     <p class="lead">
-      Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.
+      단종된 정품 부품, 호환 부품, 특수 사양 부품을 직접 설계·제작합니다.
+      35년 현장 경험 기반의 정밀 가공·조립 역량으로 다양한 발전기·엔진 부품을 자체 공급합니다.
     </p>
+    <div class="hero-badges">
+      <div class="hero-badge">단종 부품 대응</div>
+      <div class="hero-badge">정품 호환 제작</div>
+      <div class="hero-badge">특수 사양 제작</div>
+    </div>
   </div>
 </section>
 
+<!-- 왜 자체 제작? -->
 <section class="intro-section">
   <div class="intro-inner">
-    <p class="intro-summary">
-      <strong>㈜삼선엔지니어링</strong>은 CAT 공인 대리점으로서 35년 이상의 경험을 바탕으로
-      MRO·정품 부품 조달 분야에서 신뢰할 수 있는 서비스를 제공합니다.
-    </p>
-    <div class="intro-tags">
-      <span class="tag">정품 부품</span> <span class="tag">신속 조달</span> <span class="tag">T/S</span>
+    <div class="intro-left">
+      <span class="eyebrow">WHY IN-HOUSE</span>
+      <h2>단종 부품, 어떻게 해결하시겠습니까?</h2>
     </div>
-  </div>
-</section>
-
-<!-- 자체 제작 제품 안내 (in-house) -->
-<section class="inhouse-promo" style="background: var(--cat-black); color: var(--cat-white); padding: 70px 2rem;">
-  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;">
-    <div>
-      <div style="display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 3px; color: var(--cat-yellow); background: rgba(255,196,0,0.15); border-left: 3px solid var(--cat-yellow); padding: 5px 12px; margin-bottom: 1rem;">
-        SAMSUN IN-HOUSE
-      </div>
-      <h2 style="font-size: 26px; font-weight: 800; margin: 0 0 1rem; letter-spacing: -0.3px; line-height: 1.35; word-break: keep-all;">
-        단종 부품, <em style="font-style: normal; color: var(--cat-yellow);">직접 제작</em>합니다
-      </h2>
-      <p style="font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.85); margin: 0; word-break: keep-all; max-width: 640px;">
-        정품 공급이 중단된 부품, 특수 사양 부품 등 ㈜삼선엔지니어링이 직접 설계·제작·공급합니다.
-        도면 분석부터 정밀 가공, 품질 검수까지 자체 진행하여 정품에 준하는 품질을 확보합니다.
+    <div class="intro-right">
+      <p>
+        <strong>오래된 발전기·엔진의 부품 단종</strong>은 설비 운영에 큰 부담입니다. 정품 제조사가 더 이상 공급하지 않거나, 리드타임이 수개월 이상 걸리는 경우 설비 가동이 중단될 수 있습니다.
+      </p>
+      <p>
+        ㈜삼선엔지니어링은 <strong>자체 설계·제작 역량</strong>을 통해 단종 부품을 직접 제작·공급합니다.
+        도면 분석, 재질 검증, 정밀 가공, 품질 검수까지 자체 진행하여 정품에 준하는 품질을 확보합니다.
       </p>
     </div>
-    <div>
-      <a href="/products/in-house/" style="display: inline-flex; align-items: center; gap: 10px; background: var(--cat-yellow); color: var(--cat-black); padding: 14px 22px; font-size: 14px; font-weight: 800; letter-spacing: 0.3px; text-decoration: none; border-left: 4px solid var(--cat-black); transition: gap 0.18s;" onmouseover="this.style.gap='14px'" onmouseout="this.style.gap='10px'">
-        자체 제작 제품 보기 →
+  </div>
+</section>
+
+<!-- 제품 카드 그리드 -->
+<section class="products-section">
+  <div class="products-inner">
+    <h2 class="products-section-title">현재 제작 가능 제품</h2>
+    
+    <div class="products-grid">
+      
+      <!-- ✏️ 제품 1: 사장님 제품 정보를 받으면 채워주세요 -->
+      <a href="/products/in-house/product-1/" class="product-card">
+        <div class="product-card-img">
+          <!-- ✏️ 제품 사진 — 권장: 800x600px JPG -->
+          <!-- <img src="/img/products/in-house/product-1-thumb.jpg" alt="제품명"> -->
+          <span>제품 사진 (준비 중)</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">자체 제작</span>
+          <h3>제품명 (예: 임펠러 ASSY)</h3>
+          <div class="product-card-model">MODEL-CODE-001</div>
+          <p class="product-card-desc">
+            제품에 대한 1-2줄 설명. 어떤 발전기·엔진에 쓰이는지, 어떤 문제를 해결하는지 간단히.
+          </p>
+          <div class="product-card-foot">
+            <span class="product-card-meta">정품 호환</span>
+            <span class="product-card-arrow">자세히 →</span>
+          </div>
+        </div>
       </a>
-    </div>
-  </div>
-</section>
-
-
-<section class="content-placeholder">
-  <div class="content-inner">
-    <span class="placeholder-note">CONTENT COMING SOON</span>
-    <h2>상세 콘텐츠 준비 중입니다</h2>
-    <p>
-      구체적인 서비스 항목, 차별화 포인트, 주요 실적 등 자세한 내용을 곧 업데이트할 예정입니다.<br>
-      문의사항이 있으시면 언제든 연락 주세요.
-    </p>
-  </div>
-</section>
-
-  <!-- 관련 자료 -->
-  <section class="related-section">
-    <div class="related-inner">
-      <div class="related-label">RELATED RESOURCES</div>
-      <h2>관련 자료</h2>
-      <div class="related-list">
-        <a href="/products/" class="related-link">
-          <span class="related-arrow">→</span>
-          <span>주요 제품 라인업 보기</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-<section class="other-services">
-  <div class="other-inner">
-    <div class="other-label">OTHER SERVICES</div>
-    <h2>다른 사업분야 보기</h2>
-    <div class="other-svc-grid">
-      <a href="/services/sales/" class="other-svc-card">세일즈 →</a>
-      <a href="/services/maintenance/" class="other-svc-card">유지보수 →</a>
-      <a href="/services/marine/" class="other-svc-card">해상 엔진 수리 →</a>
-      <a href="/services/construction/" class="other-svc-card">시공업 →</a>
-      <a href="/services/rental/" class="other-svc-card">임대업 →</a>
-      <a href="/services/" class="other-svc-card" style="background:var(--cat-yellow);color:var(--cat-black);border-left-color:var(--cat-black);font-weight:800;">전체 사업분야 보기 →</a>
+      
+      <!-- 👉 제품 2, 3... 추가는 위 a 블록 복사 후 수정 -->
+      
+      <!-- 향후 제품 추가 안내 카드 -->
+      <a href="/contact/" class="product-card" style="background:var(--cat-gray1, #f5f5f5); border-top-color:var(--cat-gray3);">
+        <div class="product-card-img" style="background:var(--cat-gray1, #f5f5f5);">
+          <span style="font-size:32px;">⚙</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat" style="background:var(--cat-gray3); color:var(--cat-white);">맞춤 제작</span>
+          <h3>필요한 부품, 직접 문의 주세요</h3>
+          <div class="product-card-model">CUSTOM ORDER</div>
+          <p class="product-card-desc">
+            도면이 있으시면 도면 기반으로, 도면이 없으시면 현품 분석 후 제작 가능 여부를 검토해 드립니다.
+          </p>
+          <div class="product-card-foot">
+            <span class="product-card-meta">문의 시 안내</span>
+            <span class="product-card-arrow">문의하기 →</span>
+          </div>
+        </div>
+      </a>
+      
     </div>
   </div>
 </section>
@@ -537,15 +575,15 @@ h1, h2, h3, h4, h5, h6,
 -->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-eyebrow">부품·기술 지원 문의</div>
-    <h2 class="cta-title">정품 부품 조달·기술 지원<br><em>상담받아 보세요</em></h2>
-    <p class="cta-sub">CAT 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달해 드립니다. Trouble-Shooting 기술 지원도 가능합니다.</p>
+    <div class="cta-eyebrow">제품 문의</div>
+    <h2 class="cta-title">자체 제작 제품에 대해<br><em>문의하시겠어요?</em></h2>
+    <p class="cta-sub">단종 부품, 특수 사양 부품 등 맞춤 제작 가능합니다. 도면·견적·납기 등 상세 안내 받으세요.</p>
     <div class="cta-actions">
       <a href="tel:0616421247" class="btn btn-primary">
-        ☎ 부품·기술 상담하기 (061-642-1247)
+        ☎ 제작 상담하기 (061-642-1247)
       </a>
       <a href="/contact/" class="btn btn-secondary">
-        📝 부품 조달 문의하기
+        📝 제품 문의 폼 작성하기
       </a>
     </div>
   </div>

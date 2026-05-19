@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주요 고객사 | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="㈜삼선엔지니어링 주요 고객사 — 포스코·LG·한화·롯데·금호·OCI 등 대기업과 국립공원공단·관공선·소방정 등 공공·해상 분야 고객사.">
+<meta name="description" content="㈜삼선엔지니어링 주요 거래처 — 포스코·LG화학·한화솔루션·롯데케미칼·금호석유화학·한국바스프·OCI·여천NCC 등 석유화학·철강·발전 분야 주요 산업체 및 해양수산부·국립공원공단·관세청·소방본부 등 공공기관 거래.">
+<meta name="keywords" content="여수 발전기 정비 고객사, 석유화학 발전기 협력업체, 포스코 협력업체, 비상발전기 정비 거래처, 산업용 엔진 정비 고객사">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.samsuneng.co.kr/about/clients/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="주요 고객사 | SAMSUN 삼선엔지니어링">
-<meta property="og:description" content="대기업·관공서·선사 등 다양한 산업 분야의 거래.">
+<meta property="og:description" content="석유화학·철강·발전·공공기관 등 30개+ 주요 거래처와 함께합니다.">
 <meta property="og:url" content="https://www.samsuneng.co.kr/about/clients/">
 <meta property="og:locale" content="ko_KR">
 
@@ -306,8 +307,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .sub-nav-inner {
   max-width: 1100px; margin: 0 auto;
-  display: flex; gap: 0;
-  overflow-x: auto;
+  display: flex; gap: 0; overflow-x: auto;
 }
 .sub-nav a {
   padding: 16px 24px;
@@ -324,74 +324,181 @@ h1, h2, h3, h4, h5, h6,
   border-bottom-color: var(--cat-yellow);
 }
 
-/* 카테고리별 고객사 */
-.clients-section {
+/* 비주얼 영역 (전체 거래처 한눈에) */
+.clients-visual {
   background: var(--cat-white);
-  padding: 70px 2rem;
+  padding: 60px 2rem 40px;
 }
-.clients-inner { max-width: 1100px; margin: 0 auto; }
-
-.clients-cat-block {
-  margin-bottom: 3rem;
+.clients-visual-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.clients-visual-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px; font-weight: 700;
+  color: var(--cat-black); letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
-.clients-cat-block:last-child { margin-bottom: 0; }
-
-.clients-cat-title {
-  font-size: 18px; font-weight: 800;
-  color: var(--cat-black); margin: 0 0 1.2rem;
-  padding-left: 14px; border-left: 4px solid var(--cat-yellow);
-  letter-spacing: -0.3px;
+.clients-visual-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 2px;
+  background: var(--cat-yellow);
 }
-
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+.clients-visual h2 {
+  font-size: 28px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 1.4rem;
+  letter-spacing: -0.4px; line-height: 1.3;
+  word-break: keep-all;
 }
-.client-card {
-  background: var(--cat-gray1, #f5f5f5);
-  padding: 1.5rem 1.2rem;
-  text-align: center;
-  border-top: 3px solid var(--cat-yellow);
-  transition: transform 0.2s, box-shadow 0.2s;
+.clients-visual h2 em {
+  font-style: normal; color: var(--cat-yellow);
 }
-.client-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.clients-visual-lead {
+  font-size: 15px; line-height: 1.75;
+  color: var(--cat-gray4, #555);
+  max-width: 700px; margin: 0 auto 2.5rem;
+  word-break: keep-all;
 }
-.client-card h3 {
-  font-size: 15px; font-weight: 700;
-  color: var(--cat-black); margin: 0;
-  letter-spacing: -0.3px;
-  line-height: 1.4;
-}
-.client-card .en {
+.clients-visual-img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   display: block;
-  font-size: 11px; color: var(--cat-gray3);
-  font-weight: 600; margin-top: 4px;
+}
+.clients-visual-note {
+  font-size: 12px;
+  color: var(--cat-gray3);
+  margin-top: 1.4rem;
   letter-spacing: 0.3px;
 }
 
-.clients-note {
+/* 산업군별 텍스트 리스트 */
+.clients-list-section {
   background: var(--cat-gray1, #f5f5f5);
-  padding: 2rem;
-  border-left: 4px solid var(--cat-yellow);
-  margin-top: 2rem;
-  font-size: 14px; line-height: 1.7;
-  color: var(--cat-gray4, #555);
-  word-break: keep-all;
+  padding: 70px 2rem 80px;
+  border-top: 1px solid var(--cat-border);
+}
+.clients-list-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-intro {
+  margin-bottom: 2.5rem;
+}
+.section-intro .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px; font-weight: 700;
+  color: var(--cat-black); letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.section-intro .eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 2px;
+  background: var(--cat-yellow);
+}
+.section-intro h2 {
+  font-size: 26px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 1rem;
+  letter-spacing: -0.3px;
+}
+.section-intro p {
+  font-size: 15px; line-height: 1.75;
+  color: var(--cat-gray4, #555); margin: 0;
+  max-width: 720px; word-break: keep-all;
 }
 
-@media (max-width: 900px) {
-  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+/* 카테고리 카드 */
+.cat-block {
+  background: var(--cat-white);
+  margin-bottom: 1.4rem;
+  border-left: 4px solid var(--cat-yellow);
 }
+.cat-block:last-of-type { margin-bottom: 0; }
+
+.cat-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.2rem 1.8rem;
+  background: var(--cat-black);
+  color: var(--cat-white);
+}
+.cat-num {
+  font-size: 20px; font-weight: 800;
+  color: var(--cat-yellow);
+  letter-spacing: -0.5px; line-height: 1;
+}
+.cat-name {
+  font-size: 16px; font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.cat-count {
+  font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.cat-body {
+  padding: 1.6rem 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.client-chip {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--cat-gray5, #333);
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 9px 14px;
+  border: 1px solid var(--cat-border);
+  letter-spacing: -0.1px;
+  word-break: keep-all;
+  transition: background 0.15s, border-color 0.15s;
+}
+.client-chip:hover {
+  background: var(--cat-yellow);
+  border-color: var(--cat-yellow);
+  color: var(--cat-black);
+}
+.client-chip strong {
+  font-weight: 700;
+  color: var(--cat-black);
+}
+
+/* 하단 안내 */
+.clients-note {
+  background: var(--cat-white);
+  padding: 1.4rem 1.6rem;
+  border-left: 4px solid var(--cat-yellow);
+  font-size: 13.5px; line-height: 1.75;
+  color: var(--cat-gray4, #555);
+  margin-top: 2rem;
+  word-break: keep-all;
+}
+.clients-note::before {
+  content: '※ ';
+  color: var(--cat-yellow); font-weight: 800;
+}
+.clients-note strong {
+  color: var(--cat-black);
+  font-weight: 700;
+}
+
 @media (max-width: 700px) {
   .page-hero { padding: 60px 1.2rem 50px; }
   .page-hero h1 { font-size: 28px; }
-  .clients-section { padding: 40px 1.2rem; }
-  .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
-  .client-card { padding: 1.1rem 0.8rem; }
-  .client-card h3 { font-size: 13px; }
+  .clients-visual { padding: 40px 1rem 30px; }
+  .clients-visual h2 { font-size: 22px; }
+  .clients-list-section { padding: 50px 1rem 60px; }
+  .section-intro h2 { font-size: 22px; }
+  .cat-header { padding: 1rem 1.2rem; }
+  .cat-body { padding: 1.2rem 1.2rem; gap: 0.5rem; }
+  .client-chip { font-size: 12.5px; padding: 7px 11px; }
   .sub-nav-inner { padding: 0 0.5rem; }
   .sub-nav a { padding: 14px 16px; font-size: 12px; }
 }
@@ -425,8 +532,8 @@ h1, h2, h3, h4, h5, h6,
     <div class="page-hero-label">CLIENTS</div>
     <h1>주요 고객사</h1>
     <p class="lead">
-      대기업, 관공서, 선사 등 다양한 산업 분야의 고객사와 함께하고 있습니다.
-      국내 주요 화학·철강·중공업 그룹부터 공공기관, 해상 운용사까지 폭넓은 거래 관계를 유지하고 있습니다.
+      ㈜삼선엔지니어링은 35년간 석유화학·철강·발전·공공 분야의 주요 산업체와 거래를 이어왔습니다.
+      여수 본사를 거점으로 국내 주요 화학·철강·중공업 그룹부터 공공기관, 발전 공기업까지 폭넓은 거래 관계를 유지하고 있습니다.
     </p>
   </div>
 </section>
@@ -440,51 +547,117 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </nav>
 
-<section class="clients-section">
-  <div class="clients-inner">
+<!-- 비주얼 영역 -->
+<section class="clients-visual">
+  <div class="clients-visual-inner">
+    <div class="clients-visual-eyebrow">PARTNERS AT A GLANCE</div>
+    <h2>SAMSUN과 함께한 <em>주요 거래처</em></h2>
+    <p class="clients-visual-lead">
+      한 화면으로 보는 ㈜삼선엔지니어링의 주요 거래처입니다.
+      대기업·공공기관·발전 공기업·전문 화학사 등 다양한 산업 환경의 발전기·엔진 정비 경험이 축적되어 있습니다.
+    </p>
+    <img src="/img/clients/clients-overview.png" alt="㈜삼선엔지니어링 주요 거래처 — POSCO, LG화학, 한화솔루션, 롯데케미칼, 금호석유화학, BASF, OCI, 여천NCC, 한국남동발전, 한전KPS, 해양수산부, 국립공원공단, 관세청 등" class="clients-visual-img" loading="lazy">
+    <p class="clients-visual-note">상기 로고는 ㈜삼선엔지니어링의 거래 사실을 표시한 것으로, 각 로고의 권리는 해당 회사에 있습니다.</p>
+  </div>
+</section>
 
-    <!-- 대기업 -->
-    <div class="clients-cat-block">
-      <h2 class="clients-cat-title">대기업·그룹사</h2>
-      <div class="clients-grid">
-        <div class="client-card">
-          <h3>POSCO</h3>
-          <span class="en">포스코</span>
-        </div>
-        <div class="client-card">
-          <h3>LG 그룹</h3>
-        </div>
-        <div class="client-card">
-          <h3>한화 그룹</h3>
-        </div>
-        <div class="client-card">
-          <h3>롯데 그룹</h3>
-        </div>
-        <div class="client-card">
-          <h3>금호 그룹</h3>
-        </div>
-        <div class="client-card">
-          <h3>OCI</h3>
-        </div>
+<!-- 산업군별 텍스트 리스트 -->
+<section class="clients-list-section">
+  <div class="clients-list-inner">
+    <div class="section-intro">
+      <span class="eyebrow">BY INDUSTRY</span>
+      <h2>산업군별 거래처</h2>
+      <p>각 산업의 특성에 맞춘 정비 경험을 보유하고 있습니다. 산업군별 거래처는 다음과 같습니다.</p>
+    </div>
+
+    <!-- 01. 석유화학·정유 -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-num">01</div>
+        <div class="cat-name">석유화학·정유</div>
+        <div class="cat-count">16개사</div>
+      </div>
+      <div class="cat-body">
+        <span class="client-chip"><strong>롯데케미칼</strong></span>
+        <span class="client-chip"><strong>LG화학</strong></span>
+        <span class="client-chip"><strong>한화솔루션</strong></span>
+        <span class="client-chip"><strong>(주)한화</strong></span>
+        <span class="client-chip"><strong>한국바스프 BASF</strong></span>
+        <span class="client-chip"><strong>OCI</strong></span>
+        <span class="client-chip"><strong>여천NCC (YNCC)</strong></span>
+        <span class="client-chip"><strong>금호석유화학</strong></span>
+        <span class="client-chip"><strong>금호피앤비화학</strong></span>
+        <span class="client-chip"><strong>금호폴리켐</strong></span>
+        <span class="client-chip"><strong>롯데GS화학</strong></span>
+        <span class="client-chip"><strong>LOTTE MCC</strong></span>
+        <span class="client-chip"><strong>삼남석유화학</strong></span>
+        <span class="client-chip"><strong>DL Chemical</strong></span>
+        <span class="client-chip"><strong>H&amp;G Chemical</strong></span>
+        <span class="client-chip"><strong>GS칼텍스</strong></span>
       </div>
     </div>
 
-    <!-- 공공·해상 -->
-    <div class="clients-cat-block">
-      <h2 class="clients-cat-title">공공기관·해상</h2>
-      <div class="clients-grid">
-        <div class="client-card">
-          <h3>국립공원공단</h3>
-        </div>
-        <div class="client-card">
-          <h3>관공선·소방정</h3>
-        </div>
+    <!-- 02. 철강·제조 -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-num">02</div>
+        <div class="cat-name">철강·제조</div>
+        <div class="cat-count">3개사</div>
+      </div>
+      <div class="cat-body">
+        <span class="client-chip"><strong>POSCO 포스코</strong></span>
+        <span class="client-chip"><strong>포스코 MC머티리얼즈</strong></span>
+        <span class="client-chip"><strong>포스코퓨처엠</strong></span>
+      </div>
+    </div>
+
+    <!-- 03. 발전·에너지 -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-num">03</div>
+        <div class="cat-name">발전·에너지</div>
+        <div class="cat-count">2개사</div>
+      </div>
+      <div class="cat-body">
+        <span class="client-chip"><strong>한국남동발전 (KOEN)</strong></span>
+        <span class="client-chip"><strong>한전KPS</strong></span>
+      </div>
+    </div>
+
+    <!-- 04. 공공기관·관공서 -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-num">04</div>
+        <div class="cat-name">공공기관·관공서</div>
+        <div class="cat-count">7개</div>
+      </div>
+      <div class="cat-body">
+        <span class="client-chip"><strong>해양수산부</strong></span>
+        <span class="client-chip"><strong>관세청</strong></span>
+        <span class="client-chip"><strong>국립공원공단</strong></span>
+        <span class="client-chip"><strong>소방본부</strong></span>
+        <span class="client-chip"><strong>해양환경공단 (KOEM)</strong></span>
+        <span class="client-chip"><strong>전라남도</strong></span>
+        <span class="client-chip"><strong>광주광역시 동부지역본부</strong></span>
+      </div>
+    </div>
+
+    <!-- 05. 기타 산업 -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-num">05</div>
+        <div class="cat-name">기타 산업</div>
+        <div class="cat-count">2개사</div>
+      </div>
+      <div class="cat-body">
+        <span class="client-chip"><strong>LG 그룹</strong></span>
+        <span class="client-chip"><strong>한화에어로스페이스</strong></span>
       </div>
     </div>
 
     <div class="clients-note">
-      <strong>※</strong> 상기 고객사 외에도 다수의 대기업·선사·공공기관과 거래를 이어가고 있습니다.
-      개별 거래 내역은 별도 요청 시 안내해 드립니다.
+      상기 명단은 <strong>주요 거래처를 표시한 것</strong>이며, 그 외에도 다수의 산업체·선사·공공기관과 거래를 이어가고 있습니다.
+      특정 산업·고객 사례·세부 거래 내역이 필요하시면 직접 문의해 주시기 바랍니다.
     </div>
 
   </div>

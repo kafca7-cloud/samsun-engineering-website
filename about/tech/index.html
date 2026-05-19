@@ -436,6 +436,188 @@ h1, h2, h3, h4, h5, h6,
   .sub-nav-inner { padding: 0 0.5rem; }
   .sub-nav a { padding: 14px 16px; font-size: 12px; }
 }
+
+
+/* ─── 팀 블록 구조 (현장 엔지니어 / 기술영업) ─── */
+.team-block {
+  margin-bottom: 3rem;
+}
+.team-block:last-child {
+  margin-bottom: 0;
+}
+.team-header {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--cat-yellow);
+}
+.team-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--cat-yellow);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.team-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--cat-black);
+  letter-spacing: -0.3px;
+  margin: 0 0 0.3rem;
+}
+.team-sub {
+  font-size: 13px;
+  color: var(--cat-gray4, #555);
+  margin: 0;
+  font-weight: 500;
+}
+/* 국가 자격 구분선 */
+.engineer-quals .quals-divider {
+  list-style: none;
+  padding: 8px 0 4px 0 !important;
+  margin: 6px 0 4px 0;
+  border-top: 1px dashed var(--cat-border);
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cat-yellow) !important;
+}
+.engineer-quals .quals-divider::before {
+  display: none !important;
+}
+
+
+/* ─── 이수증 썸네일 그리드 ─── */
+.cert-thumbs {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--cat-border);
+}
+.cert-thumbs-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--cat-yellow);
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+.cert-thumbs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.cert-thumb {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--cat-gray2, #ddd);
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.2s;
+}
+.cert-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.cert-thumb:hover {
+  transform: scale(1.04);
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .cert-thumbs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ─── 보유 자격 통계 ─── */
+.quals-stats-section {
+  background: var(--cat-black);
+  color: var(--cat-white);
+  padding: 60px 2rem;
+}
+.quals-stats-inner { max-width: 1100px; margin: 0 auto; }
+.stats-header { margin-bottom: 2rem; }
+.stats-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cat-yellow);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.stats-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 2px;
+  background: var(--cat-yellow);
+}
+.stats-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  margin: 0;
+  color: var(--cat-white);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.stat-item {
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid var(--cat-yellow);
+  padding: 1.6rem 1.4rem;
+}
+.stat-num-big {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--cat-yellow);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-label-big {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cat-white);
+  margin-bottom: 0.5rem;
+}
+.stat-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  word-break: keep-all;
+}
+.quals-note {
+  margin-top: 2rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255,196,0,0.08);
+  border-left: 3px solid var(--cat-yellow);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  word-break: keep-all;
+}
+
+@media (max-width: 700px) {
+  .quals-stats-section { padding: 40px 1.2rem; }
+  .stats-title { font-size: 22px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-num-big { font-size: 30px; }
+}
 </style>
 </head>
 <body>
@@ -481,46 +663,133 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </nav>
 
-<!-- 핵심 엔지니어 -->
+<!-- 핵심 인력 — 현장 엔지니어 + 기술영업 -->
 <section class="engineers-section">
   <div class="engineers-inner">
-    <h2 class="section-title">핵심 엔지니어</h2>
-    <div class="engineers-grid">
-
-      <div class="engineer-card">
-        <h3 class="engineer-name">황경환 이사</h3>
-        <span class="engineer-career">경력 30년</span>
-        <p class="engineer-role">엔지니어 서비스 부문 총괄</p>
-        <ul class="engineer-quals">
-          <li>Marine&nbsp;Installation Diagnostics</li>
-          <li>D3600 Master&nbsp;Mechanic</li>
-          <li>Marine&nbsp;Engine System Troubleshooting</li>
-          <li>CAT 공인 엔지니어 과정 다수 이수</li>
-        </ul>
+    
+    <!-- 현장 엔지니어 -->
+    <div class="team-block">
+      <div class="team-header">
+        <div class="team-num">01</div>
+        <div>
+          <h2 class="team-title">현장 엔지니어</h2>
+          <p class="team-sub">발전기·엔진 정비 직접 수행</p>
+        </div>
       </div>
+      <div class="engineers-grid">
+        
+        <div class="engineer-card">
+          <h3 class="engineer-name">황경환 이사</h3>
+          <span class="engineer-career">경력 30년+</span>
+          <p class="engineer-role">엔지니어 서비스 부문 총괄</p>
+          <ul class="engineer-quals">
+            <li><strong>CAT D3600 Master&nbsp;Mechanic</strong></li>
+            <li>CAT Marine Installation Diagnostics</li>
+            <li>CAT Marine Engine Systems Troubleshooting</li>
+            <li>CAT Electronic Engine Troubleshooting</li>
+            <li>CAT C175 Engine Training</li>
+          </ul>
+          <div class="cert-thumbs">
+            <div class="cert-thumbs-title">보유 자격 5건</div>
+            <div class="cert-thumbs-grid">
+              <div class="cert-thumb" title="D3600 Master Mechanic"><img src="/img/certifications/hwang-01-d3600-master-mechanic.jpg" alt="D3600 Master Mechanic" loading="lazy"></div>
+              <div class="cert-thumb" title="Electronic Engine TS"><img src="/img/certifications/hwang-02-electronic-engine.jpg" alt="Electronic Engine TS" loading="lazy"></div>
+              <div class="cert-thumb" title="Marine Engine TS"><img src="/img/certifications/hwang-03-marine-engine.jpg" alt="Marine Engine TS" loading="lazy"></div>
+              <div class="cert-thumb" title="Marine Installation"><img src="/img/certifications/hwang-04-marine-installation.jpg" alt="Marine Installation" loading="lazy"></div>
+              <div class="cert-thumb" title="C175 Engine Training"><img src="/img/certifications/hwang-05-c175.jpg" alt="C175 Engine Training" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
 
-      <div class="engineer-card">
-        <h3 class="engineer-name">김상현 부장</h3>
-        <span class="engineer-career">경력 22년</span>
-        <p class="engineer-role">해상엔진 정비 및 전자식 엔진 서비스 총괄</p>
-        <ul class="engineer-quals">
-          <li>AMD Master&nbsp;Mechanic</li>
-          <li>MCS Troubleshooting</li>
-          <li>MID · MEST 등 CAT 공인 자격 다수 이수</li>
-        </ul>
+        <div class="engineer-card">
+          <h3 class="engineer-name">김상현 부장</h3>
+          <span class="engineer-career">경력 22년+</span>
+          <p class="engineer-role">해상엔진 정비 · 전자식 엔진 서비스 총괄</p>
+          <ul class="engineer-quals">
+            <li><strong>CAT MCS Troubleshooting</strong></li>
+            <li>CAT Marine Engine Systems Troubleshooting</li>
+            <li>MCS Troubleshooting 심화 이수</li>
+          </ul>
+          <div class="cert-thumbs">
+            <div class="cert-thumbs-title">보유 자격 3건</div>
+            <div class="cert-thumbs-grid">
+              <div class="cert-thumb" title="CAT MCS Troubleshooting"><img src="/img/certifications/kim-sh-01-mcs.jpg" alt="CAT MCS Troubleshooting" loading="lazy"></div>
+              <div class="cert-thumb" title="Marine Engine TS"><img src="/img/certifications/kim-sh-02-marine.jpg" alt="Marine Engine TS" loading="lazy"></div>
+              <div class="cert-thumb" title="MCS Advanced"><img src="/img/certifications/kim-sh-03-mcs-advanced.jpg" alt="MCS Advanced" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="engineer-card">
+          <h3 class="engineer-name">김영일 과장</h3>
+          <span class="engineer-career">경력 20년+</span>
+          <p class="engineer-role">시운전 · 긴급 대응 부문 총괄</p>
+          <ul class="engineer-quals">
+            <li>Engine System Troubleshooting</li>
+            <li>CAT 공인 정비 교육 다수 이수</li>
+          </ul>
+        </div>
+
       </div>
-
-      <div class="engineer-card">
-        <h3 class="engineer-name">김영일 과장</h3>
-        <span class="engineer-career">경력 20년</span>
-        <p class="engineer-role">시운전 및 긴급 대응 부문 총괄</p>
-        <ul class="engineer-quals">
-          <li>Engine System Troubleshooting</li>
-          <li>CAT 공인 정비 교육 다수 이수</li>
-        </ul>
-      </div>
-
     </div>
+
+    <!-- 기술영업 -->
+    <div class="team-block">
+      <div class="team-header">
+        <div class="team-num">02</div>
+        <div>
+          <h2 class="team-title">기술영업</h2>
+          <p class="team-sub">기술 기반 영업 · 고객 솔루션 컨설팅</p>
+        </div>
+      </div>
+      <div class="engineers-grid">
+
+        <div class="engineer-card">
+          <h3 class="engineer-name">유미현 이사</h3>
+          <span class="engineer-career">기술영업</span>
+          <p class="engineer-role">발전기·엔진 영업 총괄</p>
+          <ul class="engineer-quals">
+            <li>CAT Electric Power 2 이수</li>
+            <li>CAT Marine Engine Systems Troubleshooting 이수</li>
+          </ul>
+          <div class="cert-thumbs">
+            <div class="cert-thumbs-title">보유 자격 2건</div>
+            <div class="cert-thumbs-grid">
+              <div class="cert-thumb" title="CAT Electric Power 2"><img src="/img/certifications/yoo-01-electric-power2.jpg" alt="CAT Electric Power 2" loading="lazy"></div>
+              <div class="cert-thumb" title="Marine Engine TS"><img src="/img/certifications/yoo-02-marine.jpg" alt="Marine Engine TS" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="engineer-card">
+          <h3 class="engineer-name">임홍진 부장</h3>
+          <span class="engineer-career">기술영업</span>
+          <p class="engineer-role">발전기·엔진 영업 · 기술 컨설팅</p>
+          <ul class="engineer-quals">
+            <li>CAT Electric Power 2 이수</li>
+            <li>CAT Marine Engine Systems Troubleshooting 이수</li>
+            <li>CAT C175 Engine Training 이수</li>
+            <li class="quals-divider">국가 자격</li>
+            <li><strong>전기공사기사</strong></li>
+            <li><strong>전기기사</strong></li>
+            <li>전기기능사</li>
+          </ul>
+          <div class="cert-thumbs">
+            <div class="cert-thumbs-title">보유 자격 6건</div>
+            <div class="cert-thumbs-grid">
+              <div class="cert-thumb" title="CAT Electric Power 2"><img src="/img/certifications/lim-01-electric-power2.jpg" alt="CAT Electric Power 2" loading="lazy"></div>
+              <div class="cert-thumb" title="Marine Engine TS"><img src="/img/certifications/lim-02-marine.jpg" alt="Marine Engine TS" loading="lazy"></div>
+              <div class="cert-thumb" title="C175 Engine Training"><img src="/img/certifications/lim-03-c175.jpg" alt="C175 Engine Training" loading="lazy"></div>
+              <div class="cert-thumb" title="전기공사기사"><img src="/img/certifications/lim-04-electrical-construction.jpg" alt="전기공사기사" loading="lazy"></div>
+              <div class="cert-thumb" title="전기기사"><img src="/img/certifications/lim-06-electrical-engineer.jpg" alt="전기기사" loading="lazy"></div>
+              <div class="cert-thumb" title="전기기능사"><img src="/img/certifications/lim-05-electrical-technician.jpg" alt="전기기능사" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -583,6 +852,36 @@ h1, h2, h3, h4, h5, h6,
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- 보유 자격 통계 -->
+<section class="quals-stats-section">
+  <div class="quals-stats-inner">
+    <div class="stats-header">
+      <span class="stats-eyebrow">QUALIFICATIONS</span>
+      <h2 class="stats-title">보유 자격 현황</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num-big">13건</div>
+        <div class="stat-label-big">CAT 공인 교육 이수</div>
+        <div class="stat-sub">Master Mechanic, MCS, Marine Engine, Electric Power 등</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-big">3건</div>
+        <div class="stat-label-big">국가 자격</div>
+        <div class="stat-sub">전기공사기사, 전기기사, 전기기능사</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-big">5명</div>
+        <div class="stat-label-big">핵심 인력</div>
+        <div class="stat-sub">현장 엔지니어 3명 + 기술영업 2명</div>
+      </div>
+    </div>
+    <p class="quals-note">
+      ※ 위 이수증·자격증 이미지는 보안을 위해 가공된 썸네일이며, 원본 인증서는 NDA 후 제공 가능합니다.
+    </p>
   </div>
 </section>
 

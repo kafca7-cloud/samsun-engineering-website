@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>인증·자격 | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="㈜삼선엔지니어링 보유 인증 — ISO 9001(품질), ISO 14001(환경), ISO 45001(안전), 등록 특허 2건, 전기공사업 면허. 공식 인증 기반 신뢰할 수 있는 발전기·엔진 전문 기업.">
+<meta name="description" content="㈜삼선엔지니어링 보유 인증 — ISO 9001/14001/45001 국제 표준, 산업통상자원부 뿌리기업확인서, 항만운송관련사업(선박수리업) 등록증, 공장등록증, 전기공사업 면허, 등록 특허 2건. 정부 인증 기반 신뢰할 수 있는 발전기·엔진 전문 기업.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.samsuneng.co.kr/about/certifications/">
 
@@ -410,6 +410,81 @@ h1, h2, h3, h4, h5, h6,
   .sub-nav-inner { padding: 0 0.5rem; }
   .sub-nav a { padding: 14px 16px; font-size: 12px; }
 }
+
+
+/* ─── 정부 인증 카드 ─── */
+.gov-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.gov-card {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 1.8rem 1.6rem;
+  border-top: 4px solid var(--cat-yellow);
+}
+.gov-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--cat-yellow);
+  background: var(--cat-black);
+  padding: 4px 10px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.gov-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin: 0 0 0.7rem;
+  letter-spacing: -0.3px;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+.gov-card h3 small {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cat-gray4, #555);
+  margin-top: 2px;
+}
+.gov-card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--cat-gray4, #555);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.cert-note {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 1.4rem 1.6rem;
+  border-left: 4px solid var(--cat-yellow);
+  margin-top: 2rem;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cat-gray4, #555);
+  word-break: keep-all;
+}
+.cert-note::before {
+  content: '※ ';
+  color: var(--cat-yellow);
+  font-weight: 800;
+}
+.cert-note a {
+  color: var(--cat-black);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--cat-yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .gov-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -458,7 +533,7 @@ h1, h2, h3, h4, h5, h6,
 <section class="cert-section">
   <div class="cert-inner">
 
-    <!-- ISO 국제 표준 인증 -->
+    <!-- 01. 국제 표준 인증 -->
     <div class="cert-cat-block">
       <h2 class="cert-cat-title">국제 표준 인증</h2>
       <div class="iso-grid">
@@ -480,36 +555,65 @@ h1, h2, h3, h4, h5, h6,
       </div>
     </div>
 
-    <!-- 특허 + 면허 -->
+    <!-- 02. 정부 인증 (신규) -->
     <div class="cert-cat-block">
-      <h2 class="cert-cat-title">등록 특허 및 면허</h2>
+      <h2 class="cert-cat-title">정부 인증</h2>
+      <div class="gov-grid">
+        <div class="gov-card">
+          <span class="gov-tag">산업통상자원부</span>
+          <h3>뿌리기업확인서</h3>
+          <p>주조·금형·소성가공·용접·표면처리·열처리 등 뿌리산업 분야 전문성을 정부가 공식 인증한 기업.</p>
+        </div>
+        <div class="gov-card">
+          <span class="gov-tag">국토교통부</span>
+          <h3>항만운송관련사업<br><small>(선박수리업) 등록증</small></h3>
+          <p>선박 수리·정비 사업 공식 등록. 관공선 및 상선 정비 사업 수행 자격.</p>
+        </div>
+        <div class="gov-card">
+          <span class="gov-tag">전라남도</span>
+          <h3>공장등록증</h3>
+          <p>제조 사업 공식 등록 — 자체 가공·제작 시설 보유 증빙.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03. 등록 면허·자격 -->
+    <div class="cert-cat-block">
+      <h2 class="cert-cat-title">등록 면허·자격</h2>
       <div class="others-grid">
-
-        <div class="other-card">
-          <span class="other-cat">등록 특허</span>
-          <h3>특허 등록 (제1호)</h3>
-          <p>제10-1689014호</p>
-        </div>
-
-        <div class="other-card">
-          <span class="other-cat">등록 특허</span>
-          <h3>특허 등록 (제2호)</h3>
-          <p>제10-1902987호</p>
-        </div>
-
         <div class="other-card">
           <span class="other-cat">전기공사업</span>
           <h3>전기공사업 면허</h3>
           <p>전남-02289호</p>
         </div>
-
         <div class="other-card">
           <span class="other-cat">CAT 공인</span>
           <h3>CAT 공인 대리점</h3>
           <p>HAEIN 산하 육·해상 인증</p>
         </div>
-
       </div>
+    </div>
+
+    <!-- 04. 등록 특허 -->
+    <div class="cert-cat-block">
+      <h2 class="cert-cat-title">등록 특허</h2>
+      <div class="others-grid">
+        <div class="other-card">
+          <span class="other-cat">등록 특허</span>
+          <h3>특허 등록 (제1호)</h3>
+          <p>제10-1689014호</p>
+        </div>
+        <div class="other-card">
+          <span class="other-cat">등록 특허</span>
+          <h3>특허 등록 (제2호)</h3>
+          <p>제10-1902987호</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 안내 -->
+    <div class="cert-note">
+      공식 인증서 자료가 필요하시면 <a href="/resources/library/">자료실</a>에서 다운로드 받으시거나 직접 문의해 주세요.
     </div>
 
   </div>

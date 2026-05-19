@@ -48,5 +48,55 @@
     "size": "174KB",
     "date": "2026-05-19",
     "published": false
+  },
+  {
+    "title": "뿌리기업확인서",
+    "category": "인증서",
+    "description": "산업통상자원부 발급 뿌리기업확인서 (유효기간 2025.08.05 ~ 2028.08.04).",
+    "url": "/files/library/root-company-cert.pdf",
+    "type": "PDF",
+    "size": "—",
+    "date": "2026-05-19",
+    "published": false
+  },
+  {
+    "title": "항만운송관련사업(선박수리업) 등록증",
+    "category": "인증서",
+    "description": "국토교통부 발급 항만운송관련사업 등록증 (선박수리업).",
+    "url": "/files/library/marine-repair-registration.pdf",
+    "type": "PDF",
+    "size": "—",
+    "date": "2026-05-19",
+    "published": false
+  },
+  {
+    "title": "공장등록증",
+    "category": "인증서",
+    "description": "전라남도 발급 공장등록증명 (자체 가공·제작 시설 보유 증빙).",
+    "url": "/files/library/factory-registration.pdf",
+    "type": "PDF",
+    "size": "—",
+    "date": "2026-05-19",
+    "published": false
+  },
+  {
+    "title": "특허 등록증 (제10-1689014호)",
+    "category": "인증서",
+    "description": "등록 특허 제10-1689014호.",
+    "url": "/files/library/patent-1689014.pdf",
+    "type": "PDF",
+    "size": "—",
+    "date": "2026-05-19",
+    "published": false
+  },
+  {
+    "title": "특허 등록증 (제10-1902987호)",
+    "category": "인증서",
+    "description": "등록 특허 제10-1902987호.",
+    "url": "/files/library/patent-1902987.pdf",
+    "type": "PDF",
+    "size": "—",
+    "date": "2026-05-19",
+    "published": false
   }
 ]

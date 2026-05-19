@@ -450,8 +450,6 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   gap: 1.4rem;
   margin-bottom: 1.6rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--cat-yellow);
 }
 .team-num {
   font-size: 36px;
@@ -617,6 +615,26 @@ h1, h2, h3, h4, h5, h6,
   .stats-title { font-size: 22px; }
   .stats-grid { grid-template-columns: 1fr; }
   .stat-num-big { font-size: 30px; }
+}
+
+.stat-num-big .stat-num-suffix {
+  font-size: 24px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+  margin-left: 2px;
+  vertical-align: top;
+}
+
+.stat-keyword {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--cat-yellow);
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 700px) {
+  .stat-keyword { font-size: 28px; }
 }
 </style>
 </head>
@@ -864,23 +882,25 @@ h1, h2, h3, h4, h5, h6,
     </div>
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-num-big">13건</div>
-        <div class="stat-label-big">CAT 공인 교육 이수</div>
-        <div class="stat-sub">Master Mechanic, MCS, Marine Engine, Electric Power 등</div>
+        <div class="stat-keyword">CAT</div>
+        <div class="stat-label-big">공인 교육 이수증 다수</div>
+        <div class="stat-sub">Master Mechanic · MCS Troubleshooting · Marine Engine · Electric Power · C175 Engine Training 등</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num-big">3건</div>
-        <div class="stat-label-big">국가 자격</div>
-        <div class="stat-sub">전기공사기사, 전기기사, 전기기능사</div>
+        <div class="stat-keyword">국가</div>
+        <div class="stat-label-big">기술 자격 다수</div>
+        <div class="stat-sub">전기공사기사 · 전기기사 · 전기기능사 · 선박 기능사 등 산업 기술 자격</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num-big">5명</div>
-        <div class="stat-label-big">핵심 인력</div>
-        <div class="stat-sub">현장 엔지니어 3명 + 기술영업 2명</div>
+        <div class="stat-keyword">전문</div>
+        <div class="stat-label-big">핵심 인력 운영</div>
+        <div class="stat-sub">현장 엔지니어 · 기술영업 · 사원·대리급 정비 인력으로 구성</div>
       </div>
     </div>
     <p class="quals-note">
-      ※ 위 이수증·자격증 이미지는 보안을 위해 가공된 썸네일이며, 원본 인증서는 NDA 후 제공 가능합니다.
+      ※ 위에 표시된 이수증·자격증은 핵심 인력의 <strong>대표 자격</strong>입니다.
+      이 외에도 사원·대리급 인력이 CAT 공인 교육과 산업 기술 자격을 다수 보유하고 있습니다.<br>
+      ※ 이수증·자격증 이미지는 보안을 위해 가공된 썸네일이며, 원본 인증서는 NDA 후 제공 가능합니다.
     </p>
   </div>
 </section>

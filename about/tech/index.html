@@ -636,6 +636,86 @@ h1, h2, h3, h4, h5, h6,
 @media (max-width: 700px) {
   .stat-keyword { font-size: 28px; }
 }
+
+
+/* ─── 교육센터 — 헤더 + 지도 ─── */
+.training-header {
+  margin-bottom: 2rem;
+}
+.training-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cat-black);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.training-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 2px;
+  background: var(--cat-yellow);
+}
+.training-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--cat-black);
+  letter-spacing: -0.3px;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.training-map {
+  background: var(--cat-white);
+  padding: 1.6rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--cat-yellow);
+  text-align: center;
+}
+.training-map img {
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 카드 — 천안(국내) 강조 */
+.training-card.kr {
+  border-left: 4px solid var(--cat-yellow);
+  background: linear-gradient(to right, rgba(255,196,0,0.06), var(--cat-white) 60%);
+}
+.training-card.kr .training-flag {
+  background: var(--cat-yellow);
+  color: var(--cat-black);
+}
+.training-info .city-en {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cat-gray3);
+  margin-left: 4px;
+}
+.training-info h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cat-black);
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.2px;
+}
+.training-info .label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cat-gray4, #555);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 700px) {
+  .training-title { font-size: 22px; }
+  .training-map { padding: 1rem; }
+}
 </style>
 </head>
 <body>
@@ -814,18 +894,30 @@ h1, h2, h3, h4, h5, h6,
 <!-- CAT 공인 교육센터 -->
 <section class="training-section">
   <div class="training-inner">
-    <h2 class="section-title">국내외 CAT 공인 교육센터 이수 현황</h2>
-    <p class="training-intro">
-      ㈜삼선엔지니어링 엔지니어들은 국내 천안 교육센터를 비롯해 미국, 스페인, 호주, UAE 등
-      전 세계 주요 CAT 공인 교육센터에서 정식 교육 과정을 이수했습니다.
-    </p>
+    <div class="training-header">
+      <span class="training-eyebrow">GLOBAL TRAINING</span>
+      <h2 class="training-title">국내외 CAT 공인 교육센터 이수 현황</h2>
+      <p class="training-intro">
+        ㈜삼선엔지니어링 엔지니어들은 국내 천안 교육센터를 비롯해 미국·스페인·호주·UAE 등
+        전 세계 주요 CAT 공인 교육센터에서 정식 교육 과정을 이수했습니다.
+      </p>
+    </div>
+
+    <!-- 세계지도 이미지 -->
+    <div class="training-map">
+      <img src="/img/tech/training-centers-map.png" 
+           alt="㈜삼선엔지니어링 엔지니어 CAT 공인 교육센터 이수 지역 - 국내 천안, 미국 Peoria/Miami, 스페인 Malaga, UAE Dubai, 호주 Melbourne" 
+           loading="lazy">
+    </div>
+
+    <!-- 6개 센터 카드 (보조 정보) -->
     <div class="training-grid">
 
-      <div class="training-card">
+      <div class="training-card kr">
         <div class="training-flag kr">KR</div>
         <div class="training-info">
-          <h4>천안 (Cheonan)</h4>
-          <span class="label">국내</span>
+          <h4>천안 <span class="city-en">(Cheonan)</span></h4>
+          <span class="label">국내 교육센터</span>
         </div>
       </div>
 
@@ -833,7 +925,7 @@ h1, h2, h3, h4, h5, h6,
         <div class="training-flag">US</div>
         <div class="training-info">
           <h4>Peoria, USA</h4>
-          <span class="label">해외</span>
+          <span class="label">해외 교육센터</span>
         </div>
       </div>
 
@@ -841,7 +933,7 @@ h1, h2, h3, h4, h5, h6,
         <div class="training-flag">US</div>
         <div class="training-info">
           <h4>Miami, USA</h4>
-          <span class="label">해외</span>
+          <span class="label">해외 교육센터</span>
         </div>
       </div>
 
@@ -849,15 +941,7 @@ h1, h2, h3, h4, h5, h6,
         <div class="training-flag">ES</div>
         <div class="training-info">
           <h4>Malaga, Spain</h4>
-          <span class="label">해외</span>
-        </div>
-      </div>
-
-      <div class="training-card">
-        <div class="training-flag">AU</div>
-        <div class="training-info">
-          <h4>Melbourne, Australia</h4>
-          <span class="label">해외</span>
+          <span class="label">해외 교육센터</span>
         </div>
       </div>
 
@@ -865,11 +949,20 @@ h1, h2, h3, h4, h5, h6,
         <div class="training-flag">AE</div>
         <div class="training-info">
           <h4>Dubai, UAE</h4>
-          <span class="label">해외</span>
+          <span class="label">해외 교육센터</span>
+        </div>
+      </div>
+
+      <div class="training-card">
+        <div class="training-flag">AU</div>
+        <div class="training-info">
+          <h4>Melbourne, Australia</h4>
+          <span class="label">해외 교육센터</span>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
 

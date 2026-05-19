@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자료실 | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="㈜삼선엔지니어링 자료실 — 회사 소개서, 제품 카탈로그, 기술 자료, 인증서 등 주요 자료를 다운로드 받으실 수 있습니다.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.samsuneng.co.kr/resources/library/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="자료실 | SAMSUN 삼선엔지니어링">
+<meta property="og:description" content="회사 소개서, 제품 카탈로그, 기술 자료, 인증서 등.">
+<meta property="og:url" content="https://www.samsuneng.co.kr/resources/library/">
+<meta property="og:locale" content="ko_KR">
+
+<style>
+/* ============================================================
+   SAMSUN 공통 디자인 토큰
+   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
+   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
+   ============================================================ */
+
+:root {
+  /* 색상 */
+  --cat-yellow: #FFC400;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-yellow-soft: rgba(255,196,0,0.06);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-white: #ffffff;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-gray5: #2a2a2a;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+
+  /* 레이아웃 */
+  --max-w: 1280px;
+
+  /* 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── 기본 리셋 ─── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 64px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--cat-black);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─── HERO 영역 공통 스타일 ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-stripe {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
+  z-index: 2;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
+
+/* ─── CTA 섹션 공통 스타일 ─── */
+.cta-section {
+  background: var(--cat-black); color: var(--cat-white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow, .cta-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.cta-title em { color: var(--cat-yellow); font-style: normal; }
+.cta-sub, .cta-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 16px 32px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  border: 1px solid transparent; cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cat-yellow); color: var(--cat-black);
+}
+.btn-primary:hover { background: #e6b000; }
+.btn-secondary {
+  background: transparent; color: var(--cat-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  border-color: var(--cat-yellow); color: var(--cat-yellow);
+}
+
+/* ─── 모바일 반응형 ─── */
+@media (max-width: 560px) {
+  body { padding-top: 56px; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
+  .hero { padding: 110px 1rem 60px; }
+  .cta-section { padding: 60px 1rem; }
+  .cta-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+
+/* ─── HERO ─── */
+.page-hero {
+  background: var(--cat-black);
+  color: var(--cat-white);
+  padding: 90px 2rem 70px;
+  border-left: 6px solid var(--cat-yellow);
+}
+.page-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.page-hero-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--cat-yellow);
+  margin-bottom: 1rem;
+}
+.page-hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  letter-spacing: -0.5px;
+}
+.page-hero p.lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.8);
+  max-width: 720px;
+  word-break: keep-all;
+}
+
+/* ─── 콘텐츠 영역 ─── */
+.library-section {
+  background: var(--cat-white);
+  padding: 80px 2rem;
+}
+.library-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.library-empty {
+  text-align: center;
+  padding: 60px 2rem;
+  background: var(--cat-gray1, #f5f5f5);
+  border-left: 4px solid var(--cat-yellow);
+}
+.library-empty-icon {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+.library-empty h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.3px;
+}
+.library-empty p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cat-gray4, #555);
+  margin: 0 auto;
+  max-width: 540px;
+  word-break: keep-all;
+}
+
+/* 추후 자료 카드 스타일 (현재는 사용 안 함, 미리 정의) */
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.lib-card {
+  background: var(--cat-white);
+  border: 1px solid var(--cat-border);
+  padding: 1.8rem 1.4rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-top: 3px solid var(--cat-yellow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.lib-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.lib-card-icon {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+.lib-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+}
+.lib-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cat-gray4, #555);
+  margin-bottom: 1rem;
+  word-break: keep-all;
+}
+.lib-card-meta {
+  font-size: 11px;
+  color: var(--cat-gray3);
+  display: flex;
+  gap: 8px;
+}
+.lib-card-arrow {
+  color: var(--cat-yellow);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .lib-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .page-hero { padding: 60px 1.2rem 50px; }
+  .page-hero h1 { font-size: 28px; }
+  .library-section { padding: 50px 1.2rem; }
+  .library-empty { padding: 40px 1.4rem; }
+  .lib-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="home-btn">
+      <span class="arrow">←</span>
+      <span>홈으로</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">LIBRARY</div>
+    <h1>자료실</h1>
+    <p class="lead">
+      회사 소개서, 제품 카탈로그, 기술 자료, 인증서 등 ㈜삼선엔지니어링의 주요 자료를 안내합니다.
+    </p>
+  </div>
+</section>
+
+<!-- 자료 목록 (현재 비어있음 — 준비 중) -->
+<section class="library-section">
+  <div class="library-inner">
+    <div class="library-empty">
+      <div class="library-empty-icon">📚</div>
+      <h2>자료실 준비 중입니다</h2>
+      <p>
+        회사 소개서, 카탈로그, 기술 자료 등 곧 다운로드 가능한 형태로 준비하겠습니다.<br>
+        필요한 자료는 전화(061-642-1247) 또는 문의 폼으로 요청해 주세요.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 
+  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
+  페이지별 변수 (모두 기본값 있음):
+    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
+    cta_title        : 큰 제목
+    cta_sub          : 부제·설명
+    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
+    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
+    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
+    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
+-->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">추가 문의</div>
+    <h2 class="cta-title">필요한 자료가 따로 있으신가요?</h2>
+    <p class="cta-sub">특정 모델·서비스에 대한 자료는 직접 요청 주시면 안내해 드립니다.</p>
+    <div class="cta-actions">
+      <a href="tel:0616421247" class="btn btn-primary">
+        ☎ 자료 요청하기 (061-642-1247)
+      </a>
+      <a href="/contact/" class="btn btn-secondary">
+        📝 자료 요청 폼 작성하기
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>전화 상담</span>
+  </a>
+  <a href="/contact/" class="mcb-btn mcb-mail">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>이메일 문의</span>
+  </a>
+</div>
+
+
+</body>
+</html>

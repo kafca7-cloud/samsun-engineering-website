@@ -740,6 +740,13 @@ section { padding: 100px 2rem; }
   .cta-button { padding: 18px 28px; font-size: 1rem; }
   .cta-phone { font-size: 1.25rem; }
 }
+
+  /* 두 번째 lead 단락 — 첫 번째와 시각적 간격 + 약간 작게 */
+  .hero .lead + .lead-secondary {
+    margin-top: 1.2rem;
+    font-size: 16px;
+    opacity: 0.95;
+  }
 </style>
 
 <!-- 공통 디자인 토큰 (build.js가 자동 인라인) -->
@@ -1027,11 +1034,13 @@ h1, h2, h3, h4, h5, h6,
   <div class="hero-stripe"></div>
   <div class="hero-inner">
     <span class="hero-label">EMERGENCY GENERATOR INSPECTION</span>
-    <h1>기동 테스트만으로는<br><em>충분하지 않습니다</em></h1>
+    <h1>기동 테스트만으로는<br><em>확인하기 어려운 문제가 있습니다</em></h1>
     <p class="lead">
-      실제 비상 상황에서 발전기가 정상 출력으로 안정적으로 운전될지, Run Test 한 번으로는 알 수 없습니다.
-      CAT ET 전자식 분석과 SOS 오일 분석을 결합한 <strong>진단 기반 정기점검</strong>으로
-      잠재 결함을 사전에 발견하고 비상시 신뢰성을 확보합니다.
+      월 1회 단순 무부하 운전만으로는 센서 이상, 윤활 상태, 내부 마모, 오염도, 장기 운전 안정성을 충분히 판단하기 어렵습니다.
+    </p>
+    <p class="lead lead-secondary">
+      ㈜삼선엔지니어링은 <strong>CAT ET 전자식 진단</strong>, <strong>SOS 오일 분석</strong>, 점검 리포트를 기반으로
+      비상발전기의 잠재 리스크를 사전에 확인하고 비상 시 신뢰성을 확보합니다.
     </p>
     <div class="hero-stats">
       <div>

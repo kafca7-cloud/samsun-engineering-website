@@ -1402,6 +1402,44 @@ nav.scrolled { box-shadow: 0 1px 0 var(--cat-gray2) !important; }
 }
 .svc-card::after { display: none; }
 
+/* ━━━ 안전장치: 카드 내부 콘텐츠 명시적 보호 ━━━ */
+.svc-card > h3 {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--cat-black);
+  margin: 0.4rem 0 0.8rem;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+.svc-card > p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: var(--cat-gray4, #555);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  word-break: keep-all;
+}
+/* 이미지 wrapper의 zindex로 다른 콘텐츠 가리지 않게 */
+.svc-img-wrap {
+  position: relative;
+  z-index: 1;
+}
+/* 이미지가 카드 padding 영역 밖으로 비집고 나가지 않도록 */
+.svc-img-frame {
+  max-width: 100%;
+}
+.svc-img-frame img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* Tag pills — sharp corners + uppercase */
 .tag, .cert-tag, .type-badge, .iso-pill {
   border-radius: 0 !important;

@@ -146,8 +146,17 @@ function walkSrc(dir, callback) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       walkSrc(fullPath, callback);
-    } else if (entry.name.endsWith('.html')) {
+    } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
+      // _로 시작하는 파일(예: _template.html)은 빌드 제외
       callback(fullPath);
+    } else if (entry.name.endsWith('.json')) {
+      // JSON 파일은 그대로 복사 (공지/자료 목록 데이터)
+      const relPath = path.relative(SRC, fullPath);
+      const destPath = path.join(ROOT, relPath);
+      const destDir = path.dirname(destPath);
+      if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+      fs.copyFileSync(fullPath, destPath);
+      if (VERBOSE) console.log(`  📋 ${relPath} (JSON 복사)`);
     }
   }
 }

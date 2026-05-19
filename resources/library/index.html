@@ -277,133 +277,124 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-/* ─── HERO ─── */
 .page-hero {
   background: var(--cat-black);
   color: var(--cat-white);
   padding: 90px 2rem 70px;
   border-left: 6px solid var(--cat-yellow);
 }
-.page-hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
+.page-hero-inner { max-width: 1100px; margin: 0 auto; }
 .page-hero-label {
   display: inline-block;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: var(--cat-yellow);
-  margin-bottom: 1rem;
+  font-size: 11px; font-weight: 800; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
 }
 .page-hero h1 {
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0 0 1rem;
-  letter-spacing: -0.5px;
+  font-size: 40px; font-weight: 800; line-height: 1.25;
+  margin: 0 0 1rem; letter-spacing: -0.5px;
 }
 .page-hero p.lead {
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.8);
-  max-width: 720px;
-  word-break: keep-all;
+  font-size: 16px; line-height: 1.8;
+  color: rgba(255,255,255,0.8); max-width: 720px; word-break: keep-all;
 }
 
-/* ─── 콘텐츠 영역 ─── */
-.library-section {
-  background: var(--cat-white);
-  padding: 80px 2rem;
+.lib-filter { background: var(--cat-white); padding: 32px 2rem 0; }
+.filter-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; gap: 8px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--cat-border); padding-bottom: 20px;
 }
-.library-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+.filter-btn {
+  background: var(--cat-white); color: var(--cat-gray4, #555);
+  border: 1px solid var(--cat-border);
+  padding: 8px 16px; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
 }
-.library-empty {
-  text-align: center;
-  padding: 60px 2rem;
-  background: var(--cat-gray1, #f5f5f5);
-  border-left: 4px solid var(--cat-yellow);
-}
-.library-empty-icon {
-  font-size: 48px;
-  margin-bottom: 1rem;
-}
-.library-empty h2 {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--cat-black);
-  margin: 0 0 0.8rem;
-  letter-spacing: -0.3px;
-}
-.library-empty p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--cat-gray4, #555);
-  margin: 0 auto;
-  max-width: 540px;
-  word-break: keep-all;
+.filter-btn:hover { background: var(--cat-gray1, #f5f5f5); color: var(--cat-black); }
+.filter-btn.active {
+  background: var(--cat-black); color: var(--cat-yellow); border-color: var(--cat-black);
 }
 
-/* 추후 자료 카드 스타일 (현재는 사용 안 함, 미리 정의) */
+.lib-section { background: var(--cat-white); padding: 32px 2rem 80px; }
+.lib-inner { max-width: 1100px; margin: 0 auto; }
+
 .lib-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
 }
+
 .lib-card {
   background: var(--cat-white);
   border: 1px solid var(--cat-border);
-  padding: 1.8rem 1.4rem;
-  text-decoration: none;
-  color: inherit;
-  display: block;
+  padding: 1.8rem 1.4rem 1.4rem;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
   border-top: 3px solid var(--cat-yellow);
   transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 200px;
 }
 .lib-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
-.lib-card-icon {
-  font-size: 32px;
+.lib-card-cat {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 1px; color: var(--cat-yellow);
+  background: var(--cat-black); padding: 3px 10px;
+  text-transform: uppercase; align-self: flex-start;
   margin-bottom: 1rem;
 }
 .lib-card h3 {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--cat-black);
-  margin: 0 0 0.5rem;
-  letter-spacing: -0.3px;
-  word-break: keep-all;
+  font-size: 16px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 0.6rem;
+  letter-spacing: -0.3px; word-break: keep-all; line-height: 1.4;
 }
 .lib-card-desc {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 13px; line-height: 1.6;
   color: var(--cat-gray4, #555);
-  margin-bottom: 1rem;
-  word-break: keep-all;
+  margin: 0 0 1rem; word-break: keep-all;
+  flex: 1;
+}
+.lib-card-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 0.8rem; border-top: 1px solid var(--cat-border);
 }
 .lib-card-meta {
-  font-size: 11px;
-  color: var(--cat-gray3);
-  display: flex;
-  gap: 8px;
+  font-size: 11px; color: var(--cat-gray3);
+  display: flex; gap: 10px; align-items: center;
 }
 .lib-card-arrow {
-  color: var(--cat-yellow);
-  font-weight: 800;
+  font-size: 14px; font-weight: 800; color: var(--cat-black);
+}
+.lib-card:hover .lib-card-arrow { color: var(--cat-yellow); }
+
+.lib-empty {
+  text-align: center; padding: 60px 2rem;
+  background: var(--cat-gray1, #f5f5f5); border-left: 4px solid var(--cat-yellow);
+}
+.lib-empty-icon { font-size: 48px; margin-bottom: 1rem; }
+.lib-empty h2 {
+  font-size: 24px; font-weight: 800; color: var(--cat-black);
+  margin: 0 0 0.8rem; letter-spacing: -0.3px;
+}
+.lib-empty p {
+  font-size: 15px; line-height: 1.7; color: var(--cat-gray4, #555);
+  margin: 0 auto; max-width: 540px; word-break: keep-all;
+}
+
+.lib-loading {
+  text-align: center; padding: 40px 2rem;
+  color: var(--cat-gray3); font-size: 14px;
 }
 
 @media (max-width: 900px) {
   .lib-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .page-hero { padding: 60px 1.2rem 50px; }
   .page-hero h1 { font-size: 28px; }
-  .library-section { padding: 50px 1.2rem; }
-  .library-empty { padding: 40px 1.4rem; }
+  .lib-section, .lib-filter { padding-left: 1.2rem; padding-right: 1.2rem; }
   .lib-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -421,7 +412,6 @@ h1, h2, h3, h4, h5, h6,
 </nav>
 
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-label">LIBRARY</div>
@@ -432,17 +422,19 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </section>
 
-<!-- 자료 목록 (현재 비어있음 — 준비 중) -->
-<section class="library-section">
-  <div class="library-inner">
-    <div class="library-empty">
-      <div class="library-empty-icon">📚</div>
-      <h2>자료실 준비 중입니다</h2>
-      <p>
-        회사 소개서, 카탈로그, 기술 자료 등 곧 다운로드 가능한 형태로 준비하겠습니다.<br>
-        필요한 자료는 전화(061-642-1247) 또는 문의 폼으로 요청해 주세요.
-      </p>
-    </div>
+<section class="lib-filter">
+  <div class="filter-inner" id="filterBar">
+    <button class="filter-btn active" data-cat="all">전체</button>
+    <button class="filter-btn" data-cat="회사 소개서">회사 소개서</button>
+    <button class="filter-btn" data-cat="제품 카탈로그">제품 카탈로그</button>
+    <button class="filter-btn" data-cat="기술 자료">기술 자료</button>
+    <button class="filter-btn" data-cat="인증서">인증서</button>
+  </div>
+</section>
+
+<section class="lib-section">
+  <div class="lib-inner" id="libList">
+    <div class="lib-loading">자료를 불러오는 중...</div>
   </div>
 </section>
 
@@ -461,7 +453,7 @@ h1, h2, h3, h4, h5, h6,
   <div class="cta-inner">
     <div class="cta-eyebrow">추가 문의</div>
     <h2 class="cta-title">필요한 자료가 따로 있으신가요?</h2>
-    <p class="cta-sub">특정 모델·서비스에 대한 자료는 직접 요청 주시면 안내해 드립니다.</p>
+    <p class="cta-sub">특정 모델·서비스 자료는 직접 요청 주시면 안내해 드립니다.</p>
     <div class="cta-actions">
       <a href="tel:0616421247" class="btn btn-primary">
         ☎ 자료 요청하기 (061-642-1247)
@@ -491,6 +483,80 @@ h1, h2, h3, h4, h5, h6,
   </a>
 </div>
 
+
+<script>
+(async function() {
+  const listEl = document.getElementById('libList');
+  const filterBar = document.getElementById('filterBar');
+  let allFiles = [];
+  let currentFilter = 'all';
+
+  try {
+    const response = await fetch('/resources/library/files.json?v=' + Date.now());
+    if (!response.ok) throw new Error('Load failed');
+    allFiles = await response.json();
+    allFiles = allFiles
+      .filter(f => f.published !== false)
+      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    renderList();
+  } catch (err) {
+    console.error('자료 로드 실패:', err);
+    listEl.innerHTML = renderEmpty('자료실 준비 중입니다', '곧 다운로드 가능한 형태로 준비하겠습니다.');
+  }
+
+  function renderList() {
+    const filtered = currentFilter === 'all'
+      ? allFiles
+      : allFiles.filter(f => f.category === currentFilter);
+
+    if (filtered.length === 0) {
+      listEl.innerHTML = renderEmpty(
+        currentFilter === 'all' ? '자료실 준비 중입니다' : '해당 카테고리의 자료가 없습니다',
+        currentFilter === 'all' ? '곧 다운로드 가능한 형태로 준비하겠습니다.' : '다른 카테고리를 확인해 주세요.'
+      );
+      return;
+    }
+
+    listEl.innerHTML = '<div class="lib-grid">' + filtered.map(f => {
+      const fileSize = f.size ? '· ' + f.size : '';
+      const fileType = f.type ? f.type : 'PDF';
+      const target = f.url && f.url.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
+      const downloadAttr = f.url && !f.url.startsWith('http') ? ' download' : '';
+      return '<a href="' + (f.url || '#') + '" class="lib-card"' + target + downloadAttr + '>' +
+        '<span class="lib-card-cat">' + (f.category || '자료') + '</span>' +
+        '<h3>' + escapeHtml(f.title) + '</h3>' +
+        '<p class="lib-card-desc">' + escapeHtml(f.description || '') + '</p>' +
+        '<div class="lib-card-foot">' +
+          '<div class="lib-card-meta"><span>📄 ' + fileType + '</span><span>' + fileSize + '</span></div>' +
+          '<div class="lib-card-arrow">↓</div>' +
+        '</div>' +
+      '</a>';
+    }).join('') + '</div>';
+  }
+
+  function renderEmpty(title, msg) {
+    return '<div class="lib-empty">' +
+      '<div class="lib-empty-icon">📚</div>' +
+      '<h2>' + title + '</h2>' +
+      '<p>' + msg + '<br>필요한 자료는 전화(061-642-1247) 또는 문의 폼으로 요청해 주세요.</p>' +
+      '</div>';
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  filterBar.addEventListener('click', (e) => {
+    if (!e.target.matches('.filter-btn')) return;
+    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    currentFilter = e.target.dataset.cat;
+    renderList();
+  });
+})();
+</script>
 
 </body>
 </html>

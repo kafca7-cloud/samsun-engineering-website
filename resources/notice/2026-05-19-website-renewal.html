@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>공지사항 | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="㈜삼선엔지니어링 공지사항 — 회사 소식, 사업 안내, 정비 일정 등 주요 공지 사항을 안내합니다.">
+<title>SAMSUN 홈페이지를 새롭게 단장했습니다 | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="㈜삼선엔지니어링 홈페이지가 새롭게 단장되었습니다. 사업분야 소개, 정기점검 안내, 문의 폼 등 다양한 기능을 한 곳에서 확인하세요.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.samsuneng.co.kr/resources/notice/">
+<link rel="canonical" href="https://www.samsuneng.co.kr/resources/notice/2026-05-19-website-renewal.html">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="공지사항 | SAMSUN 삼선엔지니어링">
-<meta property="og:description" content="㈜삼선엔지니어링 공지사항.">
-<meta property="og:url" content="https://www.samsuneng.co.kr/resources/notice/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAMSUN 홈페이지를 새롭게 단장했습니다">
+<meta property="og:description" content="㈜삼선엔지니어링 홈페이지가 새롭게 단장되었습니다.">
+<meta property="og:url" content="https://www.samsuneng.co.kr/resources/notice/2026-05-19-website-renewal.html">
 <meta property="og:locale" content="ko_KR">
 
 <style>
@@ -277,103 +277,77 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-.page-hero {
+.post-hero {
   background: var(--cat-black);
   color: var(--cat-white);
-  padding: 90px 2rem 70px;
-  position: relative;
+  padding: 60px 2rem 50px;
   border-left: 6px solid var(--cat-yellow);
 }
-.page-hero-inner { max-width: 1100px; margin: 0 auto; }
-.page-hero-label {
-  display: inline-block;
-  font-size: 11px; font-weight: 800; letter-spacing: 3px;
-  color: var(--cat-yellow); margin-bottom: 1rem;
+.post-hero-inner { max-width: 800px; margin: 0 auto; }
+.post-meta {
+  display: flex; gap: 12px; align-items: center;
+  margin-bottom: 1.4rem; flex-wrap: wrap;
 }
-.page-hero h1 {
-  font-size: 40px; font-weight: 800; line-height: 1.25;
-  margin: 0 0 1rem; letter-spacing: -0.5px;
+.post-cat {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px;
+  color: var(--cat-yellow); background: rgba(255,196,0,0.15);
+  padding: 5px 12px; text-transform: uppercase;
+  border-left: 3px solid var(--cat-yellow);
 }
-.page-hero p.lead {
-  font-size: 16px; line-height: 1.8;
-  color: rgba(255,255,255,0.8); max-width: 720px; word-break: keep-all;
-}
-
-.notice-filter { background: var(--cat-white); padding: 32px 2rem 0; }
-.filter-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; gap: 8px; flex-wrap: wrap;
-  border-bottom: 1px solid var(--cat-border); padding-bottom: 20px;
-}
-.filter-btn {
-  background: var(--cat-white); color: var(--cat-gray4, #555);
-  border: 1px solid var(--cat-border);
-  padding: 8px 16px; font-size: 13px; font-weight: 600;
-  cursor: pointer; transition: all 0.2s; font-family: inherit;
-}
-.filter-btn:hover { background: var(--cat-gray1, #f5f5f5); color: var(--cat-black); }
-.filter-btn.active {
-  background: var(--cat-black); color: var(--cat-yellow); border-color: var(--cat-black);
-}
-
-.notice-section { background: var(--cat-white); padding: 32px 2rem 80px; }
-.notice-inner { max-width: 1100px; margin: 0 auto; }
-
-.notice-item {
-  display: grid; grid-template-columns: 110px auto 1fr;
-  gap: 1.5rem; padding: 1.6rem;
-  background: var(--cat-white); border-bottom: 1px solid var(--cat-border);
-  transition: background 0.15s;
-  text-decoration: none; color: inherit; align-items: center;
-}
-.notice-item:hover { background: var(--cat-yellow-soft, #fffbe6); }
-.notice-item:hover .notice-title {
-  text-decoration: underline; text-decoration-thickness: 2px;
-  text-underline-offset: 4px; text-decoration-color: var(--cat-yellow);
-}
-.notice-date {
-  font-size: 13px; color: var(--cat-gray3); font-weight: 600;
+.post-cat.urgent { background: rgba(204,68,68,0.2); color: #ff7878; border-left-color: #c44; }
+.post-date {
+  font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
-.notice-cat {
-  font-size: 11px; font-weight: 800; letter-spacing: 1px;
-  color: var(--cat-yellow); background: var(--cat-black);
-  padding: 5px 12px; text-transform: uppercase; white-space: nowrap;
-}
-.notice-cat.urgent { background: #c44; color: var(--cat-white); }
-.notice-title {
-  font-size: 16px; font-weight: 700;
-  color: var(--cat-black); word-break: keep-all; line-height: 1.45;
+.post-hero h1 {
+  font-size: 32px; font-weight: 800; line-height: 1.35;
+  margin: 0; letter-spacing: -0.4px; word-break: keep-all;
 }
 
-.notice-empty {
-  text-align: center; padding: 60px 2rem;
-  background: var(--cat-gray1, #f5f5f5); border-left: 4px solid var(--cat-yellow);
+.post-back {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 16px 2rem; border-bottom: 1px solid var(--cat-border);
 }
-.notice-empty-icon { font-size: 48px; margin-bottom: 1rem; }
-.notice-empty h2 {
-  font-size: 24px; font-weight: 800; color: var(--cat-black);
-  margin: 0 0 0.8rem; letter-spacing: -0.3px;
+.post-back-inner { max-width: 800px; margin: 0 auto; }
+.post-back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600;
+  color: var(--cat-gray4, #555); text-decoration: none;
+  transition: color 0.15s, gap 0.15s;
 }
-.notice-empty p {
-  font-size: 15px; line-height: 1.7; color: var(--cat-gray4, #555);
-  margin: 0 auto; max-width: 540px; word-break: keep-all;
-}
+.post-back-link:hover { color: var(--cat-black); gap: 10px; }
 
-.notice-loading {
-  text-align: center; padding: 40px 2rem;
-  color: var(--cat-gray3); font-size: 14px;
+.post-body {
+  background: var(--cat-white);
+  padding: 50px 2rem 80px;
+}
+.post-body-inner {
+  max-width: 800px; margin: 0 auto;
+  font-size: 16px; line-height: 1.85; color: var(--cat-black);
+}
+.post-body-inner p { margin: 0 0 1.4rem; word-break: keep-all; }
+.post-body-inner h2 {
+  font-size: 22px; font-weight: 800; color: var(--cat-black);
+  margin: 2.5rem 0 1rem; padding-left: 12px;
+  border-left: 4px solid var(--cat-yellow); letter-spacing: -0.3px;
+}
+.post-body-inner ul {
+  margin: 0 0 1.4rem; padding-left: 1.6rem;
+}
+.post-body-inner li { margin-bottom: 0.5rem; word-break: keep-all; }
+.post-body-inner strong { font-weight: 700; color: var(--cat-black); }
+.post-body-inner a {
+  color: var(--cat-black); text-decoration: underline;
+  text-decoration-color: var(--cat-yellow);
+  text-decoration-thickness: 2px; text-underline-offset: 3px;
 }
 
 @media (max-width: 700px) {
-  .page-hero { padding: 60px 1.2rem 50px; }
-  .page-hero h1 { font-size: 28px; }
-  .notice-section, .notice-filter { padding-left: 1.2rem; padding-right: 1.2rem; }
-  .notice-item {
-    grid-template-columns: 1fr; gap: 0.6rem;
-    padding: 1.2rem 1rem;
-  }
-  .notice-cat { justify-self: start; }
+  .post-hero { padding: 40px 1.2rem 36px; }
+  .post-hero h1 { font-size: 24px; }
+  .post-body { padding: 36px 1.2rem 60px; }
+  .post-body-inner { font-size: 15px; line-height: 1.75; }
+  .post-back { padding: 14px 1.2rem; }
 }
 </style>
 </head>
@@ -390,29 +364,57 @@ h1, h2, h3, h4, h5, h6,
 </nav>
 
 
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-label">NOTICE</div>
-    <h1>공지사항</h1>
-    <p class="lead">
-      ㈜삼선엔지니어링의 회사 소식, 사업 안내, 정비 일정 등 주요 공지 사항을 안내합니다.
+<section class="post-hero">
+  <div class="post-hero-inner">
+    <div class="post-meta">
+      <span class="post-cat">회사 소식</span>
+      <span class="post-date">2026.05.19</span>
+    </div>
+    <h1>SAMSUN 홈페이지를 새롭게 단장했습니다</h1>
+  </div>
+</section>
+
+<section class="post-back">
+  <div class="post-back-inner">
+    <a href="/resources/notice/" class="post-back-link">← 공지사항 목록으로</a>
+  </div>
+</section>
+
+<section class="post-body">
+  <div class="post-body-inner">
+    
+    <p>
+      안녕하세요. ㈜삼선엔지니어링입니다.
     </p>
-  </div>
-</section>
-
-<section class="notice-filter">
-  <div class="filter-inner" id="filterBar">
-    <button class="filter-btn active" data-cat="all">전체</button>
-    <button class="filter-btn" data-cat="회사 소식">회사 소식</button>
-    <button class="filter-btn" data-cat="사업 안내">사업 안내</button>
-    <button class="filter-btn" data-cat="정비 일정">정비 일정</button>
-    <button class="filter-btn" data-cat="긴급">긴급</button>
-  </div>
-</section>
-
-<section class="notice-section">
-  <div class="notice-inner" id="noticeList">
-    <div class="notice-loading">공지를 불러오는 중...</div>
+    
+    <p>
+      <strong>SAMSUN 공식 홈페이지가 새롭게 단장되었습니다.</strong> 35년 현장 경험을 바탕으로 한 발전기·엔진 토탈 솔루션 전문 기업으로서, 고객 여러분께 더욱 명확하고 접근성 좋은 정보를 제공하고자 전면 리뉴얼을 진행했습니다.
+    </p>
+    
+    <h2>주요 개편 내용</h2>
+    
+    <ul>
+      <li><strong>사업분야 6개 카테고리</strong> 정리 — 발전기·엔진 신규 공급, 비상발전기 정기점검·예방정비, 선박·관공선 엔진 정비, 발전기 설치·이전·전기공사, 렌탈 발전기·임시 전력 지원, MRO·정품 부품 조달</li>
+      <li><strong>비상발전기 정기점검 전문 페이지</strong> — CAT ET 전자식 진단, SOS 오일 분석 등 진단 기반 정기점검 안내</li>
+      <li><strong>온라인 문의 폼</strong> 구축 — 회사 정보·문의 유형·설비 정보를 한 번에 전달 가능</li>
+      <li><strong>모바일 최적화</strong> — 모든 페이지에서 모바일 사용성 개선</li>
+    </ul>
+    
+    <h2>앞으로의 계획</h2>
+    
+    <p>
+      공지사항·자료실을 통해 회사 소식과 기술 자료를 정기적으로 공유드릴 예정입니다. 더 좋은 서비스로 보답하겠습니다.
+    </p>
+    
+    <p>
+      문의 사항은 ☎ 061-642-1247로 연락 주시거나, <a href="/contact/">문의 폼</a>을 이용해 주세요.
+    </p>
+    
+    <p>
+      감사합니다.<br>
+      ㈜삼선엔지니어링 드림
+    </p>
+    
   </div>
 </section>
 
@@ -430,11 +432,11 @@ h1, h2, h3, h4, h5, h6,
 <section class="cta-section">
   <div class="cta-inner">
     <div class="cta-eyebrow">추가 문의</div>
-    <h2 class="cta-title">찾으시는 공지가 없으신가요?</h2>
-    <p class="cta-sub">전화·문의 폼으로 직접 문의 주시면 신속히 안내해 드립니다.</p>
+    <h2 class="cta-title">홈페이지 관련 문의가 있으신가요?</h2>
+    <p class="cta-sub">전화·문의 폼으로 직접 문의 주시면 답변 드립니다.</p>
     <div class="cta-actions">
       <a href="tel:0616421247" class="btn btn-primary">
-        ☎ 전화 상담하기 (061-642-1247)
+        ☎ 전화 문의하기 (061-642-1247)
       </a>
       <a href="/contact/" class="btn btn-secondary">
         📝 문의 폼 작성하기
@@ -461,74 +463,6 @@ h1, h2, h3, h4, h5, h6,
   </a>
 </div>
 
-
-<script>
-(async function() {
-  const listEl = document.getElementById('noticeList');
-  const filterBar = document.getElementById('filterBar');
-  let allPosts = [];
-  let currentFilter = 'all';
-
-  try {
-    const response = await fetch('/resources/notice/posts.json?v=' + Date.now());
-    if (!response.ok) throw new Error('Load failed');
-    allPosts = await response.json();
-    allPosts = allPosts
-      .filter(p => p.published !== false)
-      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-    renderList();
-  } catch (err) {
-    console.error('공지 로드 실패:', err);
-    listEl.innerHTML = renderEmpty('공지사항 준비 중입니다', '곧 새로운 소식으로 찾아뵙겠습니다.');
-  }
-
-  function renderList() {
-    const filtered = currentFilter === 'all'
-      ? allPosts
-      : allPosts.filter(p => p.category === currentFilter);
-
-    if (filtered.length === 0) {
-      listEl.innerHTML = renderEmpty(
-        currentFilter === 'all' ? '공지사항 준비 중입니다' : '해당 카테고리의 공지가 없습니다',
-        currentFilter === 'all' ? '곧 새로운 소식으로 찾아뵙겠습니다.' : '다른 카테고리를 확인해 주세요.'
-      );
-      return;
-    }
-
-    listEl.innerHTML = filtered.map(p => {
-      const catClass = p.category === '긴급' ? 'notice-cat urgent' : 'notice-cat';
-      const dateFmt = p.date ? p.date.replace(/-/g, '.') : '';
-      return '<a href="' + p.url + '" class="notice-item">' +
-        '<div class="notice-date">' + dateFmt + '</div>' +
-        '<div class="' + catClass + '">' + (p.category || '소식') + '</div>' +
-        '<div class="notice-title">' + escapeHtml(p.title) + '</div>' +
-        '</a>';
-    }).join('');
-  }
-
-  function renderEmpty(title, msg) {
-    return '<div class="notice-empty">' +
-      '<div class="notice-empty-icon">📢</div>' +
-      '<h2>' + title + '</h2>' +
-      '<p>' + msg + '<br>급한 문의는 전화(061-642-1247) 또는 문의 폼으로 연락 주세요.</p>' +
-      '</div>';
-  }
-
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str || '';
-    return div.innerHTML;
-  }
-
-  filterBar.addEventListener('click', (e) => {
-    if (!e.target.matches('.filter-btn')) return;
-    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    e.target.classList.add('active');
-    currentFilter = e.target.dataset.cat;
-    renderList();
-  });
-})();
-</script>
 
 </body>
 </html>

@@ -417,6 +417,115 @@ h1, h2, h3, h4, h5, h6,
   .sub-nav-inner { padding: 0 0.5rem; }
   .sub-nav a { padding: 14px 16px; font-size: 12px; }
 }
+
+/* ─── 주요 대응 산업군 ─── */
+.industries-section {
+  background: var(--cat-white);
+  padding: 70px 2rem;
+  border-top: 1px solid var(--cat-border);
+}
+.industries-inner { max-width: 1100px; margin: 0 auto; }
+.section-intro {
+  margin-bottom: 2.5rem;
+}
+.section-intro .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px; font-weight: 700;
+  color: var(--cat-black); letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.section-intro .eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 2px;
+  background: var(--cat-yellow);
+}
+.section-intro .section-title {
+  font-size: 28px; font-weight: 800;
+  color: var(--cat-black); letter-spacing: -0.4px;
+  margin: 0 0 1rem; padding: 0; border: none;
+  line-height: 1.3;
+}
+.section-intro .section-lead {
+  font-size: 15px; line-height: 1.8;
+  color: var(--cat-gray4, #555);
+  max-width: 760px; margin: 0;
+  word-break: keep-all;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+.industry-card {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 1.8rem 1.4rem;
+  border-top: 3px solid var(--cat-yellow);
+  display: flex;
+  flex-direction: column;
+}
+.industry-num {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cat-yellow); background: var(--cat-black);
+  padding: 3px 10px;
+  align-self: flex-start;
+  margin-bottom: 0.9rem;
+}
+.industry-card h3 {
+  font-size: 17px; font-weight: 800;
+  color: var(--cat-black); margin: 0 0 0.5rem;
+  letter-spacing: -0.3px;
+  word-break: keep-all; line-height: 1.4;
+}
+.industry-card > p {
+  font-size: 13.5px; line-height: 1.65;
+  color: var(--cat-gray4, #555);
+  margin: 0 0 1rem;
+  word-break: keep-all;
+  flex: 1;
+}
+.industry-tags {
+  display: flex; flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--cat-border);
+}
+.industry-tags span {
+  font-size: 11px; font-weight: 600;
+  color: var(--cat-gray4, #555);
+  background: var(--cat-white);
+  border: 1px solid var(--cat-border);
+  padding: 3px 8px;
+  word-break: keep-all;
+}
+
+.industries-note {
+  background: var(--cat-gray1, #f5f5f5);
+  padding: 1.4rem 1.6rem;
+  border-left: 4px solid var(--cat-yellow);
+  font-size: 14px; line-height: 1.7;
+  color: var(--cat-gray4, #555);
+  word-break: keep-all;
+}
+.industries-note::before {
+  content: '※ ';
+  color: var(--cat-yellow); font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .industries-section { padding: 40px 1.2rem; }
+  .industries-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .section-intro .section-title { font-size: 22px; }
+}
 </style>
 </head>
 <body>
@@ -477,6 +586,75 @@ h1, h2, h3, h4, h5, h6,
     <div class="stat-card">
       <div class="stat-num">전국</div>
       <div class="stat-label">출장 점검 가능</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 주요 대응 산업군 -->
+<section class="industries-section">
+  <div class="industries-inner">
+    <div class="section-intro">
+      <span class="eyebrow">INDUSTRIES</span>
+      <h2 class="section-title">주요 대응 산업군</h2>
+      <p class="section-lead">
+        ㈜삼선엔지니어링은 35년간 산업 전반의 발전기·엔진 정비를 수행해 왔습니다.
+        대규모 플랜트부터 해상 선박, 공공기관 비상전원까지 다양한 산업 환경에 맞춘 솔루션을 제공합니다.
+      </p>
+    </div>
+
+    <div class="industries-grid">
+
+      <div class="industry-card">
+        <div class="industry-num">01</div>
+        <h3>석유화학·플랜트</h3>
+        <p>여수·광양 국가산단 주요 설비 점검 및 정비</p>
+        <div class="industry-tags">
+          <span>금호석유화학</span><span>한화솔루션</span><span>롯데케미칼</span><span>OCI</span>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-num">02</div>
+        <h3>철강·제조</h3>
+        <p>비상발전기, 소방펌프 엔진, EDG 관련 정비</p>
+        <div class="industry-tags">
+          <span>포스코</span><span>대기업 제조</span>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-num">03</div>
+        <h3>공공·관공선</h3>
+        <p>해양경찰정, 소방정, 공공 선박 엔진 정비</p>
+        <div class="industry-tags">
+          <span>국립공원공단</span><span>해경</span><span>소방</span>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-num">04</div>
+        <h3>병원·데이터센터</h3>
+        <p>고신뢰 비상전원 설비 대응</p>
+        <div class="industry-tags">
+          <span>의료 시설</span><span>IDC</span>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-num">05</div>
+        <h3>선사·해상 MRO</h3>
+        <p>주기관, 보조기관, 선박 발전기 정비</p>
+        <div class="industry-tags">
+          <span>관공선</span><span>상선</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="industries-note">
+      여수 본사를 중심으로 전남·전북·경남권은 신속 출장 점검,
+      수도권·데이터센터·해상 MRO는 확장 대응 중입니다.
     </div>
   </div>
 </section>

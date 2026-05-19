@@ -691,19 +691,22 @@ section { padding: 100px 2rem; }
 
 /* ─── 이미지 헤더 + 별도 아이콘 영역 ─── */
 .svc-img-wrap {
-  margin: 0 0 1.6rem;
+  /* 카드 padding(2.4rem 2rem) 무시하고 좌우 끝까지 확장 */
+  margin: -2.4rem -2rem 1.6rem -2rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* 헤더 영역 (이미지 위쪽 검정 띠) */
 .svc-icon-header {
   background: var(--cat-black);
-  padding: 12px 14px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   gap: 12px;
   border-left: 3px solid var(--cat-yellow);
   transition: background 0.25s, border-color 0.25s;
-  margin-bottom: 4px;  /* 이미지와 시각적으로 구분 */
+  /* margin-bottom 제거 — 이미지와 한 덩어리로 자연스럽게 */
 }
 .svc-card:hover .svc-icon-header {
   background: var(--cat-yellow);
@@ -783,7 +786,7 @@ section { padding: 100px 2rem; }
 }
 .svc-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); transform: translateY(-4px); z-index:1; }
 .svc-card:hover::after { transform: scaleX(1); }
-.svc-card:hover .svc-card:hover .svc-card h3 { font-size: 17px; font-weight: 800; color: var(--cat-black); margin: 0.4rem 0 0.8rem; letter-spacing: -0.3px; line-height: 1.4; }
+/* 제거됨: 잘못 중첩된 셀렉터 .svc-card:hover .svc-card:hover .svc-card h3 */
 .svc-card p { font-size: 13px; color: var(--cat-gray3); line-height: 1.75; }
 .svc-tags { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
@@ -1543,8 +1546,8 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 }
 
 /* Service card image — slightly more cinematic ratio */
-.svc-card > div:first-child img { height: 200px !important; }
-.svc-card > div:first-child { height: 200px !important; margin: -2.4rem -2rem 1.6rem !important; }
+/* 제거됨: 첫 자식 강제 200px (h3/p 가림 원인) */
+/* 제거됨: 첫 자식 강제 200px margin -2.4rem -2rem (이미지 잘림 원인) */
 
 /* Hero stripe accent (left-side yellow vertical) - keep but make wider */
 .hero-stripe { width: 6px !important; }

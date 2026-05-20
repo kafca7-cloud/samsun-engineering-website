@@ -7,7 +7,7 @@
     "type": "PDF",
     "size": "70KB",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "ISO 14001 인증서 (환경경영)",
@@ -17,7 +17,7 @@
     "type": "PDF",
     "size": "71KB",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "ISO 45001 인증서 (안전보건경영)",
@@ -27,7 +27,7 @@
     "type": "PDF",
     "size": "197KB",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "사업자등록증",
@@ -47,7 +47,7 @@
     "type": "PDF",
     "size": "174KB",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "뿌리기업확인서",
@@ -57,7 +57,7 @@
     "type": "PDF",
     "size": "—",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "항만운송관련사업(선박수리업) 등록증",
@@ -67,7 +67,7 @@
     "type": "PDF",
     "size": "—",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "공장등록증",
@@ -77,7 +77,7 @@
     "type": "PDF",
     "size": "—",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "특허 등록증 (제10-1689014호)",
@@ -87,7 +87,7 @@
     "type": "PDF",
     "size": "—",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   },
   {
     "title": "특허 등록증 (제10-1902987호)",
@@ -97,6 +97,6 @@
     "type": "PDF",
     "size": "—",
     "date": "2026-05-19",
-    "published": false
+    "published": true
   }
 ]

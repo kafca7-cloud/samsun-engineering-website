@@ -397,6 +397,150 @@ h1, h2, h3, h4, h5, h6,
   .lib-section, .lib-filter { padding-left: 1.2rem; padding-right: 1.2rem; }
   .lib-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ─── 카드 하단 버튼 ─── */
+.lib-card {
+  background: var(--cat-white);
+  border: 1px solid var(--cat-border);
+  padding: 1.6rem 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.lib-card:hover {
+  border-color: var(--cat-yellow);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.lib-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 1rem;
+}
+.lib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+.lib-btn-preview {
+  background: var(--cat-gray1, #f5f5f5);
+  color: var(--cat-black);
+  border: 1px solid var(--cat-border);
+}
+.lib-btn-preview:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+  border-color: var(--cat-black);
+}
+.lib-btn-download {
+  background: var(--cat-yellow);
+  color: var(--cat-black);
+}
+.lib-btn-download:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.lib-card-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--cat-gray3);
+  letter-spacing: 0.3px;
+  padding-top: 0.8rem;
+  margin-top: auto;
+  border-top: 1px dashed var(--cat-border);
+}
+
+/* ─── 미리보기 모달 ─── */
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh 2vw;
+}
+.preview-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 96vh;
+  background: var(--cat-white);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.4rem;
+  background: var(--cat-black);
+  color: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+}
+.preview-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--cat-white);
+}
+.preview-close {
+  background: transparent;
+  border: none;
+  color: var(--cat-yellow);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 12px;
+  transition: color 0.15s;
+}
+.preview-close:hover {
+  color: var(--cat-white);
+}
+.preview-body {
+  flex: 1;
+  background: #525659;
+  overflow: hidden;
+}
+.preview-body iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+.preview-footer {
+  padding: 1rem 1.4rem;
+  background: var(--cat-white);
+  border-top: 1px solid var(--cat-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 700px) {
+  .preview-modal { padding: 0; }
+  .preview-container { height: 100vh; }
+  .lib-card-actions { grid-template-columns: 1fr; gap: 8px; }
+}
 </style>
 </head>
 <body>
@@ -476,6 +620,24 @@ h1, h2, h3, h4, h5, h6,
 </section>
 
 
+
+<!-- PDF 미리보기 모달 -->
+<div id="previewModal" class="preview-modal" style="display: none;">
+  <div class="preview-backdrop" onclick="closePreview()"></div>
+  <div class="preview-container">
+    <div class="preview-header">
+      <h3 id="previewTitle">미리보기</h3>
+      <button type="button" class="preview-close" onclick="closePreview()" aria-label="닫기">✕</button>
+    </div>
+    <div class="preview-body">
+      <iframe id="previewFrame" src="" frameborder="0"></iframe>
+    </div>
+    <div class="preview-footer">
+      <a id="previewDownload" href="" download class="lib-btn lib-btn-download">PDF 다운로드</a>
+    </div>
+  </div>
+</div>
+
 <!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
 <div class="mobile-contact-bar" aria-label="문의 빠른 액션">
   <a href="tel:0616421247" class="mcb-btn mcb-call">
@@ -528,20 +690,32 @@ h1, h2, h3, h4, h5, h6,
     }
 
     listEl.innerHTML = '<div class="lib-grid">' + filtered.map(f => {
-      const fileSize = f.size ? '· ' + f.size : '';
+      const fileSize = f.size && f.size !== '—' ? '· ' + f.size : '';
       const fileType = f.type ? f.type : 'PDF';
-      const target = f.url && f.url.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
-      const downloadAttr = f.url && !f.url.startsWith('http') ? ' download' : '';
-      return '<a href="' + (f.url || '#') + '" class="lib-card"' + target + downloadAttr + '>' +
+      const url = f.url || '#';
+      const isExternal = f.url && f.url.startsWith('http');
+      const previewBtn = isExternal 
+        ? '<a href="' + url + '" target="_blank" rel="noopener" class="lib-btn lib-btn-preview">바로가기</a>'
+        : '<button type="button" class="lib-btn lib-btn-preview" data-url="' + url + '" data-title="' + escapeHtml(f.title) + '">미리보기</button>';
+      const downloadBtn = isExternal
+        ? ''
+        : '<a href="' + url + '" class="lib-btn lib-btn-download" download>다운로드</a>';
+      
+      return '<div class="lib-card">' +
         '<span class="lib-card-cat">' + (f.category || '자료') + '</span>' +
         '<h3>' + escapeHtml(f.title) + '</h3>' +
         '<p class="lib-card-desc">' + escapeHtml(f.description || '') + '</p>' +
-        '<div class="lib-card-foot">' +
-          '<div class="lib-card-meta"><span>📄 ' + fileType + '</span><span>' + fileSize + '</span></div>' +
-          '<div class="lib-card-arrow">↓</div>' +
-        '</div>' +
-      '</a>';
+        '<div class="lib-card-meta"><span>📄 ' + fileType + '</span><span>' + fileSize + '</span></div>' +
+        '<div class="lib-card-actions">' + previewBtn + downloadBtn + '</div>' +
+      '</div>';
     }).join('') + '</div>';
+    
+    // 미리보기 버튼 이벤트
+    listEl.querySelectorAll('.lib-btn-preview[data-url]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        openPreview(this.dataset.url, this.dataset.title);
+      });
+    });
   }
 
   function renderEmpty(title, msg) {
@@ -557,6 +731,33 @@ h1, h2, h3, h4, h5, h6,
     div.textContent = str || '';
     return div.innerHTML;
   }
+
+  // 미리보기 함수 (전역)
+  window.openPreview = function(url, title) {
+    const modal = document.getElementById('previewModal');
+    const frame = document.getElementById('previewFrame');
+    const titleEl = document.getElementById('previewTitle');
+    const downloadEl = document.getElementById('previewDownload');
+    
+    titleEl.textContent = title || '미리보기';
+    frame.src = url;
+    downloadEl.href = url;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
+  
+  window.closePreview = function() {
+    const modal = document.getElementById('previewModal');
+    const frame = document.getElementById('previewFrame');
+    modal.style.display = 'none';
+    frame.src = '';
+    document.body.style.overflow = '';
+  };
+  
+  // ESC 키로 닫기
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') window.closePreview();
+  });
 
   filterBar.addEventListener('click', (e) => {
     if (!e.target.matches('.filter-btn')) return;

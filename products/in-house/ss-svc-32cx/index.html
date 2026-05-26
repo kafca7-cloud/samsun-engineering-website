@@ -468,16 +468,21 @@ h1, h2, h3, h4, h5, h6,
 }
 .drawing-card-img {
   background: var(--cat-white);
-  padding: 1rem;
+  padding: 1.2rem;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  overflow: hidden;
 }
 .drawing-card-img img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;
   display: block;
-  cursor: zoom-in;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  user-select: none;
 }
 .drawing-card-caption {
   padding: 1rem 1.2rem;
@@ -756,11 +761,11 @@ h1, h2, h3, h4, h5, h6,
           <td>대형 디젤엔진의 단종 부품 대체용</td>
         </tr>
         <tr>
-          <th>재질 (긴 부분)</th>
+          <th>재질 (Indicator Cock)</th>
           <td>강철 (Carbon Steel)</td>
         </tr>
         <tr>
-          <th>재질 (짧은 부분)</th>
+          <th>재질 (Safety Valve)</th>
           <td>주물 (Cast Iron)</td>
         </tr>
         <tr>

@@ -535,6 +535,58 @@ h1, h2, h3, h4, h5, h6,
 }
 .improvement-desc strong { color: var(--cat-black); font-weight: 700; }
 
+/* 핵심 개선 포인트 배지 (4개) */
+.improvement-keypoints {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.improvement-keypoint {
+  background: var(--cat-white);
+  border-top: 3px solid var(--cat-yellow);
+  padding: 1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.improvement-keypoint-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  background: var(--cat-yellow);
+  color: var(--cat-black);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+.improvement-keypoint-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--cat-black);
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  word-break: keep-all;
+}
+.improvement-keypoint-desc {
+  font-size: 11.5px;
+  color: var(--cat-gray4, #555);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+@media (max-width: 700px) {
+  .improvement-keypoints {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+  .improvement-keypoint { padding: 0.9rem 0.8rem; }
+  .improvement-keypoint-title { font-size: 12px; }
+  .improvement-keypoint-desc { font-size: 11px; }
+}
+
 /* ─── 품질 검증 ─── */
 .quality-section { background: var(--cat-black); color: var(--cat-white); }
 .quality-section .section-eyebrow { color: var(--cat-white); }
@@ -968,16 +1020,47 @@ h1, h2, h3, h4, h5, h6,
     <span class="section-eyebrow">IMPROVEMENTS</span>
     <h2 class="section-h2">주요 개선 포인트</h2>
     <p class="section-lead">
-      SS-SVC-32CX Improved Type은 기존 부품의 기능을 유지하면서 다음 핵심 영역에서 현장 적용성을 개선했습니다.
+      SS-SVC-32CX Improved Type은 <strong>스펙(성능)은 Standard Type과 완전히 동일하게 유지</strong>하면서,
+      현장 설치 및 정비 작업 효율을 크게 향상시킨 개량형 부품입니다.
     </p>
 
+    <!-- 4개 핵심 개선 포인트 -->
+    <div class="improvement-keypoints">
+      <div class="improvement-keypoint">
+        <span class="improvement-keypoint-check">✓</span>
+        <div class="improvement-keypoint-title">스펙(성능) 동일</div>
+        <div class="improvement-keypoint-desc">작동 압력·재질·구성 부품 등 핵심 사양 완전 동일</div>
+      </div>
+      <div class="improvement-keypoint">
+        <span class="improvement-keypoint-check">✓</span>
+        <div class="improvement-keypoint-title">설치 및 분해 작업 효율 향상</div>
+        <div class="improvement-keypoint-desc">연결 각도 최적화로 공구 접근성·작업성 개선</div>
+      </div>
+      <div class="improvement-keypoint">
+        <span class="improvement-keypoint-check">✓</span>
+        <div class="improvement-keypoint-title">주변 구조물 간섭 회피</div>
+        <div class="improvement-keypoint-desc">배관·구조물과의 간섭 해소, 작업 공간 확보</div>
+      </div>
+      <div class="improvement-keypoint">
+        <span class="improvement-keypoint-check">✓</span>
+        <div class="improvement-keypoint-title">M20 × 1.5 동일</div>
+        <div class="improvement-keypoint-desc">주요 체결 규격 동일 유지로 호환성 확보</div>
+      </div>
+    </div>
+
+    <!-- 메인 설명 카드 -->
     <div class="improvements-grid">
       <div class="improvement-card">
-        <h3 class="improvement-title">연결 각도 최적화</h3>
+        <h3 class="improvement-title">연결 각도 최적화 · Connection Angle Optimization</h3>
         <p class="improvement-desc">
-          Indicator Cock과 Safety Valve의 <strong>연결부 각도를 조정</strong>하여
-          현장 설치 시 주변 구조물·배관과의 간섭을 회피하고 작업 공간을 확보했습니다.
-          기능 변경이 아닌 <strong>설치성 개선</strong>을 위한 구조 조정입니다.
+          Indicator Cock과 Safety Valve의 <strong>연결부 각도를 최적화</strong>하여
+          현장 설치 및 분해 시 작업 효율을 크게 향상시켰습니다.
+          주변 구조물·배관과의 간섭을 회피하고 공구 접근성을 개선했습니다.
+        </p>
+        <p class="improvement-desc" style="margin-top: 0.8rem;">
+          <strong>스펙(성능)은 Standard Type과 완전히 동일</strong>하며,
+          작동 압력·재질·구성 부품 등 핵심 사양과 체결 규격(M20 × 1.5)을 그대로 유지하면서
+          <strong>설치·정비 작업성만 개선</strong>한 구조 조정입니다.
         </p>
       </div>
     </div>

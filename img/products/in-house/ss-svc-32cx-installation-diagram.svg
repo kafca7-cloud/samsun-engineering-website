@@ -70,36 +70,34 @@
     <!-- 피스톤 로드 -->
     <rect x="150" y="222" width="20" height="90" fill="#333" stroke="#000" stroke-width="1"/>
     
-    <!-- ============ SS-SVC-32CX 부품 — 노란 원 정중앙 (355, 90) ============ -->
+    <!-- ============ SS-SVC-32CX 부품 — 정중앙 + 수직 ============ -->
     <!-- 노란 강조 원 -->
     <circle cx="355" cy="90" r="48" fill="rgba(255,196,0,0.18)" filter="url(#glow)"/>
     <circle cx="355" cy="90" r="42" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="4 3"/>
     
-    <!-- 부품 본체 — 노란 원 정중앙 (355, 90) 기준으로 균형있게 배치 -->
-    <!-- 부품 전체 높이 약 80px (50~130), 폭 약 30px -->
-    <!-- 회전 중심도 원 중앙 (355, 90)으로 — 어떻게 기울여도 중앙 유지 -->
-    <g transform="rotate(-10, 355, 90)">
-      <!-- 상단 너트 (체결부) -->
-      <polygon points="355,52 361,55 361,63 355,66 349,63 349,55" fill="#777" stroke="#000" stroke-width="1.2"/>
-      
-      <!-- 상단 본체 (Indicator Cock 윗부분 - 사각 박스) -->
-      <rect x="346" y="66" width="18" height="18" fill="#666" stroke="#000" stroke-width="1.3"/>
-      
-      <!-- 메인 본체 (Indicator Cock 세로 막대) -->
-      <rect x="350" y="84" width="10" height="32" fill="#555" stroke="#000" stroke-width="1.3"/>
-      
-      <!-- 하단 플랜지 (헤드 측면 접합부) -->
-      <rect x="343" y="116" width="24" height="8" fill="#444" stroke="#000" stroke-width="1.3"/>
-      
-      <!-- 플랜지 볼트 -->
-      <circle cx="347" cy="120" r="1.8" fill="#222"/>
-      <circle cx="363" cy="120" r="1.8" fill="#222"/>
-      
-      <!-- Safety Valve — 본체 중간에서 우상향 (-35도) -->
-      <g transform="rotate(-35, 360, 90)">
-        <rect x="360" y="85" width="26" height="11" fill="#666" stroke="#000" stroke-width="1.3"/>
-        <rect x="381" y="87" width="7" height="7" fill="#777" stroke="#000" stroke-width="1"/>
-      </g>
+    <!-- 부품 본체 — 수직 배치 (회전 없음) -->
+    <!-- 모든 요소가 x=355 중심선 기준 좌우 대칭 -->
+    
+    <!-- 상단 너트 (체결부) -->
+    <polygon points="355,52 361,55 361,63 355,66 349,63 349,55" fill="#777" stroke="#000" stroke-width="1.2"/>
+    
+    <!-- 상단 본체 (Indicator Cock 윗부분 - 사각 박스) -->
+    <rect x="346" y="66" width="18" height="18" fill="#666" stroke="#000" stroke-width="1.3"/>
+    
+    <!-- 메인 본체 (Indicator Cock 세로 막대) -->
+    <rect x="350" y="84" width="10" height="32" fill="#555" stroke="#000" stroke-width="1.3"/>
+    
+    <!-- 하단 플랜지 (헤드 측면 접합부) -->
+    <rect x="343" y="116" width="24" height="8" fill="#444" stroke="#000" stroke-width="1.3"/>
+    
+    <!-- 플랜지 볼트 -->
+    <circle cx="347" cy="120" r="1.8" fill="#222"/>
+    <circle cx="363" cy="120" r="1.8" fill="#222"/>
+    
+    <!-- Safety Valve — 본체 중간에서 우상향 (-35도, 도면처럼) -->
+    <g transform="rotate(-35, 360, 90)">
+      <rect x="360" y="85" width="26" height="11" fill="#666" stroke="#000" stroke-width="1.3"/>
+      <rect x="381" y="87" width="7" height="7" fill="#777" stroke="#000" stroke-width="1"/>
     </g>
     
     <!-- 부품 → 라벨 화살표 -->

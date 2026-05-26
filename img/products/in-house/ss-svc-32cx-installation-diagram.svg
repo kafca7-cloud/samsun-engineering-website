@@ -47,7 +47,7 @@
     <!-- 실린더 본체 -->
     <rect x="40" y="180" width="240" height="140" fill="url(#cylGrad)" stroke="#000" stroke-width="2"/>
     
-    <!-- CYLINDER 라벨 — 좌측 영역으로 이동 (피스톤 로드 안 가림) -->
+    <!-- CYLINDER 라벨 — 좌측 영역 (피스톤 로드 안 가림) -->
     <text x="95" y="252" text-anchor="middle" fill="#ffc400" font-size="13" font-weight="700" font-family="Pretendard, sans-serif" letter-spacing="1">
       CYLINDER
     </text>
@@ -67,43 +67,43 @@
       PISTON
     </text>
     
-    <!-- 피스톤 로드 (중앙에 수직) -->
+    <!-- 피스톤 로드 -->
     <rect x="150" y="222" width="20" height="90" fill="#333" stroke="#000" stroke-width="1"/>
     
-    <!-- ============ SS-SVC-32CX 부품 — 도면 형상에 맞춰 다시 그림 ============ -->
-    <!-- 노란 강조 원 (전체 부품 감싸기) -->
+    <!-- ============ SS-SVC-32CX 부품 ============ -->
+    <!-- 노란 강조 원 -->
     <circle cx="160" cy="40" r="42" fill="rgba(255,196,0,0.18)" filter="url(#glow)"/>
     <circle cx="160" cy="40" r="36" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-dasharray="4 3"/>
     
-    <!-- 부품 본체 (도면 형상 참조해서 재설계) -->
+    <!-- 부품 본체 -->
     <g>
-      <!-- 상단 너트 (체결부) - 작은 헥사곤 -->
+      <!-- 상단 너트 (체결부) -->
       <polygon points="160,8 165,11 165,17 160,20 155,17 155,11" fill="#777" stroke="#000" stroke-width="1"/>
       
-      <!-- 상단 본체 (Indicator Cock 윗부분) - 사각 박스 -->
+      <!-- 상단 본체 (Indicator Cock 윗부분) -->
       <rect x="153" y="20" width="14" height="14" fill="#666" stroke="#000" stroke-width="1.2"/>
       
-      <!-- 메인 본체 (세로 긴 막대 - Indicator Cock 본체) -->
+      <!-- 메인 본체 (Indicator Cock 세로 막대) -->
       <rect x="156" y="34" width="8" height="32" fill="#555" stroke="#000" stroke-width="1.2"/>
       
-      <!-- 측면 출구 (Safety Valve 비스듬히 나오는 부분) -->
-      <g transform="rotate(30, 162, 55)">
-        <rect x="162" y="50" width="22" height="10" fill="#666" stroke="#000" stroke-width="1.2"/>
+      <!-- ★ Safety Valve - 위로 비스듬히 (-30도, 우상향) ★ -->
+      <g transform="rotate(-30, 162, 38)">
+        <rect x="162" y="33" width="22" height="10" fill="#666" stroke="#000" stroke-width="1.2"/>
         <!-- Safety Valve 끝 -->
-        <rect x="180" y="52" width="6" height="6" fill="#777" stroke="#000" stroke-width="1"/>
+        <rect x="180" y="35" width="6" height="6" fill="#777" stroke="#000" stroke-width="1"/>
       </g>
       
       <!-- 하단 플랜지 (실린더 헤드 접합부) -->
       <rect x="150" y="66" width="20" height="6" fill="#444" stroke="#000" stroke-width="1.2"/>
       
-      <!-- 플랜지 볼트 표시 (양쪽 작은 원) -->
+      <!-- 플랜지 볼트 -->
       <circle cx="153" cy="69" r="1.5" fill="#222"/>
       <circle cx="167" cy="69" r="1.5" fill="#222"/>
     </g>
     
     <!-- 부품 → 라벨 화살표 -->
     <g stroke="#1a1a1a" stroke-width="1.5" fill="none">
-      <line x1="200" y1="40" x2="350" y2="40" stroke-dasharray="0"/>
+      <line x1="205" y1="40" x2="350" y2="40" stroke-dasharray="0"/>
       <polygon points="350,40 343,36 343,44" fill="#1a1a1a"/>
     </g>
     

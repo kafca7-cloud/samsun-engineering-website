@@ -600,6 +600,69 @@ h1, h2, h3, h4, h5, h6,
 }
 .quality-note strong { color: var(--cat-yellow); font-weight: 700; }
 
+/* ─── 시험 결과 상세 표 ─── */
+.test-result-block {
+  margin-top: 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,196,0,0.25);
+}
+.test-result-header {
+  padding: 1rem 1.4rem;
+  background: rgba(255,196,0,0.08);
+  border-bottom: 1px solid rgba(255,196,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.test-result-badge {
+  background: var(--cat-yellow);
+  color: var(--cat-black);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+}
+.test-result-title {
+  color: var(--cat-white);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+.test-result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.test-result-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.test-result-table tr:last-child { border-bottom: none; }
+.test-result-table td {
+  padding: 0.85rem 1.4rem;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.test-result-table td.trt-label {
+  width: 36%;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  background: rgba(0,0,0,0.15);
+  border-right: 2px solid var(--cat-yellow);
+}
+.test-result-table td.trt-value {
+  color: var(--cat-white);
+}
+.test-result-table td.trt-value strong {
+  color: var(--cat-white);
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .test-result-table td { padding: 0.7rem 0.9rem; font-size: 12.5px; }
+  .test-result-table td.trt-label { width: 42%; }
+}
+
 /* ─── 도면 확대 모달 ─── */
 .drawing-modal {
   position: fixed;
@@ -888,8 +951,8 @@ h1, h2, h3, h4, h5, h6,
     <span class="section-eyebrow">QUALITY VERIFICATION</span>
     <h2 class="section-h2">품질·안전 검증 현황</h2>
     <p class="section-lead">
-      SS-SVC-32CX는 다년간 운영 중인 기존 고객 실증 데이터를 바탕으로 개발된 부품으로,
-      공식 인증을 위한 절차를 단계적으로 진행하고 있습니다.
+      SS-SVC-32CX는 동일 사양의 SAMSUN 제작 부품을 기존 공급 고객사에서 안정적으로 운용 중인 검증된 부품이며,
+      현장 시험을 통한 작동·누설 검증을 완료하였습니다.
     </p>
 
     <div class="quality-grid">
@@ -920,32 +983,80 @@ h1, h2, h3, h4, h5, h6,
       <div class="quality-item">
         <div class="quality-status done">✓</div>
         <div class="quality-info">
-          <h4>실증 운영 데이터</h4>
-          <p>다년간 운영 중인 기존 사용처의 정상 가동 데이터 확보</p>
+          <h4>기존 고객사 운용 실적</h4>
+          <p>동일 사양 부품이 기존 공급 고객사에서 안정적으로 운용 중</p>
         </div>
       </div>
 
       <div class="quality-item">
-        <div class="quality-status progress">○</div>
+        <div class="quality-status done">✓</div>
         <div class="quality-info">
-          <h4>시험 압력 검증 <span style="color:var(--cat-yellow);font-size:11px;font-weight:800;letter-spacing:1px;">진행 중</span></h4>
-          <p>공식 스펙 테스트 의뢰 중 — 압력시험 성적서 확보 예정</p>
+          <h4>Safety Valve Opening Pressure Test</h4>
+          <p>설정 압력 200 kgf/cm² 작동 확인 · 허용오차 ±5% 이내</p>
         </div>
       </div>
 
       <div class="quality-item">
-        <div class="quality-status progress">○</div>
+        <div class="quality-status done">✓</div>
         <div class="quality-info">
-          <h4>누설 시험 결과 <span style="color:var(--cat-yellow);font-size:11px;font-weight:800;letter-spacing:1px;">진행 중</span></h4>
-          <p>공식 스펙 테스트 의뢰 중 — 누설 시험 결과 확보 예정</p>
+          <h4>누설 시험</h4>
+          <p>스펙 테스트 결과 누설 없음 확인</p>
         </div>
       </div>
     </div>
 
+    <!-- 시험 결과 상세 표 -->
+    <div class="test-result-block">
+      <div class="test-result-header">
+        <span class="test-result-badge">TEST REPORT</span>
+        <h3 class="test-result-title">Safety Valve Opening Pressure Test 결과</h3>
+      </div>
+      <table class="test-result-table">
+        <tr>
+          <td class="trt-label">시험 항목</td>
+          <td class="trt-value">Safety Valve Opening Pressure Test</td>
+        </tr>
+        <tr>
+          <td class="trt-label">설정 압력</td>
+          <td class="trt-value"><strong>200 kgf/cm²</strong> (약 19.6 MPa)</td>
+        </tr>
+        <tr>
+          <td class="trt-label">작동 확인 압력</td>
+          <td class="trt-value"><strong>200 kgf/cm²</strong></td>
+        </tr>
+        <tr>
+          <td class="trt-label">허용 오차</td>
+          <td class="trt-value">±5%</td>
+        </tr>
+        <tr>
+          <td class="trt-label">압력 게이지 범위</td>
+          <td class="trt-value">0–500 kgf/cm² / 0–50 MPa</td>
+        </tr>
+        <tr>
+          <td class="trt-label">검증 항목</td>
+          <td class="trt-value">압력 지시 확인 · 밸브 작동 확인 · 누설 여부 확인</td>
+        </tr>
+        <tr>
+          <td class="trt-label">수행 시험소</td>
+          <td class="trt-value">현대공업사 (부산)</td>
+        </tr>
+        <tr>
+          <td class="trt-label">시험 결과</td>
+          <td class="trt-value"><strong style="color:var(--cat-yellow)">✓ PASS</strong> — 스펙 기준 내 정상 작동, 누설 없음</td>
+        </tr>
+        <tr>
+          <td class="trt-label">시험 자료</td>
+          <td class="trt-value">현장 시험 영상 보유 (요청 시 제공 가능)</td>
+        </tr>
+      </table>
+    </div>
+
     <div class="quality-note">
       <strong>※</strong> 적용 재질 성적서(Mill Sheet), 치수 비교표, 현장 장착성 검토 자료 등 상세 기술 자료는
-      <strong>NDA(비밀유지계약) 체결 후 제공</strong> 가능합니다.
-      최종 적용 전에는 시험 성적서와 치수 비교 자료를 통한 검증 후 적용을 권장합니다.
+      <strong>NDA(비밀유지계약) 체결 후 제공</strong> 가능합니다.<br>
+      <strong>※</strong> Safety Valve Opening Pressure Test <strong>현장 시험 영상 자료</strong>를 보유하고 있으며,
+      <strong>요청 시 제공 가능</strong>합니다.<br>
+      <strong>※</strong> 최종 적용 전에는 시험 자료와 치수 비교 자료를 통한 검증 후 적용을 권장합니다.
     </div>
   </div>
 </section>

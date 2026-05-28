@@ -1,52 +1,12 @@
 [
   {
-    "title": "ISO 9001 인증서 (품질경영)",
-    "category": "인증서",
-    "description": "GERMAN CERT 인증번호: GQ-211254. 품질경영 시스템 국제 표준 인증.",
-    "url": "/files/library/iso-9001-cert.pdf",
+    "title": "SS-SVC-32CX 제품 카탈로그",
+    "category": "제품 카탈로그",
+    "description": "대형 디젤엔진용 Indicator Cock & Cylinder Safety Valve 개량형 부품 카탈로그. 제품 사양, 도면, 품질 검증 자료를 확인하실 수 있습니다.",
+    "url": "/files/library/ss-svc-32cx-catalog.pdf",
     "type": "PDF",
-    "size": "70KB",
-    "date": "2026-05-19",
-    "published": false
-  },
-  {
-    "title": "ISO 14001 인증서 (환경경영)",
-    "category": "인증서",
-    "description": "GERMAN CERT 인증번호: GE-210491. 환경경영 시스템 국제 표준 인증.",
-    "url": "/files/library/iso-14001-cert.pdf",
-    "type": "PDF",
-    "size": "71KB",
-    "date": "2026-05-19",
-    "published": false
-  },
-  {
-    "title": "ISO 45001 인증서 (안전보건경영)",
-    "category": "인증서",
-    "description": "GERMAN CERT 인증번호: GO-251038. 안전보건경영 시스템 국제 표준 인증.",
-    "url": "/files/library/iso-45001-cert.pdf",
-    "type": "PDF",
-    "size": "197KB",
-    "date": "2026-05-19",
-    "published": false
-  },
-  {
-    "title": "사업자등록증",
-    "category": "인증서",
-    "description": "㈜삼선엔지니어링 사업자등록증 (업무용).",
-    "url": "/files/library/business-registration.pdf",
-    "type": "PDF",
-    "size": "797KB",
-    "date": "2026-05-19",
-    "published": false
-  },
-  {
-    "title": "전기공사업 등록증",
-    "category": "인증서",
-    "description": "전라남도 전기공사업 등록증 (등록번호: 전남-02289호).",
-    "url": "/files/library/electrical-construction-cert.pdf",
-    "type": "PDF",
-    "size": "174KB",
-    "date": "2026-05-19",
-    "published": false
+    "size": "1.2MB",
+    "date": "2026-05-28",
+    "published": true
   }
 ]

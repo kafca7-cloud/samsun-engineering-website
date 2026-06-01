@@ -915,6 +915,17 @@ h1, h2, h3, h4, h5, h6,
     color: rgba(255,255,255,0.9); font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
     padding: 1.6rem 1rem 0.7rem; line-height: 1.4; word-break: keep-all;
   }
+  .m-future-graphic .fg-route { stroke-dasharray: 3 7; animation: fgFlow 3s linear infinite; }
+  .m-future-graphic .fg-route:nth-child(2) { animation-duration: 3.6s; }
+  .m-future-graphic .fg-route:nth-child(3) { animation-duration: 2.6s; }
+  .m-future-graphic .fg-route:nth-child(4) { animation-duration: 3.3s; }
+  .m-future-graphic .fg-route:nth-child(5) { animation-duration: 2.9s; }
+  @keyframes fgFlow { to { stroke-dashoffset: -50; } }
+  .m-future-graphic .fg-pulse { transform-box: fill-box; transform-origin: center; animation: fgPulse 2.6s ease-in-out infinite; }
+  @keyframes fgPulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.55); opacity: 0.12; } }
+  @media (prefers-reduced-motion: reduce) {
+    .m-future-graphic .fg-route, .m-future-graphic .fg-pulse { animation: none; }
+  }
   @supports not (aspect-ratio: 1/1) {
     .m-future-graphic { height: 0; padding-bottom: 62.5%; }
     .m-future-graphic svg { position: absolute; inset: 0; }
@@ -948,36 +959,50 @@ h1, h2, h3, h4, h5, h6,
       </div>
       <div class="m-future-card reveal" data-d="2">
         <div class="m-future-graphic">
-          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="여수항 기항 외국적 선박 글로벌 대응 개념도">
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="세계 각지에서 대한민국 여수로 모이는 글로벌 선박 서비스 개념도">
             <defs>
               <linearGradient id="fgGrad" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="#13212e"/>
                 <stop offset="1" stop-color="#0a121a"/>
               </linearGradient>
-              <radialGradient id="fgGlow" cx="0.72" cy="0.38" r="0.62">
-                <stop offset="0" stop-color="#FFC400" stop-opacity="0.12"/>
+              <radialGradient id="fgGlow" cx="0.525" cy="0.49" r="0.6">
+                <stop offset="0" stop-color="#FFC400" stop-opacity="0.16"/>
                 <stop offset="1" stop-color="#FFC400" stop-opacity="0"/>
               </radialGradient>
             </defs>
             <rect width="320" height="200" fill="url(#fgGrad)"/>
             <rect width="320" height="200" fill="url(#fgGlow)"/>
-            <g fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1">
-              <circle cx="228" cy="98" r="72"/>
-              <ellipse cx="228" cy="98" rx="72" ry="25"/>
-              <ellipse cx="228" cy="98" rx="38" ry="72"/>
-              <line x1="156" y1="98" x2="300" y2="98"/>
+            <!-- 희미한 글로브 (여수 중심) -->
+            <g fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
+              <circle cx="168" cy="92" r="80"/>
+              <ellipse cx="168" cy="92" rx="80" ry="28"/>
+              <ellipse cx="168" cy="92" rx="42" ry="80"/>
+              <line x1="88" y1="92" x2="248" y2="92"/>
             </g>
-            <g fill="none" stroke="#FFC400" stroke-width="1.6" stroke-linecap="round">
-              <path d="M64 152 Q150 36 252 66" stroke-dasharray="2 6" stroke-opacity="0.9"/>
-              <path d="M64 152 Q120 112 198 126" stroke-dasharray="2 6" stroke-opacity="0.5"/>
+            <!-- 항로: 세계 각지 → 여수 수렴 (안쪽으로 흐름) -->
+            <g class="fg-routes" fill="none" stroke="#FFC400" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.85">
+              <path class="fg-route" d="M38 44 Q98 58 168 98"/>
+              <path class="fg-route" d="M292 34 Q238 58 168 98"/>
+              <path class="fg-route" d="M22 110 Q92 100 168 98"/>
+              <path class="fg-route" d="M302 118 Q246 104 168 98"/>
+              <path class="fg-route" d="M118 22 Q150 52 168 98"/>
             </g>
-            <circle cx="252" cy="66" r="4" fill="#FFC400"/>
-            <circle cx="252" cy="66" r="9" fill="none" stroke="#FFC400" stroke-opacity="0.4"/>
-            <circle cx="198" cy="126" r="3" fill="#ffffff" fill-opacity="0.7"/>
-            <circle cx="64" cy="152" r="5" fill="#FFC400"/>
-            <circle cx="64" cy="152" r="11" fill="none" stroke="#FFC400" stroke-opacity="0.45"/>
+            <!-- 글로벌 출발 노드 -->
+            <g fill="#ffffff" fill-opacity="0.62">
+              <circle cx="38" cy="44" r="2.6"/>
+              <circle cx="292" cy="34" r="2.6"/>
+              <circle cx="22" cy="110" r="2.6"/>
+              <circle cx="302" cy="118" r="2.6"/>
+              <circle cx="118" cy="22" r="2.6"/>
+            </g>
+            <!-- 여수 초점 노드 -->
+            <circle class="fg-pulse" cx="168" cy="98" r="13" fill="none" stroke="#FFC400" stroke-opacity="0.5"/>
+            <circle cx="168" cy="98" r="6" fill="#FFC400"/>
+            <circle cx="168" cy="98" r="2.4" fill="#0a121a"/>
+            <text x="168" y="122" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#FFC400">여수</text>
+            <text x="168" y="133" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="6.5" font-weight="600" letter-spacing="2" fill="#ffffff" fill-opacity="0.5">KOREA</text>
           </svg>
-          <span class="m-future-graphic-cap">여수항 기항 외국적 선박 · 글로벌 CAT 부품망 연계</span>
+          <span class="m-future-graphic-cap">세계 각지 운항 선박의 여수항 기항 대응 · 글로벌 CAT 부품망 연계</span>
         </div>
         <span class="m-future-tag">Global Vessels</span>
         <h3>CAT 탑재 외국적 선박 서비스</h3>

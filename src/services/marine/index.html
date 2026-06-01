@@ -1,30 +1,281 @@
-<!-- @meta {
-  "cta_eyebrow": "서비스 문의",
-  "cta_title": "선박 엔진·발전기 정비<br><em>가능 여부를 확인하세요</em>",
-  "cta_sub": "주기관·보조기관·발전기 모두 대응 가능합니다. 관공선·선사 현장 출장 정비, 부품 조달까지 통합 지원해 드립니다.",
-  "cta_primary_label": "☎ 서비스 가능 여부 확인하기",
-  "cta_primary_href": "tel:0616421247",
-  "cta_secondary_label": "✉ 이메일 문의",
-  "cta_secondary_href": "mailto:samsun3618@hanmail.net"
-} -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>해상 엔진 수리 (Marine) | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.">
+<title>선박·관공선 엔진 정비 | SAMSUN 삼선엔지니어링</title>
+<meta name="description" content="선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰 함정, 소방정 등 관공선 점검·수리 실적 다수 보유.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://samsuneng.co.kr/services/marine/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://samsuneng.co.kr/services/marine/">
-<meta property="og:title" content="해상 엔진 수리 (Marine) | SAMSUN 삼선엔지니어링">
-<meta property="og:description" content="선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.">
+<meta property="og:title" content="선박·관공선 엔진 정비 | SAMSUN 삼선엔지니어링">
+<meta property="og:description" content="선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰 함정, 소방정 등 관공선 점검·수리 실적 다수 보유.">
 <meta property="og:locale" content="ko_KR">
 
 <style>
-{{> design-tokens}}
+/* ============================================================
+   SAMSUN 공통 디자인 토큰
+   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
+   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
+   ============================================================ */
+
+:root {
+  /* 색상 */
+  --cat-yellow: #FFC400;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-yellow-soft: rgba(255,196,0,0.06);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-white: #ffffff;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-gray5: #2a2a2a;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+
+  /* 레이아웃 */
+  --max-w: 1280px;
+
+  /* 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── 기본 리셋 ─── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 64px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--cat-black);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─── HERO 영역 공통 스타일 ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-stripe {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
+  z-index: 2;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
+
+/* ─── CTA 섹션 공통 스타일 ─── */
+.cta-section {
+  background: var(--cat-black); color: var(--cat-white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow, .cta-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.cta-title em { color: var(--cat-yellow); font-style: normal; }
+.cta-sub, .cta-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 16px 32px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  border: 1px solid transparent; cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cat-yellow); color: var(--cat-black);
+}
+.btn-primary:hover { background: #e6b000; }
+.btn-secondary {
+  background: transparent; color: var(--cat-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  border-color: var(--cat-yellow); color: var(--cat-yellow);
+}
+
+/* ─── 모바일 반응형 ─── */
+@media (max-width: 560px) {
+  body { padding-top: 56px; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
+  .hero { padding: 110px 1rem 60px; }
+  .cta-section { padding: 60px 1rem; }
+  .cta-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
 </style>
 
 <style>
@@ -161,19 +412,173 @@
   }
   .content-inner { padding: 2rem 1rem; }
 }
+
+/* ============================================================
+   MARINE 상세 콘텐츠 섹션 (placeholder 교체)
+   ============================================================ */
+.m-sec { padding: 5rem 2rem; }
+.m-sec.dark { background: var(--cat-black); color: var(--cat-white); }
+.m-sec.light { background: var(--cat-white); }
+.m-sec.soft { background: var(--cat-gray1); }
+.m-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+.m-head { margin-bottom: 3rem; max-width: 640px; }
+.m-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.m-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); text-transform: uppercase; margin-bottom: 0.9rem;
+}
+.m-label::before { content: ''; width: 24px; height: 2px; background: var(--cat-yellow); }
+.m-head.center .m-label { justify-content: center; }
+.m-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800;
+  letter-spacing: -0.6px; line-height: 1.2; margin-bottom: 0.8rem;
+  word-break: keep-all;
+}
+.m-sec.dark .m-title { color: var(--cat-white); }
+.m-sec.light .m-title, .m-sec.soft .m-title { color: var(--cat-black); }
+.m-sub {
+  font-size: 1rem; line-height: 1.8; word-break: keep-all;
+}
+.m-sec.dark .m-sub { color: rgba(255,255,255,0.6); }
+.m-sec.light .m-sub, .m-sec.soft .m-sub { color: var(--cat-gray4); }
+
+/* ── 서비스 항목 카드 그리드 ── */
+.m-svc-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem;
+}
+.m-svc-card {
+  background: var(--cat-white); border: 1px solid var(--cat-border);
+  border-top: 3px solid var(--cat-yellow);
+  padding: 2rem 1.8rem; position: relative;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.m-sec.soft .m-svc-card { background: var(--cat-white); }
+.m-svc-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.m-svc-ico {
+  width: 48px; height: 48px; background: var(--cat-black);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.m-svc-ico svg { width: 26px; height: 26px; fill: var(--cat-yellow); }
+.m-svc-card h3 {
+  font-size: 17px; font-weight: 800; color: var(--cat-black);
+  margin-bottom: 0.6rem; letter-spacing: -0.3px; word-break: keep-all;
+}
+.m-svc-card p {
+  font-size: 14px; color: var(--cat-gray4); line-height: 1.7; word-break: keep-all;
+}
+.m-svc-card .m-svc-list {
+  margin-top: 1rem; display: flex; flex-direction: column; gap: 6px;
+}
+.m-svc-card .m-svc-list span {
+  font-size: 13px; color: var(--cat-gray4); padding-left: 16px; position: relative;
+}
+.m-svc-card .m-svc-list span::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 7px; height: 7px; background: var(--cat-yellow);
+}
+
+/* ── 작업 프로세스 (번호 스텝) ── */
+.m-proc {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.m-step { background: var(--cat-card); padding: 1.6rem 1.2rem; position: relative; }
+.m-step-n {
+  font-size: 12px; font-weight: 800; letter-spacing: 1px;
+  color: var(--cat-black); background: var(--cat-yellow);
+  display: inline-block; padding: 2px 8px; margin-bottom: 0.9rem;
+}
+.m-step h4 { font-size: 14.5px; font-weight: 700; color: var(--cat-white); margin-bottom: 0.4rem; word-break: keep-all; }
+.m-step p { font-size: 12.5px; color: rgba(255,255,255,0.5); line-height: 1.6; word-break: keep-all; }
+
+/* ── 현장 대응 / Why 카드 ── */
+.m-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+.m-why-card {
+  background: var(--cat-white); border: 1px solid var(--cat-border);
+  padding: 1.8rem; transition: border-color 0.25s;
+}
+.m-why-card:hover { border-color: var(--cat-black); }
+.m-why-card .m-why-tag {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--cat-yellow); background: var(--cat-black);
+  display: inline-block; padding: 4px 9px; margin-bottom: 1rem;
+}
+.m-why-card h4 { font-size: 16px; font-weight: 800; color: var(--cat-black); margin-bottom: 0.5rem; letter-spacing: -0.3px; word-break: keep-all; }
+.m-why-card p { font-size: 13.5px; color: var(--cat-gray4); line-height: 1.7; word-break: keep-all; }
+
+/* ── 관공선 실적 배너 ── */
+.m-record {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,196,0,0.2);
+  border-left: 4px solid var(--cat-yellow);
+  padding: 2rem 2.2rem; display: grid; grid-template-columns: auto 1fr; gap: 1.6rem; align-items: center;
+}
+.m-record-ico { width: 52px; height: 52px; flex-shrink: 0; }
+.m-record-ico svg { width: 52px; height: 52px; fill: var(--cat-yellow); opacity: 0.85; }
+.m-record h4 { font-size: 1.05rem; font-weight: 800; color: var(--cat-white); margin-bottom: 0.5rem; letter-spacing: -0.3px; }
+.m-record p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; word-break: keep-all; }
+
+/* ── 스크롤 등장 모션 ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal[data-d="1"] { transition-delay: 0.08s; }
+.reveal[data-d="2"] { transition-delay: 0.16s; }
+.reveal[data-d="3"] { transition-delay: 0.24s; }
+.reveal[data-d="4"] { transition-delay: 0.32s; }
+.reveal[data-d="5"] { transition-delay: 0.40s; }
+
+@media (max-width: 860px) {
+  .m-sec { padding: 3.5rem 1.2rem; }
+  .m-svc-grid { grid-template-columns: 1fr; }
+  .m-proc { grid-template-columns: repeat(2, 1fr); }
+  .m-why-grid { grid-template-columns: 1fr; }
+  .m-record { grid-template-columns: 1fr; text-align: center; }
+  .m-record-ico { margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .m-proc { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-{{> header-sub}}
+<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<style>
+  /* 서브 페이지 NAV: 1280px 제한 풀고 화면 우측 끝까지 활용 */
+  nav#mainNav .nav-inner {
+    max-width: none;
+    padding: 0 2rem;
+  }
+  @media (max-width: 720px) {
+    nav#mainNav .nav-inner { padding: 0 1rem; }
+  }
+</style>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="home-btn">
+      <span>홈으로</span>
+    </a>
+  </div>
+</nav>
+
 
 <section class="hero">
   <div class="hero-stripe"></div>
+  <!-- 사진 없이 깊이감: 그리드 패턴 + 우측 옐로우 글로우 (CSS only, 이 페이지 한정) -->
+  <div style="position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px);background-size:38px 38px;z-index:1;pointer-events:none;"></div>
+  <div style="position:absolute;top:-10%;right:-8%;width:55%;height:120%;background:radial-gradient(circle at 65% 50%,rgba(255,196,0,0.10) 0%,transparent 60%);z-index:1;pointer-events:none;"></div>
+  <!--
+    하단 hero 배경 사진 슬롯 (선택) — 실제 선박/해상 정비 사진이 있으면
+    이 section 에 background-image 로 넣고 위 그리드/글로우는 덜어내면 됩니다.
+  -->
   <div class="hero-inner">
     <span class="hero-label">MARINE</span>
     <h1>해상 엔진 수리<br><em>선박 주기관·보조기관·발전기 정비</em></h1>
     <p class="lead">
-      선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.
+      선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰 함정, 소방정 등 관공선 점검·수리 실적 다수 보유.
     </p>
   </div>
 </section>
@@ -190,14 +595,348 @@
   </div>
 </section>
 
-<section class="content-placeholder">
-  <div class="content-inner">
-    <span class="placeholder-note">CONTENT COMING SOON</span>
-    <h2>상세 콘텐츠 준비 중입니다</h2>
-    <p>
-      구체적인 서비스 항목, 차별화 포인트, 주요 실적 등 자세한 내용을 곧 업데이트할 예정입니다.<br>
-      문의사항이 있으시면 언제든 연락 주세요.
+<!-- ============ 서비스 항목 ============ -->
+<section class="m-sec soft">
+  <div class="m-wrap">
+    <div class="m-head reveal">
+      <div class="m-label">Service Scope</div>
+      <h2 class="m-title">선박 엔진·발전기,<br>분야별로 대응합니다</h2>
+      <p class="m-sub">주기관부터 보조기관·선박 발전기까지, 분해정비(O/H)와 부품 교체를 분야별 전문 인력이 수행합니다.</p>
+    </div>
+    <div class="m-svc-grid">
+      <div class="m-svc-card reveal" data-d="1">
+        <h3>주기관(Main Engine) 정비·오버홀</h3>
+        <p>선박 추진용 주기관의 분해정비와 오버홀을 수행합니다. 마모된 부품 계측, 소모품 교체, 재조립 후 시운전까지 단계별로 진행합니다.</p>
+        <div class="m-svc-list">
+          <span>분해정비 / 오버홀(O/H)</span>
+          <span>실린더·피스톤·베어링 점검</span>
+          <span>재조립 후 시운전 확인</span>
+        </div>
+      </div>
+      <div class="m-svc-card reveal" data-d="2">
+        <h3>보조기관(Aux Engine) 정비</h3>
+        <p>선내 동력·유압·펌프 구동용 보조기관의 점검 및 정비를 지원합니다. 운전 이력과 상태를 확인해 정비 범위를 함께 검토합니다.</p>
+        <div class="m-svc-list">
+          <span>보조기관 점검·정비</span>
+          <span>상태 진단 기반 정비 범위 산정</span>
+          <span>소모품 교체</span>
+        </div>
+      </div>
+      <div class="m-svc-card reveal" data-d="3">
+        <h3>선박 발전기 정비</h3>
+        <p>선박 전원 공급용 발전기의 정기점검·정비·부품 교체를 수행합니다. 엔진과 발전부를 함께 점검해 가동 신뢰성 확보를 지원합니다.</p>
+        <div class="m-svc-list">
+          <span>발전기 엔진·발전부 점검</span>
+          <span>정기점검 / 예방정비</span>
+          <span>부품 교체·조정</span>
+        </div>
+      </div>
+      <div class="m-svc-card reveal" data-d="4">
+        <h3>부품 교체·조달</h3>
+        <p>CAT 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 조달합니다. 공급이 지연되거나 단종된 부품은 자체 제작도 검토합니다.</p>
+        <div class="m-svc-list">
+          <span>정품 부품 조달</span>
+          <span>단종·특수 사양 자체 제작 검토</span>
+          <span>현장 부품 교체</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 작업 프로세스 ============ -->
+<section class="m-sec dark">
+  <div class="m-wrap">
+    <div class="m-head reveal">
+      <div class="m-label">Work Process</div>
+      <h2 class="m-title">진단부터 시운전까지,<br>표준화된 정비 절차</h2>
+      <p class="m-sub">단순 교체가 아니라, 진단으로 정비 범위를 먼저 산정합니다. 작업 내역과 교체 부품은 기록으로 정리해 드립니다.</p>
+    </div>
+    <div class="m-proc reveal" data-d="1">
+      <div class="m-step">
+        <span class="m-step-n">01</span>
+        <h4>진단·점검</h4>
+        <p>운전 상태 확인 및 결함 진단</p>
+      </div>
+      <div class="m-step">
+        <span class="m-step-n">02</span>
+        <h4>분해(O/H)</h4>
+        <p>대상 부위 분해 및 내부 확인</p>
+      </div>
+      <div class="m-step">
+        <span class="m-step-n">03</span>
+        <h4>정밀 계측·검사</h4>
+        <p>마모·치수 계측, 부품 상태 판정</p>
+      </div>
+      <div class="m-step">
+        <span class="m-step-n">04</span>
+        <h4>정비·부품 교체</h4>
+        <p>정비 범위에 따른 교체·수리</p>
+      </div>
+      <div class="m-step">
+        <span class="m-step-n">05</span>
+        <h4>재조립</h4>
+        <p>제조사 규정값에 맞춰 재조립</p>
+      </div>
+      <div class="m-step">
+        <span class="m-step-n">06</span>
+        <h4>시운전·인도</h4>
+        <p>시운전 확인 후 정비 내역 정리</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 현장 대응 / Why ============ -->
+<section class="m-sec light">
+  <div class="m-wrap">
+    <div class="m-head reveal">
+      <div class="m-label">Why SAMSUN</div>
+      <h2 class="m-title">현장 조건에 맞춰<br>유연하게 대응합니다</h2>
+      <p class="m-sub">입거 정비, 계류 중 정비, 현장 출장 정비 등 선박·관공선 운용 일정에 맞춰 작업 방식을 협의합니다.</p>
+    </div>
+    <div class="m-why-grid">
+      <div class="m-why-card reveal" data-d="1">
+        <span class="m-why-tag">CAT 공인</span>
+        <h4>공인 대리점 기술 체계</h4>
+        <p>1995년부터 이어온 Caterpillar 공인 대리점 경험을 바탕으로, CAT 진단·정비 절차에 따라 작업을 진행합니다.</p>
+      </div>
+      <div class="m-why-card reveal" data-d="2">
+        <span class="m-why-tag">35년+</span>
+        <h4>육·해상 통합 정비 경험</h4>
+        <p>1990년 창립 이래 발전기·엔진 분야에서 축적한 경험을 해상 엔진 정비에 동일하게 적용합니다.</p>
+      </div>
+      <div class="m-why-card reveal" data-d="3">
+        <span class="m-why-tag">출장 대응</span>
+        <h4>현장·출장 정비 지원</h4>
+        <p>입거·계류 일정에 맞춘 현장 출장 정비와 부품 조달을 통합 지원합니다. 일정은 사전 협의로 조율합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 관공선·선사 실적 (지명원·매출기록 기반) ============ -->
+<style>
+  .m-metric-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 3rem;
+  }
+  .m-metric { background: var(--cat-card); padding: 1.8rem 1.4rem; text-align: center; }
+  .m-metric-n { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: var(--cat-yellow); line-height: 1.1; letter-spacing: -0.5px; }
+  .m-metric-l { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 0.6rem; letter-spacing: 0.3px; line-height: 1.4; word-break: keep-all; }
+  .m-agency-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .m-agency {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--cat-yellow); padding: 1.5rem 1.6rem;
+    transition: background 0.2s;
+  }
+  .m-agency:hover { background: rgba(255,196,0,0.07); }
+  .m-agency h4 { font-size: 15.5px; font-weight: 800; color: var(--cat-white); margin-bottom: 0.4rem; letter-spacing: -0.3px; word-break: keep-all; }
+  .m-agency .m-agency-type { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--cat-yellow); text-transform: uppercase; margin-bottom: 0.8rem; }
+  .m-agency p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; word-break: keep-all; }
+  .m-eng-wrap { margin-top: 3rem; }
+  .m-eng-cap { font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--cat-yellow); text-transform: uppercase; margin-bottom: 1rem; }
+  .m-eng-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .m-eng-tag { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); padding: 5px 12px; letter-spacing: 0.3px; }
+  .m-eng-tag.alt { color: rgba(255,255,255,0.45); border-style: dashed; }
+  .m-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 2rem; line-height: 1.6; }
+  @media (max-width: 860px) {
+    .m-metric-row { grid-template-columns: repeat(2, 1fr); }
+    .m-agency-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<section class="m-sec dark">
+  <div class="m-wrap">
+    <div class="m-head reveal">
+      <div class="m-label">Track Record</div>
+      <h2 class="m-title">1990년 창립 이래<br>이어온 해상 엔진 정비</h2>
+      <p class="m-sub">1990년 창립 이래, 선박 주기관·보조기관·발전기 정비를 중심으로 해상 엔진 분야에서 경험을 쌓아 왔습니다. 관공선·연구선·방제선부터 민간 선박까지, 폭넓은 선종에 걸친 정비 실적을 보유하고 있습니다.</p>
+    </div>
+
+    <div class="m-metric-row reveal" data-d="1">
+      <div class="m-metric">
+        <div class="m-metric-n">Since 1990</div>
+        <div class="m-metric-l">창립 이래<br>해상 정비 수행</div>
+      </div>
+      <div class="m-metric">
+        <div class="m-metric-n">200건+</div>
+        <div class="m-metric-l">누적 해상 정비 실적</div>
+      </div>
+      <div class="m-metric">
+        <div class="m-metric-n">C280</div>
+        <div class="m-metric-l">CAT 마린 최상위<br>대형 기종 오버홀 경험</div>
+      </div>
+      <div class="m-metric">
+        <div class="m-metric-n">CAT 17종+</div>
+        <div class="m-metric-l">정비 경험 CAT 기종<br>(3116 ~ C280)</div>
+      </div>
+    </div>
+
+    <div class="m-agency-grid">
+      <div class="m-agency reveal" data-d="1">
+        <div class="m-agency-type">Coast Guard</div>
+        <h4>해양경찰청</h4>
+        <p>여수·목포·서해지방 해양경찰 함정·방제정·경비정 주기관 정비. 화학방제함, 방제20호정, S-76정, S-32정 등.</p>
+      </div>
+      <div class="m-agency reveal" data-d="2">
+        <div class="m-agency-type">Fisheries</div>
+        <h4>해양수산부·지방해양수산청</h4>
+        <p>어업지도선·관공선·항만순찰선 기관수리. 무궁화10호, 섬사랑3호, 항만순찰선 푸르미호 등.</p>
+      </div>
+      <div class="m-agency reveal" data-d="3">
+        <div class="m-agency-type">Customs</div>
+        <h4>관세청 세관</h4>
+        <p>여수·군산세관 감시정 주기관 정비 및 부품 공급. 전북330호, 전남321호 등.</p>
+      </div>
+      <div class="m-agency reveal" data-d="1">
+        <div class="m-agency-type">Fire & Rescue</div>
+        <h4>소방 (전남·여수)</h4>
+        <p>소방정 주기관·부품 정비 및 교체. 소방정 전남705호 등.</p>
+      </div>
+      <div class="m-agency reveal" data-d="2">
+        <div class="m-agency-type">Research</div>
+        <h4>국립공원공단</h4>
+        <p>국립공원연구원·해양생태보전원 해양 연구선 정비. 연구1호 주기관·열교환기·ECM 등.</p>
+      </div>
+      <div class="m-agency reveal" data-d="3">
+        <div class="m-agency-type">Environment</div>
+        <h4>해양환경공단</h4>
+        <p>방제선 주기관·발전기 정비. 환경1호, 방제호 등 다수.</p>
+      </div>
+    </div>
+
+    <p class="m-note reveal">
+      이 외에도 전라남도청·전남대학교 실습·지도선, 전남개발공사 울돌목 거북배(주기관 정비), 민간 예선·수산·해운사 선박 다수의 정비 실적을 보유하고 있습니다.
     </p>
+
+    <div class="m-eng-wrap reveal">
+      <div class="m-eng-cap">정비 경험 엔진 기종</div>
+      <div class="m-eng-tags">
+        <span class="m-eng-tag" style="border-color:var(--cat-yellow);color:var(--cat-yellow);font-weight:800;">CAT C280</span>
+        <span class="m-eng-tag">CAT 3116</span>
+        <span class="m-eng-tag">CAT 3126</span>
+        <span class="m-eng-tag">CAT 3304</span>
+        <span class="m-eng-tag">CAT 3306</span>
+        <span class="m-eng-tag">CAT 3406E</span>
+        <span class="m-eng-tag">CAT 3408</span>
+        <span class="m-eng-tag">CAT 3412</span>
+        <span class="m-eng-tag">CAT 3508</span>
+        <span class="m-eng-tag">CAT 3512</span>
+        <span class="m-eng-tag">CAT 3516 / 3516B</span>
+        <span class="m-eng-tag">CAT C9</span>
+        <span class="m-eng-tag">CAT C15</span>
+        <span class="m-eng-tag">CAT C18</span>
+        <span class="m-eng-tag">CAT C32</span>
+        <span class="m-eng-tag alt">CUMMINS</span>
+        <span class="m-eng-tag alt">MAN</span>
+        <span class="m-eng-tag alt">MTU</span>
+        <span class="m-eng-tag alt">YANMAR 외</span>
+      </div>
+      <p style="margin-top:1.3rem;font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.75;word-break:keep-all;">
+        특히 <strong style="color:var(--cat-yellow);font-weight:700;">Caterpillar 마린 엔진 라인업의 최상위 대형 기종인 C280</strong>(~7,600HP급)까지 오버홀 경험을 보유하고 있어, 소형 보조기관부터 대형 추진엔진까지 폭넓게 대응합니다.
+      </p>
+    </div>
+
+    <p class="m-note">* 누적 해상 정비 실적 기준. 발주처·선종·정비 항목별 상세 자료는 문의 시 제공해 드립니다.</p>
+    <!--
+      사진 슬롯 (선택) — 실제 현장 사진이 있으면 위 m-eng-wrap 아래에 갤러리 추가.
+      지명원 해상 슬라이드(28~33)에 표는 있으나 현장 사진은 별도 확보 필요.
+    -->
+  </div>
+</section>
+
+
+<!-- ============ 성장 방향 (Future Focus) — 실적 아닌 확대 분야 ============ -->
+<style>
+  .m-future-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .m-future-card {
+    background: var(--cat-white); border: 1px solid var(--cat-border);
+    border-top: 4px solid var(--cat-yellow);
+    padding: 2.2rem 2rem; position: relative; overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .m-future-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .m-future-card .m-future-ico {
+    width: 52px; height: 52px; background: var(--cat-black);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 1.3rem;
+  }
+  .m-future-card .m-future-ico svg { width: 28px; height: 28px; fill: var(--cat-yellow); }
+  .m-future-card .m-future-tag {
+    display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--cat-black); background: var(--cat-yellow);
+    padding: 4px 10px; margin-bottom: 1rem;
+  }
+  .m-future-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--cat-black); margin-bottom: 0.7rem; letter-spacing: -0.4px; line-height: 1.35; word-break: keep-all; }
+  .m-future-card p { font-size: 14px; color: var(--cat-gray4); line-height: 1.75; margin-bottom: 1.2rem; word-break: keep-all; }
+  .m-future-card .m-future-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .m-future-card .m-future-tags span { font-size: 11px; font-weight: 600; color: var(--cat-gray4); border: 1px solid var(--cat-border); padding: 4px 10px; letter-spacing: 0.2px; }
+  .m-future-note {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--cat-gray4); line-height: 1.6;
+    background: var(--cat-yellow-soft, rgba(255,196,0,0.06)); border-left: 3px solid var(--cat-yellow);
+    padding: 0.9rem 1.2rem; margin-bottom: 2.5rem; word-break: keep-all;
+  }
+  .m-future-photo {
+    margin: -2.2rem -2rem 1.5rem;
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--cat-gray1);
+  }
+  .m-future-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 45%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .m-future-card:hover .m-future-photo img { transform: scale(1.04); }
+  .m-future-photo-cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+    color: #fff; font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
+    padding: 1.6rem 1rem 0.7rem; line-height: 1.4; word-break: keep-all;
+  }
+  @supports not (aspect-ratio: 1/1) {
+    .m-future-photo { height: 0; padding-bottom: 62.5%; }
+    .m-future-photo img { position: absolute; inset: 0; }
+  }
+  @media (max-width: 860px) { .m-future-grid { grid-template-columns: 1fr; } }
+</style>
+<section class="m-sec soft">
+  <div class="m-wrap">
+    <div class="m-head reveal">
+      <div class="m-label">Future Focus</div>
+      <h2 class="m-title">다음 단계의<br>해상 정비 시장</h2>
+      <p class="m-sub">기존 관공선·산업 선박 정비를 넘어, 변화하는 해상 산업에 맞춰 대응 분야를 확대해 나가고 있습니다.</p>
+    </div>
+
+    <div class="m-future-note reveal">
+      <span>SAMSUN은 성장하는 해상 시장의 변화를 주목하고 있으며, 그동안 축적해 온 엔진 정비 역량을 바탕으로 새로운 수요에 선제적으로 대응하고자 합니다. <strong style="color:var(--cat-black);">CTV, 해상 발전, 친환경 선박 운용</strong> 등 확대되는 해상 산업 분야에 기술 역량을 지속적으로 투입하며, 미래 해상 정비 시장에 필요한 서비스 기반을 준비해 나가고 있습니다.</span>
+    </div>
+
+    <div class="m-future-grid">
+      <div class="m-future-card reveal" data-d="1">
+        <div class="m-future-photo">
+          <img src="ventus-camellia.jpg" alt="㈜여수해양 CTV 벤투스 카멜리아호 — 삼선엔지니어링 관리 선박, 여수항 접안" loading="lazy">
+          <span class="m-future-photo-cap">㈜여수해양 CTV · 벤투스 카멜리아 — 당사 관리 선박</span>
+        </div>
+        <span class="m-future-tag">Offshore Wind</span>
+        <h3>해상풍력 연계 선박 정비</h3>
+        <p>서남해·전남 연안의 해상풍력 단지 확대에 발맞춰, CTV(Crew Transfer Vessel·인력 수송선)·작업지원선과 인근 어선의 정기점검·보수·O/H에 대응하고 있습니다. 실제로 ㈜여수해양 소속 CTV <strong style="color:var(--cat-black);">벤투스 카멜리아호</strong>의 관리를 맡고 있으며, 여수 기반의 출장 정비 체계로 단지 인근 선박을 신속히 지원합니다.</p>
+        <div class="m-future-tags">
+          <span>CTV 관리</span><span>작업지원선</span><span>어선 O/H</span><span>정기점검·보수</span><span>출장 대응</span>
+        </div>
+      </div>
+      <div class="m-future-card reveal" data-d="2">
+        <span class="m-future-tag">Global Vessels</span>
+        <h3>CAT 탑재 외국적 선박 서비스</h3>
+        <p>Caterpillar 엔진·발전기를 탑재한 외국적 선박에 대해, CAT 공인 대리점 네트워크를 활용한 정비·정품 부품 공급에 대응합니다. 여수항 기항 선박을 대상으로 CAT 표준 서비스 절차를 적용하며, 글로벌 부품망과 연계해 경쟁력 있는 조달이 가능합니다.</p>
+        <div class="m-future-tags">
+          <span>외국적 선박</span><span>CAT 정품 부품</span><span>글로벌 네트워크</span><span>여수항 기항</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -207,19 +946,102 @@
     <div class="other-label">OTHER SERVICES</div>
     <h2>다른 사업분야 보기</h2>
     <div class="other-svc-grid">
-      <a href="/services/sales/" class="other-svc-card">세일즈 →</a>
-      <a href="/services/maintenance/" class="other-svc-card">유지보수 →</a>
-      <a href="/services/construction/" class="other-svc-card">시공업 →</a>
-      <a href="/services/rental/" class="other-svc-card">임대업 →</a>
-      <a href="/services/mro/" class="other-svc-card">MRO & 부품 조달 →</a>
-      <a href="/services/" class="other-svc-card" style="background:var(--cat-yellow);color:var(--cat-black);border-left-color:var(--cat-black);font-weight:800;">전체 사업분야 보기 →</a>
+      <a href="/services/sales/" class="other-svc-card">세일즈</a>
+      <a href="/services/maintenance/" class="other-svc-card">유지보수</a>
+      <a href="/services/construction/" class="other-svc-card">시공업</a>
+      <a href="/services/rental/" class="other-svc-card">임대업</a>
+      <a href="/services/mro/" class="other-svc-card">MRO·정품 부품 조달</a>
+      <a href="/services/" class="other-svc-card" style="background:var(--cat-yellow);color:var(--cat-black);border-left-color:var(--cat-black);font-weight:800;">전체 사업분야 보기</a>
     </div>
   </div>
 </section>
 
-{{> cta-section}}
 
-{{> mobile-contact-bar}}
+<!-- ============ SAMSUN IN-HOUSE 크로스링크 ============ -->
+<section class="crosslink-inhouse" style="background: var(--cat-white); padding: 70px 2rem; border-top: 1px solid var(--cat-border);">
+  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center;">
+    <div>
+      <div style="display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; color: var(--cat-black); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;">
+        <span style="display: inline-block; width: 32px; height: 2px; background: var(--cat-yellow);"></span>
+        SAMSUN IN-HOUSE
+      </div>
+      <h2 style="font-size: clamp(1.5rem, 2.6vw, 1.9rem); font-weight: 800; line-height: 1.3; letter-spacing: -0.4px; margin: 0 0 1rem; color: var(--cat-black); word-break: keep-all;">
+        선박 엔진 부품도 <em style="font-style: normal; color: var(--cat-yellow);">자체 제작 가능</em>합니다
+      </h2>
+      <p style="font-size: 15px; line-height: 1.75; color: var(--cat-gray4, #555); margin: 0; max-width: 640px; word-break: keep-all;">
+        해상 운용 특성상 정품 공급이 지연되거나 단종된 부품도 자체 설계·제작하여 신속히 공급합니다. 도면이 있으시면 도면 기반으로, 없으시면 현품 분석 후 제작 검토합니다.
+      </p>
+    </div>
+    <div>
+      <a href="/products/in-house/" style="display: inline-flex; align-items: center; gap: 12px; background: var(--cat-yellow); color: var(--cat-black); padding: 16px 26px; font-size: 14px; font-weight: 800; letter-spacing: 0.3px; text-decoration: none; border-radius: 4px; box-shadow: 0 6px 18px rgba(255, 196, 0, 0.25); transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 24px rgba(255,196,0,0.35)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 6px 18px rgba(255,196,0,0.25)'">
+        자체 제작 제품 보기
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 
+  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
+  페이지별 변수 (모두 기본값 있음):
+    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
+    cta_title        : 큰 제목
+    cta_sub          : 부제·설명
+    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
+    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
+    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
+    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
+-->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">서비스 문의</div>
+    <h2 class="cta-title">선박 엔진·발전기 정비<br><em>가능 여부를 확인하세요</em></h2>
+    <p class="cta-sub">주기관·보조기관·발전기 모두 대응 가능합니다. 관공선·선사 현장 출장 정비, 부품 조달까지 통합 지원해 드립니다.</p>
+    <div class="cta-actions">
+      <a href="tel:0616421247" class="btn btn-primary">
+        서비스 가능 여부 확인 (061-642-1247)
+      </a>
+      <a href="/contact/" class="btn btn-secondary">
+        선박 정비 문의하기
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>전화 상담</span>
+  </a>
+  <a href="/contact/" class="mcb-btn mcb-mail">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>이메일 문의</span>
+  </a>
+</div>
+
+
+<script>
+  // 스크롤 시 콘텐츠 섹션 부드럽게 등장
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || !els.length) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
 
 </body>
 </html>

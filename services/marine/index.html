@@ -877,6 +877,30 @@ h1, h2, h3, h4, h5, h6,
     background: var(--cat-yellow-soft, rgba(255,196,0,0.06)); border-left: 3px solid var(--cat-yellow);
     padding: 0.9rem 1.2rem; margin-bottom: 2.5rem; word-break: keep-all;
   }
+  .m-future-photo {
+    margin: -2.2rem -2rem 1.5rem;
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--cat-gray1);
+  }
+  .m-future-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 45%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .m-future-card:hover .m-future-photo img { transform: scale(1.04); }
+  .m-future-photo-cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+    color: #fff; font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
+    padding: 1.6rem 1rem 0.7rem; line-height: 1.4; word-break: keep-all;
+  }
+  @supports not (aspect-ratio: 1/1) {
+    .m-future-photo { height: 0; padding-bottom: 62.5%; }
+    .m-future-photo img { position: absolute; inset: 0; }
+  }
   @media (max-width: 860px) { .m-future-grid { grid-template-columns: 1fr; } }
 </style>
 <section class="m-sec soft">
@@ -893,6 +917,10 @@ h1, h2, h3, h4, h5, h6,
 
     <div class="m-future-grid">
       <div class="m-future-card reveal" data-d="1">
+        <div class="m-future-photo">
+          <img src="ventus-camellia.jpg" alt="㈜여수해양 CTV 벤투스 카멜리아호 — 삼선엔지니어링 관리 선박, 여수항 접안" loading="lazy">
+          <span class="m-future-photo-cap">㈜여수해양 CTV · 벤투스 카멜리아 — 당사 관리 선박</span>
+        </div>
         <span class="m-future-tag">Offshore Wind</span>
         <h3>해상풍력 연계 선박 정비</h3>
         <p>서남해·전남 연안의 해상풍력 단지 확대에 발맞춰, CTV(Crew Transfer Vessel·인력 수송선)·작업지원선과 인근 어선의 정기점검·보수·O/H에 대응하고 있습니다. 실제로 ㈜여수해양 소속 CTV <strong style="color:var(--cat-black);">벤투스 카멜리아호</strong>의 관리를 맡고 있으며, 여수 기반의 출장 정비 체계로 단지 인근 선박을 신속히 지원합니다.</p>

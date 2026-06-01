@@ -889,7 +889,11 @@ document.getElementById('productSearchInput').addEventListener('input', (e) => {
 
 // ─── 모달 ───
 function openProductModal(productId) {
-  const p = PRODUCT_DATA.find(x => x.id === productId);
+  // 카드 onclick은 PRODUCT_DATA의 숫자 인덱스를 넘김(originalIdx).
+  // 숫자 인덱스와 문자열 id 둘 다 안전하게 처리.
+  const p = (typeof productId === 'number')
+    ? PRODUCT_DATA[productId]
+    : PRODUCT_DATA.find(x => x.id === productId);
   if (!p) return;
 
   const modal = document.getElementById('productModal');

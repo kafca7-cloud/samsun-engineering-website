@@ -877,23 +877,47 @@ h1, h2, h3, h4, h5, h6,
     background: var(--cat-yellow-soft, rgba(255,196,0,0.06)); border-left: 3px solid var(--cat-yellow);
     padding: 0.9rem 1.2rem; margin-bottom: 2.5rem; word-break: keep-all;
   }
-  .m-future-banner {
+  .m-future-photo {
+    margin: -2.2rem -2rem 1.5rem;
     position: relative;
-    width: 100%;
-    height: clamp(220px, 34vw, 380px);
+    aspect-ratio: 16 / 10;
     overflow: hidden;
-    margin-bottom: 1.8rem;
+    background: var(--cat-gray1);
   }
-  .m-future-banner img {
+  .m-future-photo img {
     width: 100%; height: 100%;
     object-fit: cover; object-position: center 45%;
     display: block;
+    transition: transform 0.5s ease;
   }
-  .m-future-banner-cap {
+  .m-future-card:hover .m-future-photo img { transform: scale(1.04); }
+  .m-future-photo-cap {
     position: absolute; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.25) 65%, transparent 100%);
-    color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 0.2px;
-    padding: 2.2rem 1.4rem 0.9rem; line-height: 1.4; word-break: keep-all;
+    background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+    color: #fff; font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
+    padding: 1.6rem 1rem 0.7rem; line-height: 1.4; word-break: keep-all;
+  }
+  @supports not (aspect-ratio: 1/1) {
+    .m-future-photo { height: 0; padding-bottom: 62.5%; }
+    .m-future-photo img { position: absolute; inset: 0; }
+  }
+  .m-future-graphic {
+    margin: -2.2rem -2rem 1.5rem;
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #0a121a;
+  }
+  .m-future-graphic svg { width: 100%; height: 100%; display: block; }
+  .m-future-graphic-cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+    color: rgba(255,255,255,0.9); font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
+    padding: 1.6rem 1rem 0.7rem; line-height: 1.4; word-break: keep-all;
+  }
+  @supports not (aspect-ratio: 1/1) {
+    .m-future-graphic { height: 0; padding-bottom: 62.5%; }
+    .m-future-graphic svg { position: absolute; inset: 0; }
   }
   @media (max-width: 860px) { .m-future-grid { grid-template-columns: 1fr; } }
 </style>
@@ -909,13 +933,12 @@ h1, h2, h3, h4, h5, h6,
       <span>SAMSUN은 성장하는 해상 시장의 변화를 주목하고 있으며, 그동안 축적해 온 엔진 정비 역량을 바탕으로 새로운 수요에 선제적으로 대응하고자 합니다. <strong style="color:var(--cat-black);">CTV, 해상 발전, 친환경 선박 운용</strong> 등 확대되는 해상 산업 분야에 기술 역량을 지속적으로 투입하며, 미래 해상 정비 시장에 필요한 서비스 기반을 준비해 나가고 있습니다.</span>
     </div>
 
-    <div class="m-future-banner reveal">
-      <img src="ventus-camellia.jpg" alt="㈜여수해양 CTV 벤투스 카멜리아호 — 삼선엔지니어링 관리 선박, 여수항 접안" loading="lazy">
-      <span class="m-future-banner-cap">㈜여수해양 CTV · 벤투스 카멜리아 — 당사 관리 선박</span>
-    </div>
-
     <div class="m-future-grid">
       <div class="m-future-card reveal" data-d="1">
+        <div class="m-future-photo">
+          <img src="ventus-camellia.jpg" alt="㈜여수해양 CTV 벤투스 카멜리아호 — 삼선엔지니어링 관리 선박, 여수항 접안" loading="lazy">
+          <span class="m-future-photo-cap">㈜여수해양 CTV · 벤투스 카멜리아 — 당사 관리 선박</span>
+        </div>
         <span class="m-future-tag">Offshore Wind</span>
         <h3>해상풍력 연계 선박 정비</h3>
         <p>서남해·전남 연안의 해상풍력 단지 확대에 발맞춰, CTV(Crew Transfer Vessel·인력 수송선)·작업지원선과 인근 어선의 정기점검·보수·O/H에 대응하고 있습니다. 실제로 ㈜여수해양 소속 CTV <strong style="color:var(--cat-black);">벤투스 카멜리아호</strong>의 관리를 맡고 있으며, 여수 기반의 출장 정비 체계로 단지 인근 선박을 신속히 지원합니다.</p>
@@ -924,6 +947,38 @@ h1, h2, h3, h4, h5, h6,
         </div>
       </div>
       <div class="m-future-card reveal" data-d="2">
+        <div class="m-future-graphic">
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="여수항 기항 외국적 선박 글로벌 대응 개념도">
+            <defs>
+              <linearGradient id="fgGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#13212e"/>
+                <stop offset="1" stop-color="#0a121a"/>
+              </linearGradient>
+              <radialGradient id="fgGlow" cx="0.72" cy="0.38" r="0.62">
+                <stop offset="0" stop-color="#FFC400" stop-opacity="0.12"/>
+                <stop offset="1" stop-color="#FFC400" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="320" height="200" fill="url(#fgGrad)"/>
+            <rect width="320" height="200" fill="url(#fgGlow)"/>
+            <g fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1">
+              <circle cx="228" cy="98" r="72"/>
+              <ellipse cx="228" cy="98" rx="72" ry="25"/>
+              <ellipse cx="228" cy="98" rx="38" ry="72"/>
+              <line x1="156" y1="98" x2="300" y2="98"/>
+            </g>
+            <g fill="none" stroke="#FFC400" stroke-width="1.6" stroke-linecap="round">
+              <path d="M64 152 Q150 36 252 66" stroke-dasharray="2 6" stroke-opacity="0.9"/>
+              <path d="M64 152 Q120 112 198 126" stroke-dasharray="2 6" stroke-opacity="0.5"/>
+            </g>
+            <circle cx="252" cy="66" r="4" fill="#FFC400"/>
+            <circle cx="252" cy="66" r="9" fill="none" stroke="#FFC400" stroke-opacity="0.4"/>
+            <circle cx="198" cy="126" r="3" fill="#ffffff" fill-opacity="0.7"/>
+            <circle cx="64" cy="152" r="5" fill="#FFC400"/>
+            <circle cx="64" cy="152" r="11" fill="none" stroke="#FFC400" stroke-opacity="0.45"/>
+          </svg>
+          <span class="m-future-graphic-cap">여수항 기항 외국적 선박 · 글로벌 CAT 부품망 연계</span>
+        </div>
         <span class="m-future-tag">Global Vessels</span>
         <h3>CAT 탑재 외국적 선박 서비스</h3>
         <p>Caterpillar 엔진·발전기를 탑재한 외국적 선박에 대해, CAT 공인 대리점 네트워크를 활용한 정비·정품 부품 공급에 대응합니다. 여수항 기항 선박을 대상으로 CAT 표준 서비스 절차를 적용하며, 글로벌 부품망과 연계해 경쟁력 있는 조달이 가능합니다.</p>

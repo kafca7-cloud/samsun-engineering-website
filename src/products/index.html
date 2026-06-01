@@ -1,12 +1,3 @@
-<!-- @meta {
-  "cta_eyebrow": "견적 문의",
-  "cta_title": "도입 모델·납기·견적을<br><em>확인해 보세요</em>",
-  "cta_sub": "관심 모델에 대한 견적·재고·납기 정보 모두 SAMSUN에 문의해 주세요. CAT 공인 대리점으로 정품 보증을 제공합니다.",
-  "cta_primary_label": "☎ 견적 문의하기 (061-642-1247)",
-  "cta_primary_href": "tel:0616421247",
-  "cta_secondary_label": "✉ 이메일 문의",
-  "cta_secondary_href": "mailto:samsun3618@hanmail.net"
-} -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -28,7 +19,267 @@
 
 <!-- 공통 디자인 토큰 (build.js가 자동 인라인) -->
 <style>
-{{> design-tokens}}
+/* ============================================================
+   SAMSUN 공통 디자인 토큰
+   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
+   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
+   ============================================================ */
+
+:root {
+  /* 색상 */
+  --cat-yellow: #FFC400;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-yellow-soft: rgba(255,196,0,0.06);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-white: #ffffff;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-gray5: #2a2a2a;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+
+  /* 레이아웃 */
+  --max-w: 1280px;
+
+  /* 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── 기본 리셋 ─── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 64px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--cat-black);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─── HERO 영역 공통 스타일 ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-stripe {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
+  z-index: 2;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
+
+/* ─── CTA 섹션 공통 스타일 ─── */
+.cta-section {
+  background: var(--cat-black); color: var(--cat-white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow, .cta-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.cta-title em { color: var(--cat-yellow); font-style: normal; }
+.cta-sub, .cta-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 16px 32px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  border: 1px solid transparent; cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cat-yellow); color: var(--cat-black);
+}
+.btn-primary:hover { background: #e6b000; }
+.btn-secondary {
+  background: transparent; color: var(--cat-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  border-color: var(--cat-yellow); color: var(--cat-yellow);
+}
+
+/* ─── 모바일 반응형 ─── */
+@media (max-width: 560px) {
+  body { padding-top: 56px; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
+  .hero { padding: 110px 1rem 60px; }
+  .cta-section { padding: 60px 1rem; }
+  .cta-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
 </style>
 
 <!-- 페이지 고유 CSS -->
@@ -188,7 +439,26 @@
 </head>
 <body>
 
-{{> header-sub}}
+<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<style>
+  /* 서브 페이지 NAV: 1280px 제한 풀고 화면 우측 끝까지 활용 */
+  nav#mainNav .nav-inner {
+    max-width: none;
+    padding: 0 2rem;
+  }
+  @media (max-width: 720px) {
+    nav#mainNav .nav-inner { padding: 0 1rem; }
+  }
+</style>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="home-btn">
+      <span class="arrow">←</span>
+      <span>홈으로</span>
+    </a>
+  </div>
+</nav>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -289,7 +559,33 @@
   </div>
 </div>
 
-{{> cta-section}}
+<!-- 
+  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
+  페이지별 변수 (모두 기본값 있음):
+    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
+    cta_title        : 큰 제목
+    cta_sub          : 부제·설명
+    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
+    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
+    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
+    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
+-->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">견적 문의</div>
+    <h2 class="cta-title">도입 모델·납기·견적을<br><em>확인해 보세요</em></h2>
+    <p class="cta-sub">관심 모델에 대한 견적·재고·납기 정보 모두 SAMSUN에 문의해 주세요. CAT 공인 대리점으로 정품 보증을 제공합니다.</p>
+    <div class="cta-actions">
+      <a href="tel:0616421247" class="btn btn-primary">
+        ☎ 견적 문의하기 (061-642-1247)
+      </a>
+      <a href="mailto:samsun3618@hanmail.net" class="btn btn-secondary">
+        ✉ 이메일 문의
+      </a>
+    </div>
+  </div>
+</section>
+
 
 <script>
 const PRODUCT_DATA = [
@@ -305,7 +601,7 @@ const PRODUCT_DATA = [
       ['주파수', '50 / 60 Hz'], ['전압', '380 ~ 480 V'], ['배출 규제', 'U.S. EPA Tier 2 / Tier 3']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/product/view.php?idx=14'
   },
   {
     id: 'c27-land', model: 'CAT C27', category: 'land', categoryLabel: '육상 발전기',
@@ -318,7 +614,7 @@ const PRODUCT_DATA = [
       ['배출 규제', 'U.S. EPA Tier 2 (Stationary Emergency)'], ['제어 시스템', 'EMCP 4 / GCCP 1.2']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/product/list_3depth.php?part_idx=2'
   },
   {
     id: 'c32-land', model: 'CAT C32', category: 'land', categoryLabel: '육상 발전기',
@@ -331,7 +627,7 @@ const PRODUCT_DATA = [
       ['주파수', '50 / 60 Hz'], ['전압', '380 ~ 13,800 V'], ['제어 시스템', 'EMCP 4.2 / 4.4']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/product/view.php?idx=12'
   },
   {
     id: '3512-land', model: 'CAT 3512', category: 'land', categoryLabel: '대형 발전기',
@@ -341,10 +637,10 @@ const PRODUCT_DATA = [
       ['엔진 모델', 'CAT 3512'], ['실린더', 'V형 12기통, 4행정'], ['배기량', '51.8 L'],
       ['출력 (Standby, 60Hz)', '1,250 ekW'], ['출력 (Prime, 60Hz)', '1,135 ekW'], ['출력 (Continuous)', '1,010 ekW'],
       ['출력 (50Hz)', '1,150 ~ 1,400 kVA'],
-      ['주파수', '50 / 60 Hz'], ['전압', '380 ~ 13,800 V'], ['제어 시스템', 'EMCP 4.4']
+      ['주파수', '50 / 60 Hz'], ['전압', '380 ~ 13,800 V'], ['제어 시스템', 'EMCP 4.4']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/product/view.php?idx=11'
   },
   {
     id: '3516-land', model: 'CAT 3516 / 3516C', category: 'land', categoryLabel: '대형 발전기',
@@ -355,24 +651,24 @@ const PRODUCT_DATA = [
       ['3516 (60Hz, Standby)', '1,450 ~ 1,750 ekW'],
       ['3516C (60Hz, Standby)', '1,825 ~ 2,500 ekW'],
       ['출력 (50Hz)', '1,600 ~ 2,750 kVA'],
-      ['주파수', '50 / 60 Hz'], ['전압', '380 ~ 13,800 V'], ['제어 시스템', 'EMCP 4.4']
+      ['주파수', '50 / 60 Hz'], ['전압', '380 ~ 13,800 V'], ['제어 시스템', 'EMCP 4.4']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/product/view.php?idx=6'
   },
   {
     id: 'c175-land', model: 'CAT C175', category: 'land', categoryLabel: '초대형 발전기',
     spec: '2,500 ~ 4,000 ekW', use: '하이퍼스케일 데이터센터, 광산', status: '주문 생산',
-    description: 'CAT C175 시리즈는 최고 4,000 ekW급 초대형 발전기로, 광산·하이퍼스케일 데이터센터·해양 플랜트 등 극한 환경에서도 안정적으로 운영됩니다. C175-16(V16)과 C175-20(V20) 두 가지 라인업이 있으며, 동급 최고 수준의 출력 밀도를 제공합니다.',
+    description: 'CAT C175 시리즈는 4,000 ekW급 초대형 발전기로, 광산·하이퍼스케일 데이터센터·해양 플랜트 등 극한 환경에서도 안정적으로 운영됩니다. C175-16(V16)과 C175-20(V20) 두 가지 라인업이 있으며, 우수한 출력 밀도를 제공합니다.',
     specs: [
       ['엔진 모델', 'CAT C175-16 / C175-20 SCAC'], ['실린더', 'V형 16 / 20기통, 4행정'], ['배기량', '85.8 L (C175-16) / 105.8 L (C175-20)'],
       ['C175-16 (60Hz, Standby)', '2,500 ~ 3,365 ekW'],
       ['C175-20 (60Hz, Standby)', '3,150 ~ 4,000 ekW'],
       ['주파수', '50 / 60 Hz'], ['전압', '480 ~ 13,800 V'],
-      ['배출 규제', 'U.S. EPA Tier 2 / Tier 4'], ['제어 시스템', 'EMCP 4.4 (Dual ADEM A4 ECU)']
+      ['배출 규제', 'U.S. EPA Tier 2 / Tier 4'], ['제어 시스템', 'EMCP 4.4 (Dual ADEM A4 ECU)']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/product/view.php?idx=4'
   },
 
   // 해상 주기 · 보기 (MARINE)
@@ -387,7 +683,7 @@ const PRODUCT_DATA = [
       ['배출 규제', 'IMO II, U.S. EPA Tier 3, RCD II, China II'], ['연료 시스템', 'Common Rail']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/system/view.php?idx=128'
   },
   {
     id: 'c129-marine', model: 'CAT C12.9 / C12', category: 'marine', categoryLabel: '해상 주기관',
@@ -402,7 +698,7 @@ const PRODUCT_DATA = [
       ['배출 규제', 'IMO I / II, U.S. EPA Tier 3, EU Stage IIIA'], ['냉각 방식', '청수 냉각 (Heat Exchanger / Keel)']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/system/view.php?idx=94'
   },
   {
     id: 'c18-marine', model: 'CAT C18 (Marine)', category: 'marine', categoryLabel: '해상 주기관 · 보조 발전',
@@ -416,7 +712,7 @@ const PRODUCT_DATA = [
       ['배출 규제', 'U.S. EPA Tier 3, IMO II, EU IWW, China II'], ['제어 시스템', 'A4 ECU']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/system/view.php?idx=130'
   },
   {
     id: '3512c-marine', model: 'CAT 3512C / 3512E', category: 'marine', categoryLabel: '해상 주기관',
@@ -426,16 +722,16 @@ const PRODUCT_DATA = [
       ['엔진 모델', 'CAT 3512C / 3512E Marine'], ['실린더', 'V형 12기통, 4행정'], ['배기량', '58.56 L'],
       ['출력 (Commercial Propulsion)', '955 ~ 1,902 bkW (1,280 ~ 2,551 bhp)'],
       ['회전수', '1,200 ~ 1,800 rpm'], ['용도', '주기관 (Marine Propulsion)'],
-      ['배출 규제', 'U.S. EPA Tier 3 (3512C) / Tier 4 + IMO III (3512E)'],
+      ['배출 규제', 'U.S. EPA Tier 3 (3512C) / Tier 4 + IMO III (3512E)'],
       ['Bore × Stroke', '170 × 215 mm'], ['냉각 방식', '청수 냉각 (Heat Exchanger / Keel)']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/system/view.php?idx=134'
   },
   {
     id: 'c280-marine', model: 'CAT C280 (3600 Series)', category: 'marine', categoryLabel: '해상 주기 · 발전',
     spec: '1,900 ~ 5,420 bkW', use: '대형 상선, 발전 플랜트', status: '주문 생산',
-    description: 'CAT C280 시리즈(구 3600 시리즈)는 대형 상선의 주기관과 해양 발전 플랜트용으로 사용되는 헤비듀티 마린 엔진입니다. 최대 5,420 bkW급으로 글로벌 해운에서 신뢰받고 있으며, 900~1,000 rpm 중속 운전으로 긴 수명을 보장합니다.',
+    description: 'CAT C280 시리즈(구 3600 시리즈)는 대형 상선의 주기관과 해양 발전 플랜트용으로 사용되는 헤비듀티 마린 엔진입니다. 최대 5,420 bkW급으로 글로벌 해운에서 신뢰받고 있으며, 900~1,000 rpm 중속 운전으로 안정적인 장기 운용에 적합합니다.',
     specs: [
       ['엔진 모델', 'CAT C280-6 / C280-8 / C280-12 / C280-16'],
       ['실린더', '직렬 6 / V형 8·12·16기통, 4행정'],
@@ -447,7 +743,7 @@ const PRODUCT_DATA = [
       ['배출 규제', 'U.S. EPA Tier 2, IMO II']
     ],
     catalogUrl: 'https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html',
-    haeinUrl: 'https://catengine.haein.com/catengine/'
+    haeinUrl: 'https://catengine.haein.com/catengine/system/view.php?idx=138'
   },
 
   // CAT 정품 부품 (PARTS)
@@ -463,7 +759,7 @@ const PRODUCT_DATA = [
       ['보증', 'CAT 정품 보증서 발급']
     ],
     catalogUrl: 'https://parts.cat.com/en/catcorp',
-    haeinUrl: 'https://www.haein.com/kr/business/business_04.php'
+    haeinUrl: 'https://catengine.haein.com/catengine/engine/parts_team.php'
   },
   {
     id: 'turbo-parts', model: '터보차저 (Turbocharger)', category: 'parts', categoryLabel: '핵심 부품',
@@ -477,7 +773,7 @@ const PRODUCT_DATA = [
       ['관련 서비스', '터보 교환 시공 가능']
     ],
     catalogUrl: 'https://parts.cat.com/en/catcorp',
-    haeinUrl: 'https://www.haein.com/kr/business/business_04.php'
+    haeinUrl: 'https://catengine.haein.com/catengine/engine/parts_team.php'
   },
   {
     id: 'head-parts', model: '실린더 헤드 / 라이너', category: 'parts', categoryLabel: '핵심 부품',
@@ -491,7 +787,7 @@ const PRODUCT_DATA = [
       ['관련 서비스', '정비 인력 파견 가능 (O/H 시공)']
     ],
     catalogUrl: 'https://parts.cat.com/en/catcorp',
-    haeinUrl: 'https://www.haein.com/kr/business/business_04.php'
+    haeinUrl: 'https://catengine.haein.com/catengine/engine/parts_team.php'
   },
   {
     id: 'oil-parts', model: 'CAT 정품 엔진오일', category: 'parts', categoryLabel: '소모품',
@@ -505,12 +801,12 @@ const PRODUCT_DATA = [
       ['긴급 출고', '24시간 대응']
     ],
     catalogUrl: 'https://parts.cat.com/en/catcorp',
-    haeinUrl: 'https://www.haein.com/kr/business/business_04.php'
+    haeinUrl: 'https://catengine.haein.com/catengine/engine/parts_team.php'
   },
   {
     id: 'pump-parts', model: '냉각수 펌프 / 인젝터', category: 'parts', categoryLabel: '핵심 부품',
     spec: '전 모델 대응', use: '예방 정비, 고장 대응', status: '주문 공급',
-    description: '예방 정비와 긴급 고장 대응에 필요한 냉각수 펌프, 연료 인젝터 등 핵심 부품을 공급합니다. CAT 정품으로 신뢰성과 호환성이 보장됩니다.',
+    description: '예방 정비와 긴급 고장 대응에 필요한 냉각수 펌프, 연료 인젝터 등 핵심 부품을 공급합니다. CAT 정품 부품으로 신뢰성·호환성을 확보할 수 있습니다.',
     specs: [
       ['취급 품목', '냉각수 펌프, 연료 인젝터, 인젝터 노즐'],
       ['공급 형태', '신품 / Reman'],
@@ -519,7 +815,7 @@ const PRODUCT_DATA = [
       ['보증', 'CAT 정품 보증서 발급']
     ],
     catalogUrl: 'https://parts.cat.com/en/catcorp',
-    haeinUrl: 'https://www.haein.com/kr/business/business_04.php'
+    haeinUrl: 'https://catengine.haein.com/catengine/engine/parts_team.php'
   },
 ];
 
@@ -593,7 +889,11 @@ document.getElementById('productSearchInput').addEventListener('input', (e) => {
 
 // ─── 모달 ───
 function openProductModal(productId) {
-  const p = PRODUCT_DATA.find(x => x.id === productId);
+  // 카드 onclick은 PRODUCT_DATA의 숫자 인덱스를 넘김(originalIdx).
+  // 숫자 인덱스와 문자열 id 둘 다 안전하게 처리.
+  const p = (typeof productId === 'number')
+    ? PRODUCT_DATA[productId]
+    : PRODUCT_DATA.find(x => x.id === productId);
   if (!p) return;
 
   const modal = document.getElementById('productModal');
@@ -664,7 +964,23 @@ if (hash && ['land', 'marine', 'parts'].includes(hash)) {
 }
 </script>
 
-{{> mobile-contact-bar}}
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>전화 상담</span>
+  </a>
+  <a href="/contact/" class="mcb-btn mcb-mail">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>이메일 문의</span>
+  </a>
+</div>
+
 
 </body>
 </html>

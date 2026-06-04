@@ -416,6 +416,60 @@ h1, h2, h3, h4, h5, h6,
 </head>
 <body>
 
+<style>
+  /* ===== SALES 전용 섹션 (marine 패턴 재사용) ===== */
+  .s-sec { padding: 88px 2rem; }
+  .s-wrap { max-width: 1100px; margin: 0 auto; }
+  .s-head { margin-bottom: 2.6rem; }
+  .s-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:12px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--cat-black); margin-bottom:0.9rem; }
+  .s-eyebrow::before { content:''; width:30px; height:2px; background:var(--cat-yellow); }
+  .s-eyebrow.light { color:#fff; }
+  .s-title { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; line-height:1.25; letter-spacing:-0.5px; color:var(--cat-black); margin:0 0 0.8rem; word-break:keep-all; }
+  .s-title.light { color:#fff; }
+  .s-sub { font-size:15.5px; line-height:1.8; color:#555; max-width:680px; word-break:keep-all; margin:0; }
+  .s-sub.light { color:rgba(255,255,255,0.7); }
+  .s-cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+  .s-cat { background:var(--cat-white); border:1px solid var(--cat-border); border-top:3px solid var(--cat-yellow); padding:1.8rem 1.6rem; display:flex; flex-direction:column; transition:box-shadow .25s, transform .25s; }
+  .s-cat:hover { box-shadow:0 8px 28px rgba(0,0,0,0.08); transform:translateY(-3px); }
+  .s-cat-tag { font-size:11px; font-weight:800; letter-spacing:1.5px; color:var(--cat-yellow); background:var(--cat-black); padding:3px 9px; align-self:flex-start; text-transform:uppercase; margin-bottom:0.9rem; }
+  .s-cat h3 { font-size:17px; font-weight:800; color:var(--cat-black); margin:0 0 0.6rem; }
+  .s-cat p { font-size:14px; line-height:1.7; color:#555; margin:0 0 1.1rem; word-break:keep-all; flex:1; }
+  .s-cat a { font-size:13px; font-weight:700; color:var(--cat-black); border-bottom:2px solid var(--cat-yellow); padding-bottom:2px; align-self:flex-start; display:inline-flex; gap:6px; transition:gap .18s; text-decoration:none; }
+  .s-cat a:hover { gap:10px; }
+  .s-proc-sec { background:var(--cat-gray1,#f5f5f5); }
+  .s-proc { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+  .s-step { background:var(--cat-white); border:1px solid var(--cat-border); padding:1.5rem 1.4rem; }
+  .s-step-n { font-size:12px; font-weight:800; color:var(--cat-yellow); letter-spacing:1px; margin-bottom:0.5rem; }
+  .s-step h4 { font-size:15.5px; font-weight:700; color:var(--cat-black); margin:0 0 0.4rem; word-break:keep-all; }
+  .s-step p { font-size:13px; line-height:1.6; color:#555; margin:0; word-break:keep-all; }
+  .s-why { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+  .s-why-card { padding:1.6rem; border-left:3px solid var(--cat-yellow); background:var(--cat-gray1,#f5f5f5); }
+  .s-why-card h4 { font-size:16px; font-weight:800; color:var(--cat-black); margin:0 0 0.6rem; word-break:keep-all; }
+  .s-why-card p { font-size:14px; line-height:1.7; color:#555; margin:0; word-break:keep-all; }
+  .s-apply-sec { background:var(--cat-black); }
+  .s-apply { display:flex; flex-wrap:wrap; gap:0.8rem; }
+  .s-apply span { font-size:14px; font-weight:600; color:#fff; border:1px solid rgba(255,196,0,0.4); background:rgba(255,255,255,0.04); padding:9px 16px; }
+  .s-gal-sec { background:var(--cat-gray1,#f5f5f5); }
+  .s-gal { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+  .s-gal figure { margin:0; background:var(--cat-white); border:1px solid var(--cat-border); overflow:hidden; cursor:pointer; }
+  .s-ph { position:relative; aspect-ratio:4/3; overflow:hidden; background:#222; }
+  .s-gal img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+  .s-gal figure:hover img { transform:scale(1.05); }
+  .s-gal figcaption { font-size:12.5px; font-weight:600; color:var(--cat-black); padding:0.7rem 0.9rem; line-height:1.45; word-break:keep-all; }
+  .s-gal-note { margin-top:1.4rem; font-size:12.5px; color:#777; line-height:1.7; }
+  .s-lb { position:fixed; inset:0; background:rgba(0,0,0,0.92); display:none; align-items:center; justify-content:center; z-index:3000; padding:2rem; }
+  .s-lb.open { display:flex; }
+  .s-lb img { max-width:96%; max-height:88%; object-fit:contain; }
+  .s-lb-close { position:absolute; top:1.1rem; right:1.4rem; color:#fff; font-size:32px; font-weight:300; cursor:pointer; line-height:1; background:none; border:none; }
+  .s-lb-cap { position:absolute; bottom:1.3rem; left:0; right:0; text-align:center; color:rgba(255,255,255,0.85); font-size:13px; padding:0 1rem; }
+  @media (max-width:860px){
+    .s-sec { padding:60px 1.2rem; }
+    .s-cat-grid, .s-proc, .s-why { grid-template-columns:1fr; }
+    .s-gal { grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:560px){ .s-gal { grid-template-columns:1fr; } }
+</style>
+
 <!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
 <style>
   /* 서브 페이지 NAV: 1280px 제한 풀고 화면 우측 끝까지 활용 */
@@ -451,8 +505,8 @@ h1, h2, h3, h4, h5, h6,
 <section class="intro-section">
   <div class="intro-inner">
     <p class="intro-summary">
-      <strong>㈜삼선엔지니어링</strong>은 CAT 공인 대리점으로서 35년 이상의 경험을 바탕으로
-      세일즈 분야에서 신뢰할 수 있는 서비스를 제공합니다.
+      <strong>㈜삼선엔지니어링</strong>은 CAT 공인 대리점으로서, 현장 부하 조건과 운전 목적을 분석해
+      과·저사양 없이 적합한 발전기·엔진·부품을 공급하고 설치·시운전·사후 관리까지 연계합니다.
     </p>
     <div class="intro-tags">
       <span class="tag">비상발전기 판매</span> <span class="tag">디젤엔진</span> <span class="tag">부품·소모품</span>
@@ -460,16 +514,100 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </section>
 
-<section class="content-placeholder">
-  <div class="content-inner">
-    <span class="placeholder-note">CONTENT COMING SOON</span>
-    <h2>상세 콘텐츠 준비 중입니다</h2>
-    <p>
-      구체적인 서비스 항목, 차별화 포인트, 주요 실적 등 자세한 내용을 곧 업데이트할 예정입니다.<br>
-      문의사항이 있으시면 언제든 연락 주세요.
-    </p>
+<!-- 공급 카테고리 -->
+<section class="s-sec">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">공급 분야</div>
+      <h2 class="s-title">현장에 맞는 발전기·엔진·부품을 공급합니다</h2>
+      <p class="s-sub">단순 판매가 아니라, 현장 부하 조건과 운전 목적을 분석해 과·저사양 없이 적합한 사양을 선정해 공급합니다.</p>
+    </div>
+    <div class="s-cat-grid">
+      <div class="s-cat"><span class="s-cat-tag">Generator</span><h3>비상발전기</h3><p>산업·건물용 비상전원 CAT 발전기 세트를 공급합니다. 부하 용량과 설치 환경에 맞춰 모델을 선정합니다.</p><a href="/products/">라인업 보기 →</a></div>
+      <div class="s-cat"><span class="s-cat-tag">Engine</span><h3>디젤엔진</h3><p>육상·산업용 디젤엔진 및 엔진 단품을 공급합니다. 용도별 출력대에 맞는 기종을 안내합니다.</p><a href="/products/">라인업 보기 →</a></div>
+      <div class="s-cat"><span class="s-cat-tag">Parts</span><h3>부품·소모품</h3><p>CAT 정품 부품과 필터·오일 등 소모품을 공급합니다. 정품 공급이 어려운 부품은 자체 제작으로 대응합니다.</p><a href="/products/">부품 보기 →</a></div>
+    </div>
   </div>
 </section>
+
+<!-- 공급 프로세스 -->
+<section class="s-sec s-proc-sec">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">공급 프로세스</div>
+      <h2 class="s-title">상담부터 시운전·사후 관리까지</h2>
+      <p class="s-sub">도입 전 상담부터 설치·시운전, 이후 유지보수 연계까지 단계별로 진행합니다.</p>
+    </div>
+    <div class="s-proc">
+      <div class="s-step"><div class="s-step-n">STEP 01</div><h4>요구사항 상담</h4><p>용도·예산·납기 등 도입 조건을 함께 정리합니다.</p></div>
+      <div class="s-step"><div class="s-step-n">STEP 02</div><h4>현장·부하 조건 분석</h4><p>부하 용량, 설치 공간, 배기·연료 조건을 확인합니다.</p></div>
+      <div class="s-step"><div class="s-step-n">STEP 03</div><h4>모델 선정·견적</h4><p>과·저사양 없이 적합한 모델을 선정해 견적을 제시합니다.</p></div>
+      <div class="s-step"><div class="s-step-n">STEP 04</div><h4>발주·제작·수배</h4><p>CAT 네트워크를 통해 발주하고 납기를 관리합니다.</p></div>
+      <div class="s-step"><div class="s-step-n">STEP 05</div><h4>설치·시운전</h4><p>현장 설치와 시운전으로 정상 가동을 확인합니다.</p></div>
+      <div class="s-step"><div class="s-step-n">STEP 06</div><h4>사후 관리·유지보수 연계</h4><p>도입 이후 정기점검·부품 공급까지 연계 지원합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 왜 SAMSUN -->
+<section class="s-sec">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Why SAMSUN</div>
+      <h2 class="s-title">왜 SAMSUN에서 도입하나</h2>
+    </div>
+    <div class="s-why">
+      <div class="s-why-card"><h4>CAT 공인 정품 공급</h4><p>1995년부터 이어온 Caterpillar 공인 대리점으로서 정품 발전기·엔진·부품을 공급합니다.</p></div>
+      <div class="s-why-card"><h4>35년 선정 노하우</h4><p>현장 부하 조건을 분석해 과사양·저사양 없이 운전 목적에 맞는 모델을 선정합니다.</p></div>
+      <div class="s-why-card"><h4>도입 후 한 곳에서</h4><p>설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해 운영 부담을 줄입니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 적용 분야 -->
+<section class="s-sec s-apply-sec">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div class="s-eyebrow light">적용 분야</div>
+      <h2 class="s-title light">이런 현장에 공급합니다</h2>
+      <p class="s-sub light">산업·공공·해상 등 비상전원과 동력이 필요한 다양한 현장에 대응합니다.</p>
+    </div>
+    <div class="s-apply">
+      <span>석유화학 플랜트 비상전원</span><span>산업단지·공장</span><span>선박·해상 설비</span>
+      <span>건설 현장</span><span>데이터·통신 백업 전원</span><span>공공·관공 시설</span>
+    </div>
+  </div>
+</section>
+
+<!-- 주요 설치 실적 -->
+<section class="s-sec s-gal-sec">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">설치 실적</div>
+      <h2 class="s-title">2024년 비상발전기 신규 설치</h2>
+      <p class="s-sub">금호석유화학 고무 제1공장과 한화솔루션 TDI 여수공장에 CAT 비상발전기(C18·C32)를 신규 설치하고 시운전(SAT)을 완료했습니다. 아래는 실제 설치 현장 사진입니다.</p>
+    </div>
+    <div class="s-gal">
+      <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · CAT C18 비상발전기 (2024)"><div class="s-ph"><img src="install-01.jpg" alt="금호석유화학 고무 제1공장 CAT C18 비상발전기 신규 설치" loading="lazy"></div><figcaption>금호석유화학 고무 제1공장 · CAT C18 비상발전기 (2024)</figcaption></figure>
+      <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · 발전기·제어반 설치 (2024)"><div class="s-ph"><img src="install-02.jpg" alt="금호석유화학 비상발전기 제어반 설치 현장" loading="lazy"></div><figcaption>금호석유화학 고무 제1공장 · 발전기·제어반 설치 (2024)</figcaption></figure>
+      <figure onclick="sOpenLb(this)" data-cap="한화솔루션 TDI 여수공장 · CAT C32 비상발전기 (2024)"><div class="s-ph"><img src="install-04.jpg" alt="한화솔루션 TDI 여수공장 CAT C32 비상발전기 신규 설치" loading="lazy"></div><figcaption>한화솔루션 TDI 여수공장 · CAT C32 비상발전기 (2024)</figcaption></figure>
+      <figure onclick="sOpenLb(this)" data-cap="한화솔루션 TDI 여수공장 · 발전기 패키지 설치 (2024)"><div class="s-ph"><img src="install-07.jpg" alt="한화솔루션 비상발전기 패키지 설치 현장" loading="lazy"></div><figcaption>한화솔루션 TDI 여수공장 · 발전기 패키지 설치 (2024)</figcaption></figure>
+    </div>
+    <p class="s-gal-note">※ 사진을 클릭하면 크게 볼 수 있습니다. 발전기 상세 정격(kVA·kW)은 현장 명판 기준으로 확인 후 표기할 예정입니다.</p>
+  </div>
+</section>
+
+<!-- 갤러리 라이트박스 -->
+<div class="s-lb" id="sLb" onclick="sCloseLb(event)">
+  <button class="s-lb-close" onclick="sCloseLb(event)" aria-label="닫기">&times;</button>
+  <img id="sLbImg" src="" alt="설치 현장 확대 이미지">
+  <div class="s-lb-cap" id="sLbCap"></div>
+</div>
+<script>
+function sOpenLb(fig){var img=fig.querySelector('img');document.getElementById('sLbImg').src=img.src;document.getElementById('sLbCap').textContent=fig.getAttribute('data-cap')||'';document.getElementById('sLb').classList.add('open');}
+function sCloseLb(e){if(e.target.id==='sLbImg')return;document.getElementById('sLb').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('sLb').classList.remove('open');});
+</script>
 
   <!-- 관련 자료 -->
   <section class="related-section">
@@ -543,10 +681,10 @@ h1, h2, h3, h4, h5, h6,
     <p class="cta-sub">구체적인 모델·견적·납기 상담 모두 SAMSUN에 문의해 주세요. CAT 정품 및 다양한 브랜드 라인업을 안내해 드립니다.</p>
     <div class="cta-actions">
       <a href="tel:0616421247" class="btn btn-primary">
-        ☎ 발전기 견적 요청하기 (061-642-1247)
+        발전기 견적 요청하기 (061-642-1247)
       </a>
       <a href="/contact/" class="btn btn-secondary">
-        📝 견적 문의 폼 작성하기
+        견적 문의 폼 작성하기
       </a>
     </div>
   </div>

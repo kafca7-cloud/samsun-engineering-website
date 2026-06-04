@@ -442,10 +442,14 @@ h1, h2, h3, h4, h5, h6,
   .s-step-n { font-size:12px; font-weight:800; color:var(--cat-yellow); letter-spacing:1px; margin-bottom:0.5rem; }
   .s-step h4 { font-size:15.5px; font-weight:700; color:var(--cat-black); margin:0 0 0.4rem; word-break:keep-all; }
   .s-step p { font-size:13px; line-height:1.6; color:#555; margin:0; word-break:keep-all; }
-  .s-why { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
-  .s-why-card { padding:1.6rem; border-left:3px solid var(--cat-yellow); background:var(--cat-gray1,#f5f5f5); }
-  .s-why-card h4 { font-size:16px; font-weight:800; color:var(--cat-black); margin:0 0 0.6rem; word-break:keep-all; }
-  .s-why-card p { font-size:14px; line-height:1.7; color:#555; margin:0; word-break:keep-all; }
+  .s-why-sec { background:var(--cat-black); }
+  .s-why { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+  .s-why-card { position:relative; padding:2rem 1.6rem 1.7rem; background:#161616; border:1px solid rgba(255,255,255,0.08); border-top:3px solid var(--cat-yellow); overflow:hidden; transition:transform .25s, border-color .25s; }
+  .s-why-card::after { content:''; position:absolute; right:-30px; bottom:-30px; width:90px; height:90px; background:radial-gradient(circle, rgba(255,196,0,0.10), transparent 70%); }
+  .s-why-card:hover { transform:translateY(-4px); border-top-color:#fff; }
+  .s-why-num { font-size:34px; font-weight:900; line-height:1; color:var(--cat-yellow); margin-bottom:0.9rem; letter-spacing:-1px; }
+  .s-why-card h4 { font-size:17px; font-weight:800; color:#fff; margin:0 0 0.6rem; word-break:keep-all; position:relative; z-index:1; }
+  .s-why-card p { font-size:14px; line-height:1.75; color:rgba(255,255,255,0.62); margin:0; word-break:keep-all; position:relative; z-index:1; }
   .s-apply-sec { background:var(--cat-black); }
   .s-apply { display:flex; flex-wrap:wrap; gap:0.8rem; }
   .s-apply span { font-size:14px; font-weight:600; color:#fff; border:1px solid rgba(255,196,0,0.4); background:rgba(255,255,255,0.04); padding:9px 16px; }
@@ -525,6 +529,22 @@ h1, h2, h3, h4, h5, h6,
   </div>
 </section>
 
+<!-- 왜 SAMSUN -->
+<section class="s-sec s-why-sec">
+  <div class="s-wrap">
+    <div class="s-head">
+      <div class="s-eyebrow light">Why SAMSUN</div>
+      <h2 class="s-title light">왜 SAMSUN에서 도입하나</h2>
+      <p class="s-sub light">발전기·엔진의 공급에서 끝나지 않고, 설치·시운전·사후 관리까지 전 주기를 함께 책임집니다.</p>
+    </div>
+    <div class="s-why">
+      <div class="s-why-card"><div class="s-why-num">01</div><h4>CAT 공인 정품 공급</h4><p>1995년부터 이어온 Caterpillar 공인 대리점으로서 정품 발전기·엔진·부품을 공급합니다.</p></div>
+      <div class="s-why-card"><div class="s-why-num">02</div><h4>35년 현장 경험</h4><p>현장 상황과 고객 요청사항을 반영해 운전 목적에 맞는 발전기·엔진을 선정합니다.</p></div>
+      <div class="s-why-card"><div class="s-why-num">03</div><h4>전 주기를 함께 책임</h4><p>공급·설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해, 도입 이후 운영까지 함께 책임집니다.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 공급 카테고리 -->
 <section class="s-sec">
   <div class="s-wrap">
@@ -556,22 +576,6 @@ h1, h2, h3, h4, h5, h6,
       <div class="s-step"><div class="s-step-n">STEP 04</div><h4>발주·제작·수배</h4><p>CAT 네트워크를 통해 발주하고 납기를 관리합니다.</p></div>
       <div class="s-step"><div class="s-step-n">STEP 05</div><h4>설치·시운전</h4><p>현장 설치와 시운전으로 정상 가동을 확인합니다.</p></div>
       <div class="s-step"><div class="s-step-n">STEP 06</div><h4>사후 관리·유지보수 연계</h4><p>도입 이후 정기점검·부품 공급까지 연계 지원합니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 왜 SAMSUN -->
-<section class="s-sec">
-  <div class="s-wrap">
-    <div class="s-head">
-      <div class="s-eyebrow">Why SAMSUN</div>
-      <h2 class="s-title">왜 SAMSUN에서 도입하나</h2>
-      <p class="s-sub">발전기·엔진의 공급에서 끝나지 않고, 설치·시운전·사후 관리까지 전 주기를 함께 책임집니다.</p>
-    </div>
-    <div class="s-why">
-      <div class="s-why-card"><h4>CAT 공인 정품 공급</h4><p>1995년부터 이어온 Caterpillar 공인 대리점으로서 정품 발전기·엔진·부품을 공급합니다.</p></div>
-      <div class="s-why-card"><h4>35년 현장 경험</h4><p>현장 상황과 고객 요청사항을 반영해 운전 목적에 맞는 발전기·엔진을 선정합니다.</p></div>
-      <div class="s-why-card"><h4>전 주기를 함께 책임</h4><p>공급·설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해, 도입 이후 운영까지 함께 책임집니다.</p></div>
     </div>
   </div>
 </section>
@@ -621,7 +625,7 @@ h1, h2, h3, h4, h5, h6,
         </div>
       </div>
     </div>
-    <p class="s-gal-note">※ 사진을 클릭하면 크게 볼 수 있습니다. 발전기 상세 정격(kVA·kW)은 현장 명판 기준으로 확인 후 표기할 예정입니다.</p>
+    <p class="s-gal-note">※ 사진을 클릭하면 크게 볼 수 있습니다.</p>
   </div>
 </section>
 

@@ -457,6 +457,16 @@ h1, h2, h3, h4, h5, h6,
   .s-gal figure:hover img { transform:scale(1.05); }
   .s-gal figcaption { font-size:12.5px; font-weight:600; color:var(--cat-black); padding:0.7rem 0.9rem; line-height:1.45; word-break:keep-all; }
   .s-gal-note { margin-top:1.4rem; font-size:12.5px; color:#777; line-height:1.7; }
+  .s-site-split { display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+  .s-site { background:var(--cat-white); border:1px solid var(--cat-border); border-top:3px solid var(--cat-yellow); padding:1.6rem; }
+  .s-site-tag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:1.2px; color:var(--cat-yellow); background:var(--cat-black); padding:3px 9px; text-transform:uppercase; }
+  .s-site h3 { font-size:18px; font-weight:800; color:var(--cat-black); margin:0.7rem 0 0.3rem; word-break:keep-all; }
+  .s-site-meta { font-size:13px; font-weight:700; color:#444; margin-bottom:0.5rem; }
+  .s-site p { font-size:13.5px; line-height:1.7; color:#555; margin:0 0 1.1rem; word-break:keep-all; }
+  .s-site-photos { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+  .s-site-photos figure { margin:0; cursor:pointer; overflow:hidden; border:1px solid var(--cat-border); }
+  .s-site-photos img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+  .s-site-photos figure:hover img { transform:scale(1.05); }
   .s-lb { position:fixed; inset:0; background:rgba(0,0,0,0.92); display:none; align-items:center; justify-content:center; z-index:3000; padding:2rem; }
   .s-lb.open { display:flex; }
   .s-lb img { max-width:96%; max-height:88%; object-fit:contain; }
@@ -466,6 +476,7 @@ h1, h2, h3, h4, h5, h6,
     .s-sec { padding:60px 1.2rem; }
     .s-cat-grid, .s-proc, .s-why { grid-template-columns:1fr; }
     .s-gal { grid-template-columns:1fr 1fr; }
+    .s-site-split { grid-template-columns:1fr; }
   }
   @media (max-width:560px){ .s-gal { grid-template-columns:1fr; } }
 </style>
@@ -497,7 +508,7 @@ h1, h2, h3, h4, h5, h6,
     <span class="hero-label">SALES</span>
     <h1>발전기·엔진 신규 공급<br><em>CAT 공인 대리점 네트워크 기반 공급</em></h1>
     <p class="lead">
-      CAT 공인 대리점 네트워크를 기반으로, 현장 조건과 운전 목적에 맞는 발전기·엔진 및 부품 공급을 지원합니다.
+      현장 상황과 고객 요청사항에 맞춰 발전기·엔진과 부품을 공급하고, 설치·시운전부터 사후 관리까지 전 주기를 함께 책임집니다.
     </p>
   </div>
 </section>
@@ -505,8 +516,8 @@ h1, h2, h3, h4, h5, h6,
 <section class="intro-section">
   <div class="intro-inner">
     <p class="intro-summary">
-      <strong>㈜삼선엔지니어링</strong>은 CAT 공인 대리점으로서, 현장 부하 조건과 운전 목적을 분석해
-      과·저사양 없이 적합한 발전기·엔진·부품을 공급하고 설치·시운전·사후 관리까지 연계합니다.
+      <strong>㈜삼선엔지니어링</strong>은 CAT 공인 대리점으로서, 현장 상황과 고객 요청사항을 반영해
+      발전기·엔진·부품을 공급하고, 설치·시운전부터 사후 관리까지 전 주기를 함께 책임집니다.
     </p>
     <div class="intro-tags">
       <span class="tag">비상발전기 판매</span> <span class="tag">디젤엔진</span> <span class="tag">부품·소모품</span>
@@ -520,7 +531,7 @@ h1, h2, h3, h4, h5, h6,
     <div class="s-head">
       <div class="s-eyebrow">공급 분야</div>
       <h2 class="s-title">현장에 맞는 발전기·엔진·부품을 공급합니다</h2>
-      <p class="s-sub">단순 판매가 아니라, 현장 부하 조건과 운전 목적을 분석해 과·저사양 없이 적합한 사양을 선정해 공급합니다.</p>
+      <p class="s-sub">단순 판매가 아니라, 현장 상황과 고객 요청사항을 반영해 발전기·엔진·부품을 선정하고 공급합니다.</p>
     </div>
     <div class="s-cat-grid">
       <div class="s-cat"><span class="s-cat-tag">Generator</span><h3>비상발전기</h3><p>산업·건물용 비상전원 CAT 발전기 세트를 공급합니다. 부하 용량과 설치 환경에 맞춰 모델을 선정합니다.</p><a href="/products/">라인업 보기 →</a></div>
@@ -541,7 +552,7 @@ h1, h2, h3, h4, h5, h6,
     <div class="s-proc">
       <div class="s-step"><div class="s-step-n">STEP 01</div><h4>요구사항 상담</h4><p>용도·예산·납기 등 도입 조건을 함께 정리합니다.</p></div>
       <div class="s-step"><div class="s-step-n">STEP 02</div><h4>현장·부하 조건 분석</h4><p>부하 용량, 설치 공간, 배기·연료 조건을 확인합니다.</p></div>
-      <div class="s-step"><div class="s-step-n">STEP 03</div><h4>모델 선정·견적</h4><p>과·저사양 없이 적합한 모델을 선정해 견적을 제시합니다.</p></div>
+      <div class="s-step"><div class="s-step-n">STEP 03</div><h4>모델 선정·견적</h4><p>현장 상황과 요청사항을 반영해 모델을 선정하고 견적을 제시합니다.</p></div>
       <div class="s-step"><div class="s-step-n">STEP 04</div><h4>발주·제작·수배</h4><p>CAT 네트워크를 통해 발주하고 납기를 관리합니다.</p></div>
       <div class="s-step"><div class="s-step-n">STEP 05</div><h4>설치·시운전</h4><p>현장 설치와 시운전으로 정상 가동을 확인합니다.</p></div>
       <div class="s-step"><div class="s-step-n">STEP 06</div><h4>사후 관리·유지보수 연계</h4><p>도입 이후 정기점검·부품 공급까지 연계 지원합니다.</p></div>
@@ -555,11 +566,12 @@ h1, h2, h3, h4, h5, h6,
     <div class="s-head">
       <div class="s-eyebrow">Why SAMSUN</div>
       <h2 class="s-title">왜 SAMSUN에서 도입하나</h2>
+      <p class="s-sub">발전기·엔진의 공급에서 끝나지 않고, 설치·시운전·사후 관리까지 전 주기를 함께 책임집니다.</p>
     </div>
     <div class="s-why">
       <div class="s-why-card"><h4>CAT 공인 정품 공급</h4><p>1995년부터 이어온 Caterpillar 공인 대리점으로서 정품 발전기·엔진·부품을 공급합니다.</p></div>
-      <div class="s-why-card"><h4>35년 선정 노하우</h4><p>현장 부하 조건을 분석해 과사양·저사양 없이 운전 목적에 맞는 모델을 선정합니다.</p></div>
-      <div class="s-why-card"><h4>도입 후 한 곳에서</h4><p>설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해 운영 부담을 줄입니다.</p></div>
+      <div class="s-why-card"><h4>35년 현장 경험</h4><p>현장 상황과 고객 요청사항을 반영해 운전 목적에 맞는 발전기·엔진을 선정합니다.</p></div>
+      <div class="s-why-card"><h4>전 주기를 함께 책임</h4><p>공급·설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해, 도입 이후 운영까지 함께 책임집니다.</p></div>
     </div>
   </div>
 </section>
@@ -585,13 +597,29 @@ h1, h2, h3, h4, h5, h6,
     <div class="s-head">
       <div class="s-eyebrow">설치 실적</div>
       <h2 class="s-title">2024년 비상발전기 신규 설치</h2>
-      <p class="s-sub">금호석유화학 고무 제1공장과 한화솔루션 TDI 여수공장에 CAT 비상발전기(C18·C32)를 신규 설치하고 시운전(SAT)을 완료했습니다. 아래는 실제 설치 현장 사진입니다.</p>
+      <p class="s-sub">여수산단 주요 사업장에 CAT 비상발전기를 신규 공급·설치하고 시운전(SAT)까지 완료했습니다.</p>
     </div>
-    <div class="s-gal">
-      <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · CAT C18 비상발전기 (2024)"><div class="s-ph"><img src="install-01.jpg" alt="금호석유화학 고무 제1공장 CAT C18 비상발전기 신규 설치" loading="lazy"></div><figcaption>금호석유화학 고무 제1공장 · CAT C18 비상발전기 (2024)</figcaption></figure>
-      <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · 발전기·제어반 설치 (2024)"><div class="s-ph"><img src="install-02.jpg" alt="금호석유화학 비상발전기 제어반 설치 현장" loading="lazy"></div><figcaption>금호석유화학 고무 제1공장 · 발전기·제어반 설치 (2024)</figcaption></figure>
-      <figure onclick="sOpenLb(this)" data-cap="한화솔루션 TDI 여수공장 · CAT C32 비상발전기 (2024)"><div class="s-ph"><img src="install-04.jpg" alt="한화솔루션 TDI 여수공장 CAT C32 비상발전기 신규 설치" loading="lazy"></div><figcaption>한화솔루션 TDI 여수공장 · CAT C32 비상발전기 (2024)</figcaption></figure>
-      <figure onclick="sOpenLb(this)" data-cap="한화솔루션 TDI 여수공장 · 발전기 패키지 설치 (2024)"><div class="s-ph"><img src="install-07.jpg" alt="한화솔루션 비상발전기 패키지 설치 현장" loading="lazy"></div><figcaption>한화솔루션 TDI 여수공장 · 발전기 패키지 설치 (2024)</figcaption></figure>
+    <div class="s-site-split">
+      <div class="s-site">
+        <span class="s-site-tag">Kumho Petrochemical</span>
+        <h3>금호석유화학 고무 제1공장</h3>
+        <div class="s-site-meta">CAT C18 비상발전기 · 2024</div>
+        <p>고무 제1공장 비상전원으로 CAT C18 발전기 세트를 신규 공급·설치했습니다. 현장 설치부터 시운전(SAT)과 안전장치 점검까지 진행했습니다.</p>
+        <div class="s-site-photos">
+          <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · CAT C18 비상발전기 (2024)"><div class="s-ph"><img src="install-01.jpg" alt="금호석유화학 고무 제1공장 CAT C18 비상발전기 신규 설치" loading="lazy"></div></figure>
+          <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · 발전기·제어반 설치 (2024)"><div class="s-ph"><img src="install-02.jpg" alt="금호석유화학 비상발전기 제어반 설치 현장" loading="lazy"></div></figure>
+        </div>
+      </div>
+      <div class="s-site">
+        <span class="s-site-tag">Hanwha Solution</span>
+        <h3>한화솔루션 TDI 여수공장</h3>
+        <div class="s-site-meta">CAT C32 비상발전기 · 2024</div>
+        <p>TDI 여수공장에 CAT C32 발전기 세트를 신규 공급·설치했습니다. 발전기 패키지 설치와 시운전(SAT)을 통해 정상 가동을 확인했습니다.</p>
+        <div class="s-site-photos">
+          <figure onclick="sOpenLb(this)" data-cap="한화솔루션 TDI 여수공장 · CAT C32 비상발전기 (2024)"><div class="s-ph"><img src="install-04.jpg" alt="한화솔루션 TDI 여수공장 CAT C32 비상발전기 신규 설치" loading="lazy"></div></figure>
+          <figure onclick="sOpenLb(this)" data-cap="한화솔루션 TDI 여수공장 · 발전기 패키지 설치 (2024)"><div class="s-ph"><img src="install-07.jpg" alt="한화솔루션 비상발전기 패키지 설치 현장" loading="lazy"></div></figure>
+        </div>
+      </div>
     </div>
     <p class="s-gal-note">※ 사진을 클릭하면 크게 볼 수 있습니다. 발전기 상세 정격(kVA·kW)은 현장 명판 기준으로 확인 후 표기할 예정입니다.</p>
   </div>

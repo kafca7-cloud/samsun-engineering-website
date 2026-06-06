@@ -29,6 +29,7 @@
   /* 해상부문 전용 액센트 (딥 네이비) */
   --m-navy: #0a3d62;
   --m-navy-deep: #0b2942;
+  --m-navy-lite: #6ea8c8;
   --cat-black: #000000;
   --cat-dark: #0d0d0d;
   --cat-card: #1a1a1a;
@@ -106,7 +107,7 @@ nav#mainNav {
   position: relative;
   min-height: 360px;
   padding: 140px 2rem 80px;
-  background: linear-gradient(135deg, var(--m-navy-deep) 0%, var(--cat-black) 62%);
+  background: linear-gradient(135deg, var(--m-navy) 0%, var(--cat-black) 85%);
   color: var(--cat-white);
   display: flex; align-items: center;
   overflow: hidden;
@@ -430,9 +431,11 @@ h1, h2, h3, h4, h5, h6,
 .m-label {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 11px; font-weight: 700; letter-spacing: 3px;
-  color: var(--cat-yellow); text-transform: uppercase; margin-bottom: 0.9rem;
+  color: var(--m-navy); text-transform: uppercase; margin-bottom: 0.9rem;
 }
-.m-label::before { content: ''; width: 24px; height: 2px; background: var(--cat-yellow); }
+.m-label::before { content: ''; width: 24px; height: 2px; background: var(--m-navy); }
+.m-sec.dark .m-label { color: var(--m-navy-lite); }
+.m-sec.dark .m-label::before { background: var(--m-navy-lite); }
 .m-head.center .m-label { justify-content: center; }
 .m-title {
   font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800;
@@ -453,7 +456,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .m-svc-card {
   background: var(--cat-white); border: 1px solid var(--cat-border);
-  border-top: 3px solid var(--cat-yellow);
+  border-top: 3px solid var(--m-navy);
   padding: 2rem 1.8rem; position: relative;
   transition: box-shadow 0.25s, transform 0.25s;
 }
@@ -856,7 +859,7 @@ h1, h2, h3, h4, h5, h6,
   .m-future-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
   .m-future-card {
     background: var(--cat-white); border: 1px solid var(--cat-border);
-    border-top: 4px solid var(--cat-yellow);
+    border-top: 4px solid var(--m-navy);
     padding: 2.2rem 2rem; position: relative; overflow: hidden;
     transition: box-shadow 0.25s, transform 0.25s;
   }
@@ -1048,16 +1051,9 @@ h1, h2, h3, h4, h5, h6,
 <!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
 <div class="mobile-contact-bar" aria-label="문의 빠른 액션">
   <a href="tel:0616421247" class="mcb-btn mcb-call">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
     <span>전화 상담</span>
   </a>
   <a href="/contact/" class="mcb-btn mcb-mail">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
     <span>이메일 문의</span>
   </a>
 </div>

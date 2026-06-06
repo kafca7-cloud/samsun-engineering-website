@@ -138,6 +138,7 @@
 :root {
   /* BMW M-inspired pure black canvas + minimal CAT yellow accent */
   --cat-yellow: #FFC400;
+  --m-navy: #0a3d62;
   --cat-yellow-dim: rgba(255,196,0,0.12);
   --cat-black:  #000000;       /* pure black canvas */
   --cat-dark:   #0d0d0d;       /* surface-soft */
@@ -719,6 +720,7 @@ section { padding: 100px 2rem; }
   border-left: 3px solid transparent;
   transition: background 0.25s, border-color 0.25s;
 }
+.svc-card.svc-marine .svc-icon-header { background: var(--m-navy); }
 .svc-card:hover .svc-icon-header {
   border-left-color: var(--cat-yellow);
 }
@@ -1867,7 +1869,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">예방정비</span><span class="tag">24h 긴급출동</span><span class="tag">이력관리</span></div>
         <a href="/services/maintenance/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up" data-d="2">        <div class="svc-img-wrap">
+      <div class="svc-card svc-marine fade-up" data-d="2">        <div class="svc-img-wrap">
           <div class="svc-icon-header">
             <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V10H8v2h3v8.93A8 8 0 0 1 4 13H6V11H2v.05A10 10 0 0 0 12 22a10 10 0 0 0 10-9.95V11H18V13H20A8 8 0 0 1 13 20.93V12h3V10H13V7.83A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1z"/></svg></div>
             <div class="svc-icon-label">MARINE</div>

@@ -26,6 +26,9 @@
   --cat-yellow: #FFC400;
   --cat-yellow-dim: rgba(255,196,0,0.12);
   --cat-yellow-soft: rgba(255,196,0,0.06);
+  /* 해상부문 전용 액센트 (딥 네이비) */
+  --m-navy: #0a3d62;
+  --m-navy-deep: #0b2942;
   --cat-black: #000000;
   --cat-dark: #0d0d0d;
   --cat-card: #1a1a1a;
@@ -103,7 +106,7 @@ nav#mainNav {
   position: relative;
   min-height: 360px;
   padding: 140px 2rem 80px;
-  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  background: linear-gradient(135deg, var(--m-navy-deep) 0%, var(--cat-black) 62%);
   color: var(--cat-white);
   display: flex; align-items: center;
   overflow: hidden;
@@ -457,7 +460,7 @@ h1, h2, h3, h4, h5, h6,
 .m-sec.soft .m-svc-card { background: var(--cat-white); }
 .m-svc-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-3px); }
 .m-svc-ico {
-  width: 48px; height: 48px; background: var(--cat-black);
+  width: 48px; height: 48px; background: var(--m-navy);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1.2rem;
 }
@@ -907,7 +910,7 @@ h1, h2, h3, h4, h5, h6,
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    background: #0a121a;
+    background: var(--m-navy-deep);
   }
   .m-future-graphic svg { width: 100%; height: 100%; display: block; }
   .m-future-graphic-cap {

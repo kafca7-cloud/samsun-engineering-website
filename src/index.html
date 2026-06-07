@@ -138,6 +138,7 @@
 :root {
   /* BMW M-inspired pure black canvas + minimal CAT yellow accent */
   --cat-yellow: #FFC400;
+  --m-navy: #0a3d62;
   --cat-yellow-dim: rgba(255,196,0,0.12);
   --cat-black:  #000000;       /* pure black canvas */
   --cat-dark:   #0d0d0d;       /* surface-soft */
@@ -719,6 +720,7 @@ section { padding: 100px 2rem; }
   border-left: 3px solid transparent;
   transition: background 0.25s, border-color 0.25s;
 }
+.svc-card.svc-marine .svc-icon-header { background: var(--m-navy); }
 .svc-card:hover .svc-icon-header {
   border-left-color: var(--cat-yellow);
 }
@@ -1633,7 +1635,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
           <li><a href="/services/sales/">발전기·엔진 신규 공급<span class="dd-en">Sales</span></a></li>
           <li><a href="/services/maintenance/">비상발전기 정기점검·예방정비<span class="dd-en">Maintenance</span></a></li>
           <li class="dd-sub"><a href="/generator-inspection.html">진단 기반 정기점검<span class="dd-en">Diagnostics · CAT ET·SOS</span></a></li>
-          <li><a href="/services/marine/">선박·관공선 엔진 정비<span class="dd-en">Marine</span></a></li>
+          <li><a href="/services/marine/">해상 엔진 정비<span class="dd-en" style="color:var(--m-navy);">Marine</span></a></li>
           <li><a href="/services/construction/">발전기 설치·이전·전기공사<span class="dd-en">Construction</span></a></li>
           <li><a href="/services/rental/">렌탈 발전기·임시 전력 지원<span class="dd-en">Rental</span></a></li>
           <li><a href="/services/mro/">MRO·정품 부품 조달<span class="dd-en">MRO &amp; Parts</span></a></li>
@@ -1867,7 +1869,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         <div class="svc-tags"><span class="tag">예방정비</span><span class="tag">24h 긴급출동</span><span class="tag">이력관리</span></div>
         <a href="/services/maintenance/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>
       </div>
-      <div class="svc-card fade-up" data-d="2">        <div class="svc-img-wrap">
+      <div class="svc-card svc-marine fade-up" data-d="2">        <div class="svc-img-wrap">
           <div class="svc-icon-header">
             <div class="svc-icon-box"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0 2 2.83V10H8v2h3v8.93A8 8 0 0 1 4 13H6V11H2v.05A10 10 0 0 0 12 22a10 10 0 0 0 10-9.95V11H18V13H20A8 8 0 0 1 13 20.93V12h3V10H13V7.83A3 3 0 0 0 15 5a3 3 0 0 0-3-3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1z"/></svg></div>
             <div class="svc-icon-label">MARINE</div>
@@ -1876,7 +1878,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
             <img src="img/main/service-marine.jpg" alt="선박 엔진 정비">
           </div>
         </div>
-        <h3>선박·관공선 엔진 정비</h3>
+        <h3>해상 엔진 정비</h3>
         <p>선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.</p>
         <div class="svc-tags"><span class="tag">주기관 O/H</span><span class="tag">선박 발전기</span><span class="tag">관공선 점검</span></div>
         <a href="/services/marine/" class="svc-link" style="display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:13px;font-weight:700;color:var(--cat-black);letter-spacing:0.3px;text-decoration:none;border-bottom:2px solid var(--cat-yellow);padding-bottom:3px;transition:gap 0.18s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">자세히 보기 →</a>

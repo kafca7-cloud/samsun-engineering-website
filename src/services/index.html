@@ -1,19 +1,10 @@
-<!-- @meta {
-  "cta_eyebrow": "문의하기",
-  "cta_title": "어떤 서비스가 필요하신가요?",
-  "cta_sub": "사업분야별 상세 문의는 SAMSUN에 직접 연락 주세요. 35년 현장 경험을 가진 전문가가 직접 답변 드립니다.",
-  "cta_primary_label": "☎ 전화 상담하기 (061-642-1247)",
-  "cta_primary_href": "tel:0616421247",
-  "cta_secondary_label": "✉ 이메일 문의",
-  "cta_secondary_href": "mailto:samsun3618@hanmail.net"
-} -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>사업분야 (6개) | SAMSUN 삼선엔지니어링</title>
-<meta name="description" content="㈜삼선엔지니어링의 6개 사업분야 - 세일즈, 유지보수, 해상 엔진 수리, 시공업, 임대업, MRO & 부품 조달. CAT 공인 대리점으로서 발전기·엔진 통합 솔루션을 제공합니다.">
+<meta name="description" content="㈜삼선엔지니어링의 6개 사업분야 - 발전기·엔진 신규 공급, 비상발전기 정기점검·예방정비, 선박·관공선 엔진 정비, 발전기 설치·이전·전기공사, 렌탈 발전기·임시 전력 지원, MRO·정품 부품 조달. CAT 공인 대리점으로서 발전기·엔진 통합 솔루션을 제공합니다.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://samsuneng.co.kr/services/">
 
@@ -24,7 +15,268 @@
 <meta property="og:locale" content="ko_KR">
 
 <style>
-{{> design-tokens}}
+/* ============================================================
+   SAMSUN 공통 디자인 토큰
+   - 모든 서브 페이지가 사용하는 CSS 변수와 기본 스타일
+   - 이 파일을 수정하면 모든 서브 페이지에 자동 반영됨
+   ============================================================ */
+
+:root {
+  /* 색상 */
+  --cat-yellow: #FFC400;
+  --m-navy: #0a3d62;
+  --cat-yellow-dim: rgba(255,196,0,0.12);
+  --cat-yellow-soft: rgba(255,196,0,0.06);
+  --cat-black: #000000;
+  --cat-dark: #0d0d0d;
+  --cat-card: #1a1a1a;
+  --cat-elev: #262626;
+  --cat-hairline: #262626;
+  --cat-hairline-soft: #3c3c3c;
+  --cat-white: #ffffff;
+  --cat-gray1: #f5f5f5;
+  --cat-gray2: #e0e0e0;
+  --cat-gray3: #7e7e7e;
+  --cat-gray4: #555555;
+  --cat-gray5: #2a2a2a;
+  --cat-body: #bbbbbb;
+  --cat-body-strong: #e6e6e6;
+  --cat-border: #d6d6d6;
+
+  /* 레이아웃 */
+  --max-w: 1280px;
+
+  /* 폰트 */
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-head: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── 기본 리셋 ─── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--cat-black);
+  background: var(--cat-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 64px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── 단순 페이지 헤더 (← 홈으로) ─── */
+nav#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--cat-white);
+  border-bottom: 3px solid var(--cat-yellow);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.home-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--cat-black);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--cat-black);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.home-btn:hover {
+  background: var(--cat-black);
+  color: var(--cat-yellow);
+}
+.home-btn .arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─── HERO 영역 공통 스타일 ─── */
+.hero {
+  position: relative;
+  min-height: 360px;
+  padding: 140px 2rem 80px;
+  background: linear-gradient(135deg, var(--cat-black) 0%, var(--cat-dark) 100%);
+  color: var(--cat-white);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-stripe {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--cat-yellow);
+  z-index: 2;
+}
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  color: var(--cat-yellow);
+  padding: 6px 14px; border: 1px solid rgba(255,196,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--cat-yellow); font-style: normal; }
+.hero p.lead {
+  font-size: 1.05rem; color: rgba(255,255,255,0.75);
+  max-width: 720px; line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.hero p.lead strong { color: var(--cat-white); font-weight: 700; }
+
+/* ─── CTA 섹션 공통 스타일 ─── */
+.cta-section {
+  background: var(--cat-black); color: var(--cat-white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; }
+.cta-eyebrow, .cta-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  color: var(--cat-yellow); margin-bottom: 1rem;
+}
+.cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; letter-spacing: -0.8px; line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.cta-title em { color: var(--cat-yellow); font-style: normal; }
+.cta-sub, .cta-desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 16px 32px;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  border: 1px solid transparent; cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--cat-yellow); color: var(--cat-black);
+}
+.btn-primary:hover { background: #e6b000; }
+.btn-secondary {
+  background: transparent; color: var(--cat-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  border-color: var(--cat-yellow); color: var(--cat-yellow);
+}
+
+/* ─── 모바일 반응형 ─── */
+@media (max-width: 560px) {
+  body { padding-top: 56px; }
+  .nav-inner { height: 56px; padding: 0 1rem; }
+  .home-btn { font-size: 13px; padding: 7px 14px; }
+  .hero { padding: 110px 1rem 60px; }
+  .cta-section { padding: 60px 1rem; }
+  .cta-actions { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ─── 한국어 줄바꿈 보호 ─── */
+/* 단어 단위로 끊고, 어절 중간에 끊기는 것 방지 */
+h1, h2, h3, h4, h5, h6,
+.hero h1, .hero p.lead,
+.hero-label,
+.cta-title, .cta-sub, .cta-eyebrow,
+.btn, .home-btn,
+.tag {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* lead 문단 안에서 줄바꿈 자연스럽게 */
+.lead, .intro-summary, .sec-sub {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ─── 모바일 하단 고정 문의 바 ─── */
+/* PC에서는 숨김, 모바일(≤860px)에서만 표시 */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: var(--cat-black);
+    border-top: 3px solid var(--cat-yellow);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    height: 60px;
+  }
+  /* 페이지 하단에 고정 바 만큼 여백 추가 (콘텐츠 가림 방지) */
+  body {
+    padding-bottom: 60px;
+  }
+  .mcb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--cat-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.18s, color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mcb-call {
+    background: var(--cat-yellow);
+    color: var(--cat-black);
+  }
+  .mcb-call:active {
+    background: #e6b000;
+  }
+  .mcb-mail {
+    background: var(--cat-black);
+    color: var(--cat-white);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .mcb-mail:active {
+    background: var(--cat-card);
+  }
+  .mcb-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* 매우 작은 화면 — 텍스트 살짝 축소 */
+@media (max-width: 360px) {
+  .mcb-btn {
+    font-size: 13px;
+    gap: 6px;
+  }
+}
 </style>
 
 <style>
@@ -72,6 +324,9 @@
   color: rgba(0,0,0,0.04);
   position: absolute; top: 0.5rem; right: 1rem; line-height: 1;
 }
+.svc-card.svc-marine::after { background: var(--m-navy); }
+.svc-card.svc-marine:hover .svc-arrow { color: var(--m-navy); }
+.svc-card.svc-marine .svc-num { color: rgba(10,61,98,0.07); }
 .svc-card h3 {
   font-size: 1.3rem; font-weight: 800;
   color: var(--cat-black);
@@ -118,7 +373,26 @@
 </head>
 <body>
 
-{{> header-sub}}
+<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
+<style>
+  /* 서브 페이지 NAV: 1280px 제한 풀고 화면 우측 끝까지 활용 */
+  nav#mainNav .nav-inner {
+    max-width: none;
+    padding: 0 2rem;
+  }
+  @media (max-width: 720px) {
+    nav#mainNav .nav-inner { padding: 0 1rem; }
+  }
+</style>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="home-btn">
+      <span class="arrow">←</span>
+      <span>홈으로</span>
+    </a>
+  </div>
+</nav>
+
 
 <section class="hero">
   <div class="hero-stripe"></div>
@@ -139,8 +413,8 @@
 
     <a href="/services/sales/" class="svc-card">
       <div class="svc-num">01</div>
-      <h3>세일즈</h3>
-      <p>육·해상 디젤 엔진 및 비상발전기 판매, 엔진 관련 부품 및 소모품 유통. CAT 공인 대리점으로서 최고 품질의 제품을 공급합니다.</p>
+      <h3>발전기·엔진 신규 공급</h3>
+      <p>CAT 공인 대리점 네트워크를 기반으로, 현장 조건과 운전 목적에 맞는 발전기·엔진 및 부품 공급을 지원합니다.</p>
       <div class="svc-tags">
         <span class="svc-tag">비상발전기 판매</span>
         <span class="svc-tag">디젤엔진</span>
@@ -151,8 +425,8 @@
 
     <a href="/services/maintenance/" class="svc-card">
       <div class="svc-num">02</div>
-      <h3>유지보수</h3>
-      <p>비상발전기·디젤 엔진 정기 점검 및 수리, 24시간 긴급 대응 체계 및 설비 이력 관리로 최적 상태를 유지합니다.</p>
+      <h3>비상발전기 정기점검·예방정비</h3>
+      <p>예방정비·정밀 수리·24시간 긴급 대응을 통해 비상발전기·디젤 엔진의 가동 신뢰성을 확보합니다. 설비 이력 관리와 부품 수명 분석을 함께 제공합니다.</p>
       <div class="svc-tags">
         <span class="svc-tag">정기점검·수리</span>
         <span class="svc-tag">24h 긴급출동</span>
@@ -161,9 +435,9 @@
       <div class="svc-arrow">자세히 보기 →</div>
     </a>
 
-    <a href="/services/marine/" class="svc-card">
+    <a href="/services/marine/" class="svc-card svc-marine">
       <div class="svc-num">03</div>
-      <h3>해상 엔진 수리</h3>
+      <h3>선박·관공선 엔진 정비</h3>
       <p>선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰정, 소방정 등 주요 관공선 점검·수리 실적 다수 보유.</p>
       <div class="svc-tags">
         <span class="svc-tag">주기관 O/H</span>
@@ -175,7 +449,7 @@
 
     <a href="/services/construction/" class="svc-card">
       <div class="svc-num">04</div>
-      <h3>시공업</h3>
+      <h3>발전기 설치·이전·전기공사</h3>
       <p>전기공사업 면허 기반의 신규 시공 역량. 발전기 이전·개조 공사, 전기·플랜트 시공 서비스를 제공합니다.</p>
       <div class="svc-tags">
         <span class="svc-tag">전기공사업</span>
@@ -187,19 +461,19 @@
 
     <a href="/services/rental/" class="svc-card">
       <div class="svc-num">05</div>
-      <h3>임대업</h3>
-      <p>비상발전기 단기·장기 임대 서비스와 건설 기계·장비 임대. 갑작스러운 전력 수요에도 신속하게 대응합니다.</p>
+      <h3>렌탈 발전기·임시 전력 지원</h3>
+      <p>비상발전기 단기·장기 임대와 현장 임시 전력 공급을 지원합니다. 정전 대응, 공사 현장, 설비 점검 기간 등 갑작스러운 전력 수요에 맞춰 상담합니다.</p>
       <div class="svc-tags">
         <span class="svc-tag">단기임대</span>
         <span class="svc-tag">장기임대</span>
-        <span class="svc-tag">정밀기계</span>
+        <span class="svc-tag">임시 전력</span>
       </div>
       <div class="svc-arrow">자세히 보기 →</div>
     </a>
 
     <a href="/services/mro/" class="svc-card">
       <div class="svc-num">06</div>
-      <h3>MRO & 부품 조달</h3>
+      <h3>MRO·정품 부품 조달</h3>
       <p>Caterpillar 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 신속히 조달하며, Trouble-Shooting부터 정밀 정비까지 전 주기에 걸친 기술 지원을 제공합니다.</p>
       <div class="svc-tags">
         <span class="svc-tag">정품 부품</span>
@@ -213,9 +487,44 @@
   </div>
 </section>
 
-{{> cta-section}}
+<!-- 
+  CTA 섹션: 전화 + 이메일 문의로 페이지 마무리
+  페이지별 변수 (모두 기본값 있음):
+    cta_eyebrow      : 상단 작은 라벨 (예: "문의하기")
+    cta_title        : 큰 제목
+    cta_sub          : 부제·설명
+    cta_primary_label: 노란 버튼 텍스트 (기본: "견적 문의하기")
+    cta_primary_href : 노란 버튼 링크 (기본: "tel:0616421247")
+    cta_secondary_label : 회색 버튼 텍스트 (기본: "전화 상담하기")
+    cta_secondary_href  : 회색 버튼 링크 (기본: "mailto:samsun3618@hanmail.net")
+-->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">문의하기</div>
+    <h2 class="cta-title">어떤 서비스가 필요하신가요?</h2>
+    <p class="cta-sub">사업분야별 상세 문의는 SAMSUN에 직접 연락 주세요. 35년 현장 경험을 가진 전문가가 직접 답변 드립니다.</p>
+    <div class="cta-actions">
+      <a href="tel:0616421247" class="btn btn-primary">
+        전화 상담하기 (061-642-1247)
+      </a>
+      <a href="/contact/" class="btn btn-secondary">
+        문의 폼 작성하기
+      </a>
+    </div>
+  </div>
+</section>
 
-{{> mobile-contact-bar}}
+
+<!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
+<div class="mobile-contact-bar" aria-label="문의 빠른 액션">
+  <a href="tel:0616421247" class="mcb-btn mcb-call">
+    <span>전화 상담</span>
+  </a>
+  <a href="/contact/" class="mcb-btn mcb-mail">
+    <span>이메일 문의</span>
+  </a>
+</div>
+
 
 </body>
 </html>

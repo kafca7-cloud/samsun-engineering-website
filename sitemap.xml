@@ -2,74 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://samsuneng.co.kr/</loc>
+    <loc>https://www.samsuneng.co.kr/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://samsuneng.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.samsuneng.co.kr/og-image.jpg</image:loc>
       <image:title>㈜삼선엔지니어링 - CAT 공인 대리점</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/contact/</loc>
+    <loc>https://www.samsuneng.co.kr/contact/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/</loc>
+    <loc>https://www.samsuneng.co.kr/services/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/sales/</loc>
+    <loc>https://www.samsuneng.co.kr/services/sales/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/maintenance/</loc>
+    <loc>https://www.samsuneng.co.kr/services/maintenance/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/marine/</loc>
+    <loc>https://www.samsuneng.co.kr/services/marine/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/construction/</loc>
+    <loc>https://www.samsuneng.co.kr/services/construction/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/rental/</loc>
+    <loc>https://www.samsuneng.co.kr/services/rental/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/services/mro/</loc>
+    <loc>https://www.samsuneng.co.kr/services/mro/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/generator-inspection.html</loc>
+    <loc>https://www.samsuneng.co.kr/generator-inspection.html</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/products/</loc>
+    <loc>https://www.samsuneng.co.kr/products/</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/resources/faq.html</loc>
+    <loc>https://www.samsuneng.co.kr/resources/faq.html</loc>
     <lastmod>2026-05-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsuneng.co.kr/privacy/</loc>
+    <loc>https://www.samsuneng.co.kr/privacy/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

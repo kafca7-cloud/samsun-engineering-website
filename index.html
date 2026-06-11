@@ -1929,7 +1929,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
   </div>
 </section>
 
-<!-- ============ ⭐ SAMSUN ONLY 자체 제작 ============ -->
+<!-- ============ SAMSUN ONLY 자체 제작 ============ -->
 <section id="in-house" class="inhouse-section">
   <style>
     .inhouse-section {
@@ -2284,31 +2284,36 @@ window.addEventListener('scroll', () => {
 
 // Active nav highlight (메뉴 5개 ↔ 섹션 다대다 매핑)
 // 한 메뉴가 여러 섹션을 대표할 수 있음 (예: "회사소개"는 about + history + tech 포함)
-const SECTION_TO_MENU = {
-  'home': '#home',
-  'about': '#about',
-  'history': '#about',
-  'tech': '#about',
-  'services': '#services',
-  'inspection-banner': '#services',
-  'performance': '#performance',
-  'clients': '#performance',
-  'contact': '#contact'
+// 메인 섹션 id → 강조할 상단 메뉴 라벨(텍스트로 식별 / 클릭 동작은 그대로)
+const SECTION_TO_LABEL = {
+  'home': '',
+  'about': '회사소개',
+  'history': '회사소개',
+  'services': '사업분야',
+  'in-house': '사업분야',
+  'inspection-banner': '사업분야',
+  'contact': '문의하기'
 };
 
-window.addEventListener('scroll', () => {
-  const navAs = document.querySelectorAll('.nav-links a');
+// 상단 1차 메뉴(.nav-links 직계 a)만 대상으로 캐시
+const topNavAs = Array.from(document.querySelectorAll('.nav-links > li > a'));
+function labelOf(a){ return (a.childNodes[0] && a.childNodes[0].textContent || a.textContent || '').trim(); }
+
+function updateScrollSpy() {
   let cur = '';
   document.querySelectorAll('section[id]').forEach(s => {
-    if (window.scrollY >= s.offsetTop - 90) cur = s.id;
+    if (window.scrollY >= s.offsetTop - 100) cur = s.id;
   });
-  const activeHref = SECTION_TO_MENU[cur] || '';
-  navAs.forEach(a => {
-    const active = a.getAttribute('href') === activeHref;
+  const activeLabel = SECTION_TO_LABEL[cur] || '';
+  topNavAs.forEach(a => {
+    const active = activeLabel && labelOf(a) === activeLabel;
     a.style.color = active ? 'var(--cat-yellow)' : '';
     a.style.background = active ? 'var(--cat-gray1)' : '';
   });
-});
+}
+window.addEventListener('scroll', updateScrollSpy, { passive: true });
+window.addEventListener('load', updateScrollSpy);
+updateScrollSpy();
 
 // Mobile menu
 function toggleMob() {

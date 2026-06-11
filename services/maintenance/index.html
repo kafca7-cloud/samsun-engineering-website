@@ -463,7 +463,7 @@ h1, h2, h3, h4, h5, h6,
 <!-- 정기점검 상세 미리보기 -->
 <section class="inspection-preview">
   <div class="ip-inner">
-    <div class="ip-header">
+    <div class="ip-header reveal">
       <span class="ip-eyebrow">CAT ET·SOS 진단 기반</span>
       <h2 class="ip-title">단순 시동 테스트로는 부족합니다</h2>
       <p class="ip-lead">
@@ -474,22 +474,22 @@ h1, h2, h3, h4, h5, h6,
     </div>
 
     <div class="ip-cards">
-      <div class="ip-card">
+      <div class="ip-card reveal" data-d="1">
         <div class="ip-card-num">01</div>
         <h3>엔진 주요 계통 점검</h3>
         <p>윤활·연료·냉각·흡배기·전기 계통 등 엔진 주요 시스템의 종합 진단</p>
       </div>
-      <div class="ip-card">
+      <div class="ip-card reveal" data-d="2">
         <div class="ip-card-num">02</div>
         <h3>주요 소모품 상태 점검</h3>
         <p>각종 필터·벨트·호스·배터리 등 소모품의 수명 및 교체 시점 분석</p>
       </div>
-      <div class="ip-card">
+      <div class="ip-card reveal" data-d="3">
         <div class="ip-card-num">03</div>
         <h3>CAT ET 전자식 분석</h3>
         <p>CAT 공식 진단 장비로 엔진 ECM 데이터 분석, 잠재 결함 코드 진단</p>
       </div>
-      <div class="ip-card">
+      <div class="ip-card reveal" data-d="4">
         <div class="ip-card-num">04</div>
         <h3>SOS 오일 샘플링 분석</h3>
         <p>윤활유 성분 분석으로 마모 입자·연료 희석·산화도 등 내부 상태 진단</p>
@@ -508,7 +508,7 @@ h1, h2, h3, h4, h5, h6,
 <!-- 24h 긴급출동 프로세스 -->
 <section class="emergency-process">
   <div class="ep-inner">
-    <div class="ep-header">
+    <div class="ep-header reveal">
       <span class="ep-eyebrow">24H EMERGENCY</span>
       <h2 class="ep-title">긴급 상황, 즉시 대응합니다</h2>
       <p class="ep-lead">
@@ -517,25 +517,25 @@ h1, h2, h3, h4, h5, h6,
     </div>
 
     <div class="ep-steps">
-      <div class="ep-step">
+      <div class="ep-step reveal" data-d="1">
         <div class="ep-step-num">1</div>
         <h3>장애 접수</h3>
         <p>전화·이메일·문의 폼으로 즉시 접수, 1차 원격 상담 진행</p>
       </div>
       <div class="ep-step-arrow">→</div>
-      <div class="ep-step">
+      <div class="ep-step reveal" data-d="2">
         <div class="ep-step-num">2</div>
         <h3>긴급 출동</h3>
         <p>여수 본사 기반, 전남·전북·경남권 신속 출동</p>
       </div>
       <div class="ep-step-arrow">→</div>
-      <div class="ep-step">
+      <div class="ep-step reveal" data-d="3">
         <div class="ep-step-num">3</div>
         <h3>현장 진단</h3>
         <p>CAT 공식 진단 장비로 정밀 원인 분석, 즉석 수리 가능 여부 판단</p>
       </div>
       <div class="ep-step-arrow">→</div>
-      <div class="ep-step">
+      <div class="ep-step reveal" data-d="4">
         <div class="ep-step-num">4</div>
         <h3>수리·보고</h3>
         <p>정품 부품으로 수리, 작업 보고서 및 사후 관리 안내</p>
@@ -774,6 +774,12 @@ h1, h2, h3, h4, h5, h6,
     font-size: 14.5px;
   }
 }
+
+/* 스크롤 등장 애니메이션 */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 
   <!-- 관련 자료 -->
@@ -856,5 +862,8 @@ h1, h2, h3, h4, h5, h6,
 </div>
 
 
+<script>
+(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)||!els.length){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.12});els.forEach(function(e){io.observe(e)});})();
+</script>
 </body>
 </html>

@@ -495,6 +495,12 @@ h1, h2, h3, h4, h5, h6,
   @media (max-width: 720px) {
     nav#mainNav .nav-inner { padding: 0 1rem; }
   }
+
+/* 스크롤 등장 애니메이션 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}.reveal[data-d="5"]{transition-delay:.40s}.reveal[data-d="6"]{transition-delay:.48s}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 <nav id="mainNav">
   <div class="nav-inner">
@@ -532,15 +538,15 @@ h1, h2, h3, h4, h5, h6,
 <!-- 왜 SAMSUN -->
 <section class="s-sec s-why-sec">
   <div class="s-wrap">
-    <div class="s-head">
+    <div class="s-head reveal">
       <div class="s-eyebrow light">Why SAMSUN</div>
       <h2 class="s-title light">왜 SAMSUN에서 도입하나</h2>
       <p class="s-sub light">발전기·엔진의 공급에서 끝나지 않고, 설치·시운전·사후 관리까지 전 주기를 함께 책임집니다.</p>
     </div>
     <div class="s-why">
-      <div class="s-why-card"><div class="s-why-num">01</div><h4>CAT 공인 정품 공급</h4><p>1995년부터 이어온 Caterpillar 공인 대리점으로서 정품 발전기·엔진·부품을 공급합니다.</p></div>
-      <div class="s-why-card"><div class="s-why-num">02</div><h4>35년 현장 경험</h4><p>현장 상황과 고객 요청사항을 반영해 운전 목적에 맞는 발전기·엔진을 선정합니다.</p></div>
-      <div class="s-why-card"><div class="s-why-num">03</div><h4>전 주기를 함께 책임</h4><p>공급·설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해, 도입 이후 운영까지 함께 책임집니다.</p></div>
+      <div class="s-why-card reveal" data-d="1"><div class="s-why-num">01</div><h4>CAT 공인 정품 공급</h4><p>1995년부터 이어온 Caterpillar 공인 대리점으로서 정품 발전기·엔진·부품을 공급합니다.</p></div>
+      <div class="s-why-card reveal" data-d="2"><div class="s-why-num">02</div><h4>35년 현장 경험</h4><p>현장 상황과 고객 요청사항을 반영해 운전 목적에 맞는 발전기·엔진을 선정합니다.</p></div>
+      <div class="s-why-card reveal" data-d="3"><div class="s-why-num">03</div><h4>전 주기를 함께 책임</h4><p>공급·설치·시운전부터 정기점검·부품 조달까지 한 곳에서 연계해, 도입 이후 운영까지 함께 책임집니다.</p></div>
     </div>
   </div>
 </section>
@@ -548,15 +554,15 @@ h1, h2, h3, h4, h5, h6,
 <!-- 공급 카테고리 -->
 <section class="s-sec">
   <div class="s-wrap">
-    <div class="s-head">
+    <div class="s-head reveal">
       <div class="s-eyebrow">공급 분야</div>
       <h2 class="s-title">현장에 맞는 발전기·엔진·부품을 공급합니다</h2>
       <p class="s-sub">단순 판매가 아니라, 현장 상황과 고객 요청사항을 반영해 발전기·엔진·부품을 선정하고 공급합니다.</p>
     </div>
     <div class="s-cat-grid">
-      <div class="s-cat"><span class="s-cat-tag">Generator</span><h3>비상발전기</h3><p>산업·건물용 비상전원 CAT 발전기 세트를 공급합니다. 부하 용량과 설치 환경에 맞춰 모델을 선정합니다.</p><a href="/products/">라인업 보기 →</a></div>
-      <div class="s-cat"><span class="s-cat-tag">Engine</span><h3>디젤엔진</h3><p>육상·산업용 디젤엔진 및 엔진 단품을 공급합니다. 용도별 출력대에 맞는 기종을 안내합니다.</p><a href="/products/">라인업 보기 →</a></div>
-      <div class="s-cat"><span class="s-cat-tag">Parts</span><h3>부품·소모품</h3><p>CAT 정품 부품과 필터·오일 등 소모품을 공급합니다. 정품 공급이 어려운 부품은 자체 제작으로 대응합니다.</p><a href="/products/">부품 보기 →</a></div>
+      <div class="s-cat reveal" data-d="1"><span class="s-cat-tag">Generator</span><h3>비상발전기</h3><p>산업·건물용 비상전원 CAT 발전기 세트를 공급합니다. 부하 용량과 설치 환경에 맞춰 모델을 선정합니다.</p><a href="/products/">라인업 보기 →</a></div>
+      <div class="s-cat reveal" data-d="2"><span class="s-cat-tag">Engine</span><h3>디젤엔진</h3><p>육상·산업용 디젤엔진 및 엔진 단품을 공급합니다. 용도별 출력대에 맞는 기종을 안내합니다.</p><a href="/products/">라인업 보기 →</a></div>
+      <div class="s-cat reveal" data-d="3"><span class="s-cat-tag">Parts</span><h3>부품·소모품</h3><p>CAT 정품 부품과 필터·오일 등 소모품을 공급합니다. 정품 공급이 어려운 부품은 자체 제작으로 대응합니다.</p><a href="/products/">부품 보기 →</a></div>
     </div>
   </div>
 </section>
@@ -564,18 +570,18 @@ h1, h2, h3, h4, h5, h6,
 <!-- 공급 프로세스 -->
 <section class="s-sec s-proc-sec">
   <div class="s-wrap">
-    <div class="s-head">
+    <div class="s-head reveal">
       <div class="s-eyebrow">공급 프로세스</div>
       <h2 class="s-title">상담부터 시운전·사후 관리까지</h2>
       <p class="s-sub">도입 전 상담부터 설치·시운전, 이후 유지보수 연계까지 단계별로 진행합니다.</p>
     </div>
     <div class="s-proc">
-      <div class="s-step"><div class="s-step-n">STEP 01</div><h4>요구사항 상담</h4><p>용도·예산·납기 등 도입 조건을 함께 정리합니다.</p></div>
-      <div class="s-step"><div class="s-step-n">STEP 02</div><h4>현장·부하 조건 분석</h4><p>부하 용량, 설치 공간, 배기·연료 조건을 확인합니다.</p></div>
-      <div class="s-step"><div class="s-step-n">STEP 03</div><h4>모델 선정·견적</h4><p>현장 상황과 요청사항을 반영해 모델을 선정하고 견적을 제시합니다.</p></div>
-      <div class="s-step"><div class="s-step-n">STEP 04</div><h4>발주·제작·수배</h4><p>CAT 네트워크를 통해 발주하고 납기를 관리합니다.</p></div>
-      <div class="s-step"><div class="s-step-n">STEP 05</div><h4>설치·시운전</h4><p>현장 설치와 시운전으로 정상 가동을 확인합니다.</p></div>
-      <div class="s-step"><div class="s-step-n">STEP 06</div><h4>사후 관리·유지보수 연계</h4><p>도입 이후 정기점검·부품 공급까지 연계 지원합니다.</p></div>
+      <div class="s-step reveal" data-d="1"><div class="s-step-n">STEP 01</div><h4>요구사항 상담</h4><p>용도·예산·납기 등 도입 조건을 함께 정리합니다.</p></div>
+      <div class="s-step reveal" data-d="2"><div class="s-step-n">STEP 02</div><h4>현장·부하 조건 분석</h4><p>부하 용량, 설치 공간, 배기·연료 조건을 확인합니다.</p></div>
+      <div class="s-step reveal" data-d="3"><div class="s-step-n">STEP 03</div><h4>모델 선정·견적</h4><p>현장 상황과 요청사항을 반영해 모델을 선정하고 견적을 제시합니다.</p></div>
+      <div class="s-step reveal" data-d="4"><div class="s-step-n">STEP 04</div><h4>발주·제작·수배</h4><p>CAT 네트워크를 통해 발주하고 납기를 관리합니다.</p></div>
+      <div class="s-step reveal" data-d="5"><div class="s-step-n">STEP 05</div><h4>설치·시운전</h4><p>현장 설치와 시운전으로 정상 가동을 확인합니다.</p></div>
+      <div class="s-step reveal" data-d="6"><div class="s-step-n">STEP 06</div><h4>사후 관리·유지보수 연계</h4><p>도입 이후 정기점검·부품 공급까지 연계 지원합니다.</p></div>
     </div>
   </div>
 </section>
@@ -583,7 +589,7 @@ h1, h2, h3, h4, h5, h6,
 <!-- 적용 분야 -->
 <section class="s-sec s-apply-sec">
   <div class="s-wrap">
-    <div class="s-head">
+    <div class="s-head reveal">
       <div class="s-eyebrow light">적용 분야</div>
       <h2 class="s-title light">이런 현장에 공급합니다</h2>
       <p class="s-sub light">산업·공공·해상 등 비상전원과 동력이 필요한 다양한 현장에 대응합니다.</p>
@@ -598,13 +604,13 @@ h1, h2, h3, h4, h5, h6,
 <!-- 주요 설치 실적 -->
 <section class="s-sec s-gal-sec">
   <div class="s-wrap">
-    <div class="s-head">
+    <div class="s-head reveal">
       <div class="s-eyebrow">설치 실적</div>
       <h2 class="s-title">2024년 비상발전기 신규 설치</h2>
       <p class="s-sub">여수산단 주요 사업장에 CAT 비상발전기를 신규 공급·설치하고 시운전(SAT)까지 완료했습니다.</p>
     </div>
     <div class="s-site-split">
-      <div class="s-site">
+      <div class="s-site reveal" data-d="1">
         <span class="s-site-tag">Kumho Petrochemical</span>
         <h3>금호석유화학 고무 제1공장</h3>
         <div class="s-site-meta">CAT C18 비상발전기 · 2024</div>
@@ -614,7 +620,7 @@ h1, h2, h3, h4, h5, h6,
           <figure onclick="sOpenLb(this)" data-cap="금호석유화학 고무 제1공장 · 발전기·제어반 설치 (2024)"><div class="s-ph"><img src="install-02.jpg" alt="금호석유화학 비상발전기 제어반 설치 현장" loading="lazy"></div></figure>
         </div>
       </div>
-      <div class="s-site">
+      <div class="s-site reveal" data-d="2">
         <span class="s-site-tag">Hanwha Solution</span>
         <h3>한화솔루션 TDI 여수공장</h3>
         <div class="s-site-meta">CAT C32 비상발전기 · 2024</div>
@@ -635,6 +641,9 @@ h1, h2, h3, h4, h5, h6,
   <img id="sLbImg" src="" alt="설치 현장 확대 이미지">
   <div class="s-lb-cap" id="sLbCap"></div>
 </div>
+<script>
+(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)||!els.length){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.12});els.forEach(function(e){io.observe(e)});})();
+</script>
 <script>
 function sOpenLb(fig){var img=fig.querySelector('img');document.getElementById('sLbImg').src=img.src;document.getElementById('sLbCap').textContent=fig.getAttribute('data-cap')||'';document.getElementById('sLb').classList.add('open');}
 function sCloseLb(e){if(e.target.id==='sLbImg')return;document.getElementById('sLb').classList.remove('open');}

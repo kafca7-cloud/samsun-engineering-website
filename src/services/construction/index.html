@@ -175,6 +175,29 @@
 .c-why-card h3 { font-size: 15.5px; font-weight: 800; color: var(--cat-black); margin-bottom: 0.6rem; letter-spacing: -0.3px; word-break: keep-all; }
 .c-why-card p { font-size: 13px; color: var(--cat-gray4); line-height: 1.65; word-break: keep-all; }
 @media (max-width: 760px) { .c-lic-wrap { grid-template-columns: 1fr; } }
+/* ===== 왜 삼선 — 임팩트 밴드 ===== */
+.c-why-band { background: var(--cat-black); color: var(--cat-white); padding: 5rem 2rem; position: relative; overflow: hidden; }
+.c-why-band::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 5px; background: var(--cat-yellow); }
+.c-why-band::after { content: ''; position: absolute; top: -20%; right: -8%; width: 45%; height: 140%; background: radial-gradient(circle at 60% 50%, rgba(255,196,0,0.10) 0%, transparent 62%); pointer-events: none; }
+.c-why-band-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
+.c-why-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 800; letter-spacing: 3px; color: var(--cat-yellow); margin-bottom: 1.1rem; }
+.c-why-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--cat-yellow); }
+.c-why-headline { font-size: clamp(1.7rem, 3.6vw, 2.7rem); font-weight: 900; line-height: 1.22; letter-spacing: -0.8px; margin-bottom: 1.1rem; word-break: keep-all; }
+.c-why-headline em { font-style: normal; color: var(--cat-yellow); }
+.c-why-lead { font-size: 15px; color: rgba(255,255,255,0.62); line-height: 1.8; max-width: 680px; margin-bottom: 3rem; word-break: keep-all; }
+.c-why-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.1); }
+.c-why-pt { display: flex; gap: 1rem; padding: 2rem 1.6rem 0.5rem; border-right: 1px solid rgba(255,255,255,0.1); transition: background 0.2s; }
+.c-why-pt:last-child { border-right: none; }
+.c-why-pt:hover { background: rgba(255,255,255,0.03); }
+.c-why-pt-n { font-size: 2.4rem; font-weight: 900; color: var(--cat-yellow); line-height: 1; flex-shrink: 0; letter-spacing: -1px; }
+.c-why-pt-body h3 { font-size: 16px; font-weight: 800; color: var(--cat-white); margin-bottom: 0.5rem; letter-spacing: -0.3px; line-height: 1.4; word-break: keep-all; }
+.c-why-pt-body p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; word-break: keep-all; }
+@media (max-width: 760px) {
+  .c-why-band { padding: 3.5rem 1.4rem; }
+  .c-why-points { grid-template-columns: 1fr; border-top: none; }
+  .c-why-pt { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1.6rem 0; }
+  .c-why-pt:last-child { border-bottom: none; }
+}
 .other-services {
   background: var(--cat-black);
   padding: 4rem 2rem;
@@ -248,6 +271,40 @@
   </div>
 </section>
 
+<!-- 왜 삼선 시공 (임팩트 밴드 — 히어로 직후) -->
+<section class="c-why-band">
+  <div class="c-why-band-inner">
+    <div class="c-why-head">
+      <span class="c-why-eyebrow">WHY SAMSUN</span>
+      <h2 class="c-why-headline">발전기를 공급한 곳이,<br><em>설치와 사후까지 책임집니다</em></h2>
+      <p class="c-why-lead">공급·설치·시운전·사후정비가 따로 놀면 책임 소재가 흐려집니다. 삼선엔지니어링은 이 전 과정을 하나의 창구로 책임집니다.</p>
+    </div>
+    <div class="c-why-points">
+      <div class="c-why-pt">
+        <div class="c-why-pt-n">01</div>
+        <div class="c-why-pt-body">
+          <h3>하나의 창구, 끝까지 책임</h3>
+          <p>발전기 공급–설치–시운전–사후정비를 한 곳에서. 분리 발주에서 생기는 책임 공백이 없습니다.</p>
+        </div>
+      </div>
+      <div class="c-why-pt">
+        <div class="c-why-pt-n">02</div>
+        <div class="c-why-pt-body">
+          <h3>35년 발전기 현장이 쌓은 시공 노하우</h3>
+          <p>발전기·엔진을 직접 다뤄온 경험이, 설치·시공 단계의 변수 대응으로 이어집니다.</p>
+        </div>
+      </div>
+      <div class="c-why-pt">
+        <div class="c-why-pt-n">03</div>
+        <div class="c-why-pt-body">
+          <h3>협력사 총괄 경험에, 직접 시공까지</h3>
+          <p>전문 협력사와 프로젝트를 총괄해온 경험에 더해, 전기공사업 등록(전남-02289호)으로 직접 시공 역량을 갖췄습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 공사 범위 -->
 <section class="c-sec">
   <div class="c-inner">
@@ -306,19 +363,6 @@
   </div>
 </section>
 
-<!-- 왜 삼선 시공 -->
-<section class="c-sec alt">
-  <div class="c-inner">
-    <span class="c-eyebrow">왜 삼선엔지니어링인가</span>
-    <h2 class="c-title">공급·설치·사후관리를 한 곳에서</h2>
-    <p class="c-desc">발전기를 공급한 곳이 설치·시운전·정비까지 책임지면, 책임 소재가 명확하고 사후 대응이 빠릅니다.</p>
-    <div class="c-why-grid">
-      <div class="c-why-card"><div class="c-why-n">01</div><h3>일관된 책임 체계</h3><p>발전기 공급–설치–시운전–사후정비를 하나의 창구로 책임집니다. 분리 발주에서 생기는 책임 공백이 없습니다.</p></div>
-      <div class="c-why-card"><div class="c-why-n">02</div><h3>35년 발전기 현장 경험</h3><p>발전기·엔진을 직접 다뤄온 오랜 경험을 바탕으로, 설치·시공 단계의 변수에 대응합니다.</p></div>
-      <div class="c-why-card"><div class="c-why-n">03</div><h3>협력 네트워크 + 직접 시공</h3><p>전문 협력사와의 프로젝트 총괄 경험에 더해, 전기공사업 등록으로 직접 시공 역량까지 갖췄습니다.</p></div>
-    </div>
-  </div>
-</section>
 
 
 <section class="other-services">

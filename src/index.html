@@ -393,8 +393,9 @@ nav {
   font-family: var(--font-head);
   font-size: clamp(2.8rem, 4.5vw, 4.8rem);
   font-weight: 900; color: var(--cat-white);
-  line-height: 1.02; letter-spacing: -1px;
+  line-height: 1.08; letter-spacing: -1px;
   margin-bottom: 1.6rem;
+  word-break: keep-all;
 }
 .hero-title em { color: var(--cat-yellow); font-style: normal; display:block; }
 .hero-body {
@@ -485,8 +486,7 @@ section { padding: 100px 2rem; }
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800; color: var(--cat-black);
   line-height: 1.12; letter-spacing: -0.5px;
-  margin-bottom: 1rem;
-}
+  margin-bottom: 1rem; word-break: keep-all;}
 .sec-title.light { color: var(--cat-white); }
 .sec-sub {
   font-size: 16.5px; color: var(--cat-gray3); line-height: 1.8; max-width: 560px;
@@ -1203,7 +1203,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: clamp(2rem, 9vw, 2.8rem) !important; }
+  .hero-title { font-size: clamp(1.9rem, 7.5vw, 2.6rem) !important; word-break: keep-all !important; }
   .hero-body { font-size: 14px !important; }
   .btn-cat, .btn-ghost { padding: 12px 22px !important; font-size: 12px !important; }
   .stats-bar-inner { grid-template-columns: 1fr 1fr; }
@@ -1320,8 +1320,8 @@ nav, .nav-cta, .btn-cat, .btn-ghost, .map-btn,
 .hero-title em { font-style: normal; }
 
 /* Tighter, machined typography hierarchy */
-.hero-title { font-family: var(--font-head); font-size: clamp(3rem, 5.5vw, 5.5rem); line-height: 1; letter-spacing: -1px; font-weight: 800; }
-.sec-title  { font-family: var(--font-head); letter-spacing: -0.3px; font-weight: 700; }
+.hero-title { font-family: var(--font-head); font-size: clamp(2.6rem, 5vw, 5rem); line-height: 1.08; letter-spacing: -1px; font-weight: 800; word-break: keep-all; }
+.sec-title  { font-family: var(--font-head); letter-spacing: -0.3px; font-weight: 700; word-break: keep-all; }
 .sec-label, .perf-badge, .tag, .type-badge, .iso-pill, .ct-lbl,
 .about-est, .about-badge-t, .eng-exp, .hero-eyebrow,
 .hero-panel-header, .nav-cta, .btn-cat, .btn-ghost, .map-btn {
@@ -1679,7 +1679,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
     <div class="hero-content">
       <div class="hero-label">육·해상 발전기·엔진 전문 · Since 1990</div>
       <h1 class="hero-title">
-        발전기·엔진의<br>
+        <span style="white-space:nowrap;">발전기·엔진</span>의<br>
         <em>전 주기를 함께합니다</em>
       </h1>
       <p class="hero-body">

@@ -1153,7 +1153,7 @@ footer {
   .clients-grid { grid-template-columns: repeat(2,1fr); }
   .stats-bar-inner { grid-template-columns: repeat(2,1fr); }
   .sbar-item:nth-child(2) { border-right: none; }
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
   .svc-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
@@ -2070,6 +2070,19 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 @media (max-width: 380px) {
   .insp-banner-cards { grid-template-columns: 1fr 1fr !important; }
   .insp-banner-cards > div { padding: 1rem !important; }
+}
+
+/* 푸터 인증 배지 — 모바일에서도 한 줄(일렬) 유지 */
+@media (max-width: 560px) {
+  .iso-row { flex-wrap: nowrap; gap: 5px; width: 100%; }
+  .iso-pill {
+    font-size: 8.5px !important; padding: 3px 6px !important;
+    letter-spacing: 0 !important; white-space: nowrap;
+    flex: 0 1 auto; text-align: center;
+  }
+}
+@media (max-width: 360px) {
+  .iso-pill { font-size: 8px !important; padding: 3px 4px !important; }
 }
 </style>
   

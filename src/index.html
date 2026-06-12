@@ -2057,7 +2057,21 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       }
       .inhouse-text h2 { font-size: 1.6rem; }
     }
-  </style>
+  
+/* ── Featured Service(정기점검) 배너 모바일 균형 수정 ── */
+.insp-banner-title { word-break: keep-all; }
+.insp-banner-btn { word-break: keep-all; white-space: nowrap; justify-content: center; }
+@media (max-width: 860px) {
+  .insp-banner-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .insp-banner-title { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .insp-banner-btn { width: 100%; box-sizing: border-box; padding: 16px 20px !important; font-size: 1rem !important; }
+  .insp-banner-cards { gap: 0.75rem !important; }
+}
+@media (max-width: 380px) {
+  .insp-banner-cards { grid-template-columns: 1fr 1fr !important; }
+  .insp-banner-cards > div { padding: 1rem !important; }
+}
+</style>
   
   <div class="inhouse-inner">
     
@@ -2112,13 +2126,13 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 <!-- ====== 정기점검 진입 배너 (전용 페이지로 연결) ====== -->
 <section id="inspection-banner" style="background:var(--cat-black);color:#fff;padding:80px 2rem;position:relative;overflow:hidden;">
   <div style="position:absolute;top:0;right:-5%;width:50%;height:100%;background:radial-gradient(circle at 60% 50%,rgba(255,196,0,0.08) 0%,transparent 60%);pointer-events:none;"></div>
-  <div style="max-width:var(--max-w);margin:0 auto;position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;">
+  <div class="insp-banner-grid" style="max-width:var(--max-w);margin:0 auto;position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;">
     <div>
       <div style="display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;color:var(--cat-yellow);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:1.2rem;">
         <span style="display:inline-block;width:32px;height:2px;background:var(--cat-yellow);"></span>
         Featured Service
       </div>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;letter-spacing:-0.8px;margin-bottom:1rem;">
+      <h2 class="insp-banner-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;letter-spacing:-0.8px;margin-bottom:1rem;">
         기동 테스트만으로는 부족합니다.<br>
         <span style="color:var(--cat-yellow);">진단 기반 비상발전기 정기점검</span>
       </h2>
@@ -2126,12 +2140,12 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
         CAT ET 전자식 분석과 SOS 오일 분석을 결합한 진단 기반 정기점검으로 잠재 결함을 사전에 발견합니다.
         비상시 운영 신뢰성 확보를 위한 표준화된 점검 절차와 리포트를 제공합니다.
       </p>
-      <a href="/generator-inspection.html" style="display:inline-flex;align-items:center;gap:14px;padding:18px 32px;background:var(--cat-yellow);color:var(--cat-black);font-size:1.02rem;font-weight:800;letter-spacing:-0.2px;border-radius:4px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 8px 24px rgba(255,196,0,0.25);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 32px rgba(255,196,0,0.35)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 24px rgba(255,196,0,0.25)';">
+      <a href="/generator-inspection.html" class="insp-banner-btn" style="display:inline-flex;align-items:center;gap:14px;padding:18px 32px;background:var(--cat-yellow);color:var(--cat-black);font-size:1.02rem;font-weight:800;letter-spacing:-0.2px;border-radius:4px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 8px 24px rgba(255,196,0,0.25);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 32px rgba(255,196,0,0.35)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 24px rgba(255,196,0,0.25)';">
         정기점검 자세히 보기
         <span style="font-size:1.2rem;">→</span>
       </a>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;">
+    <div class="insp-banner-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;">
       <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,196,0,0.2);border-radius:4px;padding:1.4rem;">
         <div style="font-size:0.7rem;font-weight:800;color:var(--cat-yellow);letter-spacing:1.5px;margin-bottom:0.5rem;">CAT ET</div>
         <div style="font-size:0.95rem;font-weight:700;line-height:1.4;">전자식<br>진단 분석</div>

@@ -1153,7 +1153,7 @@ footer {
   .clients-grid { grid-template-columns: repeat(2,1fr); }
   .stats-bar-inner { grid-template-columns: repeat(2,1fr); }
   .sbar-item:nth-child(2) { border-right: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
   .svc-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
@@ -2083,6 +2083,33 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 }
 @media (max-width: 360px) {
   .iso-pill { font-size: 8px !important; padding: 3px 4px !important; }
+}
+
+/* ── 모바일 푸터: 전체 1열 + 가운데 정렬 ── */
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2.2rem !important;
+    justify-items: center;
+  }
+  .footer-logo { text-align: center; }
+  .footer-company-name { display: inline-block; }
+  .footer-desc { text-align: center; }
+  .footer-col { width: 100%; }
+  .footer-col h4 { text-align: center; }
+  .footer-col a { text-align: center; }
+
+  /* 하단: 저작권 + 인증배지 세로 가운데 */
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .footer-bottom p { text-align: center; }
+  .iso-row { justify-content: center; }
 }
 </style>
   

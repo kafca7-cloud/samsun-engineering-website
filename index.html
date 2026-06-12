@@ -2085,18 +2085,22 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
   .iso-pill { font-size: 8px !important; padding: 3px 4px !important; }
 }
 
-/* ── 모바일 푸터: 전체 1열 + 가운데 정렬 ── */
+/* ── 모바일 푸터: 회사정보 가운데 단독 + 메뉴 4개 2x2 ── */
 @media (max-width: 860px) {
   .footer-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem 1rem !important;
     text-align: center;
-    gap: 2.2rem !important;
-    justify-items: center;
   }
-  .footer-logo { text-align: center; }
+  /* 회사정보: 2칸 전체 폭 차지 + 가운데 */
+  .footer-logo {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
   .footer-company-name { display: inline-block; }
   .footer-desc { text-align: center; }
-  .footer-col { width: 100%; }
+  /* 메뉴 4개: 2x2 로 균형 배치, 각 칼럼 가운데 */
+  .footer-col { width: 100%; text-align: center; }
   .footer-col h4 { text-align: center; }
   .footer-col a { text-align: center; }
 

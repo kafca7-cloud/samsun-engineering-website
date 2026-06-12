@@ -141,6 +141,10 @@
   .post-body-inner { font-size: 15px; line-height: 1.75; }
   .post-back { padding: 14px 1.2rem; }
 }
+
+/* 한글 단어 단위 줄바꿈 (전역) — 폭/정렬 영향 없이 줄바꿈만 단어 단위로 */
+body { word-break: keep-all; }
+table, td, th, code, pre { word-break: normal; }
 </style>
 </head>
 <body>

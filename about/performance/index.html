@@ -661,6 +661,10 @@ h1, h2, h3, h4, h5, h6,
   @media (max-width: 720px) {
     nav#mainNav .nav-inner { padding: 0 1rem; }
   }
+
+/* 한글 단어 단위 줄바꿈 (전역) — 폭/정렬 영향 없이 줄바꿈만 단어 단위로 */
+body { word-break: keep-all; }
+table, td, th, code, pre { word-break: normal; }
 </style>
 <nav id="mainNav">
   <div class="nav-inner">

@@ -2115,6 +2115,10 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
   .footer-bottom p { text-align: center; }
   .iso-row { justify-content: center; }
 }
+
+/* 한글 단어 단위 줄바꿈 (전역) — 폭/정렬 영향 없이 줄바꿈만 단어 단위로 */
+body { word-break: keep-all; }
+table, td, th, code, pre { word-break: normal; }
 </style>
   
   <div class="inhouse-inner">

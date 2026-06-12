@@ -939,6 +939,10 @@ h1, h2, h3, h4, h5, h6,
     .m-future-graphic svg { position: absolute; inset: 0; }
   }
   @media (max-width: 860px) { .m-future-grid { grid-template-columns: 1fr; } }
+
+/* 한글 단어 단위 줄바꿈 (전역) — 폭/정렬 영향 없이 줄바꿈만 단어 단위로 */
+body { word-break: keep-all; }
+table, td, th, code, pre { word-break: normal; }
 </style>
 <section class="m-sec soft">
   <div class="m-wrap">

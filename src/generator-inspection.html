@@ -741,21 +741,10 @@ section { padding: 100px 2rem; }
 }
 
 /* ============ 전기 계통 안전 점검 섹션 (B안 추가) ============ */
-.electrical-section { background: var(--cat-white); }
-.scope-grid--4 { grid-template-columns: repeat(4, 1fr); }
-.elec-note {
-  margin-top: 2rem;
-  padding: 1rem 1.25rem;
-  background: var(--cat-yellow-soft);
-  border-left: 4px solid var(--cat-yellow);
-  border-radius: 0 4px 4px 0;
-  font-size: 0.86rem;
-  color: var(--cat-gray4);
-  line-height: 1.7;
+.electrical-section {
+  background: var(--cat-gray1);
+  border-top: 1px solid var(--cat-border);
 }
-.elec-note strong { color: var(--cat-black); font-weight: 700; }
-@media (max-width: 960px) { .scope-grid--4 { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .scope-grid--4 { grid-template-columns: 1fr; } }
 </style>
 
 <!-- 공통 디자인 토큰 (build.js가 자동 인라인) -->
@@ -1289,38 +1278,31 @@ table, td, th, code, pre { word-break: normal; }
       <strong>전기기사·전기공사기사 자격</strong>을 갖춘 인력이 절연저항·접지저항 등 전기 안전 항목을 직접 측정·판정하여, 기계적 상태와 전기적 안전을 함께 확인합니다.
     </p>
 
-    <div class="scope-grid scope-grid--4">
+    <div class="scope-grid">
       <div class="scope-card">
-        <div class="scope-num">INSULATION</div>
+        <div class="scope-num">01 · INSULATION</div>
         <h3 class="scope-title">발전기 절연저항 측정</h3>
         <p class="scope-desc">
           발전기 권선의 <strong>절연 상태</strong>를 측정하여 절연 열화·누설 징후를 확인합니다.
         </p>
       </div>
       <div class="scope-card">
-        <div class="scope-num">GROUNDING</div>
+        <div class="scope-num">02 · GROUNDING</div>
         <h3 class="scope-title">설비 접지저항 측정</h3>
         <p class="scope-desc">
           <strong>접지 계통의 건전성</strong>을 측정하여 누전·감전 위험 요인을 확인합니다.
         </p>
       </div>
       <div class="scope-card">
-        <div class="scope-num">VIBRATION</div>
-        <h3 class="scope-title">동체 소음·진동 점검</h3>
+        <div class="scope-num">03 · BODY</div>
+        <h3 class="scope-title">동체 계통 상태 점검</h3>
         <p class="scope-desc">
-          운전 중 <strong>소음·진동 상태</strong>를 점검하여 베어링·정렬 이상 징후를 확인합니다.
-        </p>
-      </div>
-      <div class="scope-card">
-        <div class="scope-num">COUPLING</div>
-        <h3 class="scope-title">커플링·베어링 상태 점검</h3>
-        <p class="scope-desc">
-          엔진–발전기 <strong>커플링 볼트 체결과 베어링 상태</strong>를 점검합니다.
+          운전 중 <strong>소음·진동</strong>과 엔진–발전기 <strong>커플링 볼트·베어링</strong> 상태를 점검하여 기계적 이상 징후를 확인합니다.
         </p>
       </div>
     </div>
 
-    <div class="elec-note">
+    <div class="intervals-note">
       ※ 절연저항·접지저항 측정은 <strong>전기 분야 국가기술자격(전기기사·전기공사기사) 보유 인력</strong>이 직접 수행하며, <strong>전기안전관리자의 직무에 관한 고시</strong>상 발전설비 점검 기준을 참고합니다. 실제 적용 항목은 설비 사양·점검 종류에 따라 조정됩니다.
     </div>
   </div>

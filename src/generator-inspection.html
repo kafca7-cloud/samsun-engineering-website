@@ -592,6 +592,16 @@ section { padding: 100px 2rem; }
   height: fit-content;
   letter-spacing: 0.2px;
 }
+/* 주기 구분 색상 (기본=노랑: 정기/연단위) */
+.interval-list .item-freq.f-routine { /* 상시·단기: Daily, 매주 */
+  color: #1f7a3d; background: rgba(31,122,61,0.12);
+}
+.interval-list .item-freq.f-long { /* 장주기: 3년, 6년 */
+  color: #2b6cb0; background: rgba(43,108,176,0.12);
+}
+.interval-list .item-freq.f-cond { /* 조건부: 필요시 */
+  color: var(--cat-gray4); background: rgba(0,0,0,0.06);
+}
 .intervals-note {
   margin-top: 2rem;
   padding: 1.3rem 1.8rem;
@@ -1438,8 +1448,8 @@ table, td, th, code, pre { word-break: normal; }
           <h3>Lubrication System (윤활 계통)</h3>
         </div>
         <ul class="interval-list">
-          <li><span class="item-name">Engine Oil Filter Differential Pressure 점검</span><span class="item-freq">Daily</span></li>
-          <li><span class="item-name">Engine Oil Level 점검</span><span class="item-freq">Daily</span></li>
+          <li><span class="item-name">Engine Oil Filter Differential Pressure 점검</span><span class="item-freq f-routine">Daily</span></li>
+          <li><span class="item-name">Engine Oil Level 점검</span><span class="item-freq f-routine">Daily</span></li>
           <li><span class="item-name">Engine Oil Sample 채취 (SOS)</span><span class="item-freq">매 300시간</span></li>
           <li><span class="item-name">Engine Crankcase Breather 청소</span><span class="item-freq">매년</span></li>
           <li><span class="item-name">Engine Oil 및 Filter 교환</span><span class="item-freq">매년</span></li>
@@ -1454,8 +1464,8 @@ table, td, th, code, pre { word-break: normal; }
           <h3>Fuel System (연료 계통)</h3>
         </div>
         <ul class="interval-list">
-          <li><span class="item-name">Fuel System Primary Filter/Water Separator 드레인</span><span class="item-freq">필요시</span></li>
-          <li><span class="item-name">Fuel Tank 수분 및 침전물 드레인</span><span class="item-freq">매주</span></li>
+          <li><span class="item-name">Fuel System Primary Filter/Water Separator 드레인</span><span class="item-freq f-cond">필요시</span></li>
+          <li><span class="item-name">Fuel Tank 수분 및 침전물 드레인</span><span class="item-freq f-routine">매주</span></li>
           <li><span class="item-name">Fuel System Primary Filter 청소/점검/교체</span><span class="item-freq">매년</span></li>
           <li><span class="item-name">Fuel System Secondary Filter 교체</span><span class="item-freq">매년</span></li>
         </ul>
@@ -1468,8 +1478,8 @@ table, td, th, code, pre { word-break: normal; }
           <h3>Air System (공기 흡배기 계통)</h3>
         </div>
         <ul class="interval-list">
-          <li><span class="item-name">Engine Air Cleaner Element (Dual) 점검/청소/교체</span><span class="item-freq">필요시</span></li>
-          <li><span class="item-name">Engine Air Cleaner Service Indicator 점검</span><span class="item-freq">매주</span></li>
+          <li><span class="item-name">Engine Air Cleaner Element (Dual) 점검/청소/교체</span><span class="item-freq f-cond">필요시</span></li>
+          <li><span class="item-name">Engine Air Cleaner Service Indicator 점검</span><span class="item-freq f-routine">매주</span></li>
           <li><span class="item-name">Engine Air Cleaner Element (Single) 점검/청소/교체</span><span class="item-freq">매년</span></li>
           <li><span class="item-name">Engine Valve Lash 점검</span><span class="item-freq">매년</span></li>
           <li><span class="item-name">Speed Sensor 청소/점검</span><span class="item-freq">매년</span></li>
@@ -1483,15 +1493,15 @@ table, td, th, code, pre { word-break: normal; }
           <h3>Cooling System (냉각 계통)</h3>
         </div>
         <ul class="interval-list">
-          <li><span class="item-name">Radiator 청소</span><span class="item-freq">필요시</span></li>
-          <li><span class="item-name">Coolant Level 점검</span><span class="item-freq">Daily</span></li>
-          <li><span class="item-name">Jacket Water Heater 점검</span><span class="item-freq">매주</span></li>
+          <li><span class="item-name">Radiator 청소</span><span class="item-freq f-cond">필요시</span></li>
+          <li><span class="item-name">Coolant Level 점검</span><span class="item-freq f-routine">Daily</span></li>
+          <li><span class="item-name">Jacket Water Heater 점검</span><span class="item-freq f-routine">매주</span></li>
           <li><span class="item-name">Coolant Sample 채취 (Level 1)</span><span class="item-freq">6개월</span></li>
           <li><span class="item-name">Coolant Sample 채취 (Level 2)</span><span class="item-freq">매년</span></li>
           <li><span class="item-name">SCA (Supplemental Coolant Additive) 측정·보충</span><span class="item-freq">매년</span></li>
           <li><span class="item-name">Water Pump 점검</span><span class="item-freq">매년</span></li>
-          <li><span class="item-name">Thermostatic Valve 점검</span><span class="item-freq">3년</span></li>
-          <li><span class="item-name">Coolant (ELC) 교환</span><span class="item-freq">6년</span></li>
+          <li><span class="item-name">Thermostatic Valve 점검</span><span class="item-freq f-long">3년</span></li>
+          <li><span class="item-name">Coolant (ELC) 교환</span><span class="item-freq f-long">6년</span></li>
         </ul>
       </div>
     </div>

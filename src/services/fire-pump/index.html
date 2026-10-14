@@ -193,13 +193,14 @@ h1, h2, h3, h4, h5, h6, .hero h1, .hero p.lead, .hero-label, .cta-title, .cta-su
 @media (max-width: 900px) { .fault-cards { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px) { .fault-cards { grid-template-columns: 1fr; } }
 
-/* 현장·작업 사진 */
-.photo-band { background: var(--cat-gray1); padding: 56px 2rem; }
-.fp-figure { max-width: 1000px; margin: 1.8rem auto 0; }
-.fp-figure.band { margin: 0 auto; }
-.fp-figure img { width: 100%; height: auto; display: block; }
-.fp-figure figcaption { font-size: 13px; color: var(--cat-gray3); margin-top: 0.8rem; padding-left: 12px; border-left: 3px solid var(--cat-yellow); line-height: 1.5; word-break: keep-all; }
-@media (max-width: 560px) { .photo-band { padding: 40px 1.2rem; } }
+/* 현장·작업 사진 (이미지 + 설명 2단) */
+.photo-band { background: var(--cat-gray1); padding: 48px 2rem; }
+.photo-row { max-width: 1000px; margin: 1.8rem auto 0; display: grid; grid-template-columns: 420px 1fr; gap: 1.8rem; align-items: center; }
+.photo-row.band { margin: 0 auto; }
+.photo-row img { width: 100%; height: auto; display: block; border-left: 3px solid var(--cat-yellow); }
+.photo-row .pr-text h3 { font-size: 16px; font-weight: 800; color: var(--cat-black); margin: 0 0 0.5rem; letter-spacing: -0.3px; word-break: keep-all; }
+.photo-row .pr-text p { font-size: 14px; line-height: 1.7; color: var(--cat-gray4); margin: 0; word-break: keep-all; }
+@media (max-width: 680px) { .photo-row { grid-template-columns: 1fr; gap: 1rem; } .photo-band { padding: 36px 1.2rem; } }
 
 /* 규제 근거 포인트 (3열) */
 .why-section { background: var(--cat-white); border-top: 1px solid var(--cat-border); }
@@ -425,10 +426,13 @@ table, td, th, code, pre { word-break: normal; }
 
 <!-- ============ 현장 사진: 펌프실 ============ -->
 <section class="photo-band">
-  <figure class="fp-figure band reveal">
+  <div class="photo-row band reveal">
     <img src="/img/fire-pump/diesel-fire-pump-engine-pump-room.webp" alt="소방펌프 디젤엔진 및 펌프 시스템 현장" loading="lazy" width="1200" height="900">
-    <figcaption>소방펌프 디젤엔진 및 펌프 시스템 현장</figcaption>
-  </figure>
+    <div class="pr-text">
+      <h3>소방펌프 디젤엔진 및 펌프 시스템 현장</h3>
+      <p>상용전원과 독립된 디젤 구동으로 비상 시 소화수를 공급하는 소방펌프 시스템입니다. 엔진·펌프·제어반을 함께 점검합니다.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ CAT · UL ============ -->
@@ -518,10 +522,13 @@ table, td, th, code, pre { word-break: normal; }
       </div>
     </div>
 
-    <figure class="fp-figure reveal">
+    <div class="photo-row reveal">
       <img src="/img/fire-pump/fire-pump-engine-alignment-inspection.webp" alt="다이얼 게이지를 이용한 구동계 얼라인먼트 점검" loading="lazy" width="1200" height="900">
-      <figcaption>다이얼 게이지를 이용한 구동계 얼라인먼트 점검</figcaption>
-    </figure>
+      <div class="pr-text">
+        <h3>다이얼 게이지를 이용한 구동계 얼라인먼트 점검</h3>
+        <p>엔진–펌프 커플링의 정렬 상태를 정밀 측정하여 진동·베어링 손상을 예방합니다.</p>
+      </div>
+    </div>
 
     <p class="scope-limit-note">
       ※ 본 서비스는 <strong>소방펌프 구동용 디젤엔진의 공급·정비·부품·상태관리</strong>를 대상으로 합니다.
@@ -542,10 +549,13 @@ table, td, th, code, pre { word-break: normal; }
       </p>
     </div>
 
-    <figure class="fp-figure reveal">
+    <div class="photo-row reveal">
       <img src="/img/fire-pump/fire-pump-diesel-engine-overhaul.webp" alt="소방펌프 디젤엔진 오버홀 및 정비 작업" loading="lazy" width="1200" height="900">
-      <figcaption>소방펌프 디젤엔진 오버홀 및 정비 작업</figcaption>
-    </figure>
+      <div class="pr-text">
+        <h3>소방펌프 디젤엔진 오버홀 및 정비 작업</h3>
+        <p>분해·부품 검수·재조립·시운전까지, 노후 엔진을 신뢰성 있는 상태로 복원합니다.</p>
+      </div>
+    </div>
 
     <!-- 대표 프로젝트 -->
     <h3 class="track-subhead">최근 3년 대표 프로젝트</h3>

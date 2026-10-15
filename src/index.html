@@ -2157,7 +2157,6 @@ table, td, th, code, pre { word-break: normal; }
 .map-panel.map-live .map-svg-link { display: block; line-height: 0; }
 .map-panel.map-live svg.map-svg { display: block; width: 100%; height: auto; opacity: 1; fill: none; position: static; z-index: auto; transition: filter 0.25s; }
 .map-panel.map-live .map-svg-link:hover svg.map-svg { filter: brightness(1.12); }
-.map-svg .nh-m { display: none; }
 .map-panel.map-live .map-meta { position: relative; z-index: 1; padding: 1.3rem 1.6rem 1.7rem; display: flex; flex-direction: column; gap: 0.35rem; }
 .map-panel.map-live .map-co { font-size: 16px; }
 .map-panel.map-live .map-addr-txt { text-align: left; }
@@ -2167,11 +2166,10 @@ table, td, th, code, pre { word-break: normal; }
 @media (max-width: 480px) {
   .map-panel.map-live .map-links { flex-direction: column; } .map-panel.map-live .map-btn { height: 44px; }
   /* 약도 모바일: 보조 라벨 숨기고 주요 라벨 확대 */
-  .map-svg .sub, .map-svg .sub2, .map-svg .nh { display: none; }
-  .map-svg .nh-m { display: block; }
-  .map-svg .lbl text { font-size: 21px; } .map-svg .lbl circle { r: 7; }
-  .map-svg .road { font-size: 23px; } .map-svg .co { font-size: 20px; }
-  .map-svg .co-bg { x: 228px; width: 204px; }
+  .map-svg .sub, .map-svg .sub2 { display: none; }
+  .map-svg .lbl text { font-size: 26px; } .map-svg .lbl circle { r: 8; }
+  .map-svg .road { font-size: 28px; } .map-svg .co { font-size: 25px; }
+  .map-svg .co-bg { x: 650px; width: 230px; height: 40px; } .map-svg .co { transform: translateY(6px); }
 }
 </style>
   
@@ -2313,59 +2311,64 @@ table, td, th, code, pre { word-break: normal; }
       <div class="map-panel map-live">
         <div class="map-embed" id="mapEmbed">
           <a class="map-svg-link" href="https://map.naver.com/p/entry/place/1203035415?lng=127.6692738&lat=34.7816958" target="_blank" rel="noopener" aria-label="네이버 지도에서 ㈜삼선엔지니어링 위치 크게 보기">
-            <!-- 약도: 카카오맵 실측 위치(34.78141, 127.66914) 기준으로 작성한 인라인 SVG (원본: /img/main/location-map.svg) -->
-            <svg class="map-svg" viewBox="0 0 640 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="㈜삼선엔지니어링 약도: 좌수영로 남측, 농협주유소 옆, 여수세무서 맞은편, 여천역 북동쪽" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToxZjQwNjljYi1jNzczLTQzNmQtOGUxMy04YTViZjNkYmIwYjkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaC9Kvb4zl0eXY/01b8io64sAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpmNWRlNzFmMS1hY2RmLTRjMWMtYjAwNS05ODk2NjJkZWQ0NGZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoHm98gjPa3fn/gRtvR9OarAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg7bTaaTlxXdHYkTAdrESopXWQgOCcpZN6HhnkIOFKCmikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaH+vPL7y/Qgy/yPFCrRh9cgAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIFiRGlk9lIn2xJziQcFeZLSqDltSrMq+L+SqP2UQsq06ZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQEfZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjFmNDA2OWNiLWM3NzMtNDM2ZC04ZTEzLThhNWJmM2RiYjBiOS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmVmMzJkN2M1LWEwNDQtNDg4MC1hOTE0LTIxY2M2M2IzMTQwNnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDttNppOXFd0diRMB2sRKildZCA4Jylk3oeGeQg4UoKaKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggLZKH0E26SAYwCGmQ5yHxh/D6McNznHLSScZ2dIqUo0uiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggKUZvs7yuyi1230rkMumSqfdJZrCd3ktObw47phFFjRZ0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQOuOJNk4DdkO7P4nuBkJL130AihqYXoaZSNFKEEw3POLCoMSYI4vEZEsSvsT9L49vdzUKJBFiiRdDSGcRlGPPYU=</c2pa:manifest></metadata>
+            <!-- 약도: 네이버 지도 도로·하천·철도 위상을 따라 그린 인라인 SVG (원본: /img/main/location-map.svg) -->
+            <svg class="map-svg" viewBox="405 0 760 492" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="㈜삼선엔지니어링 약도: 좌수영로 남측, 북서쪽 사거리(주삼동 방면)에서 동쪽으로 약 150m, 남서쪽에 여천역, 동쪽에 현대오일뱅크">
               <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1c1c1c" stroke-width="1"/></pattern>
+                <pattern id="mapGrid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#1b1b1b" stroke-width="1"/></pattern>
                 <filter id="pinShadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/></filter>
               </defs>
-              <rect width="640" height="440" fill="#121212"/>
-              <rect width="640" height="440" fill="url(#grid)"/>
+              <rect x="405" y="0" width="760" height="492" fill="#121212"/>
+              <rect x="405" y="0" width="760" height="492" fill="url(#mapGrid)"/>
 
-              <!-- 하천 (신풍천) -->
-              <path d="M0 268 C 120 262, 220 286, 330 280 S 540 262, 640 272" fill="none" stroke="#1f2a33" stroke-width="10" stroke-linecap="round"/>
-              <text class="sub" x="590" y="258" fill="#3d5466" font-size="12" font-weight="600" text-anchor="end">신풍천</text>
+              <!-- 하천: 쌍봉천 -->
+              <path d="M340 300 C 420 318, 520 335, 600 340 C 700 355, 800 372, 900 372 C 930 368, 955 352, 985 346" fill="none" stroke="#1e2e3a" stroke-width="9" stroke-linecap="round"/>
+              <text class="sub" x="604" y="378" fill="#4a6a80" font-size="15" font-weight="600">쌍봉천</text>
 
-              <!-- 철도 (전라선) -->
-              <path d="M0 338 L640 322" fill="none" stroke="#2c2c2c" stroke-width="10"/>
-              <path d="M0 338 L640 322" fill="none" stroke="#6d6d6d" stroke-width="3" stroke-dasharray="16 12"/>
-              <text class="sub" x="628" y="312" fill="#7a7a7a" font-size="12" font-weight="600" text-anchor="end">전라선</text>
+              <!-- 철도: 전라선 -->
+              <path d="M340 332 C 420 350, 520 382, 600 400 C 700 412, 800 420, 900 430 C 1000 440, 1100 450, 1232 460" fill="none" stroke="#2a2a2a" stroke-width="10"/>
+              <path d="M340 332 C 420 350, 520 382, 600 400 C 700 412, 800 420, 900 430 C 1000 440, 1100 450, 1232 460" fill="none" stroke="#777" stroke-width="3" stroke-dasharray="16 12"/>
+              <text class="sub" x="1040" y="432" fill="#8a8a8a" font-size="14" font-weight="600">전라선</text>
 
-              <!-- 시청로 (남북) -->
-              <path d="M112 0 L120 150 L116 440" fill="none" stroke="#3a3a3a" stroke-width="14" stroke-linecap="round"/>
-              <text class="sub" transform="translate(103 395) rotate(-90)" fill="#8a8a8a" font-size="13" font-weight="700">시청로</text>
+              <!-- 보조 도로 (가는 선) -->
+              <g fill="none" stroke="#333" stroke-width="5" stroke-linecap="round">
+                <path d="M622 128 C 660 124, 720 128, 780 142 C 830 154, 870 140, 930 100"/>
+                <path d="M745 262 C 760 240, 800 215, 840 190 C 880 165, 905 150, 930 140"/>
+                <path d="M750 262 C 790 256, 840 258, 880 300 L 900 322"/>
+              </g>
 
-              <!-- 좌수영로: 북서(석창 방면)에서 내려와 본사 앞을 지나 동쪽으로 -->
-              <path d="M60 0 C 140 80, 230 160, 322 176 S 500 184, 640 192" fill="none" stroke="#2a2a2a" stroke-width="26" stroke-linecap="round"/>
-              <path d="M60 0 C 140 80, 230 160, 322 176 S 500 184, 640 192" fill="none" stroke="#FFC400" stroke-width="16" stroke-linecap="round"/>
-              <path d="M120 150 L322 176" fill="none" stroke="#3a3a3a" stroke-width="12" stroke-linecap="round"/>
-              <text class="road" x="445" y="172" fill="#FFC400" font-size="15" font-weight="800" letter-spacing="1">좌수영로</text>
-              <text class="sub" x="138" y="52" fill="#bdbdbd" font-size="12" font-weight="600">↖ 석창 · 주삼 방면</text>
-              <text class="sub" x="634" y="214" fill="#bdbdbd" font-size="12" font-weight="600" text-anchor="end">여수 시내 방면 →</text>
+              <!-- 주요 도로: 주삼동 방면(북) · 여천역 방면(남) -->
+              <g fill="none" stroke-linecap="round">
+                <path d="M604 282 C 596 240, 600 200, 610 170 C 622 130, 634 90, 650 40 L 672 0" stroke="#262626" stroke-width="20"/>
+                <path d="M604 282 C 596 240, 600 200, 610 170 C 622 130, 634 90, 650 40 L 672 0" stroke="#454545" stroke-width="12"/>
+                <path d="M604 282 C 590 310, 575 340, 568 380 C 562 420, 560 460, 560 492" stroke="#262626" stroke-width="18"/>
+                <path d="M604 282 C 590 310, 575 340, 568 380 C 562 420, 560 460, 560 492" stroke="#454545" stroke-width="10"/>
+              </g>
+
+              <!-- 좌수영로 (본사 앞 간선도로) -->
+              <path d="M425 0 C 470 70, 540 190, 604 282 C 660 300, 760 318, 900 340 C 1000 356, 1100 366, 1232 376" fill="none" stroke="#2a2a2a" stroke-width="28" stroke-linecap="round"/>
+              <path d="M425 0 C 470 70, 540 190, 604 282 C 660 300, 760 318, 900 340 C 1000 356, 1100 366, 1232 376" fill="none" stroke="#FFC400" stroke-width="17" stroke-linecap="round"/>
+              <text class="road" x="1060" y="332" fill="#FFC400" font-size="20" font-weight="800" letter-spacing="1" text-anchor="middle">좌수영로</text>
+              <text class="sub" x="486" y="64" fill="#bdbdbd" font-size="14" font-weight="600">↖ 석창 방면</text>
+              <text class="sub" x="690" y="38" fill="#bdbdbd" font-size="14" font-weight="600">주삼동 방면 ↑</text>
 
               <!-- 랜드마크 -->
-              <g class="lbl" fill="#e6e6e6" font-size="13" font-weight="600">
-                <circle cx="250" cy="130" r="4.5" fill="#9a9a9a"/><text x="262" y="134">여수세무서</text>
-                <circle cx="284" cy="206" r="4.5" fill="#9a9a9a"/><text class="nh" x="232" y="232">농협주유소</text><text class="nh-m" x="272" y="232" text-anchor="end">농협주유소</text>
-                <g class="sub2"><circle cx="140" cy="190" r="4.5" fill="#9a9a9a"/><text x="146" y="214">HD현대오일뱅크</text></g>
-                <rect x="178" y="352" width="30" height="12" fill="#9a9a9a" rx="1"/><text x="216" y="363">여천역</text>
-                <g class="sub2"><circle cx="458" cy="206" r="4.5" fill="#9a9a9a"/><text x="470" y="226">그린빌라장</text></g>
+              <g class="lbl" fill="#e6e6e6" font-size="17" font-weight="600">
+                <g class="sub2"><circle cx="607" cy="147" r="5" fill="#9a9a9a"/><text x="640" y="168">주삼동 주민센터</text></g>
+                <circle cx="990" cy="357" r="5" fill="#9a9a9a"/><text x="990" y="392" text-anchor="middle">현대오일뱅크</text>
+                <rect x="622" y="403" width="30" height="13" fill="#9a9a9a"/><text x="660" y="446">여천역</text>
               </g>
 
-              <!-- 본사 핀 -->
+              <!-- 본사 핀 (좌수영로 남측) -->
               <g filter="url(#pinShadow)">
-                <path d="M330 232 c-14 -18 -22 -29 -22 -41 a22 22 0 1 1 44 0 c0 12 -8 23 -22 41z" fill="#FFC400"/>
-                <circle cx="330" cy="191" r="8" fill="#111"/>
+                <path d="M765 333 c-15 -19 -24 -31 -24 -44 a24 24 0 1 1 48 0 c0 13 -9 25 -24 44z" fill="#FFC400"/>
+                <circle cx="765" cy="289" r="9" fill="#111"/>
               </g>
-              <g>
-                <rect class="co-bg" x="262" y="238" width="136" height="30" fill="#FFC400"/>
-                <text class="co" x="330" y="259" fill="#111" font-size="15" font-weight="800" text-anchor="middle" letter-spacing="0.5">㈜삼선엔지니어링</text>
-              </g>
+              <rect class="co-bg" x="688" y="341" width="154" height="32" fill="#FFC400"/>
+              <text class="co" x="765" y="363" fill="#111" font-size="17" font-weight="800" text-anchor="middle" letter-spacing="0.5">㈜삼선엔지니어링</text>
 
-              <!-- 방위 · 축척 -->
-              <g transform="translate(596 44)" fill="#bdbdbd"><path d="M0 -18 L8 10 L0 4 L-8 10 Z" fill="#FFC400"/><text y="28" font-size="11" font-weight="700" text-anchor="middle">N</text></g>
-              <g class="sub" transform="translate(24 404)"><rect width="90" height="4" fill="#bdbdbd"/><rect width="45" height="4" fill="#4a4a4a"/><text y="20" fill="#9a9a9a" font-size="11" font-weight="600">약 250 m</text></g>
-              <text class="sub" x="616" y="420" fill="#555" font-size="10" text-anchor="end">약도 — 도로 형태·축척은 단순화한 것입니다</text>
+              <!-- 방위 -->
+              <g transform="translate(1125 44)" fill="#bdbdbd"><path d="M0 -18 L8 10 L0 4 L-8 10 Z" fill="#FFC400"/><text y="30" font-size="12" font-weight="700" text-anchor="middle">N</text></g>
+              <text class="sub" x="1152" y="480" fill="#555" font-size="11" text-anchor="end">약도 — 도로 형태는 단순화한 것입니다</text>
             </svg>
           </a>
         </div>

@@ -300,17 +300,14 @@ h1, h2, h3, h4, h5, h6, .hero h1, .hero p.lead, .hero-label, .cta-title, .cta-su
 body { word-break: keep-all; }
 table, td, th, code, pre { word-break: normal; }
 </style>
-<!-- ▼ CAT 레드 액센트 (소방 도메인 컬러) -->
+<!-- ▼ CAT 레드 액센트 (소방 도메인 컬러) — 채움 박스 포인트에만 한정 -->
 <style>
-  :root { --fp-red: #E0443E; --fp-red-soft: rgba(224,68,62,0.09); }
-  .hero-stripe { background: var(--fp-red); }
-  .hero-label { color: var(--fp-red); border-color: rgba(224,68,62,0.5); }
+  :root { --fp-red: #E0443E; }
+  /* 레드는 '채워진 박스' 포인트에만 유지 (선/테두리는 기존 옐로우 유지) */
   .fault-section .sec-eyebrow { background: var(--fp-red); color: #fff; }
-  .fault-section .svc-card { border-top-color: var(--fp-red); }
   .fault-section .svc-card .sc-num { background: var(--fp-red); }
-  .photo-row img { border-left-color: var(--fp-red); }
-  .combo-inner { border-left-color: var(--fp-red); }
-  .scope-limit-note { background: var(--fp-red-soft); border-color: var(--fp-red); }
+  /* 사진 왼쪽 라인 포인트 제거 */
+  .photo-row img { border-left: none; }
 </style>
 </head>
 <body>

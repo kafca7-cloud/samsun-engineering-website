@@ -200,6 +200,7 @@ h1, h2, h3, h4, h5, h6, .hero h1, .hero p.lead, .hero-label, .cta-title, .cta-su
 .photo-row img { width: 100%; height: auto; display: block; border-left: 3px solid var(--cat-yellow); }
 .photo-row .pr-text h3 { font-size: 16px; font-weight: 800; color: var(--cat-black); margin: 0 0 0.5rem; letter-spacing: -0.3px; word-break: keep-all; }
 .photo-row .pr-text p { font-size: 14px; line-height: 1.7; color: var(--cat-gray4); margin: 0; word-break: keep-all; }
+.photo-row.track-photo { margin: 1.8rem auto 2.8rem; }
 @media (max-width: 680px) { .photo-row { grid-template-columns: 1fr; gap: 1rem; } .photo-band { padding: 36px 1.2rem; } }
 
 /* 규제 근거 포인트 (3열) */
@@ -298,6 +299,18 @@ h1, h2, h3, h4, h5, h6, .hero h1, .hero p.lead, .hero-label, .cta-title, .cta-su
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 body { word-break: keep-all; }
 table, td, th, code, pre { word-break: normal; }
+</style>
+<!-- ▼ CAT 레드 액센트 (소방 도메인 컬러) -->
+<style>
+  :root { --fp-red: #E0443E; --fp-red-soft: rgba(224,68,62,0.09); }
+  .hero-stripe { background: var(--fp-red); }
+  .hero-label { color: var(--fp-red); border-color: rgba(224,68,62,0.5); }
+  .fault-section .sec-eyebrow { background: var(--fp-red); color: #fff; }
+  .fault-section .svc-card { border-top-color: var(--fp-red); }
+  .fault-section .svc-card .sc-num { background: var(--fp-red); }
+  .photo-row img { border-left-color: var(--fp-red); }
+  .combo-inner { border-left-color: var(--fp-red); }
+  .scope-limit-note { background: var(--fp-red-soft); border-color: var(--fp-red); }
 </style>
 </head>
 <body>
@@ -549,7 +562,7 @@ table, td, th, code, pre { word-break: normal; }
       </p>
     </div>
 
-    <div class="photo-row reveal">
+    <div class="photo-row track-photo reveal">
       <img src="/img/fire-pump/fire-pump-diesel-engine-overhaul.webp" alt="소방펌프 디젤엔진 오버홀 및 정비 작업" loading="lazy" width="1200" height="900">
       <div class="pr-text">
         <h3>소방펌프 디젤엔진 오버홀 및 정비 작업</h3>
@@ -592,11 +605,11 @@ table, td, th, code, pre { word-break: normal; }
     <div class="tr-list">
       <div class="tr-row reveal">
         <div class="tr-client">LG화학 여수</div>
-        <div class="tr-detail">소방펌프엔진 CAT C18 · 현대 외 (U2 · U3 · 본관동) — 정기 점검 (2024~2026)</div>
+        <div class="tr-detail">소방펌프엔진 CAT C18 · 현대 외 (U2 · U3 · 본관동) — 정기 점검</div>
       </div>
       <div class="tr-row reveal">
         <div class="tr-client">한화솔루션 여수</div>
-        <div class="tr-detail">소방펌프 디젤엔진 (Cummins QSX15, CAT 3306/3406, 두산 P126TI·P158LE·DB58) — 정기 점검 (2025~)</div>
+        <div class="tr-detail">소방펌프 디젤엔진 (Cummins QSX15, CAT 3306/3406, 두산 P126TI·P158LE·DB58) — 정기 점검</div>
       </div>
       <div class="tr-row reveal">
         <div class="tr-client">석유화학 · 정유 다수 현장</div>

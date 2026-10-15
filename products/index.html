@@ -1023,6 +1023,91 @@ if (hash && ['land', 'marine', 'parts'].includes(hash)) {
 }
 </script>
 
+<!-- 공통 푸터 (서브페이지) -->
+<style>
+  .site-footer { background: var(--cat-black, #000); border-top: 4px solid var(--cat-yellow, #FFC400); padding: 4rem 2rem 2rem; color: #fff; }
+  .site-footer a { text-decoration: none; }
+  .site-footer .sf-wrap { max-width: var(--max-w, 1280px); margin: 0 auto; }
+  .site-footer .sf-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 2.4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .site-footer .sf-company { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 0.5px; line-height: 1.2; display: block; margin-bottom: 1.2rem; }
+  .site-footer .sf-desc { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.9; font-weight: 400; margin: 0; }
+  .site-footer .sf-col h4 { font-family: var(--font-head, 'Pretendard', sans-serif); font-size: 11px; font-weight: 800; color: var(--cat-yellow, #FFC400); letter-spacing: 2.5px; text-transform: uppercase; margin: 0 0 1.2rem; }
+  .site-footer .sf-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 0.7rem; transition: color 0.2s; }
+  .site-footer .sf-col a:hover { color: var(--cat-yellow, #FFC400); }
+  .site-footer .sf-stripe { height: 4px; width: 100%; margin: 1.5rem 0; background: linear-gradient(to right, var(--cat-yellow, #FFC400) 0%, var(--cat-yellow, #FFC400) 33%, #ffd740 33%, #ffd740 66%, var(--cat-black, #000) 66%, var(--cat-black, #000) 100%); }
+  .site-footer .sf-bottom { padding-top: 0.3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .site-footer .sf-bottom p { font-size: 11.5px; color: rgba(255,255,255,0.2); margin: 0; }
+  .site-footer .sf-iso { display: flex; gap: 8px; flex-wrap: wrap; }
+  .site-footer .sf-pill { font-size: 10px; font-weight: 700; padding: 4px 12px; border: 1px solid var(--cat-yellow, #FFC400); color: var(--cat-yellow, #FFC400); letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+  .site-footer .sf-privacy { text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); }
+  .site-footer .sf-privacy a { font-size: 12px; color: rgba(255,255,255,0.45); border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 1px; }
+  @media (max-width: 1100px) { .site-footer .sf-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  @media (max-width: 860px) {
+    .site-footer { padding: 3rem 1.2rem 1.6rem; }
+    .site-footer .sf-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; text-align: center; }
+    .site-footer .sf-logo { grid-column: 1 / -1; text-align: center; }
+    .site-footer .sf-company { display: inline-block; }
+    .site-footer .sf-col, .site-footer .sf-col h4, .site-footer .sf-col a, .site-footer .sf-desc { text-align: center; }
+    .site-footer .sf-bottom { flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 1.2rem; }
+    .site-footer .sf-iso { justify-content: center; flex-wrap: nowrap; gap: 5px; width: 100%; }
+    .site-footer .sf-pill { font-size: 8.5px; padding: 3px 6px; letter-spacing: 0; flex: 0 1 auto; text-align: center; }
+  }
+</style>
+<footer class="site-footer">
+  <div class="sf-wrap">
+    <div class="sf-grid">
+      <div class="sf-logo">
+        <span class="sf-company">㈜삼선엔지니어링</span>
+        <p class="sf-desc">
+          대표이사: 우광희 &nbsp;|&nbsp; 설립: 1990년<br>
+          사업자등록번호: 417-81-26338<br>
+          전라남도 여수시 좌수영로 919<br><br>
+          Tel. 061-642-1247<br>
+          E-mail: samsun3618@hanmail.net
+        </p>
+      </div>
+      <div class="sf-col">
+        <h4>회사</h4>
+        <a href="/#about">회사 소개</a>
+        <a href="/#history">회사 연혁</a>
+      </div>
+      <div class="sf-col">
+        <h4>서비스·제품</h4>
+        <a href="/services/">사업 분야</a>
+        <a href="/generator-inspection.html">정기점검 진단</a>
+        <a href="/products/in-house/">자체 제작 제품</a>
+        <a href="/products/">CAT 발전기 라인업</a>
+      </div>
+      <div class="sf-col">
+        <h4>실적·역량</h4>
+        <a href="/about/performance/">주요 실적</a>
+        <a href="/about/clients/">주요 고객사</a>
+        <a href="/about/tech/">기술력·전문성</a>
+        <a href="/about/certifications/">인증·자격</a>
+      </div>
+      <div class="sf-col">
+        <h4>고객지원</h4>
+        <a href="/resources/notice/">공지사항</a>
+        <a href="/resources/library/">자료실</a>
+        <a href="/resources/faq.html">자주 묻는 질문</a>
+        <a href="/contact/">문의하기</a>
+      </div>
+    </div>
+    <div class="sf-stripe"></div>
+    <div class="sf-bottom">
+      <p>© 1990–<span class="sf-year">2026</span> ㈜삼선엔지니어링. All rights reserved.</p>
+      <div class="sf-iso">
+        <span class="sf-pill" title="GERMAN CERT 인증번호: GQ-211254">ISO 9001</span>
+        <span class="sf-pill" title="GERMAN CERT 인증번호: GE-210491">ISO 14001</span>
+        <span class="sf-pill" title="GERMAN CERT 인증번호: GO-251038">ISO 45001</span>
+        <span class="sf-pill" title="전라남도지사 등록 2025.05.30">전기공사업 등록</span>
+      </div>
+    </div>
+    <div class="sf-privacy"><a href="/privacy/">개인정보 처리방침</a></div>
+  </div>
+  <script>(function(){var y=document.querySelector('.sf-year');if(y){y.textContent=new Date().getFullYear();}})();</script>
+</footer>
+
 <!-- 모바일 하단 고정 문의 바 (≤860px에서만 노출) -->
 <div class="mobile-contact-bar" aria-label="문의 빠른 액션">
   <a href="tel:0616421247" class="mcb-btn mcb-call">

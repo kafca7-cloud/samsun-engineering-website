@@ -2151,17 +2151,6 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 body { word-break: keep-all; }
 table, td, th, code, pre { word-break: normal; }
 
-/* ── 오시는 길: 카카오맵 약도 임베드 패널 ── */
-.map-panel.map-live { padding: 0; gap: 0; min-height: 0; align-items: stretch; justify-content: flex-start; }
-.map-panel.map-live .map-embed { position: relative; z-index: 1; width: 100%; overflow: hidden; background: #1a1a1a; }
-.map-panel.map-live .map-scale { transform-origin: 0 0; }
-.map-panel.map-live .map-meta { position: relative; z-index: 1; padding: 1.3rem 1.6rem 1.7rem; display: flex; flex-direction: column; gap: 0.35rem; }
-.map-panel.map-live .map-co { font-size: 16px; }
-.map-panel.map-live .map-addr-txt { text-align: left; }
-.map-panel.map-live .map-links { display: flex; gap: 8px; margin-top: 0.8rem; }
-.map-panel.map-live .map-btn { flex: 1; margin-top: 0; height: 42px; padding: 0 10px !important; font-size: 12px !important; justify-content: center; text-align: center; background: transparent; color: var(--cat-yellow); border: 1px solid var(--cat-yellow); white-space: nowrap; }
-.map-panel.map-live .map-btn:hover { background: var(--cat-yellow); color: var(--cat-black); }
-@media (max-width: 480px) { .map-panel.map-live .map-links { flex-direction: column; } .map-panel.map-live .map-btn { height: 44px; } }
 </style>
   
   <div class="inhouse-inner">
@@ -2299,22 +2288,12 @@ table, td, th, code, pre { word-break: normal; }
           <div><div class="ct-lbl">대표이사</div><div class="ct-val">우광희</div></div>
         </div>
       </div>
-      <div class="map-panel map-live">
-        <div class="map-embed" id="mapEmbed" aria-label="㈜삼선엔지니어링 위치 지도 (카카오맵)">
-          <div class="map-scale" id="mapScale">
-            <!-- 카카오맵 약도: /map-embed.html 을 iframe으로 지연 로드 (화면 폭에 따라 PC 640×440 / 모바일 360×320) -->
-            <iframe id="mapFrame" title="㈜삼선엔지니어링 위치 약도 (카카오맵)" loading="lazy" width="640" height="440" scrolling="no" style="border:0;display:block;background:#1a1a1a;"></iframe>
-          </div>
-        </div>
-        <div class="map-meta">
-          <div class="map-co">㈜삼선엔지니어링</div>
-          <div class="map-addr-txt">전남광주통합특별시 여수시 좌수영로 919 (우 59635)</div>
-          <div class="map-links">
-            <a class="map-btn" href="https://map.naver.com/p/entry/place/1203035415?lng=127.6692738&lat=34.7816958" target="_blank" rel="noopener">네이버 지도</a>
-            <a class="map-btn" href="https://map.kakao.com/link/map/8964785" target="_blank" rel="noopener">카카오맵</a>
-            <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=34.78141%2C127.66914" target="_blank" rel="noopener">구글 지도</a>
-          </div>
-        </div>
+      <div class="map-panel" style="position:relative;">
+      <div style="position:absolute;inset:0;background-image:url('img/main/contact-bg.jpg');background-size:cover;background-position:center;opacity:0.07;border-radius:inherit;"></div>
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="map-co">㈜삼선엔지니어링</div>
+        <div class="map-addr-txt">전남광주통합특별시 여수시 좌수영로 919</div>
+        <a class="map-btn" href="https://map.naver.com/p/entry/place/1203035415?lng=127.6692738&lat=34.7816958" target="_blank" rel="noopener">네이버지도에서 보기</a>
       </div>
     </div>
   </div>
@@ -2455,34 +2434,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   </a>
 </div>
 
-<script>
-  // 카카오맵 약도: 오시는 길 섹션이 화면에 가까워질 때 /map-embed.html 을 iframe으로 로드, 패널 폭에 따라 PC/모바일 약도 선택 후 폭에 맞춰 축소
-  (function () {
-    var box = document.getElementById('mapEmbed'), inner = document.getElementById('mapScale'), frame = document.getElementById('mapFrame');
-    if (!box || !inner || !frame) return;
-    var MAPS = { pc: { w: 640, h: 440, src: '/map-embed.html' }, mobile: { w: 360, h: 320, src: '/map-embed.html?size=m' } };
-    var cur = null;
-    function pick() { return box.clientWidth < 480 ? MAPS.mobile : MAPS.pc; }
-    function fit() {
-      var m = cur || pick();
-      var s = Math.min(1, box.clientWidth / m.w);
-      inner.style.width = m.w + 'px'; inner.style.height = m.h + 'px';
-      inner.style.transform = 'scale(' + s + ')';
-      box.style.height = Math.round(m.h * s) + 'px';
-    }
-    fit(); window.addEventListener('resize', fit);
-    var loaded = false;
-    function load() {
-      if (loaded) return; loaded = true;
-      cur = pick(); fit();
-      frame.width = cur.w; frame.height = cur.h; frame.src = cur.src;
-    }
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } }); }, { rootMargin: '600px' });
-      io.observe(box);
-    } else { load(); }
-  })();
-</script>
 <script>(function(){var y=document.getElementById("copyYear");if(y){y.textContent=new Date().getFullYear();}})();</script>
 </body>
 </html>

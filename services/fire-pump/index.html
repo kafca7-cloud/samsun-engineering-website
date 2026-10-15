@@ -308,11 +308,10 @@ table, td, th, code, pre { word-break: normal; }
   .fault-section .svc-card .sc-num { background: var(--fp-red); }
   /* 사진 왼쪽 라인 포인트 제거 */
   .photo-row img { border-left: none; }
-  /* Hero 2단 (텍스트 + 엔진 이미지) */
-  .hero-grid { display: grid; grid-template-columns: 1fr 440px; gap: 2.6rem; align-items: center; }
-  .hero-copy p.lead { margin-bottom: 0; }
-  .hero-visual img { width: 100%; height: auto; display: block; border-radius: 8px; background: #fff; box-shadow: 0 14px 40px rgba(0,0,0,0.38); }
-  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 1.8rem; } .hero-visual { max-width: 460px; } }
+  /* 현장 사진 호버 줌 (메인페이지와 동일: 프레임 안에서 확대) */
+  .photo-row .pr-img { overflow: hidden; }
+  .photo-row .pr-img img { transition: transform 0.4s ease; }
+  .photo-row .pr-img:hover img { transform: scale(1.05); }
 </style>
 </head>
 <body>
@@ -334,20 +333,13 @@ table, td, th, code, pre { word-break: normal; }
 <section class="hero">
   <div class="hero-stripe"></div>
   <div class="hero-inner">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="hero-label">FIRE PUMP ENGINE</span>
-        <h1>소방펌프 디젤엔진<br><em>공급 · 정비 · 긴급 대응</em></h1>
-        <p class="lead">
-          정전 등 상용전원이 끊긴 상황에서도 소화수 공급은 멈춰선 안 됩니다.
-          ㈜삼선엔지니어링은 CAT 공인 딜러로서 <strong>소방펌프 구동용 디젤엔진</strong>의
-          신규 공급부터 정비·부품·긴급 대응까지, 비상 소화설비의 동력원을 책임집니다.
-        </p>
-      </div>
-      <div class="hero-visual">
-        <img src="/img/fire-pump/hero-fire-pump.webp" alt="CAT 소방펌프 디젤엔진" width="1000" height="667">
-      </div>
-    </div>
+    <span class="hero-label">FIRE PUMP ENGINE</span>
+    <h1>소방펌프 디젤엔진<br><em>공급 · 정비 · 긴급 대응</em></h1>
+    <p class="lead">
+      정전 등 상용전원이 끊긴 상황에서도 소화수 공급은 멈춰선 안 됩니다.
+      ㈜삼선엔지니어링은 CAT 공인 딜러로서 <strong>소방펌프 구동용 디젤엔진</strong>의
+      신규 공급부터 정비·부품·긴급 대응까지, 비상 소화설비의 동력원을 책임집니다.
+    </p>
   </div>
 </section>
 
@@ -449,7 +441,7 @@ table, td, th, code, pre { word-break: normal; }
 <!-- ============ 현장 사진: 펌프실 ============ -->
 <section class="photo-band">
   <div class="photo-row band reveal">
-    <img src="/img/fire-pump/diesel-fire-pump-engine-pump-room.webp" alt="소방펌프 디젤엔진 및 펌프 시스템 현장" loading="lazy" width="1200" height="900">
+    <div class="pr-img"><img src="/img/fire-pump/diesel-fire-pump-engine-pump-room.webp" alt="소방펌프 디젤엔진 및 펌프 시스템 현장" loading="lazy" width="1200" height="900"></div>
     <div class="pr-text">
       <h3>소방펌프 디젤엔진 및 펌프 시스템 현장</h3>
       <p>상용전원과 독립된 디젤 구동으로 비상 시 소화수를 공급하는 소방펌프 시스템입니다. 엔진·펌프·제어반을 함께 점검합니다.</p>
@@ -545,7 +537,7 @@ table, td, th, code, pre { word-break: normal; }
     </div>
 
     <div class="photo-row reveal">
-      <img src="/img/fire-pump/fire-pump-engine-alignment-inspection.webp" alt="다이얼 게이지를 이용한 구동계 얼라인먼트 점검" loading="lazy" width="1200" height="900">
+      <div class="pr-img"><img src="/img/fire-pump/fire-pump-engine-alignment-inspection.webp" alt="다이얼 게이지를 이용한 구동계 얼라인먼트 점검" loading="lazy" width="1200" height="900"></div>
       <div class="pr-text">
         <h3>다이얼 게이지를 이용한 구동계 얼라인먼트 점검</h3>
         <p>엔진–펌프 커플링의 정렬 상태를 정밀 측정하여 진동·베어링 손상을 예방합니다.</p>
@@ -572,7 +564,7 @@ table, td, th, code, pre { word-break: normal; }
     </div>
 
     <div class="photo-row track-photo reveal">
-      <img src="/img/fire-pump/fire-pump-diesel-engine-overhaul.webp" alt="소방펌프 디젤엔진 오버홀 및 정비 작업" loading="lazy" width="1200" height="900">
+      <div class="pr-img"><img src="/img/fire-pump/fire-pump-diesel-engine-overhaul.webp" alt="소방펌프 디젤엔진 오버홀 및 정비 작업" loading="lazy" width="1200" height="900"></div>
       <div class="pr-text">
         <h3>소방펌프 디젤엔진 오버홀 및 정비 작업</h3>
         <p>분해·부품 검수·재조립·시운전까지, 노후 엔진을 신뢰성 있는 상태로 복원합니다.</p>

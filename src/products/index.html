@@ -422,7 +422,7 @@ h1, h2, h3, h4, h5, h6,
   color: var(--cat-gray3);
   grid-column: 1 / -1;
 }
-.empty-state-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.3; }
+.empty-state-icon { margin-bottom: 1rem; opacity: 0.3; color: var(--cat-gray4); }
 .empty-state h3 { font-size: 1.2rem; color: var(--cat-gray4); margin-bottom: 0.5rem; }
 .empty-state p { font-size: 14px; }
 
@@ -903,7 +903,7 @@ function renderProductCards(filterCategory = 'all', searchQuery = '') {
   if (filtered.length === 0) {
     grid.innerHTML = `
       <div class="empty-state">
-        <div class="empty-state-icon">🔍</div>
+        <div class="empty-state-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <h3>일치하는 모델이 없습니다</h3>
         <p>다른 카테고리나 검색어를 시도해 주세요.</p>
       </div>

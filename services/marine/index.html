@@ -27,16 +27,16 @@
 <meta property="og:url" content="https://www.samsuneng.co.kr/services/marine/">
 <meta property="og:title" content="선박·관공선 엔진 정비 | SAMSUN 삼선엔지니어링">
 <meta property="og:description" content="선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰 함정, 소방정 등 관공선 점검·수리 실적 다수 보유.">
-<meta property="og:image" content="https://www.samsuneng.co.kr/og-image.jpg">
-<meta property="og:image:secure_url" content="https://www.samsuneng.co.kr/og-image.jpg">
+<meta property="og:image" content="https://www.samsuneng.co.kr/img/marine/og-marine.jpg">
+<meta property="og:image:secure_url" content="https://www.samsuneng.co.kr/img/marine/og-marine.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="선박·관공선 엔진 정비 | SAMSUN 삼선엔지니어링">
+<meta property="og:image:alt" content="여수항에 접안한 CTV 벤투스 카멜리아 — SAMSUN 삼선엔지니어링 해상 엔진 정비">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="선박·관공선 엔진 정비 | SAMSUN 삼선엔지니어링">
-<meta name="twitter:image" content="https://www.samsuneng.co.kr/og-image.jpg">
+<meta name="twitter:image" content="https://www.samsuneng.co.kr/img/marine/og-marine.jpg">
 
 <style>
 /* ============================================================
@@ -571,6 +571,30 @@ h1, h2, h3, h4, h5, h6,
   .m-proc { grid-template-columns: 1fr; }
 }
 </style>
+<style>
+  /* Hero 배경 사진 (여수항 접안 CTV 벤투스 카멜리아) + 네이비 오버레이: 좌측 텍스트 가독성 확보 */
+  .hero.hero-photo {
+    min-height: 460px;
+    background:
+      linear-gradient(90deg, rgba(6,22,38,0.94) 0%, rgba(6,22,38,0.80) 42%, rgba(6,22,38,0.38) 100%),
+      url('/img/marine/yeosu-port-ctv-ventus-camellia-hero.webp') 20% 55% / cover no-repeat;
+  }
+  .hero-photo-cap {
+    position: absolute; right: 1.4rem; bottom: 0.9rem; z-index: 2;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+    color: rgba(255,255,255,0.55);
+  }
+  @media (max-width: 720px) {
+    .hero.hero-photo {
+      min-height: 0;
+      background:
+        linear-gradient(180deg, rgba(6,22,38,0.92) 0%, rgba(6,22,38,0.86) 100%),
+        url('/img/marine/yeosu-port-ctv-ventus-camellia-hero.webp') center 60% / cover no-repeat;
+    }
+    .hero-photo-cap { left: 1.2rem; right: auto; bottom: 0.7rem; font-size: 10.5px; }
+  }
+</style>
+<link rel="preload" as="image" href="/img/marine/yeosu-port-ctv-ventus-camellia-hero.webp" fetchpriority="high">
 </head>
 <body>
 
@@ -595,15 +619,8 @@ h1, h2, h3, h4, h5, h6,
 </nav>
 
 
-<section class="hero">
+<section class="hero hero-photo">
   <div class="hero-stripe"></div>
-  <!-- 사진 없이 깊이감: 그리드 패턴 + 우측 옐로우 글로우 (CSS only, 이 페이지 한정) -->
-  <div style="position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px);background-size:38px 38px;z-index:1;pointer-events:none;"></div>
-  <div style="position:absolute;top:-10%;right:-8%;width:55%;height:120%;background:radial-gradient(circle at 65% 50%,rgba(255,196,0,0.10) 0%,transparent 60%);z-index:1;pointer-events:none;"></div>
-  <!--
-    하단 hero 배경 사진 슬롯 (선택) — 실제 선박/해상 정비 사진이 있으면
-    이 section 에 background-image 로 넣고 위 그리드/글로우는 덜어내면 됩니다.
-  -->
   <div class="hero-inner">
     <span class="hero-label">MARINE</span>
     <h1>해상 엔진 수리<br><em>선박 주기관·보조기관·발전기 정비</em></h1>
@@ -611,6 +628,7 @@ h1, h2, h3, h4, h5, h6,
       선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰 함정, 소방정 등 관공선 점검·수리 실적 다수 보유.
     </p>
   </div>
+  <span class="hero-photo-cap">㈜여수해양 CTV 벤투스 카멜리아 · 당사 관리 선박 · 여수항</span>
 </section>
 
 <section class="intro-section">
@@ -983,7 +1001,7 @@ table, td, th, code, pre { word-break: normal; }
     <div class="m-future-grid">
       <div class="m-future-card reveal" data-d="1">
         <div class="m-future-photo">
-          <img src="ventus-camellia.jpg" alt="㈜여수해양 CTV 벤투스 카멜리아호 — 삼선엔지니어링 관리 선박, 여수항 접안" loading="lazy">
+          <img src="/img/marine/ctv-ventus-camellia-yeosu.webp" alt="㈜여수해양 CTV 벤투스 카멜리아호 — 삼선엔지니어링이 관리하는 해상풍력 인력수송선, 여수항 접안" loading="lazy" width="1200" height="750">
           <span class="m-future-photo-cap">㈜여수해양 CTV · 벤투스 카멜리아 — 당사 관리 선박</span>
         </div>
         <span class="m-future-tag">Offshore Wind</span>

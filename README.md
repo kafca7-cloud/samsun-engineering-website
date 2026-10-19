@@ -15,6 +15,7 @@ img/                       이미지 (main/, marine/, fire-pump/, products/, cer
 files/library/             자료실 PDF
 sitemap.xml, robots.txt, vercel.json (보안 헤더·CSP·301 리다이렉트)
 _reference/components/     참고용 공통 블록 스니펫 (헤더·CTA·모바일 문의바·푸터·디자인 토큰). 배포 제외(.vercelignore)
+_reference/tools/          build-product-table.js — 메인 제품 검색표 <tbody>를 PRODUCT_DATA로 미리 채우는 SEO 스크립트 (제품 모델 변경 시 `node _reference/tools/build-product-table.js`)
 ```
 
 > 2026-10 이전에는 `src/` 템플릿을 `node build.js`로 루트에 생성하는 구조였으나, src가 루트보다 뒤처져 빌드 시 최신 내용이 덮어써지는 사고가 있어 **루트 단일 관리**로 전환했습니다. `src/`·`build.js`는 삭제됨 (git 이력에는 남아 있음).

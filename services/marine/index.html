@@ -32,7 +32,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="여수항에 접안한 CTV 벤투스 카멜리아 — SAMSUN 삼선엔지니어링 해상 엔진 정비">
+<meta property="og:image:alt" content="선박 기관실의 CAT 엔진 — SAMSUN 삼선엔지니어링 해상 엔진 정비 현장">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="선박·관공선 엔진 정비 | SAMSUN 삼선엔지니어링">
@@ -509,6 +509,37 @@ h1, h2, h3, h4, h5, h6,
   width: 7px; height: 7px; background: var(--m-navy);
 }
 
+/* ── 서비스 카드 상단 현장 사진 ── */
+.m-svc-photo { margin: -2rem -1.8rem 1.4rem; aspect-ratio: 16 / 9; overflow: hidden; background: var(--cat-gray2); }
+.m-svc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.m-svc-card:hover .m-svc-photo img { transform: scale(1.04); }
+
+/* ── 작업 프로세스 현장 사진 스트립 ── */
+.m-proc-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-top: 0; }
+.m-proc-photos figure { margin: 0; background: var(--cat-card); overflow: hidden; }
+.m-proc-photos .m-ph { aspect-ratio: 16 / 10; overflow: hidden; }
+.m-proc-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.m-proc-photos figure:hover img { transform: scale(1.04); }
+.m-proc-photos figcaption { padding: 0.8rem 1rem 0.9rem; font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.55; word-break: keep-all; }
+.m-proc-photos figcaption b { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--cat-black); background: var(--cat-yellow); padding: 1px 7px; margin-right: 8px; vertical-align: 1px; }
+
+/* ── 실적 섹션 현장 작업 갤러리 ── */
+.m-gallery-wrap { margin-top: 3rem; }
+.m-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.m-gallery figure { margin: 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+.m-gallery .m-ph { aspect-ratio: 4 / 3; overflow: hidden; }
+.m-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.m-gallery figure:hover img { transform: scale(1.04); }
+.m-gallery figcaption { padding: 0.75rem 1rem 0.85rem; font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.55; word-break: keep-all; }
+@media (max-width: 860px) {
+  .m-proc-photos { grid-template-columns: 1fr; }
+  .m-gallery { grid-template-columns: 1fr; }
+  .m-svc-photo { margin: -2rem -1.8rem 1.2rem; }
+}
+@media (max-width: 560px) {
+  .m-svc-photo { margin: -1.6rem -1.4rem 1.1rem; }
+}
+
 /* ── 작업 프로세스 (번호 스텝) ── */
 .m-proc {
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px;
@@ -572,12 +603,12 @@ h1, h2, h3, h4, h5, h6,
 }
 </style>
 <style>
-  /* Hero 배경 사진 (여수항 접안 CTV 벤투스 카멜리아) + 네이비 오버레이: 좌측 텍스트 가독성 확보 */
+  /* Hero 배경 사진 (선박 기관실 CAT 엔진 — 당사 정비 현장) + 네이비 오버레이: 좌측 텍스트 가독성 확보 */
   .hero.hero-photo {
     min-height: 460px;
     background:
-      linear-gradient(90deg, rgba(6,22,38,0.94) 0%, rgba(6,22,38,0.80) 42%, rgba(6,22,38,0.38) 100%),
-      url('/img/marine/yeosu-port-ctv-ventus-camellia-hero.webp') 20% 55% / cover no-repeat;
+      linear-gradient(90deg, rgba(6,22,38,0.94) 0%, rgba(6,22,38,0.78) 40%, rgba(6,22,38,0.30) 100%),
+      url('/img/marine/engine-room-cat-marine-hero.webp') 60% 50% / cover no-repeat;
   }
   .hero-photo-cap {
     position: absolute; right: 1.4rem; bottom: 0.9rem; z-index: 2;
@@ -589,12 +620,12 @@ h1, h2, h3, h4, h5, h6,
       min-height: 0;
       background:
         linear-gradient(180deg, rgba(6,22,38,0.92) 0%, rgba(6,22,38,0.86) 100%),
-        url('/img/marine/yeosu-port-ctv-ventus-camellia-hero.webp') center 60% / cover no-repeat;
+        url('/img/marine/engine-room-cat-marine-hero.webp') 55% 50% / cover no-repeat;
     }
     .hero-photo-cap { left: 1.2rem; right: auto; bottom: 0.7rem; font-size: 10.5px; }
   }
 </style>
-<link rel="preload" as="image" href="/img/marine/yeosu-port-ctv-ventus-camellia-hero.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/img/marine/engine-room-cat-marine-hero.webp" fetchpriority="high">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.samsuneng.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "사업분야", "item": "https://www.samsuneng.co.kr/services/"}, {"@type": "ListItem", "position": 3, "name": "해상 엔진 정비", "item": "https://www.samsuneng.co.kr/services/marine/"}]}
 </script>
@@ -812,7 +843,7 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
       선박용 주기관·보조기관·발전기의 분해정비, 오버홀, 부품 교체. 해양경찰 함정, 소방정 등 관공선 점검·수리 실적 다수 보유.
     </p>
   </div>
-  <span class="hero-photo-cap">㈜여수해양 CTV 벤투스 카멜리아 · 당사 관리 선박 · 여수항</span>
+  <span class="hero-photo-cap">선박 기관실 CAT 엔진 · 당사 정비 현장</span>
 </section>
 
 <section class="intro-section">
@@ -837,6 +868,7 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
     </div>
     <div class="m-svc-grid">
       <div class="m-svc-card reveal" data-d="1">
+        <div class="m-svc-photo"><img src="/img/marine/main-engine-fuel-system-detail.webp" alt="CAT 주기관 연료 계통·배관 점검 — 당사 정비 현장" width="900" height="675" loading="lazy" decoding="async"></div>
         <h3>주기관(Main Engine) 정비·오버홀</h3>
         <p>선박 추진용 주기관의 분해정비와 오버홀을 수행합니다. 마모된 부품 계측, 소모품 교체, 재조립 후 시운전까지 단계별로 진행합니다.</p>
         <div class="m-svc-list">
@@ -846,6 +878,7 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
         </div>
       </div>
       <div class="m-svc-card reveal" data-d="2">
+        <div class="m-svc-photo"><img src="/img/marine/engine-room-aux-engine-wide.webp" alt="선박 기관실 — 보조기관과 배기·냉각 배관" width="900" height="675" loading="lazy" decoding="async"></div>
         <h3>보조기관(Aux Engine) 정비</h3>
         <p>선내 동력·유압·펌프 구동용 보조기관의 점검 및 정비를 지원합니다. 운전 이력과 상태를 확인해 정비 범위를 함께 검토합니다.</p>
         <div class="m-svc-list">
@@ -855,6 +888,7 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
         </div>
       </div>
       <div class="m-svc-card reveal" data-d="3">
+        <div class="m-svc-photo"><img src="/img/marine/marine-generator-electrical-check.webp" alt="선박 발전기 전기 계통 점검 — 멀티미터 계측" width="900" height="675" loading="lazy" decoding="async"></div>
         <h3>선박 발전기 정비</h3>
         <p>선박 전원 공급용 발전기의 정기점검·정비·부품 교체를 수행합니다. 엔진과 발전부를 함께 점검해 가동 신뢰성 확보를 지원합니다.</p>
         <div class="m-svc-list">
@@ -864,6 +898,7 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
         </div>
       </div>
       <div class="m-svc-card reveal" data-d="4">
+        <div class="m-svc-photo"><img src="/img/marine/fuel-injectors-replacement-set.webp" alt="교체용 연료 인젝터 신품 세트" width="900" height="675" loading="lazy" decoding="async"></div>
         <h3>부품 교체·조달</h3>
         <p>CAT 네트워크 및 국내외 제조사 파트너십을 기반으로 정품 부품을 조달합니다. 공급이 지연되거나 단종된 부품은 자체 제작도 검토합니다.</p>
         <div class="m-svc-list">
@@ -915,6 +950,20 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
         <h4>시운전·인도</h4>
         <p>시운전 확인 후 정비 내역 정리</p>
       </div>
+    </div>
+    <div class="m-proc-photos reveal" data-d="2">
+      <figure>
+        <div class="m-ph"><img src="/img/marine/cat-engine-display-diagnostics.webp" alt="CAT 엔진 디스플레이 — 냉각수 온도·회전수·오일 압력 등 운전 상태 확인" width="900" height="562" loading="lazy" decoding="async"></div>
+        <figcaption><b>01</b>디스플레이·진단 장비로 냉각수 온도, 회전수, 오일 압력 등 운전 상태를 먼저 확인합니다.</figcaption>
+      </figure>
+      <figure>
+        <div class="m-ph"><img src="/img/marine/cylinder-liners-overhaul.webp" alt="주기관 오버홀 — 교체용 실린더 라이너" width="900" height="562" loading="lazy" decoding="async"></div>
+        <figcaption><b>02–04</b>분해 후 실린더 라이너 등 마모 부품을 계측하고, 정비 범위에 따라 교체합니다.</figcaption>
+      </figure>
+      <figure>
+        <div class="m-ph"><img src="/img/marine/shaft-alignment-measurement.webp" alt="축 정렬(샤프트 얼라인먼트) 계측" width="900" height="562" loading="lazy" decoding="async"></div>
+        <figcaption><b>05</b>재조립 시 축 정렬(얼라인먼트)을 계측해 제조사 규정값에 맞춥니다.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1072,11 +1121,25 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
       <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;padding:11px 22px;border:1px solid var(--m-navy-lite);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.3px;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='var(--m-navy-lite)';this.style.color='#06243a';" onmouseout="this.style.background='transparent';this.style.color='#fff';">신품 발전기·엔진 라인업 보기 →</a>
     </div>
 
-    <p class="m-note">* 누적 해상 정비 실적 기준. 발주처·선종·정비 항목별 상세 자료는 문의 시 제공해 드립니다.</p>
-    <!--
-      사진 슬롯 (선택) — 실제 현장 사진이 있으면 위 m-eng-wrap 아래에 갤러리 추가.
-      지명원 해상 슬라이드(28~33)에 표는 있으나 현장 사진은 별도 확보 필요.
-    -->
+    <div class="m-gallery-wrap reveal">
+      <div class="m-eng-cap">현장 작업 기록</div>
+      <div class="m-gallery">
+        <figure>
+          <div class="m-ph"><img src="/img/marine/plate-heat-exchanger-cleaning.webp" alt="판형 열교환기 분해 세척 작업" width="900" height="675" loading="lazy" decoding="async"></div>
+          <figcaption>판형 열교환기 분해 세척 — 플레이트 단위로 분리해 이물질을 제거합니다.</figcaption>
+        </figure>
+        <figure>
+          <div class="m-ph"><img src="/img/marine/heat-exchanger-assembly.webp" alt="CAT 엔진 열교환기(냉각기) 조립·점검" width="900" height="675" loading="lazy" decoding="async"></div>
+          <figcaption>열교환기(냉각기) 조립·점검 — 세척 후 재조립하여 누수 여부를 확인합니다.</figcaption>
+        </figure>
+        <figure>
+          <div class="m-ph"><img src="/img/marine/engineer-generator-field-check.webp" alt="선박 발전기 현장 점검 — 진단 장비 연결" width="900" height="675" loading="lazy" decoding="async"></div>
+          <figcaption>선박 발전기 현장 점검 — 진단 장비를 연결해 운전 데이터를 확인합니다.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <p class="m-note">* 누적 해상 정비 실적 기준. 발주처·선종·정비 항목별 상세 자료는 문의 시 제공해 드립니다. 현장 사진은 당사 정비 작업 기록이며, 선박·발주처 식별 정보는 게재하지 않습니다.</p>
   </div>
 </section>
 

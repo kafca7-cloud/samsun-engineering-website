@@ -727,7 +727,6 @@ h1, h2, h3, h4, h5, h6,
 </head>
 <body>
 
-<!-- 서브 페이지용 헤더: 우측 상단 "← 홈으로" 버튼만 -->
 <style>
   /* 서브 페이지 NAV: 1280px 제한 풀고 화면 우측 끝까지 활용 */
   nav#mainNav .nav-inner {
@@ -742,14 +741,196 @@ h1, h2, h3, h4, h5, h6,
 body { word-break: keep-all; }
 table, td, th, code, pre { word-break: normal; }
 </style>
-<nav id="mainNav">
+<!-- ===== 공통 상단 네비게이션 (메인과 동일 구조) — nav-shared v2 ===== -->
+<style>
+nav#mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--cat-white); border-bottom: 1px solid var(--cat-gray2); box-shadow: none; }
+body { padding-top: 84px; }
+nav#mainNav .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; height: 84px; display: flex; align-items: center; justify-content: space-between; }
+nav#mainNav .logo { display: flex; align-items: center; gap: 18px; height: 64px; text-decoration: none; }
+nav#mainNav .logo img { height: 62px; width: auto; display: block; }
+nav#mainNav .logo-text { font-size: 32px; font-weight: 900; color: var(--cat-black); letter-spacing: -0.8px; font-family: var(--font-body); line-height: 1; white-space: nowrap; }
+nav#mainNav .nav-links { display: flex; gap: 0; list-style: none; margin: 0; padding: 0; height: 100%; }
+nav#mainNav .nav-links > li { display: flex; align-items: center; position: relative; }
+nav#mainNav .nav-links > li > a { color: var(--cat-black); font-size: 16px; font-weight: 500; padding: 0 1.3rem; height: 84px; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px; position: relative; text-decoration: none; white-space: nowrap; font-family: var(--font-body); transition: color .2s, background .2s; }
+nav#mainNav .nav-links > li > a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--cat-yellow); transform: scaleX(0); transition: transform .25s ease; }
+nav#mainNav .nav-links > li > a:hover { background: var(--cat-gray1); }
+nav#mainNav .nav-links > li > a:hover::after,
+nav#mainNav .nav-links > li.current > a::after { transform: scaleX(1); }
+nav#mainNav .nav-links > li.current > a { font-weight: 700; }
+nav#mainNav .dd-arrow { font-size: 9px; color: var(--cat-gray3); margin-left: 2px; transition: transform .25s, color .25s; }
+nav#mainNav .has-dropdown:hover .dd-arrow,
+nav#mainNav .has-dropdown:focus-within .dd-arrow { transform: rotate(180deg); color: var(--cat-yellow); }
+nav#mainNav .has-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 320px; height: 12px; display: none; }
+nav#mainNav .has-dropdown:hover::after,
+nav#mainNav .has-dropdown:focus-within::after { display: block; }
+nav#mainNav .dropdown { position: absolute; top: calc(100% + 12px); left: 0; width: 320px; background: var(--cat-white); border-top: 3px solid var(--cat-yellow); box-shadow: 0 12px 36px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04); list-style: none; padding: .8rem 0; margin: 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .22s ease, visibility .22s ease, transform .22s ease; z-index: 1001; }
+nav#mainNav .has-dropdown:hover .dropdown,
+nav#mainNav .has-dropdown:focus-within .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+nav#mainNav .dropdown li { display: block; margin: 0; padding: 0; }
+nav#mainNav .dropdown a { display: block; padding: .85rem 1.5rem; line-height: 1.5; font-size: 14.5px; font-weight: 600; color: var(--cat-black); letter-spacing: .2px; white-space: nowrap; border-left: 3px solid transparent; text-decoration: none; font-family: var(--font-body); transition: background .18s, border-color .18s, padding-left .18s; }
+nav#mainNav .dropdown a:hover, nav#mainNav .dropdown a:focus,
+nav#mainNav .dropdown a[aria-current="page"] { background: var(--cat-gray1); border-left-color: var(--cat-yellow); }
+nav#mainNav .dropdown a:hover, nav#mainNav .dropdown a:focus { padding-left: 1.8rem; }
+nav#mainNav .dropdown .dd-sub a { padding-left: 2.6rem; position: relative; }
+nav#mainNav .dropdown .dd-sub a::before { content: '\2514'; position: absolute; left: 1.55rem; top: .82rem; color: var(--cat-gray3); font-size: 12px; line-height: 1; }
+nav#mainNav .dropdown .dd-sub a:hover { padding-left: 2.9rem; }
+nav#mainNav .nav-links > li.has-dropdown:nth-last-child(2) .dropdown,
+nav#mainNav .nav-links > li.has-dropdown:nth-last-child(2)::after { left: auto; right: 0; }
+nav#mainNav .dd-en { display: block; font-size: 11px; font-weight: 500; color: var(--cat-gray3); letter-spacing: .5px; margin-top: 2px; text-transform: uppercase; }
+/* 사업분야 3그룹 메가메뉴 */
+nav#mainNav .dropdown.dd-mega { width: 780px; padding: 1.1rem .7rem .7rem; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: .4rem; left: 50%; transform: translate(-50%, -6px); }
+nav#mainNav .has-dropdown:hover .dropdown.dd-mega,
+nav#mainNav .has-dropdown:focus-within .dropdown.dd-mega { transform: translate(-50%, 0); }
+nav#mainNav .dd-mega .dd-group-title { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--cat-gray3); padding: 0 1.1rem .55rem; margin: 0 0 .35rem; border-bottom: 1px solid var(--cat-border); }
+nav#mainNav .dd-mega .dd-group ul { list-style: none; margin: 0; padding: 0; }
+nav#mainNav .dd-mega .dd-group a { padding: .7rem 1.1rem; font-size: 14px; line-height: 1.45; }
+nav#mainNav .dd-mega .dd-group a:hover, nav#mainNav .dd-mega .dd-group a:focus { padding-left: 1.4rem; }
+nav#mainNav .dd-mega .dd-sub a { padding-left: 2.2rem; }
+nav#mainNav .dd-mega .dd-sub a::before { left: 1.15rem; top: .72rem; }
+nav#mainNav .dd-mega .dd-sub a:hover { padding-left: 2.5rem; }
+nav#mainNav .dd-mega .dd-all { grid-column: 1 / -1; margin-top: .6rem; border-top: 1px solid var(--cat-border); padding-top: .5rem; }
+nav#mainNav .dd-mega .dd-all a { padding: .65rem 1.1rem; font-size: 13px; font-weight: 800; letter-spacing: .3px; }
+/* 햄버거 */
+nav#mainNav .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 0; width: 44px; height: 44px; margin-right: -8px; }
+nav#mainNav .hamburger span { width: 22px; height: 2px; background: var(--cat-black); display: block; border-radius: 1px; transition: transform .25s, opacity .2s; }
+nav#mainNav.mob-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav#mainNav.mob-open .hamburger span:nth-child(2) { opacity: 0; }
+nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* 반응형 */
+@media (max-width: 1100px) {
+  nav#mainNav .nav-links > li > a { padding: 0 .95rem; font-size: 15px; }
+  nav#mainNav .logo-text { font-size: 28px; }
+}
+@media (max-width: 860px) {
+  body { padding-top: 72px; }
+  nav#mainNav .nav-inner { height: 72px; }
+  nav#mainNav .logo { height: 54px; gap: 14px; }
+  nav#mainNav .logo img { height: 52px; }
+  nav#mainNav .logo-text { font-size: 26px; letter-spacing: -0.6px; }
+  nav#mainNav .hamburger { display: flex; }
+  nav#mainNav .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; max-height: calc(100vh - 72px); overflow-y: auto; -webkit-overflow-scrolling: touch; flex-direction: column; background: var(--cat-white); border-top: 2px solid var(--cat-yellow); box-shadow: 0 8px 24px rgba(0,0,0,.12); padding: .25rem 0 1rem; z-index: 999; height: auto; }
+  nav#mainNav.mob-open .nav-links { display: flex; }
+  nav#mainNav .nav-links > li { display: block; border-bottom: 1px solid var(--cat-border); }
+  nav#mainNav .nav-links > li:last-child { border-bottom: 0; }
+  nav#mainNav .nav-links > li > a { height: auto; width: 100%; padding: .95rem 1.25rem; font-size: 16px; font-weight: 600; display: flex; justify-content: space-between; }
+  nav#mainNav .nav-links > li > a::after { display: none; }
+  nav#mainNav .nav-links > li.current > a { color: var(--cat-black); box-shadow: inset 4px 0 0 var(--cat-yellow); }
+  nav#mainNav .dd-arrow { display: inline-block; font-size: 11px; }
+  nav#mainNav .has-dropdown:hover .dd-arrow { transform: none; color: var(--cat-gray3); }
+  nav#mainNav .has-dropdown::after { display: none !important; }
+  nav#mainNav .dropdown, nav#mainNav .dropdown.dd-mega { position: static; width: auto; display: none; opacity: 1; visibility: visible; transform: none; box-shadow: none; border-top: 0; padding: 0 0 .5rem; margin: 0; background: var(--cat-gray1); grid-template-columns: 1fr; column-gap: 0; transition: none; }
+  nav#mainNav .has-dropdown:hover .dropdown, nav#mainNav .has-dropdown:focus-within .dropdown,
+  nav#mainNav .has-dropdown:hover .dropdown.dd-mega, nav#mainNav .has-dropdown:focus-within .dropdown.dd-mega { transform: none; opacity: 1; visibility: visible; }
+  nav#mainNav .has-dropdown.open .dropdown, nav#mainNav .has-dropdown.open .dropdown.dd-mega { display: block; }
+  nav#mainNav .has-dropdown.open::after { display: none !important; }
+  nav#mainNav .has-dropdown.open .dd-arrow { transform: rotate(180deg); color: var(--cat-yellow); }
+  nav#mainNav .dd-mega .dd-group-title { padding: .75rem 1.25rem .25rem; margin: 0; border-bottom: 0; }
+  nav#mainNav .dropdown a, nav#mainNav .dd-mega .dd-group a { padding: .6rem 1.6rem; font-size: 14.5px; white-space: normal; }
+  nav#mainNav .dropdown a:hover, nav#mainNav .dropdown a:focus, nav#mainNav .dd-mega .dd-group a:hover { padding-left: 1.6rem; }
+  nav#mainNav .dropdown .dd-sub a, nav#mainNav .dd-mega .dd-sub a { padding-left: 2.5rem; }
+  nav#mainNav .dropdown .dd-sub a::before, nav#mainNav .dd-mega .dd-sub a::before { left: 1.65rem; top: .72rem; }
+  nav#mainNav .dropdown .dd-sub a:hover, nav#mainNav .dd-mega .dd-sub a:hover { padding-left: 2.5rem; }
+  nav#mainNav .dd-mega .dd-all { margin: .4rem 1.25rem 0; padding-top: .35rem; }
+  nav#mainNav .dd-mega .dd-all a { padding: .55rem .35rem; }
+  nav#mainNav .dd-en { display: inline; margin: 0 0 0 .45rem; font-size: 10.5px; }
+}
+@media (max-width: 560px) {
+  body { padding-top: 64px; }
+  nav#mainNav .nav-inner { height: 64px; padding: 0 1rem; }
+  nav#mainNav .logo { height: 44px; gap: 10px; }
+  nav#mainNav .logo img { height: 42px; }
+  nav#mainNav .logo-text { font-size: 20px; letter-spacing: -0.4px; }
+  nav#mainNav .hamburger { margin-right: -6px; }
+  nav#mainNav .nav-links { top: 64px; max-height: calc(100vh - 64px); }
+}
+</style>
+<nav id="mainNav" aria-label="주 메뉴">
   <div class="nav-inner">
-    <a href="/" class="home-btn">
-      <span class="arrow">←</span>
-      <span>홈으로</span>
+    <a href="/" class="logo" aria-label="삼선엔지니어링 홈">
+      <img src="/img/main/logo.jpg" alt="삼선엔지니어링">
+      <span class="logo-text">삼선엔지니어링</span>
     </a>
+    <ul class="nav-links">
+      <li><a href="/#about">회사소개</a></li>
+      <li class="has-dropdown">
+        <a href="/services/">사업분야 <span class="dd-arrow">▾</span></a>
+        <ul class="dropdown dd-mega">
+          <li class="dd-group">
+            <div class="dd-group-title">공급 · 설치</div>
+            <ul>
+              <li><a href="/services/sales/">발전기·엔진 신규 공급<span class="dd-en">Sales</span></a></li>
+              <li><a href="/services/construction/">발전기 설치·이전·전기공사<span class="dd-en">Construction</span></a></li>
+              <li><a href="/services/rental/">렌탈 발전기·임시 전력 지원<span class="dd-en">Rental</span></a></li>
+            </ul>
+          </li>
+          <li class="dd-group">
+            <div class="dd-group-title">정비 · 점검</div>
+            <ul>
+              <li><a href="/services/maintenance/">비상발전기 정기점검·예방정비<span class="dd-en">Maintenance</span></a></li>
+              <li class="dd-sub"><a href="/services/diagnostics/">진단 기반 정기점검<span class="dd-en">Diagnostics · CAT ET·SOS</span></a></li>
+              <li><a href="/services/fire-pump/">소방펌프 디젤엔진<span class="dd-en" style="color:#E0443E;">Fire Pump</span></a></li>
+              <li><a href="/services/marine/">해상 엔진 정비<span class="dd-en" style="color:#0a3d62;">Marine</span></a></li>
+            </ul>
+          </li>
+          <li class="dd-group">
+            <div class="dd-group-title">부품 · 제품</div>
+            <ul>
+              <li><a href="/services/mro/">MRO·정품 부품 조달<span class="dd-en">MRO &amp; Parts</span></a></li>
+              <li><a href="/products/in-house/">자체 제작 제품<span class="dd-en">In-House</span></a></li>
+            </ul>
+          </li>
+          <li class="dd-all"><a href="/services/">전체 사업분야 보기 →</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown current">
+        <a href="/about/performance/">실적·역량 <span class="dd-arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="/about/performance/">주요 실적<span class="dd-en">Performance</span></a></li>
+          <li><a href="/about/clients/">주요 고객사<span class="dd-en">Clients</span></a></li>
+          <li><a href="/about/tech/" aria-current="page">기술력·전문성<span class="dd-en">Technology</span></a></li>
+          <li><a href="/about/certifications/">인증·자격<span class="dd-en">Certifications</span></a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/resources/faq.html">고객지원 <span class="dd-arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="/resources/notice/">공지사항<span class="dd-en">Notice</span></a></li>
+          <li><a href="/resources/library/">자료실<span class="dd-en">Library</span></a></li>
+          <li><a href="/resources/faq.html">자주묻는질문<span class="dd-en">FAQ</span></a></li>
+        </ul>
+      </li>
+      <li><a href="/contact/">문의하기</a></li>
+    </ul>
+    <button class="hamburger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<script>
+(function(){
+  var nav = document.getElementById('mainNav'); if (!nav) return;
+  var btn = nav.querySelector('.hamburger');
+  var isMob = function(){ return window.innerWidth <= 860; };
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('mob-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    if (!open) nav.querySelectorAll('.has-dropdown.open').forEach(function(li){ li.classList.remove('open'); });
+  });
+  nav.querySelectorAll('.has-dropdown > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (!isMob()) return;
+      e.preventDefault();
+      var li = a.parentNode, wasOpen = li.classList.contains('open');
+      nav.querySelectorAll('.has-dropdown.open').forEach(function(x){ x.classList.remove('open'); });
+      if (!wasOpen) li.classList.add('open');
+    });
+  });
+  window.addEventListener('resize', function(){
+    if (!isMob()) { nav.classList.remove('mob-open'); btn.setAttribute('aria-expanded','false'); nav.querySelectorAll('.has-dropdown.open').forEach(function(li){ li.classList.remove('open'); }); }
+  });
+})();
+</script>
 
 
 <section class="page-hero">

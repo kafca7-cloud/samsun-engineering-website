@@ -1650,10 +1650,47 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 }
 .dropdown.dd-mega .dd-all a:hover { background: var(--cat-gray1) !important; color: var(--cat-black) !important; }
 
-/* 모바일: 드롭다운 숨김, 일반 링크처럼 동작 */
+/* 고객지원(마지막 드롭다운) 우측 정렬: 화면 밖 넘침 방지 */
+.nav-links > li.has-dropdown:nth-last-child(2) .dropdown,
+.nav-links > li.has-dropdown:nth-last-child(2)::after { left: auto; right: 0; }
+
+/* 햄버거 버튼 (44px 터치 영역) + X 전환 */
+nav#mainNav .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 0; width: 44px; height: 44px; margin-right: -8px; }
+nav#mainNav .hamburger span { width: 22px; height: 2px; background: var(--cat-black); display: block; border-radius: 1px; transition: transform .25s, opacity .2s; }
+nav#mainNav.mob-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav#mainNav.mob-open .hamburger span:nth-child(2) { opacity: 0; }
+nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 모바일: 햄버거 → 아코디언 메뉴 (하위 항목까지 접근) — 서브페이지 nav-shared v2 와 동일 동작 */
 @media (max-width: 860px) {
-  .dropdown { display: none !important; }
-  .dd-arrow { display: none; }
+  nav#mainNav .hamburger { display: flex; }
+  nav#mainNav .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; max-height: calc(100vh - 132px); overflow-y: auto; -webkit-overflow-scrolling: touch; flex-direction: column; background: var(--cat-white); border-top: 2px solid var(--cat-yellow); box-shadow: 0 8px 24px rgba(0,0,0,.12); padding: .25rem 0 1rem; z-index: 999; height: auto; }
+  nav#mainNav.mob-open .nav-links { display: flex; }
+  nav#mainNav .nav-links > li { display: block; border-bottom: 1px solid var(--cat-border); }
+  nav#mainNav .nav-links > li:last-child { border-bottom: 0; }
+  nav#mainNav .nav-links > li > a { height: auto !important; width: 100%; padding: .95rem 1.25rem !important; font-size: 16px !important; font-weight: 600 !important; display: flex !important; justify-content: space-between; background: transparent; }
+  nav#mainNav .nav-links > li > a::after { display: none !important; }
+  nav#mainNav .dd-arrow { display: inline-block; font-size: 11px; }
+  nav#mainNav .has-dropdown:hover .dd-arrow { transform: none; color: var(--cat-gray3); }
+  nav#mainNav .has-dropdown::after { display: none !important; }
+  nav#mainNav .dropdown, nav#mainNav .dropdown.dd-mega { position: static; width: auto; display: none !important; opacity: 1; visibility: visible; transform: none; box-shadow: none; border-top: 0; padding: 0 0 .5rem; margin: 0; background: var(--cat-gray1); grid-template-columns: 1fr; column-gap: 0; transition: none; }
+  nav#mainNav .has-dropdown:hover .dropdown, nav#mainNav .has-dropdown:focus-within .dropdown,
+  nav#mainNav .has-dropdown:hover .dropdown.dd-mega, nav#mainNav .has-dropdown:focus-within .dropdown.dd-mega { transform: none; opacity: 1; visibility: visible; }
+  nav#mainNav .has-dropdown.open .dropdown, nav#mainNav .has-dropdown.open .dropdown.dd-mega { display: block !important; }
+  nav#mainNav .has-dropdown.open .dd-arrow { transform: rotate(180deg); color: var(--cat-yellow); }
+  nav#mainNav .dropdown.dd-mega .dd-group-title { padding: .75rem 1.25rem .25rem; margin: 0; border-bottom: 0; }
+  nav#mainNav .dropdown > li > a, nav#mainNav .dropdown.dd-mega .dd-group ul li a { padding: .6rem 1.6rem !important; font-size: 14.5px !important; white-space: normal; }
+  nav#mainNav .dropdown > li > a:hover, nav#mainNav .dropdown.dd-mega .dd-group ul li a:hover { padding-left: 1.6rem !important; }
+  nav#mainNav .dropdown > li.dd-sub > a, nav#mainNav .dropdown.dd-mega .dd-group ul li.dd-sub a { padding-left: 2.5rem !important; }
+  nav#mainNav .dropdown > li.dd-sub > a::before, nav#mainNav .dropdown.dd-mega .dd-group ul li.dd-sub a::before { left: 1.65rem; top: .72rem; }
+  nav#mainNav .dropdown > li.dd-sub > a:hover, nav#mainNav .dropdown.dd-mega .dd-group ul li.dd-sub a:hover { padding-left: 2.5rem !important; }
+  nav#mainNav .dropdown.dd-mega .dd-all { margin: .4rem 1.25rem 0 !important; padding-top: .35rem !important; }
+  nav#mainNav .dropdown.dd-mega .dd-all a { padding: .55rem .35rem !important; }
+  nav#mainNav .dd-en, nav#mainNav .dropdown.dd-mega .dd-en { display: inline; margin: 0 0 0 .45rem; font-size: 10.5px; }
+}
+@media (max-width: 560px) {
+  nav#mainNav .hamburger { margin-right: -6px; }
+  nav#mainNav .nav-links { top: 64px; max-height: calc(100vh - 124px); }
 }
 </style>
 </head>
@@ -1721,7 +1758,7 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       <li><a href="/contact/">문의하기</a></li>
     </ul>
     <div class="nav-right">
-      <button class="hamburger" onclick="toggleMob()" aria-label="메뉴">
+      <button class="hamburger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -2476,20 +2513,34 @@ window.addEventListener('scroll', updateScrollSpy, { passive: true });
 window.addEventListener('load', updateScrollSpy);
 updateScrollSpy();
 
-// Mobile menu
-function toggleMob() {
-  const nl = document.querySelector('.nav-links');
-  const open = nl.style.display === 'flex';
-  nl.style.cssText = open ? '' :
-    'display:flex;flex-direction:column;position:fixed;top:105px;left:0;right:0;' +
-    'background:#fff;padding:1.5rem 2rem;gap:0;z-index:999;' +
-    'border-top:2px solid var(--cat-yellow);box-shadow:0 8px 24px rgba(0,0,0,0.12);';
-}
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    if (window.innerWidth < 860) document.querySelector('.nav-links').style.cssText = '';
+// Mobile menu — 햄버거 토글 + 드롭다운 아코디언 (서브페이지 nav-shared v2 와 동일 동작)
+(function(){
+  const nav = document.getElementById('mainNav'); if (!nav) return;
+  const btn = nav.querySelector('.hamburger');
+  const isMob = () => window.innerWidth <= 860;
+  const closeAll = () => { nav.classList.remove('mob-open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', '메뉴 열기'); nav.querySelectorAll('.has-dropdown.open').forEach(li => li.classList.remove('open')); };
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('mob-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    if (!open) nav.querySelectorAll('.has-dropdown.open').forEach(li => li.classList.remove('open'));
   });
-});
+  nav.querySelectorAll('.has-dropdown > a').forEach(a => {
+    a.addEventListener('click', e => {
+      if (!isMob()) return;
+      e.preventDefault();
+      const li = a.parentNode, wasOpen = li.classList.contains('open');
+      nav.querySelectorAll('.has-dropdown.open').forEach(x => x.classList.remove('open'));
+      if (!wasOpen) li.classList.add('open');
+    });
+  });
+  // 모바일에서 실제 이동 링크(앵커 포함)를 누르면 메뉴 닫기
+  nav.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.parentNode.classList.contains('has-dropdown')) return;
+    a.addEventListener('click', () => { if (isMob()) closeAll(); });
+  });
+  window.addEventListener('resize', () => { if (!isMob()) closeAll(); });
+})();
 
 
 </script>

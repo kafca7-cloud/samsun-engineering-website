@@ -65,6 +65,11 @@
       "source": "/generator-inspection.html",
       "destination": "/services/diagnostics/",
       "permanent": true
+    },
+    {
+      "source": "/resources/notice/2026-10-19-electrical-contractor-registration.html",
+      "destination": "/resources/notice/2025-05-30-electrical-contractor-registration.html",
+      "permanent": true
     }
   ]
 }

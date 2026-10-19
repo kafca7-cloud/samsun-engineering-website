@@ -1610,6 +1610,46 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 
 
 
+
+/* 사업분야 드롭다운: 3그룹 메가메뉴 (공급·설치 / 정비·점검 / 부품·제품) */
+.dropdown.dd-mega {
+  width: 780px; padding: 1.1rem 0.7rem 0.7rem;
+  display: grid !important; grid-template-columns: repeat(3, 1fr); column-gap: 0.4rem;
+  left: 50%; transform: translate(-50%, -6px);
+}
+.has-dropdown:hover .dropdown.dd-mega,
+.has-dropdown:focus-within .dropdown.dd-mega { transform: translate(-50%, 0); }
+.dropdown.dd-mega > li { display: block !important; }
+.dropdown.dd-mega .dd-group-title {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--cat-gray3); padding: 0 1.1rem 0.55rem; margin: 0 0 0.35rem;
+  border-bottom: 1px solid var(--cat-border);
+}
+.dropdown.dd-mega .dd-group ul { list-style: none; margin: 0; padding: 0; display: block; height: auto; }
+.dropdown.dd-mega .dd-group ul li { display: block !important; margin: 0 !important; padding: 0 !important; height: auto !important; }
+.dropdown.dd-mega .dd-group ul li a {
+  display: block !important; width: 100%; height: auto !important; line-height: 1.45 !important;
+  padding: 0.7rem 1.1rem !important; font-size: 14px !important; font-weight: 600 !important;
+  color: var(--cat-black) !important; letter-spacing: 0.2px !important; white-space: nowrap;
+  background: transparent !important; border-left: 3px solid transparent;
+  transition: background 0.18s ease, border-color 0.18s ease, padding-left 0.18s ease;
+}
+.dropdown.dd-mega a::after { display: none !important; }
+.dropdown.dd-mega .dd-group ul li a:hover,
+.dropdown.dd-mega .dd-group ul li a:focus { background: var(--cat-gray1) !important; border-left-color: var(--cat-yellow); padding-left: 1.4rem !important; }
+.dropdown.dd-mega .dd-group ul li.dd-sub a { padding-left: 2.2rem !important; position: relative; }
+.dropdown.dd-mega .dd-group ul li.dd-sub a::before { content: '\2514'; position: absolute; left: 1.15rem; top: 0.72rem; color: var(--cat-gray3); font-size: 12px; line-height: 1; }
+.dropdown.dd-mega .dd-group ul li.dd-sub a:hover { padding-left: 2.5rem !important; }
+.dropdown.dd-mega .dd-group ul li.dd-sub a:hover::before { left: 1.45rem; }
+.dropdown.dd-mega .dd-en { display: block; font-size: 11px; font-weight: 500; color: var(--cat-gray3); letter-spacing: 0.5px; margin-top: 2px; text-transform: uppercase; }
+.dropdown.dd-mega .dd-all { grid-column: 1 / -1; margin-top: 0.6rem !important; border-top: 1px solid var(--cat-border); padding-top: 0.5rem !important; }
+.dropdown.dd-mega .dd-all a {
+  display: block !important; height: auto !important; line-height: 1.4 !important;
+  padding: 0.65rem 1.1rem !important; font-size: 13px !important; font-weight: 800 !important;
+  color: var(--cat-black) !important; background: transparent !important; letter-spacing: 0.3px !important;
+}
+.dropdown.dd-mega .dd-all a:hover { background: var(--cat-gray1) !important; color: var(--cat-black) !important; }
+
 /* 모바일: 드롭다운 숨김, 일반 링크처럼 동작 */
 @media (max-width: 860px) {
   .dropdown { display: none !important; }
@@ -1633,16 +1673,32 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
       <li><a href="#about">회사소개</a></li>
       <li class="has-dropdown">
         <a href="/services/">사업분야 <span class="dd-arrow">▾</span></a>
-        <ul class="dropdown">
-          <li><a href="/services/sales/">발전기·엔진 신규 공급<span class="dd-en">Sales</span></a></li>
-          <li><a href="/services/maintenance/">비상발전기 정기점검·예방정비<span class="dd-en">Maintenance</span></a></li>
-          <li class="dd-sub"><a href="/services/diagnostics/">진단 기반 정기점검<span class="dd-en">Diagnostics · CAT ET·SOS</span></a></li>
-          <li><a href="/services/fire-pump/">소방펌프 디젤엔진<span class="dd-en" style="color:var(--fp-red);">Fire Pump</span></a></li>
-          <li><a href="/services/marine/">해상 엔진 정비<span class="dd-en" style="color:var(--m-navy);">Marine</span></a></li>
-          <li><a href="/services/construction/">발전기 설치·이전·전기공사<span class="dd-en">Construction</span></a></li>
-          <li><a href="/services/rental/">렌탈 발전기·임시 전력 지원<span class="dd-en">Rental</span></a></li>
-          <li><a href="/services/mro/">MRO·정품 부품 조달<span class="dd-en">MRO &amp; Parts</span></a></li>
-          <li><a href="/products/in-house/">자체 제작 제품<span class="dd-en">In-House</span></a></li>
+        <ul class="dropdown dd-mega">
+          <li class="dd-group">
+            <div class="dd-group-title">공급 · 설치</div>
+            <ul>
+              <li><a href="/services/sales/">발전기·엔진 신규 공급<span class="dd-en">Sales</span></a></li>
+              <li><a href="/services/construction/">발전기 설치·이전·전기공사<span class="dd-en">Construction</span></a></li>
+              <li><a href="/services/rental/">렌탈 발전기·임시 전력 지원<span class="dd-en">Rental</span></a></li>
+            </ul>
+          </li>
+          <li class="dd-group">
+            <div class="dd-group-title">정비 · 점검</div>
+            <ul>
+              <li><a href="/services/maintenance/">비상발전기 정기점검·예방정비<span class="dd-en">Maintenance</span></a></li>
+              <li class="dd-sub"><a href="/services/diagnostics/">진단 기반 정기점검<span class="dd-en">Diagnostics · CAT ET·SOS</span></a></li>
+              <li><a href="/services/fire-pump/">소방펌프 디젤엔진<span class="dd-en" style="color:var(--fp-red);">Fire Pump</span></a></li>
+              <li><a href="/services/marine/">해상 엔진 정비<span class="dd-en" style="color:var(--m-navy);">Marine</span></a></li>
+            </ul>
+          </li>
+          <li class="dd-group">
+            <div class="dd-group-title">부품 · 제품</div>
+            <ul>
+              <li><a href="/services/mro/">MRO·정품 부품 조달<span class="dd-en">MRO &amp; Parts</span></a></li>
+              <li><a href="/products/in-house/">자체 제작 제품<span class="dd-en">In-House</span></a></li>
+            </ul>
+          </li>
+          <li class="dd-all"><a href="/services/">전체 사업분야 보기 →</a></li>
         </ul>
       </li>
       <li class="has-dropdown">

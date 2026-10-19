@@ -13,6 +13,9 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="googlebot" content="index, follow">
 <link rel="canonical" href="https://www.samsuneng.co.kr/">
+<link rel="alternate" hreflang="ko" href="https://www.samsuneng.co.kr/">
+<link rel="alternate" hreflang="en" href="https://www.samsuneng.co.kr/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.samsuneng.co.kr/">
 
 <!-- Geo Tags (로컬 SEO 강화 - 여수) -->
 <meta name="geo.region" content="KR-46">
@@ -1651,8 +1654,9 @@ footer { background: var(--cat-black) !important; border-top: 4px solid var(--ca
 .dropdown.dd-mega .dd-all a:hover { background: var(--cat-gray1) !important; color: var(--cat-black) !important; }
 
 /* 고객지원(마지막 드롭다운) 우측 정렬: 화면 밖 넘침 방지 */
-.nav-links > li.has-dropdown:nth-last-child(2) .dropdown,
-.nav-links > li.has-dropdown:nth-last-child(2)::after { left: auto; right: 0; }
+.nav-links > li.has-dropdown:nth-last-child(3) .dropdown,
+.nav-links > li.has-dropdown:nth-last-child(3)::after { left: auto; right: 0; }
+.nav-links > li.nav-en > a { font-size: 12.5px !important; letter-spacing: 1.2px !important; color: var(--cat-gray3); padding: 0 .9rem !important; }
 
 /* 햄버거 버튼 (44px 터치 영역) + X 전환 */
 nav#mainNav .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 0; width: 44px; height: 44px; margin-right: -8px; }
@@ -1756,6 +1760,7 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
         </ul>
       </li>
       <li><a href="/contact/">문의하기</a></li>
+      <li class="nav-en"><a href="/en/" lang="en" hreflang="en" title="English">EN</a></li>
     </ul>
     <div class="nav-right">
       <button class="hamburger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mainNav">

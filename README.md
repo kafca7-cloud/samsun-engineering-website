@@ -39,3 +39,10 @@ _reference/tools/          build-product-table.js — 메인 제품 검색표 <t
 - `vercel.json`의 CSP가 `script-src 'self'`라 **외부 스크립트(지도 위젯·분석 도구 등)는 CSP를 먼저 열어야** 동작합니다.
 - 자격증 등 개인정보가 담긴 원본 PDF는 올리지 않음 — 블러·워터마크 처리한 썸네일만 사용.
 - 주소 표기는 2026.07.01 행정통합에 따라 "전남광주통합특별시 여수시 좌수영로 919". 과거 등록기관 표기("전라남도지사 등록 2025.05.30")는 사실 기록이라 유지.
+
+## 영문 페이지 (/en/)
+- `en/index.html` 한 페이지(회사소개·해상 서비스·실적·문의). 문의 채널은 이메일만 표기.
+- 한·영 연결: 메인·해상 페이지 `<head>`의 hreflang, 전체 네비 우측 "EN" 링크, `/en/`의 "한국어" 버튼.
+- 회사 영문 표기: **SAMSUN Engineering Co., Ltd** (주소: 919 Jwasuyeong-ro, Yeosu, Jeonnam, Republic of Korea 59635).
+- `samsuneng.com` / `www.samsuneng.com` 은 `vercel.json` redirects 로 `https://www.samsuneng.co.kr/en/` 301 이동.
+  → 동작하려면 Vercel 프로젝트 Settings → Domains 에 두 도메인을 추가하고 DNS(A/CNAME)를 Vercel로 향하게 해야 함.

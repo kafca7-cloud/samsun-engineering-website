@@ -70,6 +70,28 @@
       "source": "/resources/notice/2026-10-19-electrical-contractor-registration.html",
       "destination": "/resources/notice/2025-05-30-electrical-contractor-registration.html",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "samsuneng.com"
+        }
+      ],
+      "destination": "https://www.samsuneng.co.kr/en/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.samsuneng.com"
+        }
+      ],
+      "destination": "https://www.samsuneng.co.kr/en/",
+      "permanent": true
     }
   ]
 }

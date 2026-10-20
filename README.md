@@ -46,3 +46,5 @@ _reference/tools/          build-product-table.js — 메인 제품 검색표 <t
 - 회사 영문 표기: **SAMSUN Engineering Co., Ltd** (주소: 919 Jwasuyeong-ro, Yeosu, Jeonnam, Republic of Korea 59635).
 - `samsuneng.com` / `www.samsuneng.com` 은 `vercel.json` redirects 로 `https://www.samsuneng.co.kr/en/` 301 이동.
   → 동작하려면 Vercel 프로젝트 Settings → Domains 에 두 도메인을 추가하고 DNS(A/CNAME)를 Vercel로 향하게 해야 함.
+- 영문 페이지 글꼴: `/fonts/` 자체 호스팅 (본문 Inter 400·500·600·700, 제목 Barlow 700·800, 라틴 서브셋 woff2, SIL OFL — `fonts/LICENSE-OFL.txt`).
+  외부 CDN을 쓰지 않으므로 CSP(`font-src 'self'`) 변경 불필요. 한글 페이지는 기존대로 시스템 글꼴.

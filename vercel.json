@@ -72,6 +72,28 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "samsuneng.com"
+        }
+      ],
+      "destination": "https://www.samsuneng.co.kr/en/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.samsuneng.com"
+        }
+      ],
+      "destination": "https://www.samsuneng.co.kr/en/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {

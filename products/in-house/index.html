@@ -513,7 +513,21 @@ nav#mainNav .dropdown .dd-sub a::before { content: '\2514'; position: absolute; 
 nav#mainNav .dropdown .dd-sub a:hover { padding-left: 2.9rem; }
 nav#mainNav .nav-links > li.has-dropdown:nth-last-child(3) .dropdown,
 nav#mainNav .nav-links > li.has-dropdown:nth-last-child(3)::after { left: auto; right: 0; }
-nav#mainNav .nav-links > li.nav-en > a { font-size: 12.5px; letter-spacing: 1.2px; color: var(--cat-gray3); padding: 0 .9rem; }
+nav#mainNav .nav-links > li.nav-en { margin-left: 1.2rem; }
+nav#mainNav .nav-links > li.nav-en > a { height: 36px; padding: 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--cat-gray4); border: 1px solid var(--cat-border); background: transparent; }
+nav#mainNav .nav-links > li.nav-en > a::after { display: none; }
+nav#mainNav .nav-links > li.nav-en > a:hover { background: var(--cat-gray1); color: var(--cat-black); border-color: var(--cat-gray3); }
+@media (max-width: 1100px) {
+  nav#mainNav .nav-inner .logo { gap: 12px; }
+  nav#mainNav .nav-inner .logo img { height: 50px; }
+  nav#mainNav .nav-inner .logo-text { font-size: 24px; }
+  nav#mainNav .nav-inner .nav-links > li > a { padding: 0 .75rem; font-size: 14.5px; }
+  nav#mainNav .nav-inner .nav-links > li.nav-en { margin-left: .6rem; }
+}
+@media (max-width: 860px) {
+  nav#mainNav .nav-links > li.nav-en { margin: .5rem 1.25rem .4rem; border-bottom: 0; }
+  nav#mainNav .nav-links > li.nav-en > a { display: inline-flex; width: auto; height: 36px; padding: 0 16px; font-size: 13px; }
+}
 nav#mainNav .dd-en { display: block; font-size: 11px; font-weight: 500; color: var(--cat-gray3); letter-spacing: .5px; margin-top: 2px; text-transform: uppercase; }
 /* 사업분야 3그룹 메가메뉴 */
 nav#mainNav .dropdown.dd-mega { width: 780px; padding: 1.1rem .7rem .7rem; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: .4rem; left: 50%; transform: translate(-50%, -6px); }

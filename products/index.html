@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <script>/* samsuneng.com → 영문 페이지 (서버 리다이렉트 보조) */if(/(^|\.)samsuneng\.com$/i.test(location.hostname)){location.replace("https://www.samsuneng.co.kr/en/");}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" crossorigin="anonymous">
 <title>CAT 발전기·엔진 판매 라인업 (16개 모델) | SAMSUN 삼선엔지니어링</title>
 <meta name="description" content="CAT C18, C32, 3512, 3516 등 육상·해상 발전기 및 엔진 16개 모델. CAT 공인 딜러 SAMSUN이 직접 공급합니다. 모델별 사양·용도·견적 문의.">
 <meta name="keywords" content="CAT 발전기, CAT 엔진, CAT C18, CAT C32, CAT 3512, CAT 3516, CAT C175, 비상발전기, 선박엔진, 삼선엔지니어링, CAT 공인 딜러">
@@ -435,6 +437,28 @@ h1, h2, h3, h4, h5, h6,
 }
 .results-count strong { color: var(--cat-black); font-weight: 700; }
 
+/* ─── 전체 모델 사양표 (텍스트, 검색엔진·JS 미지원 환경용) ─── */
+.spec-sheet { margin: 2.5rem auto 0; max-width: var(--max-w); border: 1px solid var(--cat-border); background: var(--cat-white); }
+.spec-sheet > summary { cursor: pointer; padding: 1rem 1.4rem; font-size: 14.5px; font-weight: 700; color: var(--cat-black); list-style: none; display: flex; align-items: center; gap: 10px; }
+.spec-sheet > summary::-webkit-details-marker { display: none; }
+.spec-sheet > summary::before { content: ''; width: 8px; height: 8px; border-right: 2px solid var(--cat-black); border-bottom: 2px solid var(--cat-black); transform: rotate(-45deg); transition: transform .2s; }
+.spec-sheet[open] > summary::before { transform: rotate(45deg); }
+.spec-sheet > summary span { font-weight: 500; color: var(--cat-gray3); font-size: 13px; }
+.spec-sheet-body { padding: 0 1.4rem 1.6rem; border-top: 1px solid var(--cat-border); }
+.spec-cat h3 { font-size: 15px; font-weight: 800; letter-spacing: .3px; margin: 1.6rem 0 .8rem; padding-left: .7rem; border-left: 3px solid var(--cat-yellow); }
+.spec-model { padding: 1rem 0; border-bottom: 1px dashed var(--cat-border); }
+.spec-model:last-child { border-bottom: 0; }
+.spec-model h4 { font-size: 15px; font-weight: 700; margin: 0 0 .4rem; }
+.spec-model h4 small { font-size: 12px; font-weight: 500; color: var(--cat-gray3); margin-left: .5rem; }
+.spec-model p { font-size: 13.5px; color: var(--cat-gray4); line-height: 1.7; margin: 0 0 .6rem; }
+.spec-model table { border-collapse: collapse; width: 100%; max-width: 760px; font-size: 13px; }
+.spec-model th, .spec-model td { text-align: left; padding: .35rem .6rem; border-bottom: 1px solid var(--cat-gray2); vertical-align: top; }
+.spec-model th { width: 34%; font-weight: 600; color: var(--cat-gray4); background: var(--cat-gray1); }
+.spec-model .spec-links { margin: .6rem 0 0; font-size: 12.5px; }
+.spec-model .spec-links a { color: var(--cat-black); font-weight: 600; }
+@media (max-width: 720px) { .spec-sheet-body { padding: 0 1rem 1.2rem; } .spec-model th { width: 42%; } }
+
+
 /* ─── 모바일 ─── */
 @media (max-width: 768px) {
   .products-toolbar { position: static; }
@@ -447,6 +471,9 @@ h1, h2, h3, h4, h5, h6,
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.samsuneng.co.kr/"}, {"@type": "ListItem", "position": 2, "name": "CAT 발전기 라인업", "item": "https://www.samsuneng.co.kr/products/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ItemList", "name": "SAMSUN 취급 CAT 발전기·엔진·부품 모델", "numberOfItems": 16, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "CAT C18", "description": "CAT C18 디젤 발전기는 중형 산업시설과 병원, 데이터센터의 비상전원에 최적화된 신뢰성 높은 발전기입니다. 컴팩트한 사이즈에 높은 출력 밀도를 제공하며, 미션 크리티컬·Standby·Prime 용도 모두에 대응합니다.", "category": "육상 발전기", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c18-land"}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "CAT C27", "description": "CAT C27 발전기는 공장과 데이터센터의 비상 백업 전원으로 널리 사용되며, 100% 블록 부하를 1단계로 수용하는 빠른 응답성과 안정적인 출력으로 미션 크리티컬 시설에 적합합니다. 250,000대 이상 전 세계 운영 실적이 있는 검증된 모델입니다.", "category": "육상 발전기", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c27-land"}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "CAT C32", "description": "CAT C32 발전기는 대형 데이터센터와 산업시설의 핵심 비상전원으로 검증된 모델입니다. 미션 크리티컬·Continuous·Standby·Prime 모든 용도에 대응하며, EMCP 4 기반의 정밀한 모니터링과 원격 관리가 가능합니다.", "category": "육상 발전기", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c32-land"}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "CAT 3512", "description": "CAT 3512 시리즈는 대형 발전 플랜트와 산업시설의 주력 발전기로, 견고한 설계와 긴 정비 주기로 운영 비용을 최소화합니다. Low Fuel Consumption 사양으로 연료 효율을 극대화합니다.", "category": "대형 발전기", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-3512-land"}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "CAT 3516 / 3516C", "description": "CAT 3516 시리즈는 발전소와 하이퍼스케일 데이터센터의 비상·상시 발전용으로 사용되는 대형 디젤 발전기입니다. 3516(기본형)은 1,450~1,750 ekW, 3516C는 1,825~2,500 ekW 출력을 제공하며, 검증된 신뢰성과 글로벌 서비스 네트워크가 강점입니다.", "category": "대형 발전기", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-3516-land"}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "CAT C175", "description": "CAT C175 시리즈는 4,000 ekW급 초대형 발전기로, 광산·하이퍼스케일 데이터센터·해양 플랜트 등 극한 환경에서도 안정적으로 운영됩니다. C175-16(V16)과 C175-20(V20) 두 가지 라인업이 있으며, 우수한 출력 밀도를 제공합니다.", "category": "초대형 발전기", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c175-land"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Product", "name": "CAT C7.1", "description": "CAT C7.1 마린 엔진은 소형 어선과 관공선(해양경찰정·소방정 등), 요트의 주기관으로 사용됩니다. 커먼레일 연료 시스템으로 최적의 연소와 낮은 배출가스를 구현하며, 전자제어 기반의 정숙한 운전이 특징입니다.", "category": "해상 주기관", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c71-marine"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Product", "name": "CAT C12.9 / C12", "description": "CAT C12 ACERT(상선용)과 C12.9(고속·요트용) 마린 엔진은 중형 어선과 연안 상선, 고속정의 주기관으로 적합하며, 전자제어 유닛 인젝션(MEUI/Common Rail) 시스템으로 우수한 연비와 성능을 제공합니다.", "category": "해상 주기관", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c129-marine"}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Product", "name": "CAT C18 (Marine)", "description": "선박용 CAT C18 마린 엔진은 주기관(Commercial Propulsion)과 선내 보조 발전기로 모두 사용 가능합니다. 선내 전력 공급과 호텔 로드를 안정적으로 책임지며, IMO Tier II 환경 규제에 대응합니다.", "category": "해상 주기관 · 보조 발전", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c18-marine"}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Product", "name": "CAT 3512C / 3512E", "description": "CAT 3512C/3512E 마린 엔진은 대형 상선과 원양어선, 관공선(해경 경비함 등)의 주기관으로 검증된 모델입니다. 견고한 설계와 긴 정비 주기, EPA Tier 3 / IMO II 대응으로 장시간 운항에 적합합니다.", "category": "해상 주기관", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-3512c-marine"}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Product", "name": "CAT C280 (3600 Series)", "description": "CAT C280 시리즈(구 3600 시리즈)는 대형 상선의 주기관과 해양 발전 플랜트용으로 사용되는 헤비듀티 마린 엔진입니다. 최대 5,420 bkW급으로 글로벌 해운에서 신뢰받고 있으며, 900~1,000 rpm 중속 운전으로 안정적인 장기 운용에 적합합니다.", "category": "해상 주기 · 발전", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-c280-marine"}}, {"@type": "ListItem", "position": 12, "item": {"@type": "Product", "name": "오일 · 연료 필터", "description": "CAT 정품 오일 · 연료 · 공기 필터를 전 모델 대응하여 상시 보유합니다. 정품 필터 사용 시 엔진 보증이 유지되며, 최적의 여과 성능으로 엔진 수명을 연장합니다.", "category": "소모성 부품", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-filter-parts"}}, {"@type": "ListItem", "position": 13, "item": {"@type": "Product", "name": "터보차저 (Turbocharger)", "description": "엔진 오버홀(O/H) 및 출력 회복을 위한 CAT 정품 터보차저. 신품과 재제조품(Reman) 모두 공급 가능하며, 검증된 성능과 보증이 제공됩니다.", "category": "핵심 부품", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-turbo-parts"}}, {"@type": "ListItem", "position": 14, "item": {"@type": "Product", "name": "실린더 헤드 / 라이너", "description": "엔진 오버홀과 부분 정비에 필요한 실린더 헤드, 라이너, 피스톤 등 핵심 부품을 정품으로 공급합니다. 정밀 가공된 부품으로 원본 성능을 복원합니다.", "category": "핵심 부품", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-head-parts"}}, {"@type": "ListItem", "position": 15, "item": {"@type": "Product", "name": "CAT 정품 엔진오일", "description": "CAT 정품 엔진오일 (DEO, TDTO 시리즈)을 상시 보유하여 정기 교체에 즉시 대응합니다. CAT 엔진 사양에 최적화된 윤활 성능을 제공합니다.", "category": "소모품", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-oil-parts"}}, {"@type": "ListItem", "position": 16, "item": {"@type": "Product", "name": "냉각수 펌프 / 인젝터", "description": "예방 정비와 긴급 고장 대응에 필요한 냉각수 펌프, 연료 인젝터 등 핵심 부품을 공급합니다. CAT 정품 부품으로 신뢰성·호환성을 확보할 수 있습니다.", "category": "핵심 부품", "brand": {"@type": "Brand", "name": "Caterpillar"}, "url": "https://www.samsuneng.co.kr/products/#spec-pump-parts"}}]}
 </script>
 </head>
 <body>
@@ -715,8 +742,279 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
     <strong id="resultCount">16</strong>개의 모델
   </div>
   <div class="products-grid" id="productsGrid">
-    <!-- JS로 카드 동적 생성 -->
+    <!-- 초기 카드는 정적 HTML(검색엔진 색인용). 카테고리·검색 조작 시에만 JS가 다시 그립니다. -->
+      <div class="product-card" data-cat="land" onclick="openProductModal(0)">
+        <div class="product-card-category">육상 발전기</div>
+        <div class="product-card-model">CAT C18</div>
+        <div class="product-card-spec">455 ~ 750 ekW</div>
+        <div class="product-card-use">중형 산업시설, 병원</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="land" onclick="openProductModal(1)">
+        <div class="product-card-category">육상 발전기</div>
+        <div class="product-card-model">CAT C27</div>
+        <div class="product-card-spec">680 ~ 800 ekW</div>
+        <div class="product-card-use">공장 비상전원, 데이터센터</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="land" onclick="openProductModal(2)">
+        <div class="product-card-category">육상 발전기</div>
+        <div class="product-card-model">CAT C32</div>
+        <div class="product-card-spec">830 ~ 1,250 ekW</div>
+        <div class="product-card-use">데이터센터, 대형 산업시설</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="land" onclick="openProductModal(3)">
+        <div class="product-card-category">대형 발전기</div>
+        <div class="product-card-model">CAT 3512</div>
+        <div class="product-card-spec">890 ~ 1,250 ekW</div>
+        <div class="product-card-use">발전소, 대형 산업시설</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="land" onclick="openProductModal(4)">
+        <div class="product-card-category">대형 발전기</div>
+        <div class="product-card-model">CAT 3516 / 3516C</div>
+        <div class="product-card-spec">1,450 ~ 2,500 ekW</div>
+        <div class="product-card-use">발전소, 대형 데이터센터</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="land" onclick="openProductModal(5)">
+        <div class="product-card-category">초대형 발전기</div>
+        <div class="product-card-model">CAT C175</div>
+        <div class="product-card-spec">2,500 ~ 4,000 ekW</div>
+        <div class="product-card-use">하이퍼스케일 데이터센터, 광산</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="marine" onclick="openProductModal(6)">
+        <div class="product-card-category">해상 주기관</div>
+        <div class="product-card-model">CAT C7.1</div>
+        <div class="product-card-spec">209 ~ 373 bkW</div>
+        <div class="product-card-use">소형 어선, 관공선, 요트</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="marine" onclick="openProductModal(7)">
+        <div class="product-card-category">해상 주기관</div>
+        <div class="product-card-model">CAT C12.9 / C12</div>
+        <div class="product-card-spec">254 ~ 735 bkW</div>
+        <div class="product-card-use">중형 어선, 연안 상선, 고속정</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="marine" onclick="openProductModal(8)">
+        <div class="product-card-category">해상 주기관 · 보조 발전</div>
+        <div class="product-card-model">CAT C18 (Marine)</div>
+        <div class="product-card-spec">338 ~ 847 bkW</div>
+        <div class="product-card-use">선박 주기관 · 보조 발전기</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="marine" onclick="openProductModal(9)">
+        <div class="product-card-category">해상 주기관</div>
+        <div class="product-card-model">CAT 3512C / 3512E</div>
+        <div class="product-card-spec">955 ~ 1,902 bkW</div>
+        <div class="product-card-use">대형 상선, 원양어선, 관공선</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="marine" onclick="openProductModal(10)">
+        <div class="product-card-category">해상 주기 · 발전</div>
+        <div class="product-card-model">CAT C280 (3600 Series)</div>
+        <div class="product-card-spec">1,900 ~ 5,420 bkW</div>
+        <div class="product-card-use">대형 상선, 발전 플랜트</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 생산</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="parts" onclick="openProductModal(11)">
+        <div class="product-card-category">소모성 부품</div>
+        <div class="product-card-model">오일 · 연료 필터</div>
+        <div class="product-card-spec">전 모델 대응</div>
+        <div class="product-card-use">정기 교체용 필터류</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">재고 보유</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="parts" onclick="openProductModal(12)">
+        <div class="product-card-category">핵심 부품</div>
+        <div class="product-card-model">터보차저 (Turbocharger)</div>
+        <div class="product-card-spec">C32 / 3512 / 3516 등</div>
+        <div class="product-card-use">오버홀, 출력 회복</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 공급</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="parts" onclick="openProductModal(13)">
+        <div class="product-card-category">핵심 부품</div>
+        <div class="product-card-model">실린더 헤드 / 라이너</div>
+        <div class="product-card-spec">전 모델 대응</div>
+        <div class="product-card-use">엔진 O/H, 부분 정비</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 공급</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="parts" onclick="openProductModal(14)">
+        <div class="product-card-category">소모품</div>
+        <div class="product-card-model">CAT 정품 엔진오일</div>
+        <div class="product-card-spec">DEO / TDTO</div>
+        <div class="product-card-use">정기 교체용 윤활유</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">재고 보유</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
+      <div class="product-card" data-cat="parts" onclick="openProductModal(15)">
+        <div class="product-card-category">핵심 부품</div>
+        <div class="product-card-model">냉각수 펌프 / 인젝터</div>
+        <div class="product-card-spec">전 모델 대응</div>
+        <div class="product-card-use">예방 정비, 고장 대응</div>
+        <div class="product-card-footer">
+          <span class="product-card-status">주문 공급</span>
+          <span class="product-card-arrow">상세 →</span>
+        </div>
+      </div>
   </div>
+
+  <details class="spec-sheet">
+    <summary>전체 모델 사양표 보기 <span>(텍스트 · 16개 모델)</span></summary>
+    <div class="spec-sheet-body">
+      <div class="spec-cat">
+        <h3>육상 발전기·엔진 (6)</h3>
+        <article class="spec-model" id="spec-c18-land">
+          <h4>CAT C18 <small>육상 발전기 · 455 ~ 750 ekW</small></h4>
+          <p>CAT C18 디젤 발전기는 중형 산업시설과 병원, 데이터센터의 비상전원에 최적화된 신뢰성 높은 발전기입니다. 컴팩트한 사이즈에 높은 출력 밀도를 제공하며, 미션 크리티컬·Standby·Prime 용도 모두에 대응합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C18 ATAAC™ / ACERT™</td></tr><tr><th scope="row">실린더</th><td>직렬 6기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>18.1 L</td></tr><tr><th scope="row">출력 (Standby, 60Hz)</th><td>550 ~ 750 ekW</td></tr><tr><th scope="row">출력 (Prime, 60Hz)</th><td>500 ~ 680 ekW</td></tr><tr><th scope="row">출력 (Standby, 50Hz)</th><td>565 ~ 680 ekW (706 ~ 850 kVA)</td></tr><tr><th scope="row">주파수</th><td>50 / 60 Hz</td></tr><tr><th scope="row">전압</th><td>380 ~ 480 V</td></tr><tr><th scope="row">배출 규제</th><td>U.S. EPA Tier 2 / Tier 3</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/product/view.php?idx=14" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-c27-land">
+          <h4>CAT C27 <small>육상 발전기 · 680 ~ 800 ekW</small></h4>
+          <p>CAT C27 발전기는 공장과 데이터센터의 비상 백업 전원으로 널리 사용되며, 100% 블록 부하를 1단계로 수용하는 빠른 응답성과 안정적인 출력으로 미션 크리티컬 시설에 적합합니다. 250,000대 이상 전 세계 운영 실적이 있는 검증된 모델입니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C27 ACERT™</td></tr><tr><th scope="row">실린더</th><td>V형 12기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>27.0 L</td></tr><tr><th scope="row">출력 (Standby, 60Hz)</th><td>750 ekW</td></tr><tr><th scope="row">출력 (Prime, 60Hz)</th><td>680 ekW</td></tr><tr><th scope="row">주파수</th><td>50 / 60 Hz</td></tr><tr><th scope="row">전압</th><td>380 ~ 480 V</td></tr><tr><th scope="row">배출 규제</th><td>U.S. EPA Tier 2 (Stationary Emergency)</td></tr><tr><th scope="row">제어 시스템</th><td>EMCP 4 / GCCP 1.2</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/product/list_3depth.php?part_idx=2" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-c32-land">
+          <h4>CAT C32 <small>육상 발전기 · 830 ~ 1,250 ekW</small></h4>
+          <p>CAT C32 발전기는 대형 데이터센터와 산업시설의 핵심 비상전원으로 검증된 모델입니다. 미션 크리티컬·Continuous·Standby·Prime 모든 용도에 대응하며, EMCP 4 기반의 정밀한 모니터링과 원격 관리가 가능합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C32 V12, 4행정 수냉식 디젤</td></tr><tr><th scope="row">실린더</th><td>V형 12기통</td></tr><tr><th scope="row">배기량</th><td>32.1 L</td></tr><tr><th scope="row">출력 (Standby, 60Hz)</th><td>1,000 ~ 1,250 ekW</td></tr><tr><th scope="row">출력 (Prime, 60Hz)</th><td>910 ~ 1,135 ekW</td></tr><tr><th scope="row">출력 (Continuous)</th><td>830 ekW</td></tr><tr><th scope="row">출력 (50Hz)</th><td>910 ~ 1,500 kVA</td></tr><tr><th scope="row">주파수</th><td>50 / 60 Hz</td></tr><tr><th scope="row">전압</th><td>380 ~ 13,800 V</td></tr><tr><th scope="row">제어 시스템</th><td>EMCP 4.2 / 4.4</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/product/view.php?idx=12" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-3512-land">
+          <h4>CAT 3512 <small>대형 발전기 · 890 ~ 1,250 ekW</small></h4>
+          <p>CAT 3512 시리즈는 대형 발전 플랜트와 산업시설의 주력 발전기로, 견고한 설계와 긴 정비 주기로 운영 비용을 최소화합니다. Low Fuel Consumption 사양으로 연료 효율을 극대화합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT 3512</td></tr><tr><th scope="row">실린더</th><td>V형 12기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>51.8 L</td></tr><tr><th scope="row">출력 (Standby, 60Hz)</th><td>1,250 ekW</td></tr><tr><th scope="row">출력 (Prime, 60Hz)</th><td>1,135 ekW</td></tr><tr><th scope="row">출력 (Continuous)</th><td>1,010 ekW</td></tr><tr><th scope="row">출력 (50Hz)</th><td>1,150 ~ 1,400 kVA</td></tr><tr><th scope="row">주파수</th><td>50 / 60 Hz</td></tr><tr><th scope="row">전압</th><td>380 ~ 13,800 V</td></tr><tr><th scope="row">제어 시스템</th><td>EMCP 4.4</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/product/view.php?idx=11" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-3516-land">
+          <h4>CAT 3516 / 3516C <small>대형 발전기 · 1,450 ~ 2,500 ekW</small></h4>
+          <p>CAT 3516 시리즈는 발전소와 하이퍼스케일 데이터센터의 비상·상시 발전용으로 사용되는 대형 디젤 발전기입니다. 3516(기본형)은 1,450~1,750 ekW, 3516C는 1,825~2,500 ekW 출력을 제공하며, 검증된 신뢰성과 글로벌 서비스 네트워크가 강점입니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT 3516 / 3516C / 3516E</td></tr><tr><th scope="row">실린더</th><td>V형 16기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>69.0 L</td></tr><tr><th scope="row">3516 (60Hz, Standby)</th><td>1,450 ~ 1,750 ekW</td></tr><tr><th scope="row">3516C (60Hz, Standby)</th><td>1,825 ~ 2,500 ekW</td></tr><tr><th scope="row">출력 (50Hz)</th><td>1,600 ~ 2,750 kVA</td></tr><tr><th scope="row">주파수</th><td>50 / 60 Hz</td></tr><tr><th scope="row">전압</th><td>380 ~ 13,800 V</td></tr><tr><th scope="row">제어 시스템</th><td>EMCP 4.4</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/product/view.php?idx=6" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-c175-land">
+          <h4>CAT C175 <small>초대형 발전기 · 2,500 ~ 4,000 ekW</small></h4>
+          <p>CAT C175 시리즈는 4,000 ekW급 초대형 발전기로, 광산·하이퍼스케일 데이터센터·해양 플랜트 등 극한 환경에서도 안정적으로 운영됩니다. C175-16(V16)과 C175-20(V20) 두 가지 라인업이 있으며, 우수한 출력 밀도를 제공합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C175-16 / C175-20 SCAC</td></tr><tr><th scope="row">실린더</th><td>V형 16 / 20기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>85.8 L (C175-16) / 105.8 L (C175-20)</td></tr><tr><th scope="row">C175-16 (60Hz, Standby)</th><td>2,500 ~ 3,365 ekW</td></tr><tr><th scope="row">C175-20 (60Hz, Standby)</th><td>3,150 ~ 4,000 ekW</td></tr><tr><th scope="row">주파수</th><td>50 / 60 Hz</td></tr><tr><th scope="row">전압</th><td>480 ~ 13,800 V</td></tr><tr><th scope="row">배출 규제</th><td>U.S. EPA Tier 2 / Tier 4</td></tr><tr><th scope="row">제어 시스템</th><td>EMCP 4.4 (Dual ADEM A4 ECU)</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/electric-power/diesel-generator-sets.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/product/view.php?idx=4" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+      </div>
+      <div class="spec-cat">
+        <h3>해상 엔진 (5)</h3>
+        <article class="spec-model" id="spec-c71-marine">
+          <h4>CAT C7.1 <small>해상 주기관 · 209 ~ 373 bkW</small></h4>
+          <p>CAT C7.1 마린 엔진은 소형 어선과 관공선(해양경찰정·소방정 등), 요트의 주기관으로 사용됩니다. 커먼레일 연료 시스템으로 최적의 연소와 낮은 배출가스를 구현하며, 전자제어 기반의 정숙한 운전이 특징입니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C7.1 (Marine Propulsion)</td></tr><tr><th scope="row">실린더</th><td>직렬 6기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>7.01 L</td></tr><tr><th scope="row">출력 (Commercial)</th><td>209 ~ 317 bkW</td></tr><tr><th scope="row">출력 (High Performance)</th><td>298 ~ 373 bkW (400 ~ 500 mhp)</td></tr><tr><th scope="row">회전수</th><td>2,300 ~ 2,900 rpm</td></tr><tr><th scope="row">용도</th><td>주기관 (Marine Propulsion)</td></tr><tr><th scope="row">배출 규제</th><td>IMO II, U.S. EPA Tier 3, RCD II, China II</td></tr><tr><th scope="row">연료 시스템</th><td>Common Rail</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/system/view.php?idx=128" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-c129-marine">
+          <h4>CAT C12.9 / C12 <small>해상 주기관 · 254 ~ 735 bkW</small></h4>
+          <p>CAT C12 ACERT(상선용)과 C12.9(고속·요트용) 마린 엔진은 중형 어선과 연안 상선, 고속정의 주기관으로 적합하며, 전자제어 유닛 인젝션(MEUI/Common Rail) 시스템으로 우수한 연비와 성능을 제공합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C12 ACERT (Commercial) / C12.9 (High Performance)</td></tr><tr><th scope="row">실린더</th><td>직렬 6기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>12.0 L (C12) / 12.9 L (C12.9)</td></tr><tr><th scope="row">출력 (C12 Commercial)</th><td>254 ~ 526 bkW (340 ~ 705 bhp)</td></tr><tr><th scope="row">출력 (C12.9 High Perf.)</th><td>625 ~ 735 bkW (850 ~ 1,000 mhp)</td></tr><tr><th scope="row">회전수</th><td>1,800 ~ 2,300 rpm</td></tr><tr><th scope="row">배출 규제</th><td>IMO I / II, U.S. EPA Tier 3, EU Stage IIIA</td></tr><tr><th scope="row">냉각 방식</th><td>청수 냉각 (Heat Exchanger / Keel)</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/system/view.php?idx=94" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-c18-marine">
+          <h4>CAT C18 (Marine) <small>해상 주기관 · 보조 발전 · 338 ~ 847 bkW</small></h4>
+          <p>선박용 CAT C18 마린 엔진은 주기관(Commercial Propulsion)과 선내 보조 발전기로 모두 사용 가능합니다. 선내 전력 공급과 호텔 로드를 안정적으로 책임지며, IMO Tier II 환경 규제에 대응합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C18 ACERT Marine</td></tr><tr><th scope="row">실린더</th><td>직렬 6기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>18.1 L</td></tr><tr><th scope="row">출력 (Commercial Propulsion)</th><td>338 ~ 599 bkW (454 ~ 803 bhp)</td></tr><tr><th scope="row">출력 (High Performance)</th><td>599 ~ 847 bkW (803 ~ 1,136 bhp)</td></tr><tr><th scope="row">회전수</th><td>1,800 ~ 2,300 rpm</td></tr><tr><th scope="row">용도</th><td>주기관 / 보조 발전 (Marine Auxiliary)</td></tr><tr><th scope="row">배출 규제</th><td>U.S. EPA Tier 3, IMO II, EU IWW, China II</td></tr><tr><th scope="row">제어 시스템</th><td>A4 ECU</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/system/view.php?idx=130" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-3512c-marine">
+          <h4>CAT 3512C / 3512E <small>해상 주기관 · 955 ~ 1,902 bkW</small></h4>
+          <p>CAT 3512C/3512E 마린 엔진은 대형 상선과 원양어선, 관공선(해경 경비함 등)의 주기관으로 검증된 모델입니다. 견고한 설계와 긴 정비 주기, EPA Tier 3 / IMO II 대응으로 장시간 운항에 적합합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT 3512C / 3512E Marine</td></tr><tr><th scope="row">실린더</th><td>V형 12기통, 4행정</td></tr><tr><th scope="row">배기량</th><td>58.56 L</td></tr><tr><th scope="row">출력 (Commercial Propulsion)</th><td>955 ~ 1,902 bkW (1,280 ~ 2,551 bhp)</td></tr><tr><th scope="row">회전수</th><td>1,200 ~ 1,800 rpm</td></tr><tr><th scope="row">용도</th><td>주기관 (Marine Propulsion)</td></tr><tr><th scope="row">배출 규제</th><td>U.S. EPA Tier 3 (3512C) / Tier 4 + IMO III (3512E)</td></tr><tr><th scope="row">Bore × Stroke</th><td>170 × 215 mm</td></tr><tr><th scope="row">냉각 방식</th><td>청수 냉각 (Heat Exchanger / Keel)</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/system/view.php?idx=134" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-c280-marine">
+          <h4>CAT C280 (3600 Series) <small>해상 주기 · 발전 · 1,900 ~ 5,420 bkW</small></h4>
+          <p>CAT C280 시리즈(구 3600 시리즈)는 대형 상선의 주기관과 해양 발전 플랜트용으로 사용되는 헤비듀티 마린 엔진입니다. 최대 5,420 bkW급으로 글로벌 해운에서 신뢰받고 있으며, 900~1,000 rpm 중속 운전으로 안정적인 장기 운용에 적합합니다.</p>
+          <table><tbody><tr><th scope="row">엔진 모델</th><td>CAT C280-6 / C280-8 / C280-12 / C280-16</td></tr><tr><th scope="row">실린더</th><td>직렬 6 / V형 8·12·16기통, 4행정</td></tr><tr><th scope="row">출력 (C280-6)</th><td>1,900 ~ 2,030 bkW</td></tr><tr><th scope="row">출력 (C280-8)</th><td>2,530 ~ 2,710 bkW</td></tr><tr><th scope="row">출력 (C280-12)</th><td>3,800 ~ 4,060 bkW</td></tr><tr><th scope="row">출력 (C280-16)</th><td>5,060 ~ 5,420 bkW</td></tr><tr><th scope="row">회전수</th><td>900 ~ 1,000 rpm (중속)</td></tr><tr><th scope="row">배출 규제</th><td>U.S. EPA Tier 2, IMO II</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://www.cat.com/en_US/products/new/power-systems/marine-power-systems.html" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/system/view.php?idx=138" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+      </div>
+      <div class="spec-cat">
+        <h3>부품·소모품 (5)</h3>
+        <article class="spec-model" id="spec-filter-parts">
+          <h4>오일 · 연료 필터 <small>소모성 부품 · 전 모델 대응</small></h4>
+          <p>CAT 정품 오일 · 연료 · 공기 필터를 전 모델 대응하여 상시 보유합니다. 정품 필터 사용 시 엔진 보증이 유지되며, 최적의 여과 성능으로 엔진 수명을 연장합니다.</p>
+          <table><tbody><tr><th scope="row">취급 품목</th><td>오일 필터, 연료 필터, 공기 필터, 분리기</td></tr><tr><th scope="row">대응 모델</th><td>CAT 전 모델 (육상 · 해상)</td></tr><tr><th scope="row">재고 상태</th><td>주요 모델 상시 보유</td></tr><tr><th scope="row">긴급 출고</th><td>24시간 대응</td></tr><tr><th scope="row">보증</th><td>CAT 정품 보증서 발급</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://parts.cat.com/en/catcorp" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/engine/parts_team.php" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-turbo-parts">
+          <h4>터보차저 (Turbocharger) <small>핵심 부품 · C32 / 3512 / 3516 등</small></h4>
+          <p>엔진 오버홀(O/H) 및 출력 회복을 위한 CAT 정품 터보차저. 신품과 재제조품(Reman) 모두 공급 가능하며, 검증된 성능과 보증이 제공됩니다.</p>
+          <table><tbody><tr><th scope="row">공급 형태</th><td>신품 (New) / 재제조품 (Reman)</td></tr><tr><th scope="row">대응 모델</th><td>C18, C27, C32, 3512, 3516, C175 등</td></tr><tr><th scope="row">리드 타임</th><td>재고 시 즉시 / 주문 시 4~8주</td></tr><tr><th scope="row">보증</th><td>신품 12개월, Reman 6개월</td></tr><tr><th scope="row">관련 서비스</th><td>터보 교환 시공 가능</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://parts.cat.com/en/catcorp" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/engine/parts_team.php" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-head-parts">
+          <h4>실린더 헤드 / 라이너 <small>핵심 부품 · 전 모델 대응</small></h4>
+          <p>엔진 오버홀과 부분 정비에 필요한 실린더 헤드, 라이너, 피스톤 등 핵심 부품을 정품으로 공급합니다. 정밀 가공된 부품으로 원본 성능을 복원합니다.</p>
+          <table><tbody><tr><th scope="row">취급 품목</th><td>실린더 헤드, 라이너, 피스톤, 링 세트</td></tr><tr><th scope="row">공급 형태</th><td>신품 / Reman</td></tr><tr><th scope="row">대응 모델</th><td>CAT 전 모델</td></tr><tr><th scope="row">리드 타임</th><td>주문 시 6~10주</td></tr><tr><th scope="row">관련 서비스</th><td>정비 인력 파견 가능 (O/H 시공)</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://parts.cat.com/en/catcorp" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/engine/parts_team.php" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-oil-parts">
+          <h4>CAT 정품 엔진오일 <small>소모품 · DEO / TDTO</small></h4>
+          <p>CAT 정품 엔진오일 (DEO, TDTO 시리즈)을 상시 보유하여 정기 교체에 즉시 대응합니다. CAT 엔진 사양에 최적화된 윤활 성능을 제공합니다.</p>
+          <table><tbody><tr><th scope="row">제품군</th><td>CAT DEO (Diesel Engine Oil), TDTO</td></tr><tr><th scope="row">점도 등급</th><td>SAE 15W-40, 10W-30, 5W-40</td></tr><tr><th scope="row">용량 옵션</th><td>20 L 통, 200 L 드럼, 벌크</td></tr><tr><th scope="row">재고 상태</th><td>상시 보유</td></tr><tr><th scope="row">긴급 출고</th><td>24시간 대응</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://parts.cat.com/en/catcorp" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/engine/parts_team.php" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+        <article class="spec-model" id="spec-pump-parts">
+          <h4>냉각수 펌프 / 인젝터 <small>핵심 부품 · 전 모델 대응</small></h4>
+          <p>예방 정비와 긴급 고장 대응에 필요한 냉각수 펌프, 연료 인젝터 등 핵심 부품을 공급합니다. CAT 정품 부품으로 신뢰성·호환성을 확보할 수 있습니다.</p>
+          <table><tbody><tr><th scope="row">취급 품목</th><td>냉각수 펌프, 연료 인젝터, 인젝터 노즐</td></tr><tr><th scope="row">공급 형태</th><td>신품 / Reman</td></tr><tr><th scope="row">대응 모델</th><td>CAT 전 모델</td></tr><tr><th scope="row">리드 타임</th><td>재고 시 즉시 / 주문 시 4~6주</td></tr><tr><th scope="row">보증</th><td>CAT 정품 보증서 발급</td></tr></tbody></table>
+          <p class="spec-links"><a href="https://parts.cat.com/en/catcorp" target="_blank" rel="noopener">CAT 공식 자료</a> · <a href="https://catengine.haein.com/catengine/engine/parts_team.php" target="_blank" rel="noopener">HAEIN 제품 페이지</a></p>
+        </article>
+      </div>
+    </div>
+  </details>
 </section>
 
 <!-- 자체제작 안내 (내부링크 보강: in-house 목록 + ss-svc-32cx 상세) -->
@@ -1228,9 +1526,8 @@ const hash = window.location.hash.replace('#', '');
 if (hash && ['land', 'marine', 'parts'].includes(hash)) {
   const targetBtn = document.querySelector(`.cat-btn[data-cat="${hash}"]`);
   if (targetBtn) targetBtn.click();
-} else {
-  renderProductCards();
 }
+// 초기 카드는 정적 HTML — 여기서 renderProductCards()를 호출하지 않습니다.
 </script>
 
 <!-- 공통 푸터 (서브페이지) -->

@@ -48,3 +48,10 @@ _reference/tools/          build-product-table.js — 메인 제품 검색표 <t
   → 동작하려면 Vercel 프로젝트 Settings → Domains 에 두 도메인을 추가하고 DNS(A/CNAME)를 Vercel로 향하게 해야 함.
 - 영문 페이지 글꼴: `/fonts/` 자체 호스팅 (본문 Inter 400·500·600·700, 제목 Barlow 700·800, 라틴 서브셋 woff2, SIL OFL — `fonts/LICENSE-OFL.txt`).
   외부 CDN을 쓰지 않으므로 CSP(`font-src 'self'`) 변경 불필요. 한글 페이지는 기존대로 시스템 글꼴.
+
+## 글꼴
+- 한글 페이지 26개: Pretendard 웹폰트(jsDelivr 동적 서브셋, `pretendard-dynamic-subset.min.css`)를 `<head>`에서 로드. CSS 글꼴 스택의 'Pretendard'가 실제로 적용됨.
+  CSP의 style-src/font-src에 cdn.jsdelivr.net 허용되어 있음. 새 페이지를 만들 때도 같은 `<link>` 두 줄을 넣을 것.
+- 제품 페이지(/products/): 모델 카드 16개는 정적 HTML(검색엔진 색인용)이며, 카테고리·검색 조작 시에만 JS가 다시 그림.
+  모델 추가·수정 시 `PRODUCT_DATA`(JS)와 정적 카드·사양표(details)·ItemList JSON-LD를 함께 갱신해야 함.
+- 사이트맵 lastmod는 각 페이지의 마지막 커밋 날짜 기준. 페이지를 고치면 해당 lastmod도 갱신할 것.

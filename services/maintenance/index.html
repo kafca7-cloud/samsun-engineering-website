@@ -17,6 +17,7 @@
   "serviceType": "비상발전기 정기점검·예방정비",
   "provider": {
     "@type": "LocalBusiness",
+    "@id": "https://www.samsuneng.co.kr/#organization",
     "name": "㈜삼선엔지니어링",
     "address": {"@type": "PostalAddress", "addressRegion": "전남광주통합특별시", "addressLocality": "여수시", "streetAddress": "좌수영로 919", "addressCountry": "KR"},
     "telephone": "+82-61-642-1247"
@@ -818,8 +819,21 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
   </div>
 </section>
 
+<style>
+  /* 핵심 요약 — 질문형 검색·AI 답변용 사실 블록 */
+  .key-facts { display: grid; grid-template-columns: 112px 1fr; gap: .45rem 1rem; margin: 0 0 1.6rem; padding: 1rem 1.3rem; border: 1px solid var(--cat-border); border-left: 4px solid var(--cat-yellow); background: var(--cat-white); font-size: 14px; line-height: 1.65; }
+  .key-facts dt { font-weight: 800; color: var(--cat-black); letter-spacing: .3px; }
+  .key-facts dd { margin: 0; color: var(--cat-gray4); word-break: keep-all; }
+  @media (max-width: 560px) { .key-facts { grid-template-columns: 1fr; gap: .1rem 0; padding: .9rem 1rem; } .key-facts dd { margin-bottom: .55rem; } }
+</style>
 <section class="intro-section">
   <div class="intro-inner">
+    <dl class="key-facts">
+      <dt>서비스</dt><dd>비상발전기(EDG)·산업용 디젤엔진 정기점검, 예방정비, 정밀 수리·오버홀, 24시간 긴급 출동</dd>
+      <dt>대상</dt><dd>석유화학·철강·발전·공공 현장의 CAT 엔진과 주요 제작사 엔진</dd>
+      <dt>계약·결과물</dt><dd>연간·반기·분기 단가계약 기반 정기점검, 표준 점검 시트·리포트로 설비별 이력 관리</dd>
+      <dt>거점</dt><dd>여수 본사(좌수영로 919) 기반 전남·전북·경남권 출동</dd>
+    </dl>
     <p class="intro-summary">
       여수 본사를 거점으로 석유화학·철강·발전·공공 현장의 <strong>비상발전기(EDG)와 산업용 디젤엔진</strong>을 35년간 점검·정비해 왔습니다.
       CAT 엔진을 중심으로 주요 제작사 엔진에 대응하며, 점검 결과는 표준화된 점검 시트와 리포트로 남겨 설비별 이력으로 관리합니다.

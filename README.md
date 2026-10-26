@@ -55,3 +55,9 @@ _reference/tools/          build-product-table.js — 메인 제품 검색표 <t
 - 제품 페이지(/products/): 모델 카드 16개는 정적 HTML(검색엔진 색인용)이며, 카테고리·검색 조작 시에만 JS가 다시 그림.
   모델 추가·수정 시 `PRODUCT_DATA`(JS)와 정적 카드·사양표(details)·ItemList JSON-LD를 함께 갱신해야 함.
 - 사이트맵 lastmod는 각 페이지의 마지막 커밋 날짜 기준. 페이지를 고치면 해당 lastmod도 갱신할 것.
+
+## AEO/GEO (AI 검색 대응)
+- `llms.txt`: 회사 사실·주요 페이지 요약(AI용). 주소·연락처·자격·임대 조건이 바뀌면 함께 갱신.
+- 메인 LocalBusiness(`#organization`)에 주소·전화·이메일·영업시간·sameAs(네이버 플레이스·카카오맵) 포함. 서비스 페이지 provider는 같은 `@id`로 연결.
+- 서비스 페이지 상단 `.key-facts`(핵심 요약)와 FAQ는 사실 문장만. 변경 시 FAQ JSON-LD(FAQPage)와 화면 항목·건수를 함께 수정.
+- 외부 일치(NAP): 네이버 플레이스·카카오맵·구글 비즈니스의 회사명·주소·전화를 홈페이지와 동일하게 유지.

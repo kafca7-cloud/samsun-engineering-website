@@ -17,6 +17,7 @@
   "serviceType": "소방펌프 디젤엔진 공급·정비·긴급대응",
   "provider": {
     "@type": "LocalBusiness",
+    "@id": "https://www.samsuneng.co.kr/#organization",
     "name": "㈜삼선엔지니어링",
     "address": {"@type": "PostalAddress", "addressRegion": "전남광주통합특별시", "addressLocality": "여수시", "streetAddress": "좌수영로 919", "addressCountry": "KR"},
     "telephone": "+82-61-642-1247"
@@ -573,8 +574,21 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
 </section>
 
 <!-- ============ INTRO ============ -->
+<style>
+  /* 핵심 요약 — 질문형 검색·AI 답변용 사실 블록 */
+  .key-facts { display: grid; grid-template-columns: 112px 1fr; gap: .45rem 1rem; margin: 0 0 1.6rem; padding: 1rem 1.3rem; border: 1px solid var(--cat-border); border-left: 4px solid var(--cat-yellow); background: var(--cat-white); font-size: 14px; line-height: 1.65; }
+  .key-facts dt { font-weight: 800; color: var(--cat-black); letter-spacing: .3px; }
+  .key-facts dd { margin: 0; color: var(--cat-gray4); word-break: keep-all; }
+  @media (max-width: 560px) { .key-facts { grid-template-columns: 1fr; gap: .1rem 0; padding: .9rem 1rem; } .key-facts dd { margin-bottom: .55rem; } }
+</style>
 <section class="intro-section">
   <div class="intro-inner">
+    <dl class="key-facts">
+      <dt>서비스</dt><dd>소방펌프 디젤엔진 신규 공급, 정비·오버홀, 정품 부품, 24시간 긴급 대응</dd>
+      <dt>대상</dt><dd>내연기관(디젤) 구동 소방펌프 — CAT C18·3406C 등 Fire Pump Engine</dd>
+      <dt>근거</dt><dd>화재안전기술기준(NFTC 102·103)이 정한 상용전원 상실 대비 비상동력 설비</dd>
+      <dt>거점</dt><dd>여수 본사, 비상발전기 점검과 연계 관리</dd>
+    </dl>
     <p class="intro-summary">
       소방펌프의 가압송수장치는 전동기 또는 <strong>내연기관(디젤)</strong>으로 구동할 수 있으며,
       상용전원 상실에 대비한 내연기관 구동 펌프는 화재안전기술기준이 정한 비상 대비 수단입니다.

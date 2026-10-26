@@ -33,6 +33,7 @@
   "serviceType": "발전기 임대·렌탈",
   "provider": {
     "@type": "LocalBusiness",
+    "@id": "https://www.samsuneng.co.kr/#organization",
     "name": "㈜삼선엔지니어링",
     "address": {"@type": "PostalAddress", "addressRegion": "전남광주통합특별시", "addressLocality": "여수시", "streetAddress": "좌수영로 919", "addressCountry": "KR"},
     "telephone": "+82-61-642-1247"
@@ -757,8 +758,21 @@ nav#mainNav.mob-open .hamburger span:nth-child(3) { transform: translateY(-7px) 
   </div>
 </section>
 
+<style>
+  /* 핵심 요약 — 질문형 검색·AI 답변용 사실 블록 */
+  .key-facts { display: grid; grid-template-columns: 112px 1fr; gap: .45rem 1rem; margin: 0 0 1.6rem; padding: 1rem 1.3rem; border: 1px solid var(--cat-border); border-left: 4px solid var(--cat-yellow); background: var(--cat-white); font-size: 14px; line-height: 1.65; }
+  .key-facts dt { font-weight: 800; color: var(--cat-black); letter-spacing: .3px; }
+  .key-facts dd { margin: 0; color: var(--cat-gray4); word-break: keep-all; }
+  @media (max-width: 560px) { .key-facts { grid-template-columns: 1fr; gap: .1rem 0; padding: .9rem 1rem; } .key-facts dd { margin-bottom: .55rem; } }
+</style>
 <section class="intro-section">
   <div class="intro-inner">
+    <dl class="key-facts">
+      <dt>서비스</dt><dd>발전기 단기·장기 임대, 임시 전력 공급</dd>
+      <dt>대상 용량</dt><dd>300kW급 이상 중·대형 발전기 (300kW 미만 소형은 취급하지 않음)</dd>
+      <dt>용도</dt><dd>비상발전기 정비 기간 백업 전원, 공사 현장 임시 전원, 정전 대응</dd>
+      <dt>대응</dt><dd>운반·설치·시운전·회수 일괄, 24시간 긴급 대응</dd>
+    </dl>
     <p class="intro-summary">
       <strong>㈜삼선엔지니어링</strong>은 발전기를 직접 정비·관리해온 전문기업으로서,
       보유 발전기를 활용한 <strong>임대 서비스</strong>를 제공합니다.
